@@ -1,0 +1,33 @@
+{
+    "complaint": {
+        "placeholder": {
+            "search_content": "Tìm kiếm theo nội dung khiếu nại..."
+        },
+        "title": {
+            "complaint_management": "Quản lý khiếu nại",
+            "complaint_summary": "Tóm tắt khiếu nại"
+        },
+        "field": {
+            "topic": "Chủ đề khiếu nại",
+            "content": "Nội dung",
+            "response": "Phản hồi",
+            "type": "Loại khiếu nại",
+            "resolve_status": "Trạng thái giải quyết khiếu nại"
+        },
+        "button": {
+            "tooltip_classify": "Phân loại khiếu nại",
+            "classify_neutral": "Phân loại là Trung lập",
+            "classify_positive": "Phân loại là Tích cực",
+            "classify_negative": "Phân loại là Tiêu cực",
+            "view_summary": "Xem tóm tắt"
+        },
+        "dialog": {
+            "confirm": {
+                "close_complaint_title": "Đóng khiếu nại?",
+                "close_complaint_description": "Bạn có chắc chắn muốn đóng khiếu nại này không? Hành động này không thể hoàn tác",
+                "classify_complaint_title": "Xác nhận phân loại",
+                "classify_complaint_description": "Bạn có chắc chắn muốn phân loại khiếu nại này là {type} không?"
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "tax_bracket": {
+        "title": {
+            "page": "Tax Brackets",
+            "list": "Tax Brackets List",
+            "detail": "Tax Bracket Detail",
+            "delete": "Delete Tax Bracket",
+            "delete_confirm": "Are you sure you want to delete this tax bracket",
+            "create": "Create Tax Bracket",
+            "update": "Update Tax Bracket",
+            "tax_bracket_management": "Tax Bracket Management"
+        },
+        "description": {
+            "page_intro": "Manage all tax brackets available in the system."
+        },
+        "placeholder": {
+            "no_result_title": "No tax brackets found",
+            "no_result_subtitle": "Try adjusting the filters or searching with another keyword.",
+            "search_tax_bracket": "Search by tax bracket ..."
+        },
+        "field": {
+            "id": "ID",
+            "from_amount": "From Amount",
+            "tax_rate": "Tax Rate"
+        }
+    }
+}

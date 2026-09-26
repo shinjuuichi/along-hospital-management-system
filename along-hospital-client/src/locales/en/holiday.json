@@ -1,0 +1,41 @@
+{
+  "holiday": {
+    "title": {
+      "holiday_management": "Holiday Management"
+    },
+    "field": {
+      "id": "ID",
+      "name": "Holiday Name",
+      "day": "Day",
+      "month": "Month",
+      "year": "Year",
+      "actions": "Actions",
+      "date_range": "Date Range",
+      "from_date": "From Date",
+      "to_date": "To Date",
+      "preview": "Preview",
+      "days": "days",
+      "no_name": "(No name)",
+      "holiday_type": "Holiday Type",
+      "date_type": "Date Type"
+    },
+    "option": {
+      "annual": "Annual",
+      "specific": "Specific Date",
+      "specific_day": "Specific Day",
+      "date_range": "Date Range"
+    },
+    "dialog": {
+      "create_title": "Create Holiday",
+      "create_range_title": "Create Holiday Range",
+      "update_title": "Update Holiday",
+      "confirm_delete_title": "Delete Holiday?",
+      "confirm_delete_description": "Are you sure you want to delete \"{{name}}\"?"
+    },
+    "error": {
+      "from_after_to": "From date must be before or equal to To date",
+      "exceeds_max_days": "Date range cannot exceed 366 days"
+    }
+  }
+}
+

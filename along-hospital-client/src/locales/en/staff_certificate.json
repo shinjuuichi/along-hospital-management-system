@@ -1,0 +1,73 @@
+{
+	"staff_certificate": {
+		"page_title": "Staff Certificate Management",
+		"table": {
+			"id": "ID",
+			"certificate_no": "Certificate No.",
+			"certificate_type": "Certificate Type",
+			"staff": "Staff",
+			"issued_date": "Issued Date",
+			"expired_date": "Expired Date",
+			"issued_by": "Issued By",
+			"status": "Status",
+			"actions": "Actions"
+		},
+		"field": {
+			"certificate_no": "Certificate No.",
+			"certificate_type": "Certificate Type",
+			"staff": "Staff",
+			"issued_date": "Issued Date",
+			"expired_date": "Expired Date",
+			"issued_by": "Issued By",
+			"reason": "Reason",
+			"new_expired_date": "New Expired Date"
+		},
+		"button": {
+			"create": "Create",
+			"view": "View",
+			"delete": "Delete",
+			"suspend": "Suspend",
+			"activate": "Activate",
+			"approve": "Approve"
+		},
+		"dialog": {
+			"create_title": "Create Staff Certificate",
+			"view_title": "Staff Certificate Details",
+			"suspend_title": "Suspend Certificate",
+			"activate_expired_title": "Activate Expired Certificate",
+			"confirm_activate_title": "Confirm Activation",
+			"confirm_activate_description": "Are you sure you want to activate this certificate?",
+			"confirm_delete_title": "Confirm Delete Certificate",
+			"confirm_delete_description": "Are you sure you want to delete certificate number \"{no}\"?",
+			"confirm_approve_title": "Confirm Approval",
+			"confirm_approve_description": "Are you sure you want to approve this certificate?"
+		},
+		"message": {
+			"expired_date_past_error": "Expired date cannot be in the past"
+		}
+	},
+	"staff_certificate_type": {
+		"page_title": "Staff Certificate Type Management",
+		"table": {
+			"id": "ID",
+			"name": "Name",
+			"scope_of_practice": "Scope of Practice",
+			"actions": "Actions"
+		},
+		"field": {
+			"name": "Name",
+			"scope_of_practice": "Scope of Practice"
+		},
+		"button": {
+			"create": "Create",
+			"view": "View",
+			"delete": "Delete"
+		},
+		"dialog": {
+			"create_title": "Create Certificate Type",
+			"view_title": "Certificate Type Details",
+			"confirm_delete_title": "Confirm Delete Certificate Type",
+			"confirm_delete_description": "Are you sure you want to delete certificate type \"{name}\"?"
+		}
+	}
+}

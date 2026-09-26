@@ -1,0 +1,17 @@
+{
+    "chatbot": {
+        "title": {
+            "title": "Trợ lý ảo Bệnh viện Along",
+            "caption": "Trò chuyện nhanh với trợ lý ảo của bệnh viện"
+        },
+        "placeholder": {
+            "input": "Nhập tin nhắn của bạn...",
+            "greeting": "Xin chào! Tôi là trợ lý ảo của bạn. Tôi có thể giúp gì cho bạn hôm nay?",
+            "typing": "Đang soạn tin..."
+        },
+        "status": {
+            "connected": "Đã kết nối với trợ lý ảo",
+            "disconnected": "Chưa kết nối với trợ lý ảo"
+        }
+    }
+}

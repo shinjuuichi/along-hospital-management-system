@@ -1,0 +1,41 @@
+{
+    "bed": {
+        "title": {
+            "management": "Bed Management",
+            "list": "Bed List",
+            "detail": "Bed Detail"
+        },
+        "field": {
+            "id": "ID",
+            "code": "Code",
+            "status": "Status",
+            "room": "Room",
+            "room_id": "Room",
+            "bed_category": "Bed Category",
+            "bed_category_id": "Bed Category"
+        },
+        "filter": {
+            "title": "Filter Beds",
+            "status": "Status",
+            "room_id": "Room ID",
+            "bed_category": "Bed Category"
+        },
+        "placeholder": {
+            "select_status": "-- Select Status --",
+            "select_room": "-- Select Room --",
+            "select_bed_category": "-- Select Bed Category --"
+        },
+        "dialog": {
+            "create_title": "Create Bed",
+            "update_title": "Update Bed",
+            "delete_title": "Delete bed",
+            "delete_description": "Are you sure you want to delete bed '{code}'?",
+            "delete_many_title": "Delete multiple beds",
+            "delete_many_description": "Are you sure you want to delete {number} selected beds?"
+        },
+        "text": {
+            "no_beds": "No beds found.",
+            "no_beds_subtitle": "Try adjusting your filters or add new beds."
+        }
+    }
+}

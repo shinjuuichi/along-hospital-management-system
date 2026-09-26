@@ -1,0 +1,28 @@
+{
+    "supplier": {
+        "title": {
+            "supplier_management": "Quản lý nhà cung cấp"
+        },
+        "field": {
+            "id": "ID",
+            "name": "Tên nhà cung cấp",
+            "phone": "Số điện thoại",
+            "email": "Email",
+            "address": "Địa chỉ",
+            "note": "Ghi chú",
+            "actions": "Hành động"
+        },
+        "text": {
+            "total_suppliers": "Tổng số nhà cung cấp"
+        },
+        "filter": {
+            "search_placeholder": "Tìm theo tên nhà cung cấp..."
+        },
+        "dialog": {
+            "create_title": "Thêm nhà cung cấp",
+            "update_title": "Cập nhật nhà cung cấp",
+            "confirm_delete_title": "Xóa nhà cung cấp?",
+            "confirm_delete_description": "Bạn có chắc chắn muốn xóa \"{{name}}\" không?"
+        }
+    }
+}

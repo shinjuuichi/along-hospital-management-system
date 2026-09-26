@@ -1,0 +1,47 @@
+{
+    "shop": {
+        "title": "Cửa hàng",
+        "text": {
+            "no_products": "Không tìm thấy sản phẩm nào",
+            "no_skus_available": "Không có phiên bản sẵn có",
+            "select_full_variant_to_view_price": "Vui lòng chọn đầy đủ phiên bản để xem giá",
+            "out_of_stock": "Hết hàng"
+        },
+        "field": {
+            "search": "Tìm kiếm",
+            "category": "Danh mục",
+            "unit": "Đơn vị",
+            "price": "Giá",
+            "quantity": "Số lượng",
+            "brand": "Thương hiệu"
+        },
+        "button": {
+            "filter": "Lọc",
+            "reset": "Đặt lại",
+            "add_to_cart": "Thêm",
+            "adding_to_cart": "Đang thêm...",
+            "select_variant": "Chọn phiên bản",
+            "option_values": "Giá trị tùy chọn"
+        },
+        "placeholder": {
+            "search": "Tìm kiếm sản phẩm..."
+        },
+        "tooltip": {
+            "quantity_decrease": "Giảm số lượng",
+            "quantity_increase": "Tăng số lượng"
+        }
+    },
+    "medicine": {
+        "field": {
+            "brand": "Thương hiệu",
+            "unit": "Đơn vị",
+            "price": "Giá",
+            "quantity": "Số lượng",
+            "final_price": "Giá sau giảm"
+        },
+        "filter": {
+            "category": "Danh mục",
+            "unit": "Đơn vị"
+        }
+    }
+}

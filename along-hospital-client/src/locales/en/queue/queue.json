@@ -1,0 +1,86 @@
+{
+    "queue": {
+        "title": {
+            "queue_management": "Queue Management",
+            "queue_detail": "Room Queue Detail",
+            "queue_list": "Queue List",
+            "queue_actions": "Queue Actions",
+            "summary": "Queue Summary",
+            "now_serving": "Now Serving",
+            "up_next": "Up Next"
+        },
+        "text": {
+            "reception_room": "Reception Room",
+            "rooms_found": "Rooms found",
+            "page": "Page",
+            "priority": "Priority",
+            "view_medical_history_hint": "Review visit history, test results and previous prescriptions",
+            "assign_medical_history_hint": "Select a pending medical history before opening detailed records"
+        },
+        "button": {
+            "call": "Call number",
+            "start": "Start Consultation",
+            "uncall": "Uncall",
+            "await_results": "Await results",
+            "view_medical_history_detail": "View Medical History Detail",
+            "assign_medical_history": "Assign Medical History",
+            "online_queue": "Online Queue",
+            "offline_queue": "Offline Queue"
+        },
+        "dialog": {
+            "assign_medical_history_title": "Assign Medical History",
+            "change_status_title": "Change Queue Status",
+            "change_status_description": "Are you sure you want to change this queue status?",
+            "call_title": "Call Queue Number",
+            "call_description": "Are you sure you want to call this queue number?",
+            "uncall_title": "Uncall Queue Number",
+            "uncall_description": "Are you sure you want to move this queue number back to waiting?",
+            "start_title": "Start Consultation",
+            "start_description": "Are you sure you want to start consultation for this queue number?",
+            "await_results_title": "Await Results",
+            "await_results_description": "Are you sure you want to move this queue number to awaiting results?",
+            "complete_title": "Complete Queue",
+            "complete_description": "Are you sure you want to mark this queue as completed?",
+            "cancel_title": "Cancel Queue",
+            "cancel_description": "Are you sure you want to cancel this queue?"
+        },
+        "placeholder": {
+            "search_room_code": "Search room code",
+            "room_specialty_pending": "Specialty not assigned",
+            "no_visible_queue": "No visible queue",
+            "no_room_result": "No room found",
+            "queue_room_not_found": "Room queue not found",
+            "no_queue_in_room": "No visible queue in this room",
+            "patient_name_pending": "Patient profile pending",
+            "doctor_pending": "Doctor not assigned",
+            "medical_history_pending": "Medical history pending",
+            "purpose_pending": "Purpose pending",
+            "height_weight_pending": "Height / weight pending",
+            "demographic_pending": "Demographic pending"
+        },
+        "error": {
+            "invalid_medical_history": "Invalid medical history selection"
+        },
+        "field": {
+            "queue_status": "Queue status",
+            "medical_history_selection": "Medical history",
+            "number_of_calls": "Number of calls",
+            "doctor": {
+                "name": "Doctor"
+            },
+            "appointment_snapshot": {
+                "purpose": "Purpose"
+            },
+            "specialty_snapshot": {
+                "name": "Specialty"
+            },
+            "medical_history_snapshot": {
+                "medical_history_number": "Medical history number",
+                "patient": {
+                    "height_weight": "Height / Weight",
+                    "demographic": "Date of birth / Gender"
+                }
+            }
+        }
+    }
+}

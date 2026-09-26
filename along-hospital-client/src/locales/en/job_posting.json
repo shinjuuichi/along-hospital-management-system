@@ -1,0 +1,124 @@
+{
+  "job_posting": {
+    "title": {
+      "management": "Job Posting Management",
+      "view_detail": "View Job Posting Detail",
+      "posting_information": "Job Posting Information",
+      "menu": "Job Posting Management"
+    },
+    "field": {
+      "id": "ID",
+      "title": "Title",
+      "role": "Role",
+      "description": "Description",
+      "requirement": "Requirement",
+      "benefit": "Benefit",
+      "employment_type": "Employment Type",
+      "salary_min": "Minimum Salary",
+      "close_date": "Close Date",
+      "status": "Status",
+      "preview": "Preview",
+      "action": "Action"
+    },
+    "status": {
+      "draft": "Draft",
+      "open": "Open",
+      "closed": "Closed"
+    },
+    "placeholder": {
+      "select_employment_type": "-- Select Employment Type --",
+      "select_role": "-- Select Role --",
+      "enter_description": "Enter job description...",
+      "enter_requirement": "Enter job requirements...",
+      "enter_benefit": "Enter job benefits..."
+    },
+    "dialog": {
+      "delete_title": "Delete Job Posting",
+      "delete_description": "Are you sure you want to delete job posting '{title}'?",
+      "delete_many_title": "Delete multiple Job Postings",
+      "delete_many_description": "Are you sure you want to delete {number} selected job postings?",
+      "create_title": "Create Job Posting",
+      "update_title": "Update Job Posting"
+    },
+    "action": {
+      "open": "Open",
+      "close": "Close",
+      "open_description": "Open this job posting for applications?",
+      "close_description": "Close this job posting?",
+      "view_applications": "View Applications"
+    },
+    "message": {
+      "open_success": "Job posting opened successfully",
+      "close_success": "Job posting closed successfully",
+      "cannot_open": "Cannot open job posting. Only draft job postings can be opened.",
+      "cannot_close": "Cannot close job posting. Only open job postings can be closed."
+    },
+    "guest": {
+      "title": {
+        "list": "Career Opportunities",
+        "recent": "Other Jobs"
+      },
+      "text": {
+        "requirement": "Job Requirements",
+        "benefit": "Benefits",
+        "description": "Job Description",
+        "negotiable": "Negotiable"
+      },
+      "button": {
+        "apply": "Apply Now"
+      },
+      "status": "Status"
+    },
+    "label": {
+      "total_applications": "Total Applications"
+    }
+  },
+  "job_application": {
+    "status": {
+      "applied": "Applied",
+      "interviewing": "Interviewing",
+      "passed": "Passed",
+      "failed": "Failed"
+    },
+    "field": {
+      "id": "ID",
+      "full_name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "date_of_birth": "Date of Birth",
+      "address": "Address",
+      "gender": "Gender",
+      "applied_date": "Applied Date",
+      "status": "Status",
+      "cv_url": "CV",
+      "cover_letter": "Cover Letter",
+      "job_posting_id": "Job Posting ID"
+    },
+    "button": {
+      "pass": "Pass",
+      "fail": "Fail",
+      "reject_all": "Reject All",
+      "create_interview": "Create Interview",
+      "submit_application": "Submit Application",
+      "download_cv": "Download CV"
+    },
+    "dialog": {
+      "detail_title": "Application Details",
+      "confirm_pass_title": "Confirm Pass",
+      "confirm_pass_description": "Are you sure you want to mark applicant {name} as passed?",
+      "confirm_fail_title": "Confirm Fail",
+      "confirm_fail_description": "Are you sure you want to mark applicant {name} as failed?",
+      "confirm_reject_all_title": "Confirm Reject All",
+      "confirm_reject_all_description": "Are you sure you want to reject all pending applicants?",
+      "apply_title": "Apply for Job"
+    },
+    "message": {
+      "apply_success": "Application submitted successfully!",
+      "apply_success_desc": "Thank you for your interest. We will contact you soon."
+    },
+    "placeholder": {
+      "upload_cv": "Click to upload your CV",
+      "cv_format": "Only PDF files are accepted"
+    }
+  }
+}

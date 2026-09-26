@@ -1,0 +1,17 @@
+{
+    "chatbot": {
+        "title": {
+            "title": "Along Hospital Virtual Assistant",
+            "caption": "Quickly chat with the hospital's virtual assistant"
+        },
+        "placeholder": {
+            "input": "Type your message...",
+            "greeting": "Hello! I'm your virtual assistant. How can I help you today?",
+            "typing": "Typing..."
+        },
+        "status": {
+            "connected": "Connected to chatbot",
+            "disconnected": "Disconnected from chatbot"
+        }
+    }
+}

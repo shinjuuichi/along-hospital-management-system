@@ -1,0 +1,73 @@
+{
+	"staff_certificate": {
+		"page_title": "Quản lý chứng chỉ nhân viên",
+		"table": {
+			"id": "ID",
+			"certificate_no": "Số chứng chỉ",
+			"certificate_type": "Loại chứng chỉ",
+			"staff": "Nhân viên",
+			"issued_date": "Ngày cấp",
+			"expired_date": "Ngày hết hạn",
+			"issued_by": "Đơn vị cấp",
+			"status": "Trạng thái",
+			"actions": "Thao tác"
+		},
+		"field": {
+			"certificate_no": "Số chứng chỉ",
+			"certificate_type": "Loại chứng chỉ",
+			"staff": "Nhân viên",
+			"issued_date": "Ngày cấp",
+			"expired_date": "Ngày hết hạn",
+			"issued_by": "Đơn vị cấp",
+			"reason": "Lý do",
+			"new_expired_date": "Ngày hết hạn mới"
+		},
+		"button": {
+			"create": "Tạo mới",
+			"view": "Xem",
+			"delete": "Xóa",
+			"suspend": "Tạm đình chỉ",
+			"activate": "Kích hoạt",
+			"approve": "Phê duyệt"
+		},
+		"dialog": {
+			"create_title": "Tạo chứng chỉ nhân viên",
+			"view_title": "Chi tiết chứng chỉ nhân viên",
+			"suspend_title": "Tạm đình chỉ chứng chỉ",
+			"activate_expired_title": "Kích hoạt chứng chỉ hết hạn",
+			"confirm_activate_title": "Xác nhận kích hoạt",
+			"confirm_activate_description": "Bạn có chắc chắn muốn kích hoạt chứng chỉ này không?",
+			"confirm_delete_title": "Xác nhận xóa chứng chỉ",
+			"confirm_delete_description": "Bạn có chắc chắn muốn xóa chứng chỉ số \"{no}\" không?",
+			"confirm_approve_title": "Xác nhận phê duyệt",
+			"confirm_approve_description": "Bạn có chắc chắn muốn phê duyệt chứng chỉ này không?"
+		},
+		"message": {
+			"expired_date_past_error": "Ngày hết hạn không thể ở quá khứ"
+		}
+	},
+	"staff_certificate_type": {
+		"page_title": "Quản lý loại chứng chỉ",
+		"table": {
+			"id": "ID",
+			"name": "Tên",
+			"scope_of_practice": "Phạm vi hành nghề",
+			"actions": "Thao tác"
+		},
+		"field": {
+			"name": "Tên",
+			"scope_of_practice": "Phạm vi hành nghề"
+		},
+		"button": {
+			"create": "Tạo mới",
+			"view": "Xem",
+			"delete": "Xóa"
+		},
+		"dialog": {
+			"create_title": "Tạo loại chứng chỉ",
+			"view_title": "Chi tiết loại chứng chỉ",
+			"confirm_delete_title": "Xác nhận xóa loại chứng chỉ",
+			"confirm_delete_description": "Bạn có chắc chắn muốn xóa loại chứng chỉ \"{name}\" không?"
+		}
+	}
+}

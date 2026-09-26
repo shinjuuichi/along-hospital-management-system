@@ -1,0 +1,32 @@
+{
+  "medicine_category": {
+    "field": {
+      "id": "ID",
+      "name": "Category Name",
+      "description": "Description",
+      "actions": "Actions"
+    },
+    "title": {
+      "medicine_category_management": "Medicine Category Management",
+      "management": "Category Management",
+      "filter":"Filter Category"
+    },
+    "button": {
+      "update": "Update Category",
+      "delete": "Delete Category",
+      "search": "Search",
+      "reset": "Reset"
+    },
+    "dialog": {
+      "create_title":"Create medicine category",
+      "update_title":"Update medicine category",
+      "confirm_delete_title": "Confirm Delete Category",
+      "confirm_delete_description": "Are you sure you want to delete this category?"
+    },
+    "placeholder": {
+      "no_data": "No data...",
+      "search": "Search category...",
+      "total": "Total"
+    }
+  }
+}

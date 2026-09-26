@@ -1,0 +1,124 @@
+{
+  "job_posting": {
+    "title": {
+      "management": "Quản lý tin tuyển dụng",
+      "view_detail": "Chi tiết tin tuyển dụng",
+      "posting_information": "Thông tin tin tuyển dụng",
+      "menu": "Quản lý tin tuyển dụng"
+    },
+    "field": {
+      "id": "ID",
+      "title": "Tiêu đề",
+      "role": "Vai trò",
+      "description": "Mô tả",
+      "requirement": "Yêu cầu",
+      "benefit": "Phúc lợi",
+      "employment_type": "Loại hình công việc",
+      "salary_min": "Lương tối thiểu",
+      "close_date": "Ngày đóng",
+      "status": "Trạng thái",
+      "preview": "Xem trước",
+      "action": "Hành động"
+    },
+    "status": {
+      "draft": "Bản nháp",
+      "open": "Đang mở",
+      "closed": "Đã đóng"
+    },
+    "placeholder": {
+      "select_employment_type": "-- Chọn loại hình công việc --",
+      "select_role": "-- Chọn vai trò --",
+      "enter_description": "Nhập mô tả công việc...",
+      "enter_requirement": "Nhập yêu cầu công việc...",
+      "enter_benefit": "Nhập phúc lợi..."
+    },
+    "dialog": {
+      "delete_title": "Xóa tin tuyển dụng",
+      "delete_description": "Bạn có chắc chắn muốn xóa tin tuyển dụng '{title}' không?",
+      "delete_many_title": "Xóa nhiều tin tuyển dụng",
+      "delete_many_description": "Bạn có chắc chắn muốn xóa {number} tin tuyển dụng đã chọn không?",
+      "create_title": "Tạo tin tuyển dụng",
+      "update_title": "Cập nhật tin tuyển dụng"
+    },
+    "action": {
+      "open": "Mở",
+      "close": "Đóng",
+      "open_description": "Mở tin tuyển dụng này để nhận hồ sơ?",
+      "close_description": "Đóng tin tuyển dụng này?",
+      "view_applications": "Xem ứng viên"
+    },
+    "message": {
+      "open_success": "Mở tin tuyển dụng thành công",
+      "close_success": "Đóng tin tuyển dụng thành công",
+      "cannot_open": "Không thể mở tin tuyển dụng. Chỉ tin tuyển dụng ở trạng thái bản nháp mới có thể mở.",
+      "cannot_close": "Không thể đóng tin tuyển dụng. Chỉ tin tuyển dụng đang mở mới có thể đóng."
+    },
+    "guest": {
+      "title": {
+        "list": "Cơ hội nghề nghiệp",
+        "recent": "Công việc khác"
+      },
+      "text": {
+        "requirement": "Yêu cầu công việc",
+        "benefit": "Quyền lợi",
+        "description": "Mô tả công việc",
+        "negotiable": "Thỏa thuận"
+      },
+      "button": {
+        "apply": "Ứng tuyển ngay"
+      },
+      "status": "Trạng thái"
+    },
+    "label": {
+      "total_applications": "Tổng đơn ứng tuyển"
+    }
+  },
+  "job_application": {
+    "status": {
+      "applied": "Ứng tuyển",
+      "interviewing": "Phỏng vấn",
+      "passed": "Đạt",
+      "failed": "Không đạt"
+    },
+    "field": {
+      "id": "ID",
+      "full_name": "Họ tên",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "date_of_birth": "Ngày sinh",
+      "address": "Địa chỉ",
+      "gender": "Giới tính",
+      "applied_date": "Ngày ứng tuyển",
+      "status": "Trạng thái",
+      "cv_url": "CV",
+      "cover_letter": "Thư xin việc",
+      "job_posting_id": "Mã tin tuyển dụng"
+    },
+    "button": {
+      "pass": "Đạt",
+      "fail": "Không đạt",
+      "reject_all": "Từ chối tất cả",
+      "create_interview": "Tạo phỏng vấn",
+      "submit_application": "Gửi hồ sơ",
+      "download_cv": "Tải CV"
+    },
+    "dialog": {
+      "detail_title": "Chi tiết ứng viên",
+      "confirm_pass_title": "Xác nhận đạt",
+      "confirm_pass_description": "Bạn có chắc chắn đánh dấu ứng viên {name} là đạt?",
+      "confirm_fail_title": "Xác nhận không đạt",
+      "confirm_fail_description": "Bạn có chắc chắn đánh dấu ứng viên {name} là không đạt?",
+      "confirm_reject_all_title": "Xác nhận từ chối tất cả",
+      "confirm_reject_all_description": "Bạn có chắc chắn muốn từ chối tất cả ứng viên đang chờ?",
+      "apply_title": "Ứng tuyển công việc"
+    },
+    "message": {
+      "apply_success": "Ứng tuyển thành công!",
+      "apply_success_desc": "Cảm ơn bạn đã quan tâm. Chúng tôi sẽ liên hệ sớm."
+    },
+    "placeholder": {
+      "upload_cv": "Nhấn để tải lên CV của bạn",
+      "cv_format": "Chỉ chấp nhận file PDF"
+    }
+  }
+}

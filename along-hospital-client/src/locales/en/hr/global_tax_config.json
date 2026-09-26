@@ -1,0 +1,31 @@
+{
+    "global_tax_config": {
+        "title": {
+            "page": "Global Tax Configs",
+            "list": "Global Tax Configs List",
+            "detail": "Global Tax Config Detail",
+            "delete": "Delete Global Tax Config",
+            "delete_confirm": "Are you sure you want to delete this global tax config",
+            "create": "Create Global Tax Config",
+            "update": "Update Global Tax Config",
+            "global_tax_config_management": "Global Tax Config Management"
+        },
+        "description": {
+            "page_intro": "Manage all global tax configurations available in the system."
+        },
+        "placeholder": {
+            "no_result_title": "No global tax configs found",
+            "no_result_subtitle": "Try adjusting the filters or searching with another keyword.",
+            "search_global_tax_config": "Search by global tax config ..."
+        },
+        "field": {
+            "id": "ID",
+            "personal_deduction_amount": "Personal Deduction Amount",
+            "dependent_deduction_amount": "Dependent Deduction Amount",
+            "reference_base_salary": "Reference Base Salary",
+            "social_insurance_rate": "Social Insurance Rate",
+            "health_insurance_rate": "Health Insurance Rate",
+            "unemployment_insurance_rate": "Unemployment Insurance Rate"
+        }
+    }
+}

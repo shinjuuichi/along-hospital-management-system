@@ -1,0 +1,81 @@
+{
+    "order_management": {
+        "title": {
+            "order_management": "Order Management",
+            "filters": "Filters",
+            "detail": "Order Detail",
+            "order_info": "Order Information",
+            "price_summary": "Price Summary",
+            "patient_info": "Patient Information"
+        },
+        "field": {
+            "id": "ID",
+            "order_date": "Order Date",
+            "delivery_date": "Delivery Date",
+            "status": "Status",
+            "voucher": "Voucher",
+            "origin_price": "Origin Price",
+            "total_discount": "Total Discount",
+            "final_price": "Final Price",
+            "transaction_id": "Transaction ID",
+            "medicine_name": "Medicine Name",
+            "medicine_brand": "Medicine Brand",
+            "medicine_unit": "Unit",
+            "quantity": "Quantity",
+            "unit_price": "Unit Price",
+            "discount_amount": "Discount Amount",
+            "is_payment_cash": "Pay At Store",
+            "is_pickup_at_store": "Pickup at Store",
+            "paid_date": "Paid Date",
+            "cancellation_reason": "Cancellation Reason",
+            "patient_name": "Patient Name",
+            "patient_phone": "Phone",
+            "patient_email": "Email",
+            "patient_address": "Address"
+        },
+        "text": {
+            "unknown": "Unknown",
+            "order_details": "Order Details",
+            "yes": "Yes",
+            "no": "No",
+            "pickup_at_store": "Pickup at Store",
+            "delivery": "Delivery"
+        },
+        "button": {
+            "shipping": "Shipping",
+            "delivered": "Delivered",
+            "completed": "Completed",
+            "paid": "Paid",
+            "create_order": "Create Order"
+        },
+        "confirm": {
+            "paid_title": "Confirm Payment",
+            "paid_description": "Are you sure you want to confirm this order as paid?",
+            "shipping_title": "Confirm Shipping",
+            "shipping_description": "Are you sure you want to update this order status to Shipping?",
+            "completed_title": "Confirm Completed",
+            "completed_description": "Are you sure you want to mark this order as completed?"
+        },
+        "public": "Public",
+        "private": "Private",
+        "create": {
+            "title": "Create Order",
+            "field": {
+                "patient_id": "Patient",
+                "voucher_code": "Voucher Code",
+                "payment_type": "Payment Type",
+                "description": "Description",
+                "order_details": "Order Details",
+                "details": "Order Details",
+                "medicine": "Medicine",
+                "sku": "SKU",
+                "sku_code": "SKU Code",
+                "quantity": "Quantity",
+                "add_detail": "Add Product",
+                "remove_detail": "Remove",
+                "select_medicine": "Select medicine",
+                "select_sku": "Select SKU"
+            }
+        }
+    }
+}

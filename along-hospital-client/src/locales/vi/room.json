@@ -1,0 +1,53 @@
+{
+    "room": {
+        "title": {
+            "management": "Quản lý phòng",
+            "filters": "Bộ lọc",
+            "detail": "Chi tiết phòng",
+            "beds_list": "Danh sách giường"
+        },
+        "placeholder": {
+            "search": "Tìm kiếm mã phòng..."
+        },
+        "field": {
+            "status": "Trạng thái",
+            "floor": "Tầng",
+            "category": "Loại phòng",
+            "room_code": "Mã phòng",
+            "building": "Tòa nhà",
+            "room_category": "Loại phòng",
+            "specialty": "Chuyên khoa",
+            "bed_count": "Số giường"
+        },
+        "dialog": {
+            "create_title": "Thêm mới phòng",
+            "update_title": "Cập nhật phòng",
+            "confirm_delete_title": "Xác nhận xóa",
+            "confirm_delete_description": "Bạn có chắc chắn muốn xóa phòng {code} không?",
+            "confirm_delete_selected_title": "Xác nhận xóa các mục đã chọn",
+            "confirm_delete_selected_description": "Bạn có chắc chắn muốn xóa {count} phòng đã chọn không?"
+        }
+    },
+    "room_category": {
+        "title": {
+            "management": "Quản lý loại phòng",
+            "filters": "Bộ lọc"
+        },
+        "placeholder": {
+            "search_name": "Tìm kiếm tên loại phòng..."
+        },
+        "field": {
+            "name": "Tên loại phòng",
+            "description": "Mô tả",
+            "roles": "Vai trò"
+        },
+        "dialog": {
+            "create_title": "Thêm mới loại phòng",
+            "update_title": "Cập nhật loại phòng",
+            "confirm_delete_title": "Xác nhận xóa",
+            "confirm_delete_description": "Bạn có chắc chắn muốn xóa loại phòng {name} không?",
+            "confirm_delete_selected_title": "Xác nhận xóa các mục đã chọn",
+            "confirm_delete_selected_description": "Bạn có chắc chắn muốn xóa {count} loại phòng đã chọn không?"
+        }
+    }
+}

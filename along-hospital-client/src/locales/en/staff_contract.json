@@ -1,0 +1,49 @@
+{
+  "staff_contract": {
+    "title": {
+      "staff_contract_management": "Staff Contract Management",
+      "hr_contract_management": "HR Contract Management",
+      "create_form": "Create Staff Contract",
+      "update_form": "Update Staff Contract",
+      "renew_form": "Renew Staff Contract",
+      "delete_title": "Delete Staff Contract?",
+      "delete_description": "Are you sure you want to delete contract \"{code}\"?",
+      "terminate_title": "Terminate Contract?",
+      "terminate_description": "Are you sure you want to terminate contract \"{code}\"?",
+      "renew_title": "Renew Contract?",
+      "renew_description": "Are you sure you want to renew contract \"{code}\"?",
+      "sign_form": "Sign Contract",
+      "sign_title": "Sign Contract?",
+      "sign_description": "Are you sure you want to sign contract \"{code}\"?"
+    },
+    "field": {
+      "id": "ID",
+      "contract_code": "Contract Code",
+      "contract_type": "Contract Type",
+      "start_date": "Start Date",
+      "end_date": "End Date",
+      "hourly_rate": "Hourly Rate",
+      "working_hours_per_week": "Working Hours/Week",
+      "status": "Status",
+      "signed_date": "Signed Date",
+      "signing_status": "Signing Status",
+      "signature_image": "Signature Image",
+      "insurance_salary_rate": "Insurance Salary Rate",
+      "staff": "Staff",
+      "staff_name": "Staff Name",
+      "staff_image": "Staff Image",
+      "regional_wage": "Regional Wage",
+      "creation_date": "Creation Date",
+      "last_modified_date": "Last Modified Date",
+      "actions": "Actions"
+    },
+    "button": {
+      "terminate": "Terminate",
+      "renew": "Renew",
+      "sign": "Sign",
+      "signed": "Signed",
+      "detail": "Detail",
+      "unsigned": "Unsigned"
+    }
+  }
+}

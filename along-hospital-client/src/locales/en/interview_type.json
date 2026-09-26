@@ -1,0 +1,19 @@
+{
+  "interview_type": {
+    "title": {
+      "interview_type_management": "Interview Type Management"
+    },
+    "field": {
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "actions": "Actions"
+    },
+    "dialog": {
+      "create_title": "Create Interview Type",
+      "update_title": "Update Interview Type",
+      "confirm_delete_title": "Delete Interview Type?",
+      "confirm_delete_description": "Are you sure you want to delete \"{name}\"?"
+    }
+  }
+}

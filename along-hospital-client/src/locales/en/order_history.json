@@ -1,0 +1,45 @@
+{
+    "order": {
+        "title": {
+            "page": "Order History",
+            "subtitle": "Manage and track your orders"
+        },
+        "history": {
+            "empty": "No orders yet",
+            "empty_desc": "You haven't placed any orders. Start shopping now!",
+            "order_id": "Order",
+            "transaction_id": "Transaction ID",
+            "order_date": "Order Date",
+            "delivery_date": "Delivery Date",
+            "voucher_code": "Voucher Code",
+            "total_products": "Total Products",
+            "product_unit": "items",
+            "origin_price": "Original Price",
+            "discount": "Discount",
+            "total": "Total Amount",
+            "detail_button": "Details",
+            "no_delivery_date": "No delivery date",
+            "quantity": "Quantity",
+            "paid_date": "Paid Date",
+            "pickup_at_store": "Pickup at Store",
+            "delivery": "Delivery",
+            "cancellation_reason": "Cancellation Reason"
+        },
+        "button": {
+            "repay": "Payment Again"
+        },
+        "repay_dialog": {
+            "title": "Select Payment Method",
+            "payment_type": "Payment Method"
+        },
+        "cancel_dialog": {
+            "title": "Cancel Order?",
+            "description": "Are you sure you want to cancel this order?"
+        },
+        "field": {
+            "status": "Status",
+            "order_date": "Order Date",
+            "delivery_date": "Delivery Date"
+        }
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "appointment": {
+        "title": {
+            "patient_info": "Thông tin bệnh nhân",
+            "appointment_info": "Thông tin cuộc hẹn",
+            "doctor_info": "Thông tin bác sĩ",
+            "create_appointment": "Tạo cuộc hẹn",
+            "create_appointment_note": "Lưu ý: Cuộc hẹn chỉ có thể được đặt 1 lần trong một ngày.",
+            "appointment_history": "Lịch sử cuộc hẹn",
+            "appointment_management": "Quản lý cuộc hẹn",
+            "appointment_detail": "Chi tiết cuộc hẹn",
+            "tele_session_info": "Thông tin Tele Session",
+            "timelines": "Dòng thời gian",
+            "upcoming": "Sắp tới",
+            "completed": "Đã hoàn thành",
+            "available_time_slots": "Khung giờ còn trống"
+        },
+        "button": {
+            "cancel_appointment": "Hủy cuộc hẹn",
+            "choose_time_slot": "Chọn ngày & khung giờ",
+            "pay": "Thanh toán"
+        },
+        "field": {
+            "date": "Ngày",
+            "purpose": "Mục đích",
+            "status": "Trạng thái",
+            "meeting_type": "Hình thức",
+            "payment_status": "Trạng thái thanh toán",
+            "specialty": "Chuyên khoa",
+            "time_slot": "Khung giờ",
+            "patient": "Bệnh nhân",
+            "join_url": "Link tham gia"
+        },
+        "text": {
+            "time_slot_booked": "Đã đặt {booked}/{max}",
+            "no_date_selected": "Chưa chọn ngày",
+            "no_time_slot_available": "Không có khung giờ phù hợp",
+            "link": "Link"
+        },
+        "dialog": {
+            "confirm_create_title": "Tạo cuộc hẹn?",
+            "confirm_create_description": "Bạn có chắc chắn muốn tạo cuộc hẹn này không?",
+            "confirm_cancel_title": "Hủy cuộc hẹn?",
+            "confirm_cancel_description": "Bạn có chắc chắn muốn hủy cuộc hẹn này không?",
+            "select_time_slot_title": "Chọn ngày và khung giờ",
+            "create_success_title": "Tạo cuộc hẹn thành công",
+            "create_success_payment_instruction": "Vui lòng nhấp vào TẠI ĐÂY để thanh toán phí khám tổng quát:",
+            "create_success_payment_link_label": "TẠI ĐÂY",
+            "create_success_skip_payment_instruction": "Bạn có thể bỏ qua bước này và vào lại Lịch sử cuộc hẹn, mở drawer chi tiết cuộc hẹn để thanh toán lại trong vòng 3 ngày kể từ khi tạo để tránh bị tự động hủy nếu không muốn.",
+            "create_success_telehealth_join_instruction": "Với cuộc hẹn Telehealth, vui lòng vào Lịch sử cuộc hẹn, bấm vào cuộc hẹn đó để mở drawer chi tiết, sau đó bấm vào link tham gia."
+        }
+    }
+}

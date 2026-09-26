@@ -1,0 +1,53 @@
+{
+    "queue": {
+        "guest": {
+            "title": {
+                "badge": "WELCOME GUEST",
+                "main": "For new patients or those without a visit slip",
+                "waiting": "Please wait before creating another queue number",
+                "queue_created": "Queue Number Created",
+                "settings": "Queue Settings",
+                "scan_instruction": "Please scan the QR code on the slip\nto auto join the queue",
+                "now_serving": "Now Serving",
+                "up_next": "Up Next",
+                "ticket_number": "Ticket Number",
+                "patient_name": "Patient Name"
+            },
+            "text": {
+                "description": "Please press the button below to receive a queue number and complete registration at the reception desk.",
+                "prepare_identity_card": "PREPARE ID CARD",
+                "prepare_health_insurance": "HEALTH INSURANCE CARD (IF ANY)",
+                "waiting_description": "To prevent spam, the next request is available after a certain time interval.",
+                "waiting_countdown": "Time remaining: {time}",
+                "queue_created_success": "Your queue number has been created successfully.",
+                "scan_hint": "Keep the QR code about 10 to 15 cm from the camera for better detection.",
+                "scanner_error": "Unable to access camera. Please check browser permission and camera device.",
+                "current_room_code": "Selected room: {roomCode}",
+                "last_scanned_code": "Last scanned code: {code}",
+                "live": "Live",
+                "priority_badge": "PRIORITY {value}"
+            },
+            "button": {
+                "take_new_number": "PRESS TO GET A NEW NUMBER",
+                "new_registration": "(NEW REGISTRATION)",
+                "apply_room": "Apply Room",
+                "select_qr_image": "Choose QR Image"
+            },
+            "placeholder": {
+                "room_code": "ROOM CODE",
+                "room_specialty_name": "Specialty",
+                "doctor_name": "Doctor",
+                "patient_name_pending": "PROFILE PENDING",
+                "no_queue_in_progress": "No queue is currently in progress.",
+                "no_queue_available": "No queue is available for this room."
+            },
+            "field": {
+                "select_room": "Select room"
+            },
+            "error": {
+                "invalid_qr_format": "Invalid QR format",
+                "image_scan_not_supported": "Your browser does not support scanning QR from image."
+            }
+        }
+    }
+}

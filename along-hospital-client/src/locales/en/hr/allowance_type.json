@@ -1,0 +1,33 @@
+{
+    "allowance_type": {
+        "title": {
+            "page": "Allowance Types",
+            "list": "Allowance Types List",
+            "detail": "Allowance Type Detail",
+            "delete": "Delete Allowance Type",
+            "delete_confirm": "Are you sure you want to delete",
+            "create": "Create Allowance Type",
+            "update": "Update Allowance Type",
+            "allowance_type_management": "Allowance Type Management"
+        },
+        "description": {
+            "page_intro": "Manage all allowance types available in the system."
+        },
+        "placeholder": {
+            "no_result_title": "No allowance types found",
+            "no_result_subtitle": "Try adjusting the filters or searching with another keyword.",
+            "search_allowance_type": "Search by allowance type name ..."
+        },
+        "field": {
+            "id": "ID",
+            "name": "Name",
+            "price": "Price",
+            "description": "Description",
+            "allowance_quantity_source": "Quantity Source",
+            "insurance_subject": "Insurance Subject",
+            "is_taxable": "Taxable",
+            "is_system_generated": "System Generated",
+            "is_percentage": "Percentage"
+        }
+    }
+}

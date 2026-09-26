@@ -1,0 +1,34 @@
+{
+    "qualification": {
+        "title": {
+            "page": "Bằng cấp",
+            "list": "Danh sách bằng cấp",
+            "detail": "Chi tiết bằng cấp",
+            "delete": "Xóa bằng cấp",
+            "delete_confirm": "Bạn có chắc chắn muốn xóa",
+            "create": "Tạo bằng cấp",
+            "update": "Cập nhật bằng cấp",
+            "qualification_management": "Quản lý bằng cấp"
+        },
+        "description": {
+            "page_intro": "Duyệt qua danh sách đầy đủ các bằng cấp có sẵn trong hệ thống bệnh viện của chúng tôi.",
+            "list": "Sử dụng thanh tìm kiếm hoặc bộ lọc để tìm bằng cấp bạn cần."
+        },
+        "button": {
+            "view_detail": "Xem chi tiết",
+            "book_appointment": "Đặt lịch hẹn"
+        },
+        "placeholder": {
+            "no_description": "Thông tin đang được cập nhật.",
+            "no_featured": "Bằng cấp nổi bật sẽ sớm được cập nhật.",
+            "no_result_title": "Không tìm thấy bằng cấp",
+            "no_result_subtitle": "Hãy thử điều chỉnh bộ lọc hoặc tìm kiếm bằng từ khóa khác.",
+            "search_qualification": "Tìm kiếm theo tên bằng cấp ..."
+        },
+        "field": {
+            "id": "Mã",
+            "name": "Tên bằng cấp",
+            "description": "Mô tả"
+        }
+    }
+}

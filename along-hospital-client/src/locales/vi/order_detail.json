@@ -1,0 +1,31 @@
+{
+    "order_detail": {
+        "common": {
+            "loading": "Đang tải...",
+            "back": "Quay lại",
+            "back_to_history": "Quay lại lịch sử đơn hàng"
+        },
+        "detail": {
+            "title": "Chi tiết đơn hàng ",
+            "transaction_id": "Mã giao dịch",
+            "not_found": "Không tìm thấy đơn hàng",
+            "info_title": "Thông tin đơn hàng",
+            "order_date": "Ngày đặt hàng",
+            "paid_date": "Ngày thanh toán",
+            "delivery_date": "Ngày giao hàng",
+            "voucher_code": "Mã giảm giá",
+            "total_quantity": "Tổng số lượng",
+            "unit_product": "sản phẩm",
+            "products": "Sản phẩm",
+            "quantity": "Số lượng",
+            "unit_price": "Đơn giá",
+            "discount": "Giảm giá",
+            "medicine_discount": "Giảm giá sản phẩm",
+            "voucher_discount": "Giảm giá voucher",
+            "total": "Thành tiền",
+            "origin_price": "Giá gốc",
+            "total_discount": "Tổng giảm giá",
+            "final_price": "Tổng thanh toán"
+        }
+    }
+}

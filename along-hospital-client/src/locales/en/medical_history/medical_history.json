@@ -1,0 +1,104 @@
+{
+    "medical_history": {
+        "title": {
+            "medical_history_information": "Medical History Information",
+            "invoices": "Invoices",
+            "prescription": "Prescription",
+            "prescription_details": "Prescription Details",
+            "complaint": "Complaint",
+            "create_medical_history": "Create Medical History",
+            "select_patient": "Select Patient",
+            "patient_summary": "Patient Summary",
+            "chosen_patient": "Chosen Patient: {name}",
+            "no_chosen_patient": "No patient selected",
+            "medical_record_info": "Medical Record Info",
+            "medical_history_management": "Medical History Management",
+            "medical_history_detail": "Medical History Detail",
+            "patient_info": "Patient Information",
+            "doctor_info": "Doctor Information",
+            "assign_doctor_to_medical_history": "Assign Doctor To Medical History",
+            "examination_info": "Examination Information",
+            "medication_guide": "Medication Guide"
+        },
+        "placeholder": {
+            "no_service": "No medical services recorded",
+            "no_prescription": "No prescriptions recorded",
+            "no_complaint": "No complaints recorded",
+            "no_invoices": "No invoices recorded",
+            "no_assigned_doctor": "No doctor assigned",
+            "search_medical_history_number": "Search by medical history number...",
+            "search_patient_name": "Search by patient name...",
+            "search_doctor_name": "Search by doctor name...",
+            "search_patient_in_create": "Search by patient phone/name/email/medical number...",
+            "fill_all_before_create": "Please fill all required fields before creating",
+            "prescription_note": "Note: Patients should take medication with the correct dosage and duration as instructed by the doctor. Do not stop or change the dosage without consulting the doctor."
+        },
+        "field": {
+            "id": "Medical History ID",
+            "medical_history_number": "Medical History Number",
+            "diagnosis": "Diagnosis",
+            "follow_up_appointment_date": "Follow-up Appointment Date",
+            "status": "Medical History Status",
+            "type": "Medical History Type",
+            "admission_date": "Admission Date",
+            "discharge_date": "Discharge Date",
+            "patient": "Patient",
+            "doctor": "Doctor",
+            "specialty": "Specialty",
+            "prescription": {
+                "id": "Prescription ID",
+                "prescription": "Prescription",
+                "doctor_note": "Doctor's Note",
+                "medication_days": "Medication Days",
+                "prescription_details": "Prescription Details",
+                "prescription_detail": {
+                    "medicine": "Medicine",
+                    "dosage": "Dosage (per time)",
+                    "frequency_per_day": "Frequency (per day)",
+                    "medicine_name": "Medicine Name",
+                    "medicine_brand": "Medicine Brand",
+                    "medicine_image": "Medicine Image",
+                    "medicine_unit": "Medicine Unit"
+                }
+            },
+            "complaint": {
+                "topic": "Complaint Topic",
+                "content": "Content",
+                "resolve_status": "Complaint Resolve Status",
+                "response": "Response",
+                "type": "Complaint Type"
+            }
+        },
+        "button": {
+            "add_service": "Add Service",
+            "create_prescription": "Create Prescription",
+            "update_prescription": "Update Prescription",
+            "print_prescription": "Print Prescription",
+            "create_complaint": "Create Complaint",
+            "respond_complaint": "Respond to Complaint",
+            "save_as_draft": "Save as Draft",
+            "close_complaint": "Close Complaint",
+            "create_medical_history": "Create Medical History",
+            "update_medical_history": "Update Medical History",
+            "complete_medical_history": "Complete Medical History",
+            "view_full_detail": "View Full Detail",
+            "create_patient": "Create Patient"
+        },
+        "dialog": {
+            "title": {
+                "update_medical_history": "Update Medical History",
+                "add_medical_service": "Add Medical Service",
+                "create_prescription": "Create Prescription",
+                "update_prescription": "Update Prescription",
+                "create_complaint": "Create Complaint",
+                "respond_complaint": "Respond to Complaint"
+            },
+            "confirm": {
+                "delete_service_title": "Delete medical service?",
+                "delete_service_description": "Are you sure you want to delete this medical service from the medical history? This action cannot be undone",
+                "complete_medical_history_title": "Complete medical history?",
+                "complete_medical_history_description": "Are you sure you want to mark this medical history as completed?"
+            }
+        }
+    }
+}

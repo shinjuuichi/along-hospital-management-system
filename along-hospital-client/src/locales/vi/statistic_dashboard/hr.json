@@ -1,0 +1,42 @@
+{
+	"statistic_dashboard_hr": {
+		"title": {
+			"page": "Bảng Điều Khiển HR",
+			"filters": "Bộ Lọc Thời Gian",
+			"current_range": "Khoảng thời gian hiện tại"
+		},
+		"field": {
+			"preset": "Khoảng thời gian",
+			"date_range": "Khoảng ngày",
+			"from_date": "Từ ngày",
+			"to_date": "Đến ngày"
+		},
+		"preset": {
+			"this_month": "Tháng này",
+			"this_year": "Năm nay",
+			"custom": "Tùy chỉnh"
+		},
+		"tab": {
+			"overview": "Tổng quan",
+			"recruitment": "Tuyển dụng",
+			"leave": "Nghỉ phép"
+		},
+		"widget": {
+			"open_job_postings": "Tin tuyển dụng đang mở",
+			"applications_received": "Hồ sơ ứng tuyển nhận được",
+			"pending_leave_requests": "Đơn nghỉ phép chờ xử lý",
+			"approved_leave_requests": "Đơn nghỉ phép đã duyệt",
+			"finalized_schedules": "Lịch làm việc đã chốt",
+			"passed_applications": "Hồ sơ đạt",
+			"failed_applications": "Hồ sơ không đạt",
+			"interview_pass_rate": "Tỷ lệ đạt phỏng vấn",
+			"rejected_leave_requests": "Đơn nghỉ phép bị từ chối"
+		},
+		"text": {
+			"description": "Theo dõi hiệu quả tuyển dụng, quản lý nghỉ phép và nhân sự HR trên một bảng điều khiển duy nhất."
+		},
+		"button": {
+			"export": "Xuất Excel"
+		}
+	}
+}

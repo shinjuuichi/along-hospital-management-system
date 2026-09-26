@@ -1,0 +1,67 @@
+{
+    "medicine": {
+        "text": {
+            "true": "True",
+            "false": "False"
+        },
+        "field": {
+            "name": "Medicine Name",
+            "brand": "Brand",
+            "images": "Images",
+            "unit": "Unit",
+            "status": "Status",
+            "options": "Options",
+            "medicine_category": {
+                "name": "Medicine Category",
+                "description": "Description"
+            },
+            "price": "Price",
+            "action": "Action",
+            "quantity": "Quantity",
+            "min_quantity": "Minimum quantity",
+            "max_quantity": "Maximum quantity"
+        },
+        "title": {
+            "medicine_management": "Medicine Management",
+            "medicine_information": "Medicine Information"
+        },
+        "label": {
+            "total_skus": "Total SKUs",
+            "active_skus": "Active SKUs"
+        },
+        "filter": {
+            "title": "Medicine Filter",
+            "category": "Medicine Category",
+            "unit": "Unit",
+            "search_place_holder": "Search by medicine name...",
+            "is_public": "Public"
+        },
+        "button": {
+            "add": "Add Medicine",
+            "update": "Update Medicine",
+            "delete": "Delete Medicine",
+            "reset": "Reset"
+        },
+        "table": {
+            "name": "Medicine Name",
+            "brand": "Brand",
+            "unit": "Unit",
+            "category": "Category",
+            "images": "Images",
+            "actions": "Actions"
+        },
+        "placeholder": {
+            "no_data": "No data...",
+            "total": "Total"
+        },
+        "dialog": {
+            "create_title": "Create New Medicine",
+            "update_title": "Update Medicine",
+            "confirm_delete_title": "Delete Medicine?",
+            "confirm_delete_description": "Are you sure you want to delete \"{{name}}\"?"
+        },
+        "action": {
+            "medicine_sku": "Manage SKU"
+        }
+    }
+}

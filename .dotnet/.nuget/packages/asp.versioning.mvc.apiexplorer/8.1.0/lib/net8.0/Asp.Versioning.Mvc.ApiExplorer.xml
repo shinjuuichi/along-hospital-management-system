@@ -1,0 +1,665 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Asp.Versioning.Mvc.ApiExplorer</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionExtensions">
+            <summary>
+            Provides extension methods for the <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionExtensions.GetApiVersion(Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription)">
+            <summary>
+            Gets the API version associated with the API description, if any.
+            </summary>
+            <param name="apiDescription">The <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription">API description</see> to get the API version for.</param>
+            <returns>The associated <see cref="T:Asp.Versioning.ApiVersion">API version</see> or <c>null</c>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionExtensions.GetSunsetPolicy(Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription)">
+            <summary>
+            Gets the API sunset policy associated with the API description, if any.
+            </summary>
+            <param name="apiDescription">The <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription">API description</see> to get the sunset policy for.</param>
+            <returns>The defined sunset policy defined for the API or <c>null</c>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionExtensions.IsDeprecated(Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription)">
+            <summary>
+            Gets a value indicating whether the associated API description is deprecated.
+            </summary>
+            <param name="apiDescription">The <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription">API description</see> to evaluate.</param>
+            <returns><c>True</c> if the <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription">API description</see> is deprecated; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionExtensions.SetApiVersion(Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription,Asp.Versioning.ApiVersion)">
+            <summary>
+            Sets the API version associated with the API description.
+            </summary>
+            <param name="apiDescription">The <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription">API description</see> to set the API version for.</param>
+            <param name="apiVersion">The associated <see cref="T:Asp.Versioning.ApiVersion">API version</see>.</param>
+            <remarks>This API is meant for infrastructure and should not be used by application code.</remarks>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionExtensions.SetSunsetPolicy(Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription,Asp.Versioning.SunsetPolicy)">
+            <summary>
+            Sets the API sunset policy associated with the API description.
+            </summary>
+            <param name="apiDescription">The <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription">API description</see> to set the sunset policy for.</param>
+            <param name="sunsetPolicy">The associated <see cref="T:Asp.Versioning.SunsetPolicy">sunst policy</see>.</param>
+            <remarks>This API is meant for infrastructure and should not be used by application code.</remarks>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionExtensions.TryUpdateRelativePathAndRemoveApiVersionParameter(Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription,Asp.Versioning.ApiExplorer.ApiExplorerOptions)">
+            <summary>
+            Attempts to update the relate path of the specified API description and remove the corresponding parameter according to the specified options.
+            </summary>
+            <param name="apiDescription">The <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription">API description</see> to attempt to update.</param>
+            <param name="options">The current <see cref="T:Asp.Versioning.ApiExplorer.ApiExplorerOptions">API Explorer options</see>.</param>
+            <returns>True if the <paramref name="apiDescription">API description</paramref> was updated; otherwise, false.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionExtensions.Clone(Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription)">
+            <summary>
+            Creates a shallow copy of the current API description.
+            </summary>
+            <param name="apiDescription">The <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription">API description</see> to create a copy of.</param>
+            <returns>A new <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription">API description</see>.</returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Builder.IEndpointRouteBuilderExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:Microsoft.AspNetCore.Routing.IEndpointRouteBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.IEndpointRouteBuilderExtensions.DescribeApiVersions(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)">
+            <summary>
+            Returns a read-only list of API version descriptions.
+            </summary>
+            <param name="endpoints">The <see cref="T:Microsoft.AspNetCore.Routing.IEndpointRouteBuilder">endpoints</see> to build the
+            API version descriptions from.</param>
+            <returns>A new <see cref="T:System.Collections.Generic.IReadOnlyList`1">read-only list</see> of<see cref="T:Asp.Versioning.ApiExplorer.ApiVersionDescription">API version descriptions</see>.</returns>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.IApiVersioningBuilderExtensions">
+            <summary>
+            Provides ASP.NET Core API Explorer specific extension methods for <see cref="T:Asp.Versioning.IApiVersioningBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.IApiVersioningBuilderExtensions.AddApiExplorer(Asp.Versioning.IApiVersioningBuilder)">
+            <summary>
+            Adds the API versioning extensions for the API Explorer.
+            </summary>
+            <param name="builder">The extended <see cref="T:Asp.Versioning.IApiVersioningBuilder">API versioning builder</see>.</param>
+            <returns>The original <paramref name="builder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.IApiVersioningBuilderExtensions.AddApiExplorer(Asp.Versioning.IApiVersioningBuilder,System.Action{Asp.Versioning.ApiExplorer.ApiExplorerOptions})">
+            <summary>
+            Adds the API versioning extensions for the API Explorer.
+            </summary>
+            <param name="builder">The extended <see cref="T:Asp.Versioning.IApiVersioningBuilder">API versioning builder</see>.</param>
+            <param name="setupAction">An <see cref="T:System.Action`1">action</see> used to configure the provided options.</param>
+            <returns>The original <paramref name="builder"/>.</returns>
+        </member>
+        <member name="T:Asp.Versioning.ApiExplorer.ApiExplorerOptions">
+            <content>
+            Provides additional implementation specific to ASP.NET Core.
+            </content>
+            <summary>
+            Represents the possible API versioning options for the API explorer.
+            </summary>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiExplorerOptions.DefaultApiVersion">
+            <summary>
+            Gets or sets the default API version applied to services that do not have explicit versions.
+            </summary>
+            <value>The default <see cref="T:Asp.Versioning.ApiVersion">API version</see>. The default value is <see cref="P:Asp.Versioning.ApiVersion.Default"/>.</value>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiExplorerOptions.AssumeDefaultVersionWhenUnspecified">
+            <summary>
+            Gets or sets a value indicating whether a default version is assumed when a client does
+            does not provide a service API version.
+            </summary>
+            <value>True if the a default API version should be assumed when a client does not
+            provide a service API version; otherwise, false. The default value derives from
+            <see cref="P:Asp.Versioning.ApiVersioningOptions.AssumeDefaultVersionWhenUnspecified"/>.</value>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiExplorerOptions.ApiVersionParameterSource">
+            <summary>
+            Gets or sets the source for defining API version parameters.
+            </summary>
+            <value>The <see cref="T:Asp.Versioning.IApiVersionParameterSource">API version parameter source</see> used to describe API version parameters.</value>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiExplorerOptions.RouteConstraintName">
+            <summary>
+            Gets or sets the name associated with the API version route constraint.
+            </summary>
+            <value>The name associated with the <see cref="T:Asp.Versioning.Routing.ApiVersionRouteConstraint">API version route constraint</see>.</value>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiExplorerOptions.ApiVersionSelector">
+            <summary>
+            Gets or sets the API version selector.
+            </summary>
+            <value>An <see cref="T:Asp.Versioning.IApiVersionSelector">API version selector</see> object.</value>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiExplorerOptions.FormatGroupName">
+            <summary>
+            Gets or sets the function used to format the combination of a group name and API version.
+            </summary>
+            <value>The <see cref="T:Asp.Versioning.ApiExplorer.FormatGroupNameCallback">callback</see> used to format the combination of
+            a group name and API version. The default value is <c>null</c>.</value>
+            <remarks>The specified callback will only be invoked if a group name has been configured. The API
+            version will be provided formatted according to the <see cref="P:Asp.Versioning.ApiExplorer.ApiExplorerOptions.GroupNameFormat">group name format</see>.</remarks>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiExplorerOptions.GroupNameFormat">
+            <summary>
+            Gets or sets the format used to create group names from API versions.
+            </summary>
+            <value>The string format used to format an <see cref="T:Asp.Versioning.ApiVersion">API version</see>
+            as a group name. The default value is <c>null</c>.</value>
+            <remarks>For information about API version formatting, review <see cref="T:Asp.Versioning.ApiVersionFormatProvider"/>
+            as well as the <see cref="M:Asp.Versioning.ApiVersion.ToString(System.String)"/> and <see cref="M:Asp.Versioning.ApiVersion.ToString(System.String,System.IFormatProvider)"/>
+            methods.</remarks>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiExplorerOptions.SubstitutionFormat">
+            <summary>
+            Gets or sets the format used to format the API version value substituted in route templates.
+            </summary>
+            <value>The string format used to format an <see cref="T:Asp.Versioning.ApiVersion">API version</see>
+            in a route template. The default value is "VVV", which formats the major version number
+            and optional minor version.</value>
+            <remarks>For information about API version formatting, review <see cref="T:Asp.Versioning.ApiVersionFormatProvider"/>
+            as well as the <see cref="M:Asp.Versioning.ApiVersion.ToString(System.String)"/> and <see cref="M:Asp.Versioning.ApiVersion.ToString(System.String,System.IFormatProvider)"/>
+            methods.</remarks>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiExplorerOptions.SubstituteApiVersionInUrl">
+            <summary>
+            Gets or sets a value indicating whether the API version parameter should be substituted in route templates.
+            </summary>
+            <value>True if the API version parameter should be substituted in route templates; otherwise, false.
+            The default value is <c>false</c>.</value>
+            <remarks>Setting this property to <c>true</c> will also remove the API version parameter from the
+            corresponding API description.</remarks>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiExplorerOptions.DefaultApiVersionParameterDescription">
+            <summary>
+            Gets or sets the default description used for API version parameters.
+            </summary>
+            <value>The default description for API version parameters. The default value
+            is "The requested API version".</value>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiExplorerOptions.AddApiVersionParametersWhenVersionNeutral">
+            <summary>
+            Gets or sets a value indicating whether API version parameters are added when an API is version-neutral.
+            </summary>
+            <value>True if API version parameters should be included when exploring a version-neutral API; otherwise, false.
+            The default value is <c>false</c>.</value>
+            <remarks>
+            <para>
+            A version-neutral API can accept any API version, including none at all. Setting this property to true
+            will enable exploring parameter descriptors for an API version that can be used to generate user input, which
+            may be useful for a version-neutral API that its own per-API version logic.
+            </para>
+            <para>
+            An API version defined using the URL segment method is unaffected by this setting because path-based route
+            parameters are always required.
+            </para></remarks>
+        </member>
+        <member name="T:Asp.Versioning.ApiExplorer.ApiExplorerOptionsFactory`1">
+            <summary>
+            Represents a factory to create API explorer options.
+            </summary>
+            <typeparam name="T">The type of options to create.</typeparam>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.ApiExplorerOptionsFactory`1.#ctor(Microsoft.Extensions.Options.IOptions{Asp.Versioning.ApiVersioningOptions},System.Collections.Generic.IEnumerable{Microsoft.Extensions.Options.IConfigureOptions{`0}},System.Collections.Generic.IEnumerable{Microsoft.Extensions.Options.IPostConfigureOptions{`0}})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Asp.Versioning.ApiExplorer.ApiExplorerOptionsFactory`1"/> class.
+            </summary>
+            <param name="options">The <see cref="T:Asp.Versioning.ApiVersioningOptions">API versioning options</see>
+            used to create API explorer options.</param>
+            <param name="setups">The <see cref="T:System.Collections.Generic.IEnumerable`1">sequence</see> of
+            <see cref="T:Microsoft.Extensions.Options.IConfigureOptions`1">configuration actions</see> to run.</param>
+            <param name="postConfigures">The <see cref="T:System.Collections.Generic.IEnumerable`1">sequence</see> of
+            <see cref="T:Microsoft.Extensions.Options.IPostConfigureOptions`1">initialization actions</see> to run.</param>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.ApiExplorerOptionsFactory`1.#ctor(Microsoft.Extensions.Options.IOptions{Asp.Versioning.ApiVersioningOptions},System.Collections.Generic.IEnumerable{Microsoft.Extensions.Options.IConfigureOptions{`0}},System.Collections.Generic.IEnumerable{Microsoft.Extensions.Options.IPostConfigureOptions{`0}},System.Collections.Generic.IEnumerable{Microsoft.Extensions.Options.IValidateOptions{`0}})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Asp.Versioning.ApiExplorer.ApiExplorerOptionsFactory`1"/> class.
+            </summary>
+            <param name="options">The <see cref="T:Asp.Versioning.ApiVersioningOptions">API versioning options</see>
+            used to create API explorer options.</param>
+            <param name="setups">The <see cref="T:System.Collections.Generic.IEnumerable`1">sequence</see> of
+            <see cref="T:Microsoft.Extensions.Options.IConfigureOptions`1">configuration actions</see> to run.</param>
+            <param name="postConfigures">The <see cref="T:System.Collections.Generic.IEnumerable`1">sequence</see> of
+            <see cref="T:Microsoft.Extensions.Options.IPostConfigureOptions`1">initialization actions</see> to run.</param>
+            <param name="validations">The <see cref="T:System.Collections.Generic.IEnumerable`1">sequence</see> of
+            <see cref="T:Microsoft.Extensions.Options.IValidateOptions`1">validations</see> to run.</param>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiExplorerOptionsFactory`1.Options">
+            <summary>
+            Gets the API versioning options associated with the factory.
+            </summary>
+            <value>The <see cref="T:Asp.Versioning.ApiVersioningOptions">API versioning options</see> used to create API explorer options.</value>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.ApiExplorerOptionsFactory`1.CreateInstance(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.ApiExplorerOptionsFactory`1.CopyOptions(Asp.Versioning.ApiVersioningOptions,`0)">
+            <summary>
+            Copies the following source options to the target options.
+            </summary>
+            <param name="sourceOptions">The source options.</param>
+            <param name="targetOptions">The target options.</param>
+        </member>
+        <member name="T:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata">
+            <summary>
+            Represents the model metadata for an <see cref="T:Asp.Versioning.ApiVersion">API version</see>.
+            </summary>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.#ctor(Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata"/> class.
+            </summary>
+            <param name="modelMetadataProvider">The <see cref="T:Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider">model metadata provider</see>
+            used to create the new instance.</param>
+            <param name="description">The description associated with the model metadata.</param>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.AdditionalValues">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.Properties">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.BinderModelName">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.BinderType">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.BindingSource">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.ConvertEmptyStringToNull">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.DataTypeName">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.Description">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.DisplayFormatString">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.DisplayName">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.EditFormatString">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.ElementMetadata">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.EnumGroupedDisplayNamesAndValues">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.EnumNamesAndValues">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.HasNonDefaultEditFormat">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.HtmlEncode">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.HideSurroundingHtml">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.IsBindingAllowed">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.IsBindingRequired">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.IsEnum">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.IsFlagsEnum">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.IsReadOnly">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.IsRequired">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.ModelBindingMessageProvider">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.Order">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.Placeholder">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.NullDisplayText">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.PropertyFilterProvider">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.ShowForDisplay">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.ShowForEdit">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.SimpleDisplayProperty">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.TemplateHint">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.ValidateChildren">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.ValidatorMetadata">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.PropertyGetter">
+            <inheritdoc />
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionModelMetadata.PropertySetter">
+            <inheritdoc />
+        </member>
+        <member name="T:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext">
+            <summary>
+            Represents an object that contains API version parameter descriptions.
+            </summary>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription,Asp.Versioning.ApiVersion,Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata,Asp.Versioning.ApiExplorer.ApiExplorerOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext"/> class.
+            </summary>
+            <param name="apiDescription">The <see cref="P:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext.ApiDescription"/> to provide API version parameter descriptions for.</param>
+            <param name="apiVersion">The current API version.</param>
+            <param name="modelMetadata">The <see cref="P:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext.ModelMetadata">metadata</see> for the API version parameters.</param>
+            <param name="options">The configured <see cref="T:Asp.Versioning.ApiExplorer.ApiExplorerOptions">API explorer options</see>.</param>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext.ApiDescription">
+            <summary>
+            Gets the associated API description.
+            </summary>
+            <value>The associated <see cref="P:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext.ApiDescription">API description</see>.</value>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext.ApiVersion">
+            <summary>
+            Gets the associated API version.
+            </summary>
+            <value>The associated <see cref="P:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext.ApiVersion">API version</see>.</value>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext.IsApiVersionNeutral">
+            <summary>
+            Gets a value indicating whether the current API is version-neutral.
+            </summary>
+            <value>True if the current API is version-neutral; otherwise, false.</value>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext.ModelMetadata">
+            <summary>
+            Gets the model metadata for API version parameters.
+            </summary>
+            <value>The <see cref="P:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext.ModelMetadata">model metadata</see> for the API version parameter.</value>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext.Options">
+            <summary>
+            Gets the options associated with the API explorer.
+            </summary>
+            <value>The configured <see cref="T:Asp.Versioning.ApiExplorer.ApiExplorerOptions">API explorer options</see>.</value>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext.AddParameter(System.String,Asp.Versioning.ApiVersionParameterLocation)">
+            <summary>
+            Adds an API version parameter with the specified name, from the specified location.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="location">One of the <see cref="T:Asp.Versioning.ApiVersionParameterLocation"/> values.</param>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext.AddQueryString(System.String)">
+            <summary>
+            Adds the description for an API version expressed as a query string parameter.
+            </summary>
+            <param name="name">The name of the query string parameter.</param>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext.AddHeader(System.String)">
+            <summary>
+            Adds the description for an API version expressed as a header.
+            </summary>
+            <param name="name">The name of the header.</param>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext.UpdateUrlSegment">
+            <summary>
+            Adds the description for an API version expressed as a route parameter in a URL segment.
+            </summary>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.ApiVersionParameterDescriptionContext.AddMediaTypeParameter(System.String)">
+            <summary>
+            Adds the description for an API version expressed as a media type parameter.
+            </summary>
+            <param name="name">The name of the media type parameter.</param>
+        </member>
+        <member name="T:Asp.Versioning.ApiExplorer.DefaultApiVersionDescriptionProvider">
+            <summary>
+            Represents the default implementation of an object that discovers and describes the API version information within an application.
+            </summary>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.DefaultApiVersionDescriptionProvider.#ctor(System.Collections.Generic.IEnumerable{Asp.Versioning.ApiExplorer.IApiVersionMetadataCollationProvider},Asp.Versioning.ISunsetPolicyManager,Microsoft.Extensions.Options.IOptions{Asp.Versioning.ApiExplorer.ApiExplorerOptions})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Asp.Versioning.ApiExplorer.DefaultApiVersionDescriptionProvider"/> class.
+            </summary>
+            <param name="providers">The <see cref="T:System.Collections.Generic.IEnumerable`1">sequence</see> of
+            <see cref="T:Asp.Versioning.ApiExplorer.IApiVersionMetadataCollationProvider">API version metadata collation providers.</see>.</param>
+            <param name="sunsetPolicyManager">The <see cref="T:Asp.Versioning.ISunsetPolicyManager">manager</see> used to resolve sunset policies.</param>
+            <param name="apiExplorerOptions">The <see cref="T:Microsoft.Extensions.Options.IOptions`1">container</see> of configured
+            <see cref="T:Asp.Versioning.ApiExplorer.ApiExplorerOptions">API explorer options</see>.</param>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.DefaultApiVersionDescriptionProvider.SunsetPolicyManager">
+            <summary>
+            Gets the manager used to resolve sunset policies.
+            </summary>
+            <value>The associated <see cref="T:Asp.Versioning.ISunsetPolicyManager">sunset policy manager</see>.</value>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.DefaultApiVersionDescriptionProvider.Options">
+            <summary>
+            Gets the options associated with the API explorer.
+            </summary>
+            <value>The current <see cref="T:Asp.Versioning.ApiExplorer.ApiExplorerOptions">API explorer options</see>.</value>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.DefaultApiVersionDescriptionProvider.ApiVersionDescriptions">
+            <inheritdoc />
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.DefaultApiVersionDescriptionProvider.Describe(System.Collections.Generic.IReadOnlyList{Asp.Versioning.ApiVersionMetadata})">
+            <summary>
+            Provides a list of API version descriptions from a list of application API version metadata.
+            </summary>
+            <param name="metadata">The <see cref="T:System.Collections.Generic.IReadOnlyList`1">read-only list</see> of <see cref="T:Asp.Versioning.ApiVersionMetadata">API version metadata</see>
+            within the application.</param>
+            <returns>A <see cref="T:System.Collections.Generic.IReadOnlyList`1">read-only list</see> of <see cref="T:Asp.Versioning.ApiExplorer.ApiVersionDescription">API version descriptions</see>.</returns>
+        </member>
+        <member name="T:Asp.Versioning.ApiExplorer.FormatGroupNameCallback">
+            <summary>
+            Represents a callback function used to format a group name.
+            </summary>
+            <param name="groupName">The associated group name.</param>
+            <param name="apiVersion">A formatted API version.</param>
+            <returns>The format result.</returns>
+        </member>
+        <member name="T:Asp.Versioning.ApiExplorer.GroupedApiVersionDescriptionProvider">
+            <summary>
+            Represents the default implementation of an object that discovers and describes the API version information within an application.
+            </summary>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.GroupedApiVersionDescriptionProvider.#ctor(System.Collections.Generic.IEnumerable{Asp.Versioning.ApiExplorer.IApiVersionMetadataCollationProvider},Asp.Versioning.ISunsetPolicyManager,Microsoft.Extensions.Options.IOptions{Asp.Versioning.ApiExplorer.ApiExplorerOptions})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Asp.Versioning.ApiExplorer.GroupedApiVersionDescriptionProvider"/> class.
+            </summary>
+            <param name="providers">The <see cref="T:System.Collections.Generic.IEnumerable`1">sequence</see> of
+            <see cref="T:Asp.Versioning.ApiExplorer.IApiVersionMetadataCollationProvider">API version metadata collation providers.</see>.</param>
+            <param name="sunsetPolicyManager">The <see cref="T:Asp.Versioning.ISunsetPolicyManager">manager</see> used to resolve sunset policies.</param>
+            <param name="apiExplorerOptions">The <see cref="T:Microsoft.Extensions.Options.IOptions`1">container</see> of configured
+            <see cref="T:Asp.Versioning.ApiExplorer.ApiExplorerOptions">API explorer options</see>.</param>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.GroupedApiVersionDescriptionProvider.SunsetPolicyManager">
+            <summary>
+            Gets the manager used to resolve sunset policies.
+            </summary>
+            <value>The associated <see cref="T:Asp.Versioning.ISunsetPolicyManager">sunset policy manager</see>.</value>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.GroupedApiVersionDescriptionProvider.Options">
+            <summary>
+            Gets the options associated with the API explorer.
+            </summary>
+            <value>The current <see cref="T:Asp.Versioning.ApiExplorer.ApiExplorerOptions">API explorer options</see>.</value>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.GroupedApiVersionDescriptionProvider.ApiVersionDescriptions">
+            <inheritdoc />
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.GroupedApiVersionDescriptionProvider.Describe(System.Collections.Generic.IReadOnlyList{Asp.Versioning.ApiExplorer.GroupedApiVersionDescriptionProvider.GroupedApiVersionMetadata})">
+            <summary>
+            Provides a list of API version descriptions from a list of application API version metadata.
+            </summary>
+            <param name="metadata">The <see cref="T:System.Collections.Generic.IReadOnlyList`1">read-only list</see> of
+            <see cref="T:Asp.Versioning.ApiExplorer.GroupedApiVersionDescriptionProvider.GroupedApiVersionMetadata">grouped API version metadata</see> within the application.</param>
+            <returns>A <see cref="T:System.Collections.Generic.IReadOnlyList`1">read-only list</see> of <see cref="T:Asp.Versioning.ApiExplorer.ApiVersionDescription">API
+            version descriptions</see>.</returns>
+        </member>
+        <member name="T:Asp.Versioning.ApiExplorer.GroupedApiVersionDescriptionProvider.GroupedApiVersionMetadata">
+            <summary>
+            Represents the API version metadata applied to an endpoint with an optional group name.
+            </summary>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.GroupedApiVersionDescriptionProvider.GroupedApiVersionMetadata.#ctor(System.String,Asp.Versioning.ApiVersionMetadata)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Asp.Versioning.ApiExplorer.GroupedApiVersionDescriptionProvider.GroupedApiVersionMetadata"/> class.
+            </summary>
+            <param name="groupName">The associated group name.</param>
+            <param name="metadata">The existing metadata to initialize from.</param>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.GroupedApiVersionDescriptionProvider.GroupedApiVersionMetadata.GroupName">
+            <summary>
+            Gets the associated group name.
+            </summary>
+            <value>The associated group name, if any.</value>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.GroupedApiVersionDescriptionProvider.GroupedApiVersionMetadata.Equals(Asp.Versioning.ApiExplorer.GroupedApiVersionDescriptionProvider.GroupedApiVersionMetadata)">
+            <inheritdoc />
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.GroupedApiVersionDescriptionProvider.GroupedApiVersionMetadata.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.GroupedApiVersionDescriptionProvider.GroupedApiVersionMetadata.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:Asp.Versioning.ApiExplorer.SR">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.SR.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.SR.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.SR.ApiVersionDisplayName">
+            <summary>
+              Looks up a localized string similar to API Version.
+            </summary>
+        </member>
+        <member name="T:Asp.Versioning.ApiExplorer.VersionedApiDescriptionProvider">
+            <summary>
+            Represents an API explorer that provides <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription">API descriptions</see> for actions represented by
+            <see cref="T:Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor">controller action descriptors</see> that are <see cref="T:Asp.Versioning.ApiVersion">API version</see> aware.
+            </summary>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.VersionedApiDescriptionProvider.#ctor(Asp.Versioning.ISunsetPolicyManager,Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider,Microsoft.Extensions.Options.IOptions{Asp.Versioning.ApiExplorer.ApiExplorerOptions})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Asp.Versioning.ApiExplorer.VersionedApiDescriptionProvider"/> class.
+            </summary>
+            <param name="sunsetPolicyManager">The <see cref="T:Asp.Versioning.ISunsetPolicyManager">manager</see> used to resolve sunset policies.</param>
+            <param name="modelMetadataProvider">The <see cref="T:Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider">provider</see> used to retrieve model metadata.</param>
+            <param name="options">The <see cref="T:Microsoft.Extensions.Options.IOptions`1">container</see> of configured
+            <see cref="T:Asp.Versioning.ApiExplorer.ApiExplorerOptions">API explorer options</see>.</param>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.VersionedApiDescriptionProvider.Order">
+            <summary>
+            Gets or sets the order precedence of the current API description provider.
+            </summary>
+            <value>The order precedence of the current API description provider. The default value is 0.</value>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.VersionedApiDescriptionProvider.SunsetPolicyManager">
+            <summary>
+            Gets the manager used to resolve sunset policies.
+            </summary>
+            <value>The associated <see cref="T:Asp.Versioning.ISunsetPolicyManager">sunset policy manager</see>.</value>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.VersionedApiDescriptionProvider.Options">
+            <summary>
+            Gets the options associated with the API explorer.
+            </summary>
+            <value>The current <see cref="T:Asp.Versioning.ApiExplorer.ApiExplorerOptions">API explorer options</see>.</value>
+        </member>
+        <member name="P:Asp.Versioning.ApiExplorer.VersionedApiDescriptionProvider.ModelMetadataProvider">
+            <summary>
+            Gets the model metadata provider associated with the API description provider.
+            </summary>
+            <value>The <see cref="T:Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider">provider</see> used to retrieve model metadata.</value>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.VersionedApiDescriptionProvider.ShouldExploreAction(Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor,Asp.Versioning.ApiVersion)">
+            <summary>
+            Determines whether the specified action should be explored for the indicated API version.
+            </summary>
+            <param name="actionDescriptor">The <see cref="T:Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor">action</see> to evaluate.</param>
+            <param name="apiVersion">The <see cref="T:Asp.Versioning.ApiVersion">API version</see> for action being explored.</param>
+            <returns>True if the action should be explored; otherwise, false.</returns>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.VersionedApiDescriptionProvider.PopulateApiVersionParameters(Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription,Asp.Versioning.ApiVersion)">
+            <summary>
+            Populates the API version parameters for the specified API description.
+            </summary>
+            <param name="apiDescription">The <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription">API description</see> to populate parameters for.</param>
+            <param name="apiVersion">The <see cref="T:Asp.Versioning.ApiVersion">API version</see> used to populate parameters with.</param>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.VersionedApiDescriptionProvider.OnProvidersExecuted(Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionProviderContext)">
+            <summary>
+            Occurs after the providers have been executed.
+            </summary>
+            <param name="context">The current <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionProviderContext">execution context</see>.</param>
+            <remarks>The default implementation performs no action.</remarks>
+        </member>
+        <member name="M:Asp.Versioning.ApiExplorer.VersionedApiDescriptionProvider.OnProvidersExecuting(Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionProviderContext)">
+            <summary>
+            Occurs when the providers are being executed.
+            </summary>
+            <param name="context">The current <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionProviderContext">execution context</see>.</param>
+            <remarks>The default implementation performs no operation.</remarks>
+        </member>
+        <member name="T:Asp.Versioning.ExpSR">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Asp.Versioning.ExpSR.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Asp.Versioning.ExpSR.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Asp.Versioning.ExpSR.DefaultApiVersionParamDesc">
+            <summary>
+              Looks up a localized string similar to The requested API version.
+            </summary>
+        </member>
+    </members>
+</doc>

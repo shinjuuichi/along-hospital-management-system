@@ -1,0 +1,17 @@
+{
+    "time_slot": {
+        "title": {
+            "time_slot_management": "Quản lý khung giờ",
+            "create_form": "Tạo khung giờ",
+            "update_form": "Cập nhật khung giờ"
+        },
+        "field": {
+            "time": "Thời gian",
+            "capacity_per_doctor": "Sức chứa mỗi bác sĩ"
+        },
+        "dialog": {
+            "delete_title": "Xóa khung giờ",
+            "delete_description": "Bạn có chắc chắn muốn xóa khung giờ {time}?"
+        }
+    }
+}

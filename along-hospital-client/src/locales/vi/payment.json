@@ -1,0 +1,27 @@
+{
+    "payment": {
+        "cancel": {
+            "title": "Thanh toán đã bị hủy",
+            "subtitle": "Cảm ơn bạn đã quan tâm đến dịch vụ của Along Hospital.",
+            "help": "Nếu cần hỗ trợ, vui lòng liên hệ bộ phận chăm sóc khách hàng."
+        },
+        "success": {
+            "title": "Thanh toán thành công",
+            "subtitle": "Cảm ơn bạn đã sử dụng dịch vụ của Along Hospital.",
+            "wish": "Chúc bạn một ngày thật nhiều sức khỏe!"
+        }
+    },
+    "sepay": {
+        "payment_title": "Thanh Toán SePay",
+        "qr_code": "Quét mã QR",
+        "scan_instruction": "Quét mã QR bằng ứng dụng ngân hàng hoặc ví điện tử để thanh toán",
+        "no_payment_url": "Không có URL thanh toán",
+        "order_summary": "Thông tin đơn hàng",
+        "total": "Tổng cộng",
+        "back": "Quay lại",
+        "view_order_history": "Khi thanh toán thành công, bạn có thể qua trang lịch sử đơn hàng để xem đơn hàng",
+        "here": "tại đây",
+        "no_image": "Không có hình ảnh",
+        "unknown": "Không xác định"
+    }
+}

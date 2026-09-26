@@ -1,0 +1,39 @@
+{
+    "interview": {
+        "title": {
+            "management": "Quản lý phỏng vấn"
+        },
+        "field": {
+            "id": "ID",
+            "interview_date": "Ngày giờ phỏng vấn",
+            "interview_type": "Loại phỏng vấn",
+            "result": "Kết quả",
+            "note": "Ghi chú"
+        },
+        "button": {
+            "create": "Tạo lịch phỏng vấn",
+            "set_passed": "Đánh dấu đạt",
+            "set_failed": "Đánh dấu không đạt",
+            "set_cancelled": "Hủy phỏng vấn"
+        },
+        "dialog": {
+            "create_title": "Tạo lịch phỏng vấn",
+            "update_title": "Cập nhật phỏng vấn",
+            "confirm_result_title": "Xác nhận kết quả phỏng vấn",
+            "confirm_result_description": "Bạn có chắc chắn muốn cập nhật kết quả phỏng vấn thành {result}?",
+            "confirm_delete_title": "Xóa lịch phỏng vấn",
+            "confirm_delete_description": "Bạn có chắc chắn muốn xóa lịch phỏng vấn này?",
+            "confirm_set_passed_description": "Bạn có chắc chắn muốn đánh dấu ứng viên này là Đạt?"
+        },
+        "result": {
+            "pending": "Chờ kết quả",
+            "passed": "Đạt",
+            "failed": "Không đạt",
+            "cancelled": "Đã hủy"
+        },
+        "text": {
+            "load_error": "Không thể tải danh sách phỏng vấn.",
+            "actions": "Thao tác"
+        }
+    }
+}

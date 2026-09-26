@@ -1,0 +1,19 @@
+{
+	"building": {
+		"field": {
+			"name": "Tên",
+			"location": "Vị trí"
+		},
+		"dialog": {
+			"create_title": "Tạo tòa nhà",
+			"update_title": "Cập nhật tòa nhà",
+			"confirm_delete_title": "Xác nhận xóa",
+			"confirm_delete_description": "Xóa tòa nhà {name}?",
+			"confirm_delete_selected_title": "Xác nhận xóa đã chọn",
+			"confirm_delete_selected_description": "Xóa {count} tòa nhà đã chọn?"
+		},
+		"title": {
+			"management": "Quản lý tòa nhà"
+		}
+	}
+}

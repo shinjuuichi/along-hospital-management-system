@@ -1,0 +1,556 @@
+x-worker-deploy: &worker-deploy
+  mode: replicated
+  replicas: 1
+  placement:
+    constraints:
+      - node.role == worker
+  restart_policy:
+    condition: on-failure
+    delay: 5s
+    max_attempts: 10
+    window: 120s
+  update_config:
+    parallelism: 1
+    order: start-first
+    failure_action: rollback
+  rollback_config:
+    parallelism: 1
+    order: stop-first
+
+x-aspnet-env: &aspnet-env
+  ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT:-Production}
+  ASPNETCORE_HTTP_PORTS: '8080'
+
+x-jwt-env: &jwt-env
+  JwtConfig__SecretKey: ${JWT_SECRET}
+  JwtConfig__ExpireTimeInMinutes: ${JWT_EXPIRE_MINUTES}
+  JwtConfig__Issuer: ${JWT_ISSUER}
+  JwtConfig__Audience: ${JWT_AUDIENCE}
+
+x-rabbitmq-env: &rabbitmq-env
+  RabbitMQConfig__Host: ${RABBITMQ_HOST:-amqp://infra_rabbitmq:5672}
+  RabbitMQConfig__UserName: ${RABBITMQ_USERNAME}
+  RabbitMQConfig__Password: ${RABBITMQ_PASSWORD}
+
+x-otel-env: &otel-env
+  OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT:-http://observability_otel-collector:4317}
+  OTEL_EXPORTER_OTLP_PROTOCOL: ${OTEL_EXPORTER_OTLP_PROTOCOL:-grpc}
+
+x-redis-env: &redis-env
+  RedisConfig__Host: ${REDIS_HOST:-infra_redis:6379}
+  RedisConfig__InstanceName: ${REDIS_INSTANCE_NAME}
+  RedisConfig__Password: ${REDIS_PASSWORD}
+
+services:
+  email-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/email-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 7999
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *rabbitmq-env, *otel-env]
+      EmailConfig__ApiKey: ${SENDGRID_API_KEY}
+      EmailConfig__Email: ${EMAIL_ADDRESS}
+      EmailConfig__DisplayName: ${EMAIL_DISPLAY_NAME}
+      UrlsConfig__FrontendUrl: ${FRONTEND_URL}
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  sms-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/sms-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 7997
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *rabbitmq-env, *otel-env]
+      TwilioConfig__AccountSid: ${TWILIO_ACCOUNT_SID}
+      TwilioConfig__AuthToken: ${TWILIO_AUTH_TOKEN}
+      TwilioConfig__MessageSid: ${TWILIO_MESSAGE_SID}
+      TextBeeConfig__ApiKey: ${TEXTBEE_API_KEY}
+      TextBeeConfig__BaseUrl: ${TEXTBEE_BASE_URL}
+      TextBeeConfig__DeviceId: ${TEXTBEE_DEVICE_ID}
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  upload-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/upload-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 7998
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *otel-env]
+      R2Config__AccountId: ${R2_ACCOUNT_ID}
+      R2Config__AccessKeyId: ${R2_ACCESS_KEY_ID}
+      R2Config__SecretAccessKey: ${R2_SECRET_ACCESS_KEY}
+      R2Config__Bucket: ${R2_BUCKET}
+      R2Config__PublicBaseUrl: ${R2_PUBLIC_BASE_URL}
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  api-gateway:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/api-gateway:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8000
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *redis-env, *otel-env]
+      UrlsConfig__FrontendUrl: ${FRONTEND_URL}
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  auth-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/auth-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8001
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env, *redis-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_AUTH};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      RefreshTokenConfig__ExpirationDays: ${REFRESH_TOKEN_EXPIRATION_DAYS}
+      RefreshTokenConfig__Secure: ${REFRESH_TOKEN_SECURE}
+      RefreshTokenConfig__Domain: ${REFRESH_TOKEN_DOMAIN}
+      GoogleConfig__ClientId: ${GOOGLE_CLIENT_ID}
+      UrlsConfig__FrontendUrl: ${FRONTEND_URL}
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  user-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/user-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8002
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_USER};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  patient-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/patient-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8003
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_PATIENT};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  recruitment-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/recruitment-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8004
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_RECRUITMENT};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  staff-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/staff-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8005
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_STAFF};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+      ApiUrlsConfig__MachineLearningUrl: ${API_MACHINE_LEARNING_URL}
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  attendance-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/attendance-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8006
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_ATTENDANCE};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+      ApiUrlsConfig__MachineLearningUrl: ${API_MACHINE_LEARNING_URL}
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  medicine-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/medicine-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8007
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_MEDICINE};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  voucher-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/voucher-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8008
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseMongoConfig__ConnectionString: 'mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@${DB_HOST_MONGO:-infra_mongodb}:27017'
+      DatabaseMongoConfig__DatabaseName: ${MONGO_DB_NAME_VOUCHER}
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  feedback-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/feedback-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8009
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_FEEDBACK};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+      ApiUrlsConfig__MachineLearningUrl: ${API_MACHINE_LEARNING_URL}
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  cart-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/cart-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8010
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_CART};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  order-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/order-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8011
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_ORDER};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  payment-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/payment-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8012
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseMongoConfig__ConnectionString: 'mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@${DB_HOST_MONGO:-infra_mongodb}:27017'
+      DatabaseMongoConfig__DatabaseName: ${MONGO_DB_NAME_PAYMENT}
+      PayOSConfig__ClientId: ${PAYOS_CLIENT_ID}
+      PayOSConfig__ApiKey: ${PAYOS_API_KEY}
+      PayOSConfig__ChecksumKey: ${PAYOS_CHECKSUM_KEY}
+      VnPayConfig__TmnCode: ${VNPAY_TMN_CODE}
+      VnPayConfig__HashSecret: ${VNPAY_HASH_SECRET}
+      VnPayConfig__BaseUrl: ${VNPAY_BASE_URL}
+      SePayConfig__MerchantId: ${SEPAY_MERCHANT_ID}
+      SePayConfig__SecretKey: ${SEPAY_SECRET_KEY}
+      SePayConfig__BaseUrl: ${SEPAY_BASE_URL}
+      SePayConfig__BankName: ${SEPAY_BANK_NAME}
+      SePayConfig__VA: ${SEPAY_VA}
+      SePayConfig__ApiKeyValidator: ${SEPAY_API_KEY_VALIDATOR}
+      UrlsConfig__FrontendUrl: ${FRONTEND_URL}
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  supplier-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/supplier-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8013
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_SUPPLIER};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  inventory-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/inventory-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8014
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_INVENTORY};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  blog-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/blog-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8015
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_BLOG};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  medical-service-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/medical-service-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8017
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_MEDICAL_SERVICE};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  appointment-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/appointment-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8018
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_APPOINTMENT};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  medical-history-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/medical-history-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8019
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_MEDICAL_HISTORY};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      ApiUrlsConfig__MachineLearningUrl: ${API_MACHINE_LEARNING_URL}
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  report-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/report-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8020
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  billing-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/billing-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8016
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_BILLING};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  medical-order-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/medical-order-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8027
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseMongoConfig__ConnectionString: 'mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@${DB_HOST_MONGO:-infra_mongodb}:27017'
+      DatabaseMongoConfig__DatabaseName: ${MONGO_DB_NAME_MEDICAL_ORDER:-AlongHospitalMedicalOrderDb}
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  chatbox-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/chatbox-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8021
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env, *redis-env]
+      GoogleConfig__GeminiAPIKey: ${GEMINI_API_KEY}
+      ApiUrlsConfig__MachineLearningUrl: ${API_MACHINE_LEARNING_URL}
+      QdrantConfig__Host: ${QDRANT_HOST:-infra_qdrant}
+      QdrantConfig__Port: ${QDRANT_PORT:-6334}
+      QdrantConfig__CollectionName: ${QDRANT_COLLECTION_NAME}
+      QdrantConfig__VectorSize: ${QDRANT_VECTOR_SIZE}
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  tele-health-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/tele-health-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8022
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_TELEHEALTH};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      UrlsConfig__BackendUrl: ${BACKEND_URL}
+      UrlsConfig__FrontendUrl: ${FRONTEND_URL}
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  work-schedule-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/work-schedule-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8023
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_WORK_SCHEDULE};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  staff-request-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/staff-request-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8024
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_STAFF_REQUEST};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  inpatient-resource-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/inpatient-resource-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8026
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_INPATIENT_RESOURCE};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  payroll-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/payroll-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8025
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_PAYROLL:-AlongHospital.PayrollDb};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+      ApiUrlsConfig__UploadUrl: http://upload-svc:8080
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+  queue-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/queue-svc:${VERSION:-latest}
+    ports:
+      - target: 8080
+        published: 8028
+        protocol: tcp
+        mode: ingress
+    environment:
+      <<: [*aspnet-env, *jwt-env, *rabbitmq-env, *otel-env]
+      DatabaseConfig__ConnectionString: 'Server=${DB_HOST:-infra_sqlserver},${DB_PORT:-1433};Database=${DB_NAME_QUEUE:-AlongHospital.QueueDb};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True'
+    networks:
+      - hospital-network
+    deploy: *worker-deploy
+
+networks:
+  hospital-network:
+    external: true

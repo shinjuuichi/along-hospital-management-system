@@ -1,0 +1,772 @@
+services:
+  #Common Services
+  email-svc:
+    ports:
+      - "7999:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - EmailConfig__ApiKey=${SENDGRID_API_KEY}
+      - EmailConfig__Email=${EMAIL_ADDRESS}
+      - EmailConfig__DisplayName=${EMAIL_DISPLAY_NAME}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - UrlsConfig__FrontendUrl=${FRONTEND_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  sms-svc:
+    ports:
+      - "7997:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - TwilioConfig__AccountSid=${TWILIO_ACCOUNT_SID}
+      - TwilioConfig__AuthToken=${TWILIO_AUTH_TOKEN}
+      - TwilioConfig__MessageSid=${TWILIO_MESSAGE_SID}
+
+      - TextBeeConfig__ApiKey=${TEXTBEE_API_KEY}
+      - TextBeeConfig__BaseUrl=${TEXTBEE_BASE_URL}
+      - TextBeeConfig__DeviceId=${TEXTBEE_DEVICE_ID}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  upload-svc:
+    ports:
+      - "7998:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - R2Config__AccountId=${R2_ACCOUNT_ID}
+      - R2Config__AccessKeyId=${R2_ACCESS_KEY_ID}
+      - R2Config__SecretAccessKey=${R2_SECRET_ACCESS_KEY}
+      - R2Config__Bucket=${R2_BUCKET}
+      - R2Config__PublicBaseUrl=${R2_PUBLIC_BASE_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  machine-learning-svc:
+    ports:
+      - "7996:4996"
+    environment:
+      - FLASK_ENV=production
+      - FLASK_RUN_HOST=0.0.0.0
+      - FLASK_RUN_PORT=4996
+
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+
+      - DB_NAME_MEDICAL_HISTORY=${DB_NAME_MEDICAL_HISTORY}
+      - DB_NAME_FEEDBACK=${DB_NAME_FEEDBACK}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  #API Gateway
+  api-gateway:
+    ports:
+      - "8000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RedisConfig__Host=${REDIS_HOST}
+      - RedisConfig__InstanceName=${REDIS_INSTANCE_NAME}
+      - RedisConfig__Password=${REDIS_PASSWORD}
+
+      - UrlsConfig__FrontendUrl=${FRONTEND_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  #Microservices
+  auth-svc:
+    ports:
+      - "8001:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_AUTH};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RefreshTokenConfig__ExpirationDays=${REFRESH_TOKEN_EXPIRATION_DAYS}
+      - RefreshTokenConfig__Secure=${REFRESH_TOKEN_SECURE}
+      - RefreshTokenConfig__Domain=${REFRESH_TOKEN_DOMAIN}
+
+      - RedisConfig__Host=${REDIS_HOST}
+      - RedisConfig__InstanceName=${REDIS_INSTANCE_NAME}
+      - RedisConfig__Password=${REDIS_PASSWORD}
+
+      - GoogleConfig__ClientId=${GOOGLE_CLIENT_ID}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - UrlsConfig__FrontendUrl=${FRONTEND_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  user-svc:
+    ports:
+      - "8002:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_USER};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - ApiUrlsConfig__UploadUrl=${API_UPLOAD_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  patient-svc:
+    ports:
+      - "8003:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_PATIENT};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - ApiUrlsConfig__UploadUrl=${API_UPLOAD_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  recruitment-svc:
+    ports:
+      - "8004:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_RECRUITMENT};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - ApiUrlsConfig__UploadUrl=${API_UPLOAD_URL}
+      
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  staff-svc:
+    ports:
+      - "8005:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_STAFF};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - ApiUrlsConfig__UploadUrl=${API_UPLOAD_URL}
+      - ApiUrlsConfig__MachineLearningUrl=${API_MACHINE_LEARNING_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  attendance-svc:
+    ports:
+      - "8006:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_ATTENDANCE};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - ApiUrlsConfig__UploadUrl=${API_UPLOAD_URL}
+      - ApiUrlsConfig__MachineLearningUrl=${API_MACHINE_LEARNING_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  medicine-svc:
+    ports:
+      - "8007:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_MEDICINE};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - ApiUrlsConfig__UploadUrl=${API_UPLOAD_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  voucher-svc:
+    ports:
+      - "8008:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseMongoConfig__ConnectionString=mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@${DB_HOST_MONGO}:27017
+      - DatabaseMongoConfig__DatabaseName=${MONGO_DB_NAME_VOUCHER}
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - ApiUrlsConfig__UploadUrl=${API_UPLOAD_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  feedback-svc:
+    ports:
+      - "8009:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_FEEDBACK};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - ApiUrlsConfig__UploadUrl=${API_UPLOAD_URL}
+      - ApiUrlsConfig__MachineLearningUrl=${API_MACHINE_LEARNING_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  cart-svc:
+    ports:
+      - "8010:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_CART};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - ApiUrlsConfig__UploadUrl=${API_UPLOAD_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  order-svc:
+    ports:
+      - "8011:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_ORDER};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - ApiUrlsConfig__UploadUrl=${API_UPLOAD_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  payment-svc:
+    ports:
+      - "8012:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseMongoConfig__ConnectionString=mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@${DB_HOST_MONGO}:27017
+      - DatabaseMongoConfig__DatabaseName=${MONGO_DB_NAME_PAYMENT}
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - PayOSConfig__ClientId=${PAYOS_CLIENT_ID}
+      - PayOSConfig__ApiKey=${PAYOS_API_KEY}
+      - PayOSConfig__ChecksumKey=${PAYOS_CHECKSUM_KEY}
+
+      - VnPayConfig__TmnCode=${VNPAY_TMN_CODE}
+      - VnPayConfig__HashSecret=${VNPAY_HASH_SECRET}
+      - VnPayConfig__BaseUrl=${VNPAY_BASE_URL}
+
+      - SePayConfig__MerchantId=${SEPAY_MERCHANT_ID}
+      - SePayConfig__SecretKey=${SEPAY_SECRET_KEY}
+      - SePayConfig__BaseUrl=${SEPAY_BASE_URL}
+      - SePayConfig__BankName=${SEPAY_BANK_NAME}
+      - SePayConfig__VA=${SEPAY_VA}
+      - SePayConfig__ApiKeyValidator=${SEPAY_API_KEY_VALIDATOR}
+
+      - UrlsConfig__FrontendUrl=${FRONTEND_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  supplier-svc:
+    ports:
+      - "8013:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_SUPPLIER};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - ApiUrlsConfig__UploadUrl=${API_UPLOAD_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  inventory-svc:
+    ports:
+      - "8014:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_INVENTORY};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - ApiUrlsConfig__UploadUrl=${API_UPLOAD_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  blog-svc:
+    ports:
+      - "8015:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_BLOG};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - ApiUrlsConfig__UploadUrl=${API_UPLOAD_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  billing-svc:
+    ports:
+      - "8016:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_BILLING};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  medical-service-svc:
+    ports:
+      - "8017:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_MEDICAL_SERVICE};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - ApiUrlsConfig__UploadUrl=${API_UPLOAD_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  appointment-svc:
+    ports:
+      - "8018:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_APPOINTMENT};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  medical-history-svc:
+    ports:
+      - "8019:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_MEDICAL_HISTORY};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - ApiUrlsConfig__MachineLearningUrl=${API_MACHINE_LEARNING_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  report-svc:
+    ports:
+      - "8020:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  chatbox-svc:
+    ports:
+      - "8021:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - RedisConfig__Host=${REDIS_HOST}
+      - RedisConfig__InstanceName=${REDIS_INSTANCE_NAME}
+      - RedisConfig__Password=${REDIS_PASSWORD}
+
+      - GoogleConfig__GeminiAPIKey=${GEMINI_API_KEY}
+
+      - ApiUrlsConfig__MachineLearningUrl=${API_MACHINE_LEARNING_URL}
+
+      - QdrantConfig__Host=${QDRANT_HOST}
+      - QdrantConfig__Port=${QDRANT_PORT}
+      - QdrantConfig__CollectionName=${QDRANT_COLLECTION_NAME}
+      - QdrantConfig__VectorSize=${QDRANT_VECTOR_SIZE}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  tele-health-svc:
+    ports:
+      - "8022:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_TELEHEALTH};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - UrlsConfig__BackendUrl=${BACKEND_URL}
+      - UrlsConfig__FrontendUrl=${FRONTEND_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  work-schedule-svc:
+    ports:
+      - "8023:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_WORK_SCHEDULE};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  staff-request-svc:
+    ports:
+      - "8024:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_STAFF_REQUEST};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  payroll-svc:
+    ports:
+      - "8025:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_PAYROLL};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  inpatient-resource-svc:
+    ports:
+      - "8026:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_INPATIENT_RESOURCE};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - ApiUrlsConfig__UploadUrl=${API_UPLOAD_URL}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  medical-order-svc:
+    ports:
+      - "8027:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseMongoConfig__ConnectionString=mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@${DB_HOST_MONGO}:27017
+      - DatabaseMongoConfig__DatabaseName=${MONGO_DB_NAME_MEDICAL_ORDER}
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}
+
+  queue-svc:
+    ports:
+      - "8028:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+
+      - DatabaseConfig__ConnectionString=Server=${DB_HOST},${DB_PORT};Database=${DB_NAME_QUEUE};User ID=${DB_USER};Password=${DB_PASSWORD};TrustServerCertificate=True
+
+      - JwtConfig__SecretKey=${JWT_SECRET}
+      - JwtConfig__ExpireTimeInMinutes=${JWT_EXPIRE_MINUTES}
+      - JwtConfig__Issuer=${JWT_ISSUER}
+      - JwtConfig__Audience=${JWT_AUDIENCE}
+
+      - RedisConfig__Host=${REDIS_HOST}
+      - RedisConfig__InstanceName=${REDIS_INSTANCE_NAME}
+      - RedisConfig__Password=${REDIS_PASSWORD}
+
+      - RabbitMQConfig__Host=${RABBITMQ_HOST}
+      - RabbitMQConfig__UserName=${RABBITMQ_USERNAME}
+      - RabbitMQConfig__Password=${RABBITMQ_PASSWORD}
+
+      - OTEL_EXPORTER_OTLP_ENDPOINT=${OTEL_EXPORTER_OTLP_ENDPOINT}
+      - OTEL_EXPORTER_OTLP_PROTOCOL=${OTEL_EXPORTER_OTLP_PROTOCOL}

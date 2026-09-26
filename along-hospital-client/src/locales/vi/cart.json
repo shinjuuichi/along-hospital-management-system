@@ -1,0 +1,58 @@
+{
+    "cart": {
+        "title": "Giỏ hàng",
+        "empty_cart": "Giỏ hàng trống",
+        "no_image": "Không có hình",
+        "no_name": "Không có tên",
+        "brand": "Thương hiệu",
+        "unit": "Đơn vị",
+        "pickup_at_store": "Nhận tại cửa hàng",
+        "delivery": "Giao hàng",
+        "is_pickup_at_store": "Nhận hàng tại cửa hàng",
+        "delivery_default_note": "Nếu không check, mặc định giao hàng tại địa chỉ của bạn",
+        "summary": {
+            "title": "Tóm tắt giỏ hàng",
+            "subtotal": "Tạm tính",
+            "subtotal_item": "Tạm tính",
+            "total": "Tổng cộng",
+            "total_pay": "Tổng thanh toán",
+            "voucher_code": "Mã giảm giá",
+            "voucher_placeholder": "Nhập mã voucher (VD: CHAOMUNG)",
+            "apply": "Áp dụng",
+            "your_vouchers": "Mã ưu đãi của bạn",
+            "min_order": "ĐH tối thiểu",
+            "expiry": "HSD",
+            "no_voucher": "Không dùng mã",
+            "payment_method": "Phương thức thanh toán",
+            "checkout": "Thanh toán",
+            "checkout_description": "Thanh toán đơn hàng",
+            "processing": "Đang xử lý...",
+            "delivery_method": "Phương thức giao hàng",
+            "voucher": "Mã giảm giá",
+            "voucher_empty": "--",
+            "voucher_not_available": "Mã voucher không hợp lệ hoặc không có sẵn!",
+            "voucher_apply_success": "Áp dụng voucher thành công!",
+            "cancel_voucher": "Hủy",
+            "cancel_voucher_success": "Đã hủy áp dụng voucher!"
+        },
+        "button": {
+            "delete": "Xóa"
+        },
+        "continue_shopping": "Tiếp tục mua sắm ",
+        "out_of_stock": "Hết hàng",
+        "order_items": "Sản phẩm đã chọn",
+        "delivery_fee": "Phí giao hàng",
+        "free": "Miễn phí"
+    },
+    "checkout": {
+        "title": "Thanh toán",
+        "confirm_delete": "Bạn có chắc chắn muốn xóa sản phẩm này?",
+        "success": "Thanh toán thành công"
+    },
+    "common": {
+        "error": {
+            "loading_data": "Lỗi khi tải dữ liệu",
+            "not_found": "Không tìm thấy"
+        }
+    }
+}

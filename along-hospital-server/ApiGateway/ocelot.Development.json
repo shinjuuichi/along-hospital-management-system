@@ -1,0 +1,2428 @@
+{
+	"GlobalConfiguration": {
+		"BaseUrl": "https://localhost:5000",
+		"RateLimitOptions": {
+			"DisableRateLimitHeaders": false,
+			"QuotaExceededMessage": "{\"data\": null,\"error\": \"Too many requests, please try again later\",\"message\":\"Too many requests, please try again later\"}",
+			"HttpStatusCode": 429,
+			"ClientIdHeader": "X-Client-Id"
+		},
+		"QoSOptions": {
+			"ExceptionsAllowedBeforeBreaking": 3,
+			"DurationOfBreak": 10000,
+			"TimeoutValue": 30000
+		}
+	},
+	"Routes": [
+		{
+			"UpstreamPathTemplate": "/api/v1/auth/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/auth/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5001
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/upload/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/upload/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 4998
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/user/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/user/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5002
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/patient-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/patient-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5003
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/staff/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/staff/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5005
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/staff-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/staff-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5005
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/staff-group-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/staff-group-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5005
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/staff-certificate-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/staff-certificate-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5005
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/staff-certificate-type-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/staff-certificate-type-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5005
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/qualification-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/qualification-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5005
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/staff-recognization/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/staff-recognization/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5005
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/regional-wage-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/regional-wage-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5005
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/attendance-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/attendance-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5006
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/staff-attendance/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/staff-attendance/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5006
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/staff-contract-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/staff-contract-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5005
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/medicine/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/medicine/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5007
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/medicine-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/medicine-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5007
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/voucher/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/voucher/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5008
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/voucher-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/voucher-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5008
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/feedback/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/feedback/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5009
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/feedback-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/feedback-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5009
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/feedback-respond/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/feedback-respond/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5009
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/cart/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/cart/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5010
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/order/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/order/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5011
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/order-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/order-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5011
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/pay-os/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/pay-os/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5012
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/se-pay/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/se-pay/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5012
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/supplier/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/supplier/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5013
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/inventory/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/inventory/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5014
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/blog/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/blog/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5015
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/blog-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/blog-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5015
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/blog-category/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/blog-category/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5015
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/invoice/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/invoice/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5016
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/refund/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/refund/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5016
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/medical-service/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/medical-service/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5017
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/medical-service-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/medical-service-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5017
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/appointment/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/appointment/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5018
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/appointment-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/appointment-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5018
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/time-slot/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/time-slot/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5018
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/time-slot-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/time-slot-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5018
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/medical-history/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/medical-history/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5019
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/medical-history-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/medical-history-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5019
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/complaint-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/complaint-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5019
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/report/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/report/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5020
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/hub/chatbot/{everything}",
+			"DownstreamScheme": "wss",
+			"DownstreamPathTemplate": "/hub/chatbot/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5021
+				}
+			]
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/tele-room-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/tele-room-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5022
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/tele-room/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/tele-room/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5022
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/tele-session/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/tele-session/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5022
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/hubs/meeting/{everything}",
+			"DownstreamScheme": "wss",
+			"DownstreamPathTemplate": "/hubs/meeting/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5022
+				}
+			]
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/specialty-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/specialty-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5005
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/specialty/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/specialty/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5005
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/department/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/department/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5005
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/department-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/department-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5005
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/import-request-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/import-request-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5013
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/import-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/import-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5013
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/medicine-category/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/medicine-category/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5007
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/medicine-sku-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/medicine-sku-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5007
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/medicine-unit-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/medicine-unit-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5007
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/option-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/option-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5007
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/option-value-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/option-value-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5007
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/supplier-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/supplier-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5013
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/room-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/room-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5026
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/room-category-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/room-category-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5026
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/bed-category-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/bed-category-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5026
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/bed-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/bed-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5026
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/building-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/building-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5026
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/floor-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/floor-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5026
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/bed-occupancy/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/bed-occupancy/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5026
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/medical-order/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/medical-order/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5027
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/queue/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/queue/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5028
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/queue-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/queue-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5028
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/hub/queue/{everything}",
+			"DownstreamScheme": "wss",
+			"DownstreamPathTemplate": "/hub/queue/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5028
+				}
+			]
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/feedback-report/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/feedback-report/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5009
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/feedback-report-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/feedback-report-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5009
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/allowance-type-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/allowance-type-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5025
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/deduction-type-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/deduction-type-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5025
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/deduction-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/deduction-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5025
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/allowance-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/allowance-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5025
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/global-tax-config-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/global-tax-config-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5025
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/payroll-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/payroll-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5025
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/payroll-policy-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/payroll-policy-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5025
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/tax-bracket-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/tax-bracket-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5025
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/leave-request/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/leave-request/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5024
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/leave-request-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/leave-request-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5024
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/salary-advance/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/salary-advance/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5024
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/salary-advance-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/salary-advance-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5024
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/shift-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/shift-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5023
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/shift/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/shift/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5023
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/work-schedule-template-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/work-schedule-template-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5023
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/work-schedule-template-assignment-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/work-schedule-template-assignment-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5023
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/work-schedule-template-day-shift-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/work-schedule-template-day-shift-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5023
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/holiday-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/holiday-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5023
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/work-schedule-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/work-schedule-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5023
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/work-schedule/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/work-schedule/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5023
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/work-schedule-assignment-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/work-schedule-assignment-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5023
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/work-segment-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/work-segment-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5023
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/job-posting-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/job-posting-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5004
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/job-posting/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/job-posting/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5004
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/job-application-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/job-application-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5004
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/interview-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/interview-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5004
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/interview-type-management/{everything}",
+			"UpstreamHttpMethod": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/interview-type-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5004
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		},
+		{
+			"UpstreamPathTemplate": "/api/v1/medicine-unit-option-management/{everything}",
+			"UpstreamHttpMethod": [ "GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS" ],
+			"DownstreamScheme": "https",
+			"DownstreamPathTemplate": "/api/v1/medicine-unit-option-management/{everything}",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5007
+				}
+			],
+			"LoadBalancerOptions": { "Type": "RoundRobin" },
+			"RateLimitOptions": {
+				"EnableRateLimiting": true,
+				"Period": "10s",
+				"PeriodTimespan": 10,
+				"Limit": 20
+			},
+			"QoSOptions": {
+				"ExceptionsAllowedBeforeBreaking": 3,
+				"DurationOfBreak": 10000,
+				"TimeoutValue": 30000
+			}
+		}
+	]
+}
+

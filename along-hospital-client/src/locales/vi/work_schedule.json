@@ -1,0 +1,96 @@
+{
+	"work_schedule": {
+		"title": {
+			"management": "Lịch làm việc",
+			"detail": "Chi tiết lịch làm việc",
+			"my_schedule": "Lịch làm việc của tôi",
+			"calendar": "Lịch ca làm việc",
+			"shift_detail": "Chi tiết ca trực",
+			"assignments": "Phân công",
+			"info": "Thông tin lịch",
+			"filters": "Bộ lọc",
+			"segments_for": "Phân đoạn làm việc cho"
+		},
+		"view": {
+			"month": "Tháng",
+			"week": "Tuần",
+			"day": "Ngày"
+		},
+		"field": {
+			"work_date": "Ngày làm việc",
+			"shift": "Ca",
+			"start_time": "Giờ bắt đầu",
+			"end_time": "Giờ kết thúc",
+			"is_overtime": "Tăng ca",
+			"shift_time": "Thời gian ca",
+			"status": "Trạng thái",
+			"template": "Mẫu",
+			"template_id": "Mã mẫu",
+			"staff_name": "Tên nhân viên",
+			"staff": "Nhân viên",
+			"role": "Vai trò",
+			"phone": "Số điện thoại",
+			"email": "Email",
+			"room": "Phòng",
+			"room_code": "Mã phòng",
+			"room_category": "Loại phòng",
+			"specialty": "Chuyên khoa",
+			"tele_room": "Phòng tele",
+			"tele_room_code": "Mã phòng tele",
+			"tele_room_name": "Tên phòng tele",
+			"from_date": "Từ ngày",
+			"to_date": "Đến ngày",
+			"location_type": "Loại vị trí",
+			"work_status": "Trạng thái làm việc",
+			"work_status_reason": "Lý do trạng thái làm việc",
+			"lock_status": "Trạng thái khóa",
+			"work_segments": "Phân đoạn làm việc"
+		},
+		"tab": {
+			"room_assignments": "Phân công phòng",
+			"tele_room_assignments": "Phân công phòng tele"
+		},
+		"table": {
+			"id": "ID",
+			"actions": "Thao tác"
+		},
+		"button": {
+			"create": "Tạo mới",
+			"publish": "Phát hành",
+			"lock": "Khóa",
+			"today": "Hôm nay",
+			"finalize": "Chốt lịch",
+			"update": "Cập nhật",
+			"open": "Mở",
+			"add_assignment": "Thêm phân công"
+		},
+		"dialog": {
+			"create_title": "Tạo lịch làm việc",
+			"edit_title": "Sửa lịch làm việc",
+			"delete_title": "Xóa lịch làm việc",
+			"delete_description": "Bạn có chắc chắn muốn xóa lịch làm việc này (ID: {id})?",
+			"publish_title": "Phát hành lịch làm việc",
+			"publish_description": "Bạn có chắc chắn muốn phát hành lịch làm việc này?",
+			"lock_title": "Khóa lịch làm việc",
+			"finalize_title": "Chốt lịch làm việc",
+			"finalize_description": "Bạn có chắc chắn muốn chốt lịch làm việc này?",
+			"lock_description": "Bạn có chắc chắn muốn khóa lịch làm việc này? Hành động này không thể hoàn tác.",
+			"create_assignment_title": "Thêm phân công",
+			"edit_assignment_title": "Sửa phân công",
+			"edit_work_segment_title": "Cập nhật giờ phân đoạn làm việc",
+			"delete_assignment_title": "Xóa phân công",
+			"delete_assignment_description": "Bạn có chắc chắn muốn xóa phân công này (ID: {id})?"
+		},
+		"text": {
+			"no_assignments": "Không tìm thấy phân công.",
+			"no_assignments_yet": "Chưa có phân công nào.",
+			"load_my_schedule_failed": "Không thể tải lịch làm việc của bạn. Vui lòng thử lại sau.",
+			"my_schedule_description": "Xem lịch làm việc và các phân đoạn làm việc của bạn theo từng ngày.",
+			"no_my_schedule": "Không có lịch làm việc trong khoảng thời gian đã chọn.",
+			"no_results_found": "Không tìm thấy kết quả.",
+			"no_locations_found": "Không tìm thấy vị trí nào.",
+			"total_assignments": "Tổng phân công",
+			"no_work_segments": "Không có phân đoạn làm việc."
+		}
+	}
+}

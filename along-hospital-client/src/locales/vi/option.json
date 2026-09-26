@@ -1,0 +1,21 @@
+{
+    "option": {
+        "title": {
+            "management": "Quản lý thuộc tính"
+        },
+        "filter": {
+            "title": "Bộ lọc",
+            "searchPlaceholder": "Tìm kiếm thuộc tính"
+        },
+        "field": {
+            "name": "Tên thuộc tính"
+        },
+        "actions": "Hành động",
+        "dialog": {
+            "create_title": "Thêm thuộc tính",
+            "update_title": "Cập nhật thuộc tính",
+            "confirm_delete_title": "Xóa thuộc tính",
+            "confirm_delete_description": "Bạn có chắc muốn xóa thuộc tính \"{{name}}\"?"
+        }
+    }
+}

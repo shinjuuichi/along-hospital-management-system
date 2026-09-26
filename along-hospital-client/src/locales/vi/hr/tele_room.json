@@ -1,0 +1,28 @@
+{
+    "tele_room": {
+        "title": {
+            "page": "Phòng tele",
+            "list": "Danh sách phòng tele",
+            "detail": "Chi tiết phòng tele",
+            "delete": "Xóa phòng tele",
+            "delete_confirm": "Bạn có chắc chắn muốn xóa phòng tele này",
+            "create": "Tạo phòng tele",
+            "update": "Cập nhật phòng tele",
+            "tele_room_management": "Quản lý phòng tele"
+        },
+        "description": {
+            "page_intro": "Quản lý tất cả phòng tele trong hệ thống."
+        },
+        "placeholder": {
+            "no_result_title": "Không tìm thấy phòng tele",
+            "no_result_subtitle": "Thử điều chỉnh bộ lọc hoặc tìm kiếm với từ khóa khác.",
+            "search_tele_room": "Tìm theo tên phòng tele ..."
+        },
+        "field": {
+            "id": "ID",
+            "room_code": "Mã phòng",
+            "room_display_name": "Tên hiển thị",
+            "specialty_id": "Chuyên khoa"
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "regional_wage": {
+        "title": {
+            "menu": "Regional Wage",
+            "management": "Regional Wage Management",
+            "create": "Create Regional Wage",
+            "update": "Update Regional Wage",
+            "delete": "Delete Regional Wage",
+            "delete_confirm": "Are you sure you want to delete regional wage code"
+        },
+        "field": {
+            "id": "ID",
+            "code": "Code",
+            "monthly_wage": "Monthly Wage",
+            "from_date": "From Date",
+            "to_date": "To Date"
+        }
+    }
+}

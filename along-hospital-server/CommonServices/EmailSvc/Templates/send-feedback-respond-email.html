@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="x-apple-disable-message-reformatting" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="supported-color-schemes" content="light dark" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Feedback Response</title>
+		<style>
+			body,
+			table,
+			td,
+			a {
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				-webkit-text-size-adjust: 100%;
+				-ms-text-size-adjust: 100%;
+			}
+			table,
+			td {
+				border-collapse: collapse !important;
+			}
+			body {
+				margin: 0 !important;
+				padding: 0 !important;
+				width: 100% !important;
+				background: linear-gradient(135deg, #f9fbfd 0%, #f3fffd 100%);
+				color: #0f172a;
+			}
+			.wrapper {
+				width: 100%;
+				background: linear-gradient(135deg, #f9fbfd 0%, #f3fffd 100%);
+				padding: 24px 0;
+			}
+			.container {
+				width: 100%;
+				max-width: 600px;
+				margin: 0 auto;
+				background-color: #ffffff;
+				border-radius: 12px;
+				box-shadow: 0 4px 12px rgba(30, 136, 229, 0.08);
+				overflow: hidden;
+				border: 1px solid #e2e8f0;
+			}
+			.header {
+				background: linear-gradient(135deg, #1e88e5 0%, #00bfa6 100%);
+				color: #ffffff;
+				padding: 30px 20px;
+				text-align: center;
+			}
+			.header h1 {
+				margin: 0;
+				font-size: 24px;
+				font-weight: 600;
+			}
+			.content {
+				padding: 32px 28px;
+				background-color: #ffffff;
+			}
+			.content p {
+				font-size: 15px;
+				line-height: 1.6;
+				color: #475569;
+				margin: 0 0 14px;
+			}
+			.staff-name {
+				display: inline-block;
+				padding: 6px 12px;
+				border-radius: 8px;
+				background: #e6faf8;
+				color: #0f766e;
+				font-size: 14px;
+				font-weight: 600;
+				margin-bottom: 16px;
+			}
+			.reply-box {
+				background: #f8fafc;
+				border: 1px solid #e2e8f0;
+				border-left: 4px solid #1e88e5;
+				border-radius: 10px;
+				padding: 16px;
+				color: #0f172a;
+				font-size: 15px;
+				line-height: 1.7;
+				white-space: normal;
+			}
+			.note {
+				margin-top: 18px;
+				font-size: 13px;
+				color: #64748b;
+			}
+			.divider {
+				height: 1px;
+				background: #e2e8f0;
+				margin: 32px 0;
+			}
+			.footer {
+				padding: 20px 30px;
+				background-color: #f7fafc;
+				border-top: 1px solid #e2e8f0;
+				text-align: center;
+			}
+			.footer p {
+				font-size: 14px;
+				color: #64748b;
+				margin: 5px 0;
+			}
+			@media (prefers-color-scheme: dark) {
+				body,
+				.wrapper {
+					background: #0f172a !important;
+				}
+				.container {
+					background: #1e293b !important;
+					border-color: #334155 !important;
+				}
+				.content {
+					background-color: #1e293b !important;
+				}
+				.content p {
+					color: #cbd5e1 !important;
+				}
+				.staff-name {
+					background: #134e4a !important;
+					color: #99f6e4 !important;
+				}
+				.reply-box {
+					background: #0f172a !important;
+					border-color: #334155 !important;
+					color: #e2e8f0 !important;
+				}
+				.note {
+					color: #94a3b8 !important;
+				}
+				.divider {
+					background: #334155 !important;
+				}
+				.footer {
+					color: #94a3b8 !important;
+					background-color: #1e293b !important;
+					border-color: #334155 !important;
+				}
+				.footer p {
+					color: #94a3b8 !important;
+				}
+			}
+			@media only screen and (max-width: 600px) {
+				.wrapper {
+					padding: 16px 0;
+				}
+				.container {
+					border-radius: 8px;
+				}
+				.header {
+					padding: 24px 16px;
+				}
+				.header h1 {
+					font-size: 20px;
+				}
+				.content {
+					padding: 24px 18px;
+				}
+				.footer {
+					padding: 16px 20px;
+				}
+				.footer p {
+					font-size: 13px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<center class="wrapper">
+			<table role="presentation" class="container" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td class="header">
+						<h1>Phản Hồi Góp Ý</h1>
+					</td>
+				</tr>
+				<tr>
+					<td class="content">
+						<!-- Vietnamese Version -->
+						<p style="color: #0f172a; font-weight: 500">Xin chào,</p>
+						<p>Đội ngũ hỗ trợ của chúng tôi đã phản hồi góp ý của bạn.</p>
+						<div class="staff-name">Người phản hồi: {{StaffName}}</div>
+						<div class="reply-box">{{RespondContent}}</div>
+						<p class="note">
+							Cảm ơn bạn đã chia sẻ góp ý. Ý kiến của bạn giúp chúng tôi cải thiện dịch vụ.
+						</p>
+
+						<div class="divider"></div>
+
+						<!-- English Version -->
+						<h2 style="font-size: 20px; color: #0f172a; font-weight: 600; margin: 0 0 16px">
+							Feedback Response
+						</h2>
+						<p style="color: #0f172a; font-weight: 500">Hello,</p>
+						<p>Our support team has posted a response to your feedback.</p>
+						<div class="staff-name">Responder: {{StaffName}}</div>
+						<div class="reply-box">{{RespondContent}}</div>
+						<p class="note">
+							Thank you for sharing your feedback. Your comments help us improve our services.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class="footer">
+						<p>Along Hospital</p>
+					</td>
+				</tr>
+			</table>
+		</center>
+	</body>
+</html>

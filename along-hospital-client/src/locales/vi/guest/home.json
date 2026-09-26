@@ -1,0 +1,123 @@
+{
+    "home": {
+        "hero": {
+            "badge": "Trung tâm chăm sóc khách",
+            "title": "Đặt lịch, mua thuốc và khám phá dịch vụ trong một nơi",
+            "description": "Khám phá dịch vụ y tế, đội ngũ bác sĩ, thuốc và ưu đãi bệnh viện qua trải nghiệm khách truy cập rõ ràng hơn, dễ thao tác hơn.",
+            "quick_access": "Lối tắt nhanh",
+            "click_our_plan": "Xem Kế Hoạch",
+            "stats": {
+                "happy_patient": "Bệnh nhân hài lòng",
+                "specialist_doctor": "Bác sĩ chuyên khoa",
+                "success_rate": "Tỷ lệ thành công"
+            }
+        },
+        "medicine": {
+            "title": "Thuốc & Gợi ý nhà thuốc",
+            "subtitle": "Khám phá thuốc phổ biến và sản phẩm nhà thuốc thiết yếu với giá rõ ràng và bố cục mua sắm dễ theo dõi."
+        },
+        "news": {
+            "title": "Tin bệnh viện & kiến thức chăm sóc",
+            "subtitle": "Theo dõi bài viết mới, cập nhật bệnh viện và hướng dẫn chăm sóc sức khỏe hữu ích.",
+            "no_news": "Chưa có bài viết nào",
+            "recent_posts": "Bài viết mới nhất"
+        },
+        "doctor": {
+            "title": "Đội ngũ bác sĩ nổi bật",
+            "subtitle": "Khám phá các bác sĩ giàu kinh nghiệm và chọn hướng chăm sóc phù hợp hơn.",
+            "button": {
+                "view_all": "Xem Tất Cả Bác Sĩ"
+            },
+            "text": {
+                "no_doctors": "Chưa có bác sĩ nào",
+                "years_experience": "năm kinh nghiệm",
+                "rating": "Đánh giá"
+            }
+        },
+        "service": {
+            "title": "Dịch vụ y tế nổi bật",
+            "subtitle": "Xem nhanh các dịch vụ chính với mức giá minh bạch và thông tin cần thiết trước khi đặt lịch.",
+            "items": {
+                "general_checkup": {
+                    "title": "Khám Tổng Quát",
+                    "description": "Khám sức khỏe toàn diện với đội ngũ bác sĩ giàu kinh nghiệm"
+                },
+                "diagnostic_imaging": {
+                    "title": "Chẩn Đoán Hình Ảnh",
+                    "description": "Công nghệ hình ảnh hiện đại cho chẩn đoán chính xác"
+                },
+                "laboratory": {
+                    "title": "Xét Nghiệm",
+                    "description": "Kết quả xét nghiệm nhanh chóng và chính xác với thiết bị hiện đại"
+                },
+                "emergency": {
+                    "title": "Cấp Cứu 24/7",
+                    "description": "Dịch vụ cấp cứu hoạt động liên tục suốt ngày đêm"
+                }
+            },
+            "button": {
+                "learn_more": "Tìm Hiểu Thêm"
+            }
+        },
+        "voucher": {
+            "title": "Ưu đãi & tiết kiệm tại bệnh viện",
+            "subtitle": "Khám phá ưu đãi công khai và giảm giá thuốc ngay trong trải nghiệm trang chủ.",
+            "highlight": "Ưu đãi nổi bật"
+        },
+        "testimonial": {
+            "title": "Đánh Giá Từ Bệnh Nhân",
+            "subtitle": "Những gì bệnh nhân nói về chúng tôi",
+            "text": {
+                "no_testimonials": "Chưa có đánh giá nào"
+            }
+        },
+        "statistics": {
+            "title": "Thành Tựu Của Chúng Tôi",
+            "subtitle": "Những con số nói lên sự xuất sắc",
+            "items": {
+                "doctors": {
+                    "title": "Bác Sĩ Chuyên Gia",
+                    "suffix": "+"
+                },
+                "patients": {
+                    "title": "Bệnh Nhân Hài Lòng",
+                    "suffix": "K+"
+                },
+                "surgeries": {
+                    "title": "Ca Phẫu Thuật Thành Công",
+                    "suffix": "+"
+                },
+                "awards": {
+                    "title": "Giải Thưởng Y Khoa",
+                    "suffix": "+"
+                }
+            }
+        },
+        "faq": {
+            "title": "Câu Hỏi Thường Gặp",
+            "subtitle": "Tìm câu trả lời cho các câu hỏi phổ biến",
+            "items": {
+                "q1": {
+                    "question": "Làm thế nào để đặt lịch khám?",
+                    "answer": "Bạn có thể đặt lịch khám qua website, ứng dụng di động hoặc gọi tổng đài của chúng tôi. Chỉ cần chọn bác sĩ mong muốn, chọn khung giờ phù hợp và xác nhận đặt lịch."
+                },
+                "q2": {
+                    "question": "Bệnh viện chấp nhận những loại bảo hiểm nào?",
+                    "answer": "Chúng tôi chấp nhận hầu hết các loại bảo hiểm y tế chính. Vui lòng liên hệ phòng thanh toán hoặc kiểm tra với công ty bảo hiểm của bạn để xác nhận quyền lợi trước khi đến khám."
+                },
+                "q3": {
+                    "question": "Giờ thăm bệnh là khi nào?",
+                    "answer": "Giờ thăm bệnh thường xuyên là từ 8:00 sáng đến 8:00 tối hàng ngày. Dịch vụ cấp cứu hoạt động 24/7."
+                },
+                "q4": {
+                    "question": "Bệnh viện có dịch vụ tư vấn từ xa không?",
+                    "answer": "Có, chúng tôi cung cấp dịch vụ tư vấn trực tuyến cho một số chuyên khoa. Bạn có thể đặt lịch tư vấn video qua nền tảng của chúng tôi."
+                },
+                "q5": {
+                    "question": "Làm thế nào để xem hồ sơ bệnh án của tôi?",
+                    "answer": "Bạn có thể truy cập hồ sơ bệnh án qua tài khoản cổng thông tin bệnh nhân. Đăng nhập bằng thông tin của bạn để xem toàn bộ lịch sử khám bệnh."
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{
+	"statistic_dashboard_pharmacist": {
+		"title": {
+			"page": "Pharmacist Dashboard",
+			"filters": "Date Filters",
+			"current_range": "Current range"
+		},
+		"field": {
+			"preset": "Range preset",
+			"date_range": "Date range",
+			"from_date": "From date",
+			"to_date": "To date"
+		},
+		"preset": {
+			"this_month": "This month",
+			"this_year": "This year",
+			"custom": "Custom"
+		},
+		"tab": {
+			"overview": "Overview",
+			"order": "Order",
+			"top_medicines": "Top Medicines"
+		},
+		"widget": {
+			"total_orders": "Total Orders",
+			"pending_orders": "Pending Orders",
+			"completed_orders": "Completed Orders",
+			"revenue": "Revenue",
+			"revenue_over_time": "Revenue Over Time",
+			"orders_over_time": "Orders Over Time",
+			"order_status": "Order Status",
+			"top_medicines_title": "Top Selling Medicines",
+			"sku_code": "SKU Code",
+			"medicine_name": "Medicine Name",
+			"quantity_sold": "Quantity Sold"
+		},
+		"text": {
+			"description": "Track order performance, revenue, and top-selling medicines from one dashboard."
+		},
+		"button": {
+			"export": "Export Excel"
+		}
+	}
+}

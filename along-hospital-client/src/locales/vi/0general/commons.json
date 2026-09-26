@@ -1,0 +1,151 @@
+{
+    "button": {
+        "close": "Đóng",
+        "submit": "Gửi",
+        "submitting": "Đang gửi",
+        "cancel": "Hủy",
+        "back": "Quay lại",
+        "add": "Thêm",
+        "add_file": "Thêm file",
+        "create": "Tạo",
+        "create_range": "Tạo nhiều",
+        "edit": "Chỉnh sửa",
+        "update": "Cập nhật",
+        "report": "Báo cáo",
+        "complete": "Hoàn thành",
+        "confirm": "Xác nhận",
+        "delete": "Xóa",
+        "save": "Lưu",
+        "add_row": "Thêm dòng",
+        "clear": "Xóa",
+        "login": "Đăng nhập",
+        "filter": "Lọc",
+        "reset_filter": "Đặt lại",
+        "next": "Tiếp theo",
+        "resend_in": "Gửi lại sau",
+        "toggle_language": "Chuyển đổi ngôn ngữ",
+        "toggle_theme": "Chuyển đổi giao diện",
+        "delete_selected": "Xóa đã chọn",
+        "view_detail": "Xem chi tiết",
+        "book_appointment": "Đặt lịch ngay",
+        "view_services": "Xem dịch vụ",
+        "view_all": "Xem tất cả",
+        "select_all": "Chọn tất cả",
+        "deselect_all": "Bỏ chọn tất cả",
+        "detail": "Chi tiết",
+        "assign": "Phân công",
+        "creating": "Đang tạo...",
+        "actions": "Hành động"
+    },
+    "text": {
+        "all": "Tất cả",
+        "yes": "Có",
+        "no": "Không",
+        "search": "Tìm kiếm...",
+        "loading": "Đang tải...",
+        "filter": "Lọc",
+        "filters": "Bộ lọc",
+        "no_image": "Không có hình",
+        "user": "Người dùng",
+        "confirm_delete": "Bạn có chắc muốn xóa mục này không?",
+        "image_preview": "Xem trước hình ảnh",
+        "select_options": "Chọn tùy chọn",
+        "day": "Ngày",
+        "month": "Tháng",
+        "year": "Năm",
+        "date": "Ngày",
+        "start_date": "Ngày bắt đầu",
+        "end_date": "Ngày kết thúc",
+        "time": "Thời gian",
+        "start_time": "Thời gian bắt đầu",
+        "end_time": "Thời gian kết thúc",
+        "step": "Bước",
+        "more": "Nữa",
+        "result": "Kết quả",
+        "none": "Không",
+        "no_": "STT.",
+        "total": "Tổng",
+        "sign_here": "Ký, ghi rõ họ tên",
+        "rows_per_page": "Số dòng mỗi trang",
+        "still_have_questions": "Vẫn còn thắc mắc?",
+        "contact_support": "Hãy liên hệ với đội ngũ hỗ trợ của chúng tôi để được giúp đỡ",
+        "placeholder": {
+            "no_data": "Không có dữ liệu...",
+            "no_data_subtitle": "Không có gì để hiển thị ở đây"
+        }
+    },
+    "tooltip": {
+        "menu": "Menu",
+        "edit": "Chỉnh sửa",
+        "delete": "Xóa",
+        "cart": "Giỏ hàng",
+        "create_appointment": "Tạo cuộc hẹn",
+        "switch_dark": "Chuyển sang chế độ tối",
+        "switch_light": "Chuyển sang chế độ sáng",
+        "collapse": "Thu gọn",
+        "expand": "Mở rộng",
+        "view_detail_medical_history": "Xem chi tiết lịch sử y tế",
+        "remove": "Xóa"
+    },
+    "dialog": {
+        "doctor_picker": {
+            "title": "Chọn bác sĩ",
+            "confirm_button": "Chọn"
+        },
+        "patient_info": {
+            "basic_info": "Thông tin cơ bản",
+            "health_info": "Thông tin sức khỏe",
+            "allergies": "Dị ứng",
+            "allergy_table": {
+                "name": "Tên",
+                "severity": "Mức độ nghiêm trọng",
+                "reaction": "Phản ứng",
+                "add_allergy": "Thêm dị ứng"
+            }
+        },
+        "doctor_info": {
+            "basic_info": "Thông tin cơ bản",
+            "professional_info": "Thông tin chuyên môn"
+        }
+    },
+    "not_found": {
+        "title": "Không Tìm Thấy Trang",
+        "description": "Trang bạn đang tìm kiếm có thể đã bị xóa, đổi tên hoặc tạm thời không khả dụng.",
+        "button": {
+            "back_home": "Về Trang Chủ"
+        }
+    },
+    "error": {
+        "required": "Trường này là bắt buộc",
+        "invalid_email": "Vui lòng nhập email hợp lệ",
+        "invalid_phone": "Vui lòng nhập số điện thoại hợp lệ",
+        "invalid_phone_or_email": "Vui lòng nhập số điện thoại hoặc email hợp lệ",
+        "invalid_number": "Vui lòng nhập số hợp lệ",
+        "invalid_date": "Vui lòng nhập ngày hợp lệ",
+        "invalid_time": "Vui lòng nhập thời gian hợp lệ",
+        "weak_password": "Mật khẩu phải chứa ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt",
+        "min_length": "Phải có ít nhất {min} ký tự, hiện tại {current}",
+        "max_length": "Không được vượt quá {max} ký tự, hiện tại {current}/{max}",
+        "min_number": "Số tối thiểu là {min}",
+        "max_number": "Số tối đa là {max}",
+        "number_higher_than": "Số phải lớn hơn {min}",
+        "number_higher_than_or_equal": "Số phải lớn hơn hoặc bằng {min}",
+        "number_less_than": "Số phải nhỏ hơn {max}",
+        "number_less_than_or_equal": "Số phải nhỏ hơn hoặc bằng {max}",
+        "csv": {
+            "empty": "File CSV rỗng",
+            "invalid_format": "File phải có định dạng CSV",
+            "read_error": "Không thể đọc file",
+            "parse_error": "Lỗi khi đọc file CSV"
+        },
+        "not_match": "Giá trị không khớp",
+        "must_be_different": "Giá trị phải khác nhau",
+        "password_not_match": "Mật khẩu không khớp với mật khẩu mới",
+        "password_must_be_different": "Mật khẩu mới phải khác mật khẩu hiện tại",
+        "duplicate_values_not_allowed": "Không được phép có giá trị trùng lặp",
+        "fill_all_required": "Vui lòng điền tất cả các trường bắt buộc",
+        "invalid_percentage": "Phần trăm phải từ 0 đến 100",
+        "past_date": "Ngày không được ở quá khứ",
+        "past_time": "Thời gian không được ở quá khứ"
+    }
+}

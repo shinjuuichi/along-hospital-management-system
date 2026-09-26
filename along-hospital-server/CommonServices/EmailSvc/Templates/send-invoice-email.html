@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="x-apple-disable-message-reformatting" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="supported-color-schemes" content="light dark" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Invoice Confirmation</title>
+		<style>
+			body,
+			table,
+			td,
+			a {
+				font-family: Arial, Helvetica, sans-serif;
+				-webkit-text-size-adjust: 100%;
+				-ms-text-size-adjust: 100%;
+			}
+			table,
+			td {
+				border-collapse: collapse !important;
+			}
+			img {
+				border: 0;
+				outline: none;
+				text-decoration: none;
+				-ms-interpolation-mode: bicubic;
+			}
+			body {
+				margin: 0 !important;
+				padding: 0 !important;
+				width: 100% !important;
+				background: linear-gradient(135deg, #f8fbff 0%, #f2fff8 100%);
+			}
+			.wrapper {
+				width: 100%;
+				background: linear-gradient(135deg, #f8fbff 0%, #f2fff8 100%);
+				padding: 24px 0;
+			}
+			.container {
+				width: 100%;
+				max-width: 760px;
+				margin: 0 auto;
+				background: #ffffff;
+				border-radius: 14px;
+				overflow: hidden;
+				box-shadow: 0 8px 24px rgba(30, 136, 229, 0.08);
+				border: 1px solid #dbeafe;
+			}
+			.header {
+				padding: 24px 28px;
+				background: linear-gradient(135deg, #1e88e5 0%, #00bfa6 100%);
+				color: #ffffff;
+			}
+			.brand {
+				font-size: 18px;
+				font-weight: 700;
+				letter-spacing: 0.5px;
+			}
+			.subtle {
+				opacity: 0.95;
+				font-size: 13px;
+			}
+			.content {
+				padding: 28px;
+				color: #0f172a;
+			}
+			h1 {
+				margin: 0 0 16px;
+				font-size: 24px;
+				line-height: 1.3;
+				color: #0f172a;
+				font-weight: 700;
+			}
+			p {
+				margin: 0 0 14px;
+				font-size: 15px;
+				line-height: 1.6;
+				color: #475569;
+			}
+			.hero-card {
+				background: linear-gradient(135deg, #eff6ff 0%, #ecfeff 100%);
+				border: 1px solid #bfdbfe;
+				border-radius: 12px;
+				padding: 18px;
+				margin: 18px 0 22px;
+			}
+			.hero-title {
+				margin: 0 0 10px;
+				font-size: 16px;
+				font-weight: 700;
+				color: #0f172a;
+			}
+			.hero-text {
+				margin: 0;
+				font-size: 14px;
+				line-height: 1.6;
+				color: #475569;
+			}
+			.summary-grid {
+				width: 100%;
+				margin: 18px 0 22px;
+			}
+			.summary-left {
+				padding-right: 8px;
+				padding-bottom: 8px;
+			}
+			.summary-right {
+				padding-left: 8px;
+				padding-bottom: 8px;
+			}
+			.summary-card {
+				background: #f8fafc;
+				border: 1px solid #e2e8f0;
+				border-radius: 10px;
+				padding: 16px;
+			}
+			.summary-label {
+				font-size: 12px;
+				color: #64748b;
+				text-transform: uppercase;
+				letter-spacing: 0.4px;
+				margin-bottom: 6px;
+			}
+			.summary-value {
+				font-size: 17px;
+				font-weight: 700;
+				color: #0f172a;
+			}
+			.section-title {
+				font-size: 17px;
+				font-weight: 700;
+				color: #0f172a;
+				margin: 26px 0 12px;
+			}
+			.section-title.secondary {
+				margin-top: 0;
+			}
+			.info-card {
+				background: #f8fafc;
+				border: 1px solid #e2e8f0;
+				border-radius: 10px;
+				padding: 18px;
+			}
+			.info-row {
+				margin: 0 0 10px;
+				font-size: 14px;
+			}
+			.info-row:last-child {
+				margin-bottom: 0;
+			}
+			.label {
+				color: #64748b;
+			}
+			.value {
+				color: #0f172a;
+				font-weight: 600;
+			}
+			.table-wrapper {
+				margin-top: 14px;
+				border: 1px solid #e2e8f0;
+				border-radius: 10px;
+				overflow: hidden;
+			}
+			.table-header {
+				background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+			}
+			.table-header td {
+				padding: 12px;
+				font-size: 12px;
+				font-weight: 700;
+				color: #1e293b;
+				text-transform: uppercase;
+				letter-spacing: 0.4px;
+			}
+			.total-card {
+				margin-top: 20px;
+				margin-left: auto;
+				width: 100%;
+				max-width: 340px;
+				background: #f8fafc;
+				border: 1px solid #e2e8f0;
+				border-radius: 10px;
+				padding: 18px;
+			}
+			.total-row {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-size: 14px;
+				color: #475569;
+				margin-bottom: 10px;
+			}
+			.total-row:last-child {
+				margin-bottom: 0;
+			}
+			.total-strong {
+				color: #0f172a;
+				font-size: 18px;
+				font-weight: 700;
+			}
+			.divider {
+				height: 1px;
+				background: #e2e8f0;
+				margin: 26px 0;
+			}
+			.cta {
+				text-align: center;
+				padding: 24px 0 8px;
+			}
+			.btn {
+				display: inline-block;
+				padding: 14px 28px;
+				border-radius: 8px;
+				background: linear-gradient(135deg, #1e88e5 0%, #00bfa6 100%);
+				color: #ffffff !important;
+				text-decoration: none;
+				font-weight: 700;
+				font-size: 14px;
+				box-shadow: 0 6px 16px rgba(30, 136, 229, 0.22);
+			}
+			.note {
+				margin-top: 14px;
+				font-size: 13px;
+				color: #64748b;
+				text-align: center;
+			}
+			.link {
+				color: #1e88e5;
+				text-decoration: underline;
+				word-break: break-all;
+			}
+			@media (prefers-color-scheme: dark) {
+				body,
+				.wrapper {
+					background: #0f172a !important;
+				}
+				.container {
+					background: #1e293b !important;
+					border-color: #334155 !important;
+				}
+				.header {
+					background: linear-gradient(135deg, #1565c0 0%, #007c73 100%) !important;
+				}
+				.content,
+				h1,
+				.hero-title,
+				.summary-value,
+				.value,
+				.total-strong {
+					color: #f8fafc !important;
+				}
+				p,
+				.hero-text,
+				.info-row,
+				.total-row,
+				.note,
+				.label {
+					color: #cbd5e1 !important;
+				}
+				.hero-card,
+				.summary-card,
+				.info-card,
+				.total-card {
+					background: #334155 !important;
+					border-color: #475569 !important;
+				}
+				.table-wrapper {
+					border-color: #475569 !important;
+				}
+				.table-header {
+					background: #334155 !important;
+				}
+				.table-header td {
+					color: #e2e8f0 !important;
+				}
+				.divider {
+					background: #334155 !important;
+				}
+				.btn {
+					background: linear-gradient(135deg, #42a5f5 0%, #4fd1c5 100%) !important;
+				}
+				.link {
+					color: #90caf9 !important;
+				}
+			}
+			@media only screen and (max-width: 600px) {
+				.content {
+					padding: 24px 20px;
+				}
+				.header {
+					padding: 20px;
+				}
+				h1 {
+					font-size: 21px;
+				}
+				.total-card {
+					max-width: 100%;
+				}
+				.table-header td {
+					padding: 10px 8px;
+					font-size: 11px;
+				}
+				.btn {
+					padding: 12px 24px;
+					font-size: 13px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<center class="wrapper">
+			<table role="presentation" class="container" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td class="header">
+						<div class="brand">Along Hospital</div>
+						<div class="subtle">Invoice Confirmation - #{{InvoiceNumber}}</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="content">
+						<!-- Vietnamese Version -->
+						<h1>Hóa đơn của bạn đã được thanh toán</h1>
+						<p>Xin chào {{PatientName}},</p>
+						<p>
+							Along Hospital đã ghi nhận thanh toán thành công cho hóa đơn của bạn. Bạn có thể xem lại
+							thông tin tóm tắt bên dưới hoặc mở trang hóa đơn công khai để in và lưu trữ khi cần.
+						</p>
+
+						<div class="hero-card">
+							<div class="hero-title">Thông tin nhanh</div>
+							<p class="hero-text">
+								Hóa đơn này đã được thanh toán thành công. Vui lòng kiểm tra thông tin và lưu lại liên
+								kết hóa đơn để sử dụng khi cần.
+							</p>
+						</div>
+
+						<table role="presentation" class="summary-grid" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td class="summary-left" width="50%">
+									<div class="summary-card">
+										<div class="summary-label">Tổng tiền dịch vụ</div>
+										<div class="summary-value">{{TotalInvoiceAmount}}</div>
+									</div>
+								</td>
+								<td class="summary-right" width="50%">
+									<div class="summary-card">
+										<div class="summary-label">Tổng thanh toán</div>
+										<div class="summary-value">{{TotalAmount}}</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+
+						<div class="section-title">Thông tin hóa đơn</div>
+						<div class="info-card">
+							<div class="info-row">
+								<span class="label">Số hóa đơn:&nbsp;</span>
+								<span class="value">{{InvoiceNumber}}</span>
+							</div>
+							<div class="info-row">
+								<span class="label">Mã bệnh án:&nbsp;</span>
+								<span class="value">{{MedicalHistoryNumber}}</span>
+							</div>
+							<div class="info-row">
+								<span class="label">Ngày tạo:&nbsp;</span>
+								<span class="value">{{CreationDate}}</span>
+							</div>
+							<div class="info-row">
+								<span class="label">Ngày thanh toán:&nbsp;</span>
+								<span class="value">{{PaymentDate}}</span>
+							</div>
+						</div>
+
+						<div class="section-title">Chi tiết dịch vụ</div>
+						<div class="table-wrapper">
+							<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+								<tr class="table-header">
+									<td style="text-align: center;" width="8%">STT</td>
+									<td width="44%">Dịch vụ</td>
+									<td style="text-align: center;" width="14%">Số lượng</td>
+									<td style="text-align: right;" width="17%">Đơn giá</td>
+									<td style="text-align: right;" width="17%">Thành tiền</td>
+								</tr>
+								{{InvoiceRowsVi}}
+							</table>
+						</div>
+
+						<div class="total-card">
+							<div class="total-row">
+								<span>Tổng số dịch vụ</span>
+								<span>x{{TotalServices}}</span>
+							</div>
+							<div class="total-row">
+								<span>Tổng thanh toán</span>
+								<span class="total-strong">{{TotalAmount}}</span>
+							</div>
+						</div>
+
+						<div class="divider"></div>
+
+						<div class="section-title secondary">Xem hóa đơn trực tuyến</div>
+						<p>Bạn có thể mở trang hóa đơn công khai bất cứ lúc nào bằng nút bên dưới.</p>
+
+						<div class="cta">
+							<a class="btn" href="{{InvoiceUrl}}" target="_blank" rel="noopener">
+								XEM HÓA ĐƠN
+							</a>
+						</div>
+						<p class="note">
+							Nếu nút không hiển thị, hãy mở liên kết này:
+							<a class="link" href="{{InvoiceUrl}}" target="_blank" rel="noopener">{{InvoiceUrl}}</a>
+						</p>
+
+						<div class="divider"></div>
+
+						<!-- English Version -->
+						<h1>Your invoice has been paid</h1>
+						<p>Hello {{PatientName}},</p>
+						<p>
+							Along Hospital has confirmed your invoice payment. You can review the summary below or
+							open the public invoice page to print or save it later.
+						</p>
+
+						<div class="hero-card">
+							<div class="hero-title">Quick Summary</div>
+							<p class="hero-text">
+								This invoice has been successfully paid. Please review the details and keep the invoice
+								link for future reference.
+							</p>
+						</div>
+
+						<table role="presentation" class="summary-grid" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td class="summary-left" width="50%">
+									<div class="summary-card">
+										<div class="summary-label">Service total</div>
+										<div class="summary-value">{{TotalInvoiceAmount}}</div>
+									</div>
+								</td>
+								<td class="summary-right" width="50%">
+									<div class="summary-card">
+										<div class="summary-label">Total paid</div>
+										<div class="summary-value">{{TotalAmount}}</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+
+						<div class="section-title">Invoice details</div>
+						<div class="info-card">
+							<div class="info-row">
+								<span class="label">Invoice no:&nbsp;</span>
+								<span class="value">{{InvoiceNumber}}</span>
+							</div>
+							<div class="info-row">
+								<span class="label">Medical history:&nbsp;</span>
+								<span class="value">{{MedicalHistoryNumber}}</span>
+							</div>
+							<div class="info-row">
+								<span class="label">Created at:&nbsp;</span>
+								<span class="value">{{CreationDate}}</span>
+							</div>
+							<div class="info-row">
+								<span class="label">Paid at:&nbsp;</span>
+								<span class="value">{{PaymentDate}}</span>
+							</div>
+						</div>
+
+						<div class="section-title">Service details</div>
+						<div class="table-wrapper">
+							<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+								<tr class="table-header">
+									<td style="text-align: center;" width="8%">No.</td>
+									<td width="44%">Service</td>
+									<td style="text-align: center;" width="14%">Qty</td>
+									<td style="text-align: right;" width="17%">Unit</td>
+									<td style="text-align: right;" width="17%">Amount</td>
+								</tr>
+								{{InvoiceRowsEn}}
+							</table>
+						</div>
+
+						<div class="total-card">
+							<div class="total-row">
+								<span>Total services</span>
+								<span>x{{TotalServices}}</span>
+							</div>
+							<div class="total-row">
+								<span>Total paid</span>
+								<span class="total-strong">{{TotalAmount}}</span>
+							</div>
+						</div>
+
+						<div class="divider"></div>
+
+						<div class="section-title secondary">View invoice online</div>
+						<p>You can open the public invoice page any time using the button below.</p>
+
+						<div class="cta">
+							<a class="btn" href="{{InvoiceUrl}}" target="_blank" rel="noopener">
+								VIEW INVOICE
+							</a>
+						</div>
+						<p class="note">
+							If the button does not work, open this link:
+							<a class="link" href="{{InvoiceUrl}}" target="_blank" rel="noopener">{{InvoiceUrl}}</a>
+						</p>
+					</td>
+				</tr>
+			</table>
+		</center>
+	</body>
+</html>

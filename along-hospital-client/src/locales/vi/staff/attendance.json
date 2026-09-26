@@ -1,0 +1,71 @@
+{
+    "attendance": {
+        "title": {
+            "manage_attendance": "Quản Lý Nhật Ký Điểm Danh",
+            "face_enrollment": "Đăng Ký Khuôn Mặt",
+            "face_enrollment_subtitle": "Cho phép hệ thống nhận diện bạn khi điểm danh vào và ra bằng khuôn mặt của bạn."
+        },
+        "field": {
+            "id": "ID",
+            "log_type": "Loại ghi nhận",
+            "log_time": "Thời gian ghi nhận"
+        },
+        "button": {
+            "check_in": "Điểm Danh Vào",
+            "check_out": "Điểm Danh Ra",
+            "reset_identification": "Đặt Lại Khuôn Mặt",
+            "enroll_face": "Đăng Ký Khuôn Mặt",
+            "start_enrollment": "Bắt Đầu Đăng Ký",
+            "retake": "Chụp Lại",
+            "capturing": "Đang chụp...",
+            "capture": "Chụp"
+        },
+        "dialog": {
+            "reset_identification_title": "Xác nhận đặt lại khuôn mặt",
+            "reset_identification_description": "Bạn có chắc muốn xóa dữ liệu nhận diện khuôn mặt hiện tại không?"
+        },
+        "face_enrollment": {
+            "status": {
+                "current_status": "Trạng thái hiện tại của bạn",
+                "not_enrolled": "Chưa đăng ký",
+                "enrolled": "Đã đăng ký"
+            },
+            "title": {
+                "face_capture": "Chụp Khuôn Mặt"
+            },
+            "description": {
+                "general_info": "Đăng ký khuôn mặt giúp hệ thống xác minh rằng chính là bạn khi bạn thực hiện các hành động như điểm danh vào và ra. Hình ảnh khuôn mặt của bạn chỉ được sử dụng cho mục đích nhận diện bên trong hệ thống.",
+                "processing_images": "Đang xử lý hình ảnh đã chụp...",
+                "re_enroll": "Bạn có thể đăng ký lại khuôn mặt của mình bất cứ lúc nào nếu cảm thấy hệ thống không nhận diện chính xác.",
+                "step": {
+                    "how_it_works": "Cách thức hoạt động",
+                    "1": {
+                        "title": "1. Chụp khuôn mặt",
+                        "description": "Khi bạn bắt đầu, camera sẽ chụp khuôn mặt của bạn trong một khoảng thời gian ngắn để tạo ra một bộ dữ liệu phong phú hơn."
+                    },
+                    "2": {
+                        "title": "2. Xử lý hình ảnh",
+                        "description": "Hệ thống chuyển đổi hình ảnh khuôn mặt của bạn thành các biểu diễn số và lưu trữ chúng một cách an toàn trên máy chủ."
+                    },
+                    "3": {
+                        "title": "3. Nhận diện",
+                        "description": "Khi bạn điểm danh vào hoặc ra, hệ thống sẽ so sánh dữ liệu khuôn mặt trực tiếp của bạn với dữ liệu đã lưu để xác minh danh tính của bạn."
+                    }
+                },
+                "illustration_note": "Khu vực này có thể được thay thế sau bằng một hình minh họa hoặc hoạt hình ngắn giải thích về việc đăng ký khuôn mặt.",
+                "prompt": {
+                    "opening_camera": "Đang mở camera...",
+                    "start_burst_mode": "Nhấn \"Bắt Đầu Đăng Ký\" để tự động chụp trong {durationSeconds} giây.",
+                    "start_single_mode": "Nhấn \"Chụp\" để chụp một hình ảnh khuôn mặt duy nhất.",
+                    "preview": "Đây là hình ảnh cuối cùng đã chụp. Bạn có muốn giữ lại không?"
+                }
+            },
+            "error": {
+                "no_camera_access": "Không thể truy cập camera. Vui lòng đảm bảo rằng thiết bị của bạn có camera và bạn đã cấp quyền sử dụng nó.",
+                "enable_camera_first": "Vui lòng bật camera trước.",
+                "no_captured_images": "Không có hình ảnh nào được chụp để xử lý.",
+                "enrollment_failed": "Đăng ký khuôn mặt thất bại. Vui lòng thử lại."
+            }
+        }
+    }
+}

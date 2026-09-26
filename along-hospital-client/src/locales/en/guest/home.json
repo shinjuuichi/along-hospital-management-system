@@ -1,0 +1,123 @@
+{
+    "home": {
+        "hero": {
+            "badge": "Guest Care Hub",
+            "title": "Care, Pharmacy, and Booking in One Place",
+            "description": "Browse medical services, trusted doctors, medicines, and current hospital offers through a calmer guest experience designed for quick action.",
+            "quick_access": "Quick access",
+            "click_our_plan": "Click Our Plan",
+            "stats": {
+                "happy_patient": "Happy patient",
+                "specialist_doctor": "Specialist Doctor",
+                "success_rate": "Our Success"
+            }
+        },
+        "medicine": {
+            "title": "Medicines & Pharmacy Picks",
+            "subtitle": "Discover popular medicines and everyday pharmacy essentials with clear pricing and a cleaner storefront view."
+        },
+        "news": {
+            "title": "News & Care Insights",
+            "subtitle": "Stay close to the hospital with fresh articles, updates, and practical health guidance.",
+            "no_news": "No articles available",
+            "recent_posts": "Recent Posts"
+        },
+        "doctor": {
+            "title": "Meet Our Care Team",
+            "subtitle": "Explore experienced specialists and choose care with more confidence.",
+            "button": {
+                "view_all": "View All Doctors"
+            },
+            "text": {
+                "no_doctors": "No doctors available",
+                "years_experience": "years of experience",
+                "rating": "Rating"
+            }
+        },
+        "service": {
+            "title": "Featured Medical Services",
+            "subtitle": "Browse core services with transparent pricing and quick detail access before you book.",
+            "items": {
+                "general_checkup": {
+                    "title": "General Checkup",
+                    "description": "Comprehensive health examination with experienced doctors"
+                },
+                "diagnostic_imaging": {
+                    "title": "Diagnostic Imaging",
+                    "description": "Advanced imaging technology for accurate diagnosis"
+                },
+                "laboratory": {
+                    "title": "Laboratory Tests",
+                    "description": "Quick and accurate test results with modern equipment"
+                },
+                "emergency": {
+                    "title": "24/7 Emergency",
+                    "description": "Round-the-clock emergency care services"
+                }
+            },
+            "button": {
+                "learn_more": "Learn More"
+            }
+        },
+        "voucher": {
+            "title": "Hospital Offers & Savings",
+            "subtitle": "Explore public promotions and medicine discounts without leaving the guest experience.",
+            "highlight": "Featured offer"
+        },
+        "testimonial": {
+            "title": "Patient Testimonials",
+            "subtitle": "What our patients say about us",
+            "text": {
+                "no_testimonials": "No testimonials available"
+            }
+        },
+        "statistics": {
+            "title": "Our Achievements",
+            "subtitle": "Numbers that speak for our excellence",
+            "items": {
+                "doctors": {
+                    "title": "Expert Doctors",
+                    "suffix": "+"
+                },
+                "patients": {
+                    "title": "Happy Patients",
+                    "suffix": "K+"
+                },
+                "surgeries": {
+                    "title": "Successful Surgeries",
+                    "suffix": "+"
+                },
+                "awards": {
+                    "title": "Medical Awards",
+                    "suffix": "+"
+                }
+            }
+        },
+        "faq": {
+            "title": "Frequently Asked Questions",
+            "subtitle": "Find answers to common questions",
+            "items": {
+                "q1": {
+                    "question": "How do I book an appointment?",
+                    "answer": "You can book an appointment through our website, mobile app, or by calling our hotline. Simply choose your preferred doctor, select an available time slot, and confirm your booking."
+                },
+                "q2": {
+                    "question": "What insurance plans do you accept?",
+                    "answer": "We accept most major insurance plans. Please contact our billing department or check with your insurance provider to confirm coverage before your visit."
+                },
+                "q3": {
+                    "question": "What are your visiting hours?",
+                    "answer": "Our regular visiting hours are from 8:00 AM to 8:00 PM daily. Emergency services are available 24/7."
+                },
+                "q4": {
+                    "question": "Do you offer telemedicine consultations?",
+                    "answer": "Yes, we offer online consultations for selected specialties. You can schedule a video consultation through our platform."
+                },
+                "q5": {
+                    "question": "How can I access my medical records?",
+                    "answer": "You can access your medical records through your patient portal account. Simply log in with your credentials to view your complete medical history."
+                }
+            }
+        }
+    }
+}

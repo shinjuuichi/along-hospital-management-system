@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="x-apple-disable-message-reformatting" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="supported-color-schemes" content="light dark" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Low Stock Alert - Medicine Inventory</title>
+		<style>
+			body,
+			table,
+			td,
+			a {
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				-webkit-text-size-adjust: 100%;
+				-ms-text-size-adjust: 100%;
+			}
+			table,
+			td {
+				border-collapse: collapse !important;
+			}
+			body {
+				margin: 0 !important;
+				padding: 0 !important;
+				width: 100% !important;
+				background: linear-gradient(135deg, #f9fbfd 0%, #fff5f5 100%);
+				color: #0f172a;
+			}
+			.wrapper {
+				width: 100%;
+				background: linear-gradient(135deg, #f9fbfd 0%, #fff5f5 100%);
+				padding: 24px 0;
+			}
+			.container {
+				width: 100%;
+				max-width: 900px;
+				margin: 0 auto;
+				background-color: #ffffff;
+				border-radius: 12px;
+				box-shadow: 0 4px 12px rgba(220, 38, 38, 0.08);
+				overflow: hidden;
+				border: 1px solid #fecaca;
+			}
+			.header {
+				background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+				color: #ffffff;
+				padding: 30px 20px;
+				text-align: center;
+			}
+			.header h1 {
+				margin: 0;
+				font-size: 24px;
+				font-weight: 600;
+			}
+			.header .icon {
+				font-size: 48px;
+				margin-bottom: 10px;
+			}
+			.content {
+				padding: 40px 30px;
+				background-color: #ffffff;
+				color: #0f172a;
+			}
+			.content p {
+				font-size: 16px;
+				line-height: 1.6;
+				color: #475569;
+				margin: 15px 0;
+			}
+			.alert-box {
+				background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);
+				border-left: 4px solid #dc2626;
+				padding: 20px;
+				margin: 25px 0;
+				border-radius: 8px;
+			}
+			.alert-box h3 {
+				margin: 0 0 10px 0;
+				color: #dc2626;
+				font-size: 18px;
+			}
+			.alert-box p {
+				margin: 5px 0;
+				color: #991b1b;
+			}
+			.medicines-table {
+				width: 100%;
+				margin: 25px 0;
+				border: 1px solid #e2e8f0;
+				border-radius: 8px;
+				overflow: hidden;
+			}
+			.medicines-table thead {
+				background: linear-gradient(135deg, #f1f5f9 0%, #fef2f2 100%);
+			}
+			.medicines-table th {
+				padding: 14px 12px;
+				text-align: left;
+				font-size: 13px;
+				font-weight: 600;
+				color: #1e293b;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+			}
+			.medicines-table td {
+				padding: 16px 12px;
+				font-size: 14px;
+				color: #0f172a;
+			}
+			.medicines-table tbody tr {
+				border-bottom: 1px solid #e2e8f0;
+			}
+			.medicines-table tbody tr:hover {
+				background-color: #fafafa;
+			}
+			.stock-badge {
+				display: inline-block;
+				padding: 6px 12px;
+				border-radius: 6px;
+				font-weight: 600;
+				font-size: 14px;
+			}
+			.stock-critical {
+				background: #fee2e2;
+				color: #dc2626;
+			}
+			.stock-low {
+				background: #fef3c7;
+				color: #d97706;
+			}
+			.cta-button {
+				display: inline-block;
+				background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+				color: #ffffff !important;
+				text-decoration: none;
+				padding: 14px 32px;
+				border-radius: 8px;
+				font-size: 16px;
+				font-weight: 600;
+				margin: 25px 0;
+				box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+				transition: all 0.3s ease;
+			}
+			.cta-button:hover {
+				box-shadow: 0 6px 16px rgba(220, 38, 38, 0.3);
+				transform: translateY(-1px);
+			}
+			.divider {
+				height: 1px;
+				background: #e2e8f0;
+				margin: 32px 0;
+			}
+			.footer {
+				padding: 20px 30px;
+				background-color: #f7fafc;
+				border-top: 1px solid #e2e8f0;
+				text-align: center;
+			}
+			.footer p {
+				font-size: 14px;
+				color: #64748b;
+				margin: 5px 0;
+			}
+			/* Dark mode */
+			@media (prefers-color-scheme: dark) {
+				body,
+				.wrapper {
+					background: #0f172a;
+				}
+				.container {
+					background-color: #1e293b;
+					border-color: #334155;
+				}
+				.content,
+				.medicines-table tbody tr {
+					background-color: #1e293b;
+					color: #f1f5f9;
+				}
+				.content p {
+					color: #cbd5e1;
+				}
+				.medicines-table {
+					border-color: #334155;
+				}
+				.medicines-table thead {
+					background: #334155;
+				}
+				.medicines-table th {
+					color: #e2e8f0;
+				}
+				.medicines-table td {
+					color: #f1f5f9;
+				}
+				.medicines-table tbody tr {
+					border-color: #334155;
+				}
+				.medicines-table tbody tr:hover {
+					background-color: #293548;
+				}
+				.alert-box {
+					background: #450a0a;
+					border-color: #dc2626;
+				}
+				.alert-box h3,
+				.alert-box p {
+					color: #fca5a5;
+				}
+				.footer {
+					background-color: #1e293b;
+					border-color: #334155;
+				}
+				.footer p {
+					color: #94a3b8;
+				}
+			}
+			/* Responsive */
+			@media only screen and (max-width: 600px) {
+				.container {
+					border-radius: 0;
+				}
+				.content {
+					padding: 24px 16px;
+				}
+				.header h1 {
+					font-size: 20px;
+				}
+				.medicines-table th,
+				.medicines-table td {
+					padding: 10px 8px;
+					font-size: 12px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="container">
+				<!-- Header -->
+				<div class="header">
+					<div class="icon">⚠️</div>
+					<h1>Low Stock Alert</h1>
+					<p style="margin: 10px 0 0 0; color: #fef2f2; font-size: 14px">
+						Medicine Inventory Warning
+					</p>
+				</div>
+
+				<!-- Content -->
+				<div class="content">
+					<p style="font-size: 18px; font-weight: 600; color: #0f172a; margin-top: 0">
+						Dear Administrator,
+					</p>
+
+					<div class="alert-box">
+						<h3>⚠️ Urgent Attention Required</h3>
+						<p>
+							The following medicines have reached or fallen below their minimum stock levels.
+							Immediate action is recommended to avoid stock-outs.
+						</p>
+						<p style="font-weight: 600; margin-top: 12px">
+							Total Items Requiring Attention:
+							<span style="font-size: 20px; color: #dc2626">{{TotalCount}}</span>
+						</p>
+					</div>
+
+					<p>Please review the following medicines and take necessary restocking actions:</p>
+
+					<!-- Medicines Table -->
+					<table class="medicines-table">
+						<thead>
+							<tr>
+								<th>Medicine Name</th>
+								<th>Brand</th>
+								<th>Category</th>
+								<th style="text-align: center">Current Stock</th>
+								<th style="text-align: center">Min. Stock</th>
+								<th>Unit</th>
+								<th>Last Import</th>
+							</tr>
+						</thead>
+						<tbody>
+							{{MedicinesRows}}
+						</tbody>
+					</table>
+
+					<div class="divider"></div>
+
+					<p style="font-size: 14px; color: #475569">
+						<strong>Recommended Actions:</strong>
+					</p>
+					<ul style="color: #475569; font-size: 14px; line-height: 1.8; padding-left: 20px">
+						<li>Review supplier contacts and lead times</li>
+						<li>Place purchase orders for critical items immediately</li>
+						<li>Consider adjusting minimum stock levels if necessary</li>
+						<li>Verify current demand patterns before ordering</li>
+					</ul>
+
+					<div style="text-align: center; margin-top: 30px">
+						<a href="{{DashboardUrl}}" class="cta-button"> View Medicine Inventory → </a>
+					</div>
+
+					<p style="font-size: 13px; color: #64748b; margin-top: 25px">
+						Report generated on: <strong>{{GeneratedDate}}</strong>
+					</p>
+
+					<div class="divider"></div>
+
+					<p style="font-size: 14px; color: #475569">
+						If you have any questions or need assistance, please contact the inventory management
+						team.
+					</p>
+
+					<p style="font-size: 14px; color: #475569">
+						Best regards,<br />
+						<strong>Along Hospital Inventory System</strong>
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

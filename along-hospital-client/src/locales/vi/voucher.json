@@ -1,0 +1,99 @@
+{
+    "voucher": {
+        "title": {
+            "page": "Voucher",
+            "list": "Danh sách Voucher",
+            "detail": "Chi tiết Voucher",
+            "delete": "Xóa voucher",
+            "delete_confirm": "Bạn có chắc muốn xóa",
+            "create": "Tạo voucher",
+            "update": "Cập nhật voucher",
+            "voucher_management": "Quản lý voucher",
+            "filters": "Bộ lọc",
+            "collectible_vouchers": "Kho Voucher",
+            "my_vouchers": "Voucher Của Tôi"
+        },
+        "section": {
+            "basic_info": "Thông tin cơ bản",
+            "discount_info": "Thông tin giảm giá",
+            "usage_info": "Thông tin sử dụng",
+            "applicable_medicines": "Thuốc áp dụng"
+        },
+        "description": {
+            "page_intro": "Quản lý tất cả voucher trong hệ thống bệnh viện.",
+            "list": "Duyệt và quản lý các voucher có sẵn.",
+            "collectible_subtitle": "Thu thập voucher giảm giá mua thuốc",
+            "my_vouchers_subtitle": "Quản lý và sử dụng voucher đã thu thập",
+            "no_vouchers_title": "Bạn chưa có voucher nào",
+            "no_vouchers_subtitle": "Khám phá và thu thập voucher ưu đãi ngay hôm nay",
+            "no_collectible_title": "Không tìm thấy voucher phù hợp",
+            "no_collectible_subtitle": "Thử điều chỉnh bộ lọc hoặc xóa các tiêu chí tìm kiếm"
+        },
+        "button": {
+            "view_detail": "Xem chi tiết",
+            "collect": "Thu thập",
+            "use_now": "Dùng ngay",
+            "used": "Đã sử dụng",
+            "expired": "Hết hạn",
+            "copy_code": "Sao chép mã",
+            "explore_vouchers": "Khám phá voucher",
+            "clear_filters": "Xóa lọc"
+        },
+        "field": {
+            "id": "ID",
+            "name": "Tên voucher",
+            "description": "Mô tả",
+            "discount_value": "Giá trị giảm",
+            "discount_value_percentage": "Giá trị giảm (%)",
+            "discount_value_fixed_amount": "Giá trị giảm ($)",
+            "min_purchase_amount": "Giá trị mua tối thiểu ($)",
+            "max_discount": "Giảm tối đa ($)",
+            "quantity": "Số lượng",
+            "expire_date": "Ngày hết hạn",
+            "voucher_status": "Trạng thái",
+            "voucher_type": "Loại voucher",
+            "discount_type": "Loại giảm giá",
+            "image": "Hình ảnh",
+            "medicines": "Thuốc",
+            "medicine": "Thuốc",
+            "applicable_medicines": "Thuốc áp dụng",
+            "code": "Mã voucher",
+            "medicine_id": "Mã",
+            "medicine_name": "Tên thuốc",
+            "medicine_brand": "Thương hiệu",
+            "medicine_price": "Giá",
+            "medicine_category": "Danh mục"
+        },
+        "placeholder": {
+            "no_description": "Chưa có mô tả",
+            "no_result_title": "Không tìm thấy voucher",
+            "no_result_subtitle": "Hãy thử đổi từ khóa hoặc bộ lọc.",
+            "search_voucher": "Tìm kiếm tên voucher...",
+            "select_status": "Chọn trạng thái",
+            "select_type": "Chọn loại",
+            "select_discount_type": "Chọn loại giảm giá"
+        },
+        "status": {
+            "Active": "Đang hoạt động",
+            "Expired": "Hết hạn"
+        },
+        "type": {
+            "Patient": "Bệnh nhân voucher",
+            "Medicine": "Thuốc giảm giá"
+        },
+        "discount_type": {
+            "Percentage": "Phần trăm",
+            "FixedAmount": "Số tiền cố định"
+        },
+        "label": {
+            "expire_date": "Hết hạn",
+            "remaining_quantity": "Còn {quantity}",
+            "min_purchase": "Tối thiểu {amount}",
+            "max_discount": "Giảm tối đa {amount}"
+        },
+        "error": {
+            "duplicate_applicable_medicines": "Thuốc áp dụng không được bị trùng",
+            "medicine_fixed_amount_not_supported": "Voucher giảm giá thuốc không còn hỗ trợ giảm theo số tiền cố định. Vui lòng chuyển sang phần trăm."
+        }
+    }
+}

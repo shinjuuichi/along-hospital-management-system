@@ -1,0 +1,77 @@
+{
+	"statistic_dashboard_manager": {
+		"title": {
+			"page": "Manager Dashboard",
+			"filters": "Date Filters",
+			"current_range": "Current range"
+		},
+		"field": {
+			"preset": "Range preset",
+			"date_range": "Date range",
+			"from_date": "From date",
+			"to_date": "To date"
+		},
+		"preset": {
+			"this_month": "This month",
+			"this_year": "This year",
+			"custom": "Custom"
+		},
+		"tab": {
+			"overview": "Overview",
+			"commercial": "Commercial",
+			"clinical": "Clinical"
+		},
+		"widget": {
+			"order_revenue": "Order Revenue",
+			"new_patients": "New Patients",
+			"new_staff": "New Staff",
+			"revenue_over_time": "Order Revenue Over Time",
+			"collections_over_time": "Collections Over Time",
+			"new_users_over_time": "New Users Over Time",
+			"new_staff_role_distribution": "New Staff Role Distribution",
+			"order_status": "Order Status",
+			"orders": "Orders",
+			"revenue": "Revenue",
+			"net_collected_amount": "Net Collected Amount",
+			"total_medicines": "Total Medicines",
+			"public_medicines": "Public Medicines",
+			"orders_over_time": "Orders Over Time",
+			"invoice_status": "Invoice Status",
+			"refund_status": "Refund Status",
+			"refunds_over_time": "Refunds Over Time",
+			"medicines_created_over_time": "Medicines Created Over Time",
+			"medicine_status": "Medicine Status",
+			"total_medical_histories": "Total Medical Histories",
+			"appointments": "Appointments",
+			"active_occupancies": "Active Occupancies",
+			"occupancy_rate": "Occupancy Rate",
+			"admissions_over_time": "Admissions Over Time",
+			"medical_history_status": "Medical History Status",
+			"medical_history_type": "Medical History Type",
+			"appointments_over_time": "Appointments Over Time",
+			"appointment_status": "Appointment Status",
+			"room_status": "Room Status",
+			"bed_status": "Bed Status",
+			"check_ins": "Check Ins",
+			"unique_staff_with_attendance": "Staff With Attendance",
+			"published_schedules": "Published Schedules",
+			"worked_minutes": "Worked Minutes",
+			"pending_leave_requests": "Pending Leave Requests",
+			"pending_salary_advances": "Pending Salary Advances",
+			"applications_received": "Applications Received",
+			"attendance_logs_over_time": "Attendance Logs Over Time",
+			"work_status": "Work Status",
+			"leave_request_status": "Leave Request Status",
+			"salary_advance_status": "Salary Advance Status",
+			"job_posting_status": "Job Posting Status",
+			"job_application_status": "Job Application Status",
+			"applications_over_time": "Applications Over Time"
+		},
+		"text": {
+			"description": "Track commercial, clinical, and operational performance from one dashboard."
+		},
+		"button": {
+			"export": "Export Excel"
+		}
+	}
+}

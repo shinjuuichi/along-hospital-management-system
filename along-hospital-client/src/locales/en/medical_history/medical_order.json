@@ -1,0 +1,111 @@
+{
+    "medical_order": {
+        "title": {
+            "medical_orders": "Medical Orders",
+            "medical_order_subtitle": "Review and manage patient-specific clinical directives",
+            "detail": "Medical Order Detail",
+            "general_information": "General Information",
+            "clinical_medical_order_information": "Clinical Medical Order Information",
+            "instruction_medical_order_information": "Instruction Medical Order Information"
+        },
+        "button": {
+            "issue": "Issue",
+            "complete": "Complete",
+            "fail": "Fail",
+            "save_as_draft": "Save as Draft",
+            "print_refund": "Print Refund"
+        },
+        "field": {
+            "instruction": "Instruction",
+            "medical_order_type": "Medical Order Type",
+            "creation_date": "Creation Date",
+            "clinical_medical_order": {
+                "status": "Status",
+                "details": {
+                    "details": "Clinical Medical Order Details",
+                    "detail": "Clinical Medical Order Detail",
+                    "medical_service": "Medical Service",
+                    "quantity": "Quantity",
+                    "status": "Status",
+                    "fail_reason": "Fail Reason"
+                }
+            },
+            "infusion_medical_order": {
+                "details": {
+                    "details": "Infusion Medical Order Details",
+                    "detail": "Infusion Medical Order Detail",
+                    "medicine": "Medicine",
+                    "rate": "Rate",
+                    "frequency": "Frequency",
+                    "duration": "Duration",
+                    "execution_status": "Execution Status",
+                    "note": "Note"
+                }
+            },
+            "instruction_medical_order": {
+                "status": "Status",
+                "position_order": {
+                    "position_order": "Position Order",
+                    "position_order_type": "Type",
+                    "instruction": "Instruction"
+                },
+                "respiratory_support_order": {
+                    "respiratory_support_order": "Respiratory Support Order",
+                    "respiratory_support_order_type": "Type",
+                    "oxygen_flow": "Oxygen Flow",
+                    "fio2": "FiO2",
+                    "instruction": "Instruction"
+                },
+                "nutrition_order": {
+                    "nutrition_order": "Nutrition Order",
+                    "nutrition_order_type": "Type",
+                    "instruction": "Instruction"
+                },
+                "nursing_care_order": {
+                    "nursing_care_order": "Nursing Care Order",
+                    "nursing_care_order_level": "Level",
+                    "monitor_interval_hour": "Monitor Interval (Hour)"
+                }
+            }
+        },
+        "placeholder": {
+            "no_medical_orders": "No medical orders found",
+            "no_clinical_order_details": "No clinical order details",
+            "no_infusion_order_details": "No infusion order details",
+            "no_instruction_sub_order_data": "No instruction sub-order data"
+        },
+        "text": {
+            "processed_details": "Processed details"
+        },
+        "dialog": {
+            "title": {
+                "create_medical_order": "Create Medical Order",
+                "update_medical_order": "Update Medical Order"
+            },
+            "clinical": {
+                "cancel_title": "Cancel Clinical Medical Order",
+                "cancel_description": "Are you sure you want to cancel this clinical medical order? This action cannot be undone.",
+                "detail": {
+                    "complete_title": "Complete Clinical Medical Order Detail",
+                    "complete_description": "Are you sure you want to mark this clinical medical order detail as completed?",
+                    "fail_title": "Fail Clinical Medical Order Detail",
+                    "fail_description": "Are you sure you want to mark this clinical medical order detail as failed?"
+                }
+            },
+            "infusion": {
+                "detail": {
+                    "complete_title": "Complete Infusion Medical Order Detail",
+                    "complete_description": "Are you sure you want to mark this infusion medical order detail as completed?",
+                    "fail_title": "Fail Infusion Medical Order Detail",
+                    "fail_description": "Are you sure you want to mark this infusion medical order detail as failed?"
+                }
+            },
+            "instruction": {
+                "issue_title": "Issue Instruction Medical Order",
+                "issue_description": "Are you sure you want to issue this instruction medical order? This action cannot be undone.",
+                "cancel_title": "Cancel Instruction Medical Order",
+                "cancel_description": "Are you sure you want to cancel this instruction medical order? This action cannot be undone."
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+﻿{
+	"work_schedule_template": {
+		"title": {
+			"template_management": "Work Schedule Templates",
+			"template_detail": "Template Detail",
+			"weekly_shift_rule": "Weekly Shift Rule",
+			"assign_staff_to_inpatient_room": "Assign Staff to Inpatient Room",
+			"assign_doctor_to_tele_room": "Assign Doctor to Tele-room"
+		},
+		"field": {
+			"name": "Name",
+			"description": "Description",
+			"active": "Active",
+			"shift": "Shift",
+			"time": "Time"
+		},
+		"tab": {
+			"room_assignments": "Room Assignments",
+			"tele_room_assignments": "Tele Room Assignments"
+		},
+		"status": {
+			"yes": "Yes",
+			"no": "No"
+		},
+		"table": {
+			"id": "ID",
+			"active": "Active",
+			"actions": "Actions"
+		},
+		"button": {
+			"new_template": "New Template",
+			"open": "Open",
+			"duplicate": "Duplicate",
+			"save_weekly_rules": "Save Weekly Rules",
+			"select_all": "Select All",
+			"clear_all": "Clear All",
+			"assign_staff": "Assign Staff",
+			"assign_doctor": "Assign Doctor"
+		},
+		"dialog": {
+			"create_template": "Create Template",
+			"edit_template": "Edit Template",
+			"delete_template_title": "Delete Template",
+			"delete_template_description": "Are you sure you want to delete template '{name}'?"
+		},
+		"text": {
+			"copy_monday_to": "Copy Monday to",
+			"allowed_roles_for_room": "Allowed roles for this room",
+			"no_assignments_yet": "No assignments yet."
+		}
+	}
+}

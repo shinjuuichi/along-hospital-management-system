@@ -1,0 +1,33 @@
+{
+	"shift": {
+		"title": {
+			"management": "Quản lý ca làm việc",
+			"create": "Tạo ca làm việc",
+			"edit": "Chỉnh sửa ca làm việc",
+			"filters": "Bộ lọc làm việc"
+		},
+		"field": {
+			"id": "ID",
+			"name": "Tên",
+			"start": "Bắt đầu",
+			"end": "Kết thúc",
+			"start_time": "Giờ bắt đầu",
+			"end_time": "Giờ kết thúc",
+			"time_range": "Khoảng thời gian",
+			"is_overtime": "Tăng ca"
+		},
+		"table": {
+			"actions": "Thao tác"
+		},
+		"button": {
+			"new_shift": "Ca mới"
+		},
+		"dialog": {
+			"delete_title": "Xóa ca làm việc",
+			"delete_description": "Bạn có chắc muốn xóa \"{name}\" không?"
+		},
+		"placeholder": {
+			"search_name": "Tìm kiếm tên ca làm việc..."
+		}
+	}
+}

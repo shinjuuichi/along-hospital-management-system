@@ -1,0 +1,104 @@
+{
+    "medical_history": {
+        "title": {
+            "medical_history_information": "Thông tin lịch sử y tế",
+            "invoices": "Hóa đơn",
+            "prescription": "Đơn thuốc",
+            "prescription_details": "Chi tiết đơn thuốc",
+            "complaint": "Khiếu nại",
+            "create_medical_history": "Tạo lịch sử y tế",
+            "select_patient": "Chọn bệnh nhân",
+            "patient_summary": "Tóm tắt bệnh nhân",
+            "chosen_patient": "Bệnh nhân đã chọn: {name}",
+            "no_chosen_patient": "Chưa chọn bệnh nhân",
+            "medical_record_info": "Thông tin hồ sơ y tế",
+            "medical_history_management": "Quản lý lịch sử y tế",
+            "medical_history_detail": "Chi tiết lịch sử y tế",
+            "patient_info": "Thông tin bệnh nhân",
+            "doctor_info": "Thông tin bác sĩ",
+            "assign_doctor_to_medical_history": "Phân công bác sĩ vào hồ sơ bệnh án",
+            "examination_info": "Thông tin khám bệnh",
+            "medication_guide": "Hướng dẫn dùng thuốc"
+        },
+        "placeholder": {
+            "no_service": "Không có dịch vụ y tế nào được ghi nhận",
+            "no_prescription": "Không có đơn thuốc nào được ghi nhận",
+            "no_complaint": "Không có khiếu nại nào được ghi nhận",
+            "no_invoices": "Không có hóa đơn nào được ghi nhận",
+            "no_assigned_doctor": "Chưa có bác sĩ được chỉ định",
+            "search_medical_history_number": "Tìm kiếm theo mã số lịch sử y tế...",
+            "search_patient_name": "Tìm kiếm theo tên bệnh nhân...",
+            "search_doctor_name": "Tìm kiếm theo tên bác sĩ...",
+            "search_patient_in_create": "Tìm kiếm theo số điện thoại/tên/email/mã số bệnh nhân...",
+            "fill_all_before_create": "Vui lòng điền đầy đủ các trường bắt buộc trước khi tạo",
+            "prescription_note": "Lưu ý: Bệnh nhân dùng thuốc đúng liều, đúng thời gian theo hướng dẫn của bác sĩ. Không tự ý ngưng thuốc hoặc thay đổi liều khi chưa hỏi ý kiến bác sĩ."
+        },
+        "field": {
+            "id": "ID lịch sử y tế",
+            "medical_history_number": "Mã số lịch sử y tế",
+            "diagnosis": "Chẩn đoán",
+            "follow_up_appointment_date": "Ngày hẹn tái khám",
+            "status": "Trạng thái lịch sử y tế",
+            "type": "Loại lịch sử y tế",
+            "admission_date": "Ngày nhập viện",
+            "discharge_date": "Ngày xuất viện",
+            "patient": "Bệnh nhân",
+            "doctor": "Bác sĩ",
+            "specialty": "Chuyên khoa",
+            "prescription": {
+                "id": "ID đơn thuốc",
+                "prescription": "Đơn thuốc",
+                "doctor_note": "Ghi chú của bác sĩ",
+                "medication_days": "Số ngày dùng thuốc",
+                "prescription_details": "Chi tiết đơn thuốc",
+                "prescription_detail": {
+                    "medicine": "Thuốc",
+                    "dosage": "Liều lượng (mỗi lần)",
+                    "frequency_per_day": "Tần suất (mỗi ngày)",
+                    "medicine_name": "Tên thuốc",
+                    "medicine_brand": "Thương hiệu thuốc",
+                    "medicine_image": "Hình ảnh thuốc",
+                    "medicine_unit": "Đơn vị thuốc"
+                }
+            },
+            "complaint": {
+                "topic": "Chủ đề khiếu nại",
+                "content": "Nội dung",
+                "resolve_status": "Trạng thái giải quyết khiếu nại",
+                "response": "Phản hồi",
+                "type": "Loại khiếu nại"
+            }
+        },
+        "button": {
+            "add_service": "Thêm dịch vụ y tế",
+            "create_prescription": "Tạo đơn thuốc",
+            "update_prescription": "Cập nhật đơn thuốc",
+            "print_prescription": "In đơn thuốc",
+            "create_complaint": "Tạo khiếu nại",
+            "respond_complaint": "Phản hồi khiếu nại",
+            "save_as_draft": "Lưu dưới dạng bản nháp",
+            "close_complaint": "Đóng khiếu nại",
+            "create_medical_history": "Tạo lịch sử y tế",
+            "update_medical_history": "Cập nhật lịch sử y tế",
+            "complete_medical_history": "Hoàn thành lịch sử y tế",
+            "view_full_detail": "Xem chi tiết đầy đủ",
+            "create_patient": "Tạo bệnh nhân"
+        },
+        "dialog": {
+            "title": {
+                "update_medical_history": "Cập nhật lịch sử y tế",
+                "add_medical_service": "Thêm dịch vụ y tế",
+                "create_prescription": "Tạo đơn thuốc",
+                "update_prescription": "Cập nhật đơn thuốc",
+                "create_complaint": "Tạo khiếu nại",
+                "respond_complaint": "Phản hồi khiếu nại"
+            },
+            "confirm": {
+                "delete_service_title": "Xóa dịch vụ y tế?",
+                "delete_service_description": "Bạn có chắc chắn muốn xóa dịch vụ y tế này khỏi lịch sử y tế không? Hành động này không thể hoàn tác",
+                "complete_medical_history_title": "Hoàn thành lịch sử y tế?",
+                "complete_medical_history_description": "Bạn có chắc chắn muốn đánh dấu lịch sử y tế này là đã hoàn thành không?"
+            }
+        }
+    }
+}

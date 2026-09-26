@@ -1,0 +1,33 @@
+{
+	"shift": {
+		"title": {
+			"management": "Shift Management",
+			"create": "Create Shift",
+			"edit": "Edit Shift",
+			"filters": "Filter Shifts"
+		},
+		"field": {
+			"id": "ID",
+			"name": "Name",
+			"start": "Start",
+			"end": "End",
+			"start_time": "Start Time",
+			"end_time": "End Time",
+			"time_range": "Time Range",
+			"is_overtime": "Overtime"
+		},
+		"table": {
+			"actions": "Actions"
+		},
+		"button": {
+			"new_shift": "New Shift"
+		},
+		"dialog": {
+			"delete_title": "Delete Shift",
+			"delete_description": "Are you sure you want to delete \"{name}\"?"
+		},
+		"placeholder": {
+			"search_name": "Search shift name..."
+		}
+	}
+}

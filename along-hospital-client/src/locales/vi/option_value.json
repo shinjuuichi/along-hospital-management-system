@@ -1,0 +1,29 @@
+{
+    "option_value": {
+        "title": {
+            "management": "Quản lý giá trị thuộc tính"
+        },
+        "filter": {
+            "title": "Bộ lọc",
+            "searchPlaceholder": "Tìm kiếm giá trị thuộc tính",
+            "option": "Thuộc tính"
+        },
+        "field": {
+            "name": "Tên giá trị",
+            "unit_multiplier": "Hệ số nhân",
+            "option": "Thuộc tính",
+            "active": "Đang hoạt động"
+        },
+        "text": {
+            "active": "Hoạt động",
+            "inactive": "Ngừng hoạt động"
+        },
+        "actions": "Hành động",
+        "dialog": {
+            "create_title": "Thêm giá trị",
+            "update_title": "Cập nhật giá trị",
+            "confirm_delete_title": "Xóa giá trị",
+            "confirm_delete_description": "Bạn có chắc muốn xóa giá trị \"{{name}}\"?"
+        }
+    }
+}

@@ -1,0 +1,48 @@
+{
+  "medical_service": {
+    "title": {
+      "management": "Medical Service Management",
+      "filter": "Medical Service Filter",
+      "list": "Medical Services List"
+    },
+    "description": {
+      "list": "Search and view details of our medical services"
+    },
+    "field": {
+      "id": "ID",
+      "name": "Service Name",
+      "description": "Description",
+      "price": "Price",
+      "specialty": "Specialty",
+      "code": "Code",
+      "active": "Active",
+      "table_status": "Status",
+      "roles": "Roles",
+      "actions": "Actions"
+    },
+    "label": {
+      "price": "Service Price",
+      "description": "Description",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "button": {
+      "view_detail": "View Detail",
+      "book_appointment": "Book Appointment"
+    },
+    "placeholder": {
+      "no_result_title": "No services found",
+      "no_result_subtitle": "Please try again with different keywords",
+      "no_description": "No description"
+    },
+    "note": {
+      "price_note": "Note: The price above may vary depending on the patient's condition. Please contact the doctor for detailed consultation."
+    },
+    "dialog": {
+      "create_title": "Create New Medical Service",
+      "update_title": "Update Medical Service",
+      "confirm_delete_title": "Confirm Deletion",
+      "confirm_delete_description": "Are you sure you want to delete medical service: {name}?"
+    }
+  }
+}

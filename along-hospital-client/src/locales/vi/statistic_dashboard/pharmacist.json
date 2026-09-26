@@ -1,0 +1,44 @@
+{
+	"statistic_dashboard_pharmacist": {
+		"title": {
+			"page": "Bảng Điều Khiển Dược Sĩ",
+			"filters": "Bộ Lọc Thời Gian",
+			"current_range": "Khoảng thời gian hiện tại"
+		},
+		"field": {
+			"preset": "Khoảng thời gian",
+			"date_range": "Khoảng ngày",
+			"from_date": "Từ ngày",
+			"to_date": "Đến ngày"
+		},
+		"preset": {
+			"this_month": "Tháng này",
+			"this_year": "Năm nay",
+			"custom": "Tùy chỉnh"
+		},
+		"tab": {
+			"overview": "Tổng quan",
+			"order": "Đơn hàng",
+			"top_medicines": "Thuốc bán chạy"
+		},
+		"widget": {
+			"total_orders": "Tổng đơn hàng",
+			"pending_orders": "Đơn hàng chờ",
+			"completed_orders": "Đơn hàng hoàn thành",
+			"revenue": "Doanh thu",
+			"revenue_over_time": "Doanh thu theo thời gian",
+			"orders_over_time": "Đơn hàng theo thời gian",
+			"order_status": "Trạng thái đơn hàng",
+			"top_medicines_title": "Thuốc bán chạy",
+			"sku_code": "Mã SKU",
+			"medicine_name": "Tên thuốc",
+			"quantity_sold": "Số lượng bán"
+		},
+		"text": {
+			"description": "Theo dõi hiệu suất đơn hàng, doanh thu và thuốc bán chạy trên một bảng điều khiển duy nhất."
+		},
+		"button": {
+			"export": "Xuất Excel"
+		}
+	}
+}

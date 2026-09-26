@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="x-apple-disable-message-reformatting" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="supported-color-schemes" content="light dark" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			/* Footer Styles */
+			.footer {
+				border-top: 1px solid #e2e8f0;
+				background-color: #f7fafc;
+				padding: 20px 24px 24px;
+				text-align: center;
+				font-size: 13px;
+				color: #64748b;
+			}
+			.footer p {
+				margin: 6px 0;
+			}
+			.footer a {
+				color: #1e88e5;
+				text-decoration: underline;
+			}
+			/* Dark mode */
+			@media (prefers-color-scheme: dark) {
+				.footer {
+					background-color: #1e293b !important;
+					border-color: #334155 !important;
+					color: #94a3b8 !important;
+				}
+				.footer p {
+					color: #94a3b8 !important;
+				}
+				.footer a {
+					color: #90caf9 !important;
+				}
+			}
+			/* Mobile */
+			@media only screen and (max-width: 600px) {
+				.footer {
+					padding: 18px 20px 24px;
+					font-size: 12px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<footer class="footer">
+			<div style="max-width: 600px; margin: 0 auto">
+				<p style="font-weight: 600; margin: 8px 0; color: #0f172a; font-size: 14px">
+					Along Hospital
+				</p>
+				<p style="margin: 6px 0">123 Health St, Wellness City</p>
+				<p style="margin: 6px 0">
+					<a href="mailto:support@alonghospital.com">support@alonghospital.com</a>
+				</p>
+				<p style="font-size: 12px; color: #94a3b8; margin: 12px 0 5px">
+					© 2025 Along Hospital. All rights reserved.
+				</p>
+				<p style="font-size: 12px; color: #94a3b8; margin: 5px 0">
+					Đây là email tự động, vui lòng không trả lời · This is an automated email, please do not
+					reply
+				</p>
+				<p style="font-size: 12px; color: #64748b; margin: 8px 0">
+					Cần hỗ trợ?
+					<a href="{{webUrl}}/support" target="_blank">Trang hỗ trợ</a>
+					· Need help?
+					<a href="{{webUrl}}/support" target="_blank">Support page</a>
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

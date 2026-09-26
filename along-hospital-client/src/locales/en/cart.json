@@ -1,0 +1,58 @@
+{
+    "cart": {
+        "title": "Shopping Cart",
+        "empty_cart": "Your cart is empty",
+        "no_image": "No image",
+        "no_name": "No name",
+        "brand": "Brand",
+        "unit": "Unit",
+        "pickup_at_store": "Pickup at Store",
+        "delivery": "Delivery",
+        "is_pickup_at_store": "Pickup at Store",
+        "delivery_default_note": "If not checked, default shipping to your address",
+        "summary": {
+            "title": "Cart Summary",
+            "subtotal": "Subtotal",
+            "subtotal_item": "Subtotal",
+            "total": "Total",
+            "total_pay": "Total",
+            "voucher_code": "Voucher Code",
+            "voucher_placeholder": "Enter voucher code (e.g. CHAOMUNG)",
+            "apply": "Apply",
+            "your_vouchers": "My Vouchers",
+            "no_voucher": "No voucher",
+            "min_order": "Min order",
+            "expiry": "Expiry",
+            "payment_method": "Payment Method",
+            "checkout": "Checkout",
+            "checkout_description": "Checkout your order",
+            "processing": "Processing...",
+            "delivery_method": "Delivery Method",
+            "voucher": "Voucher",
+            "voucher_empty": "--",
+            "voucher_not_available": "Voucher code is invalid or not available!",
+            "voucher_apply_success": "Voucher applied successfully!",
+            "cancel_voucher": "Cancel",
+            "cancel_voucher_success": "Voucher cancelled successfully!"
+        },
+        "button": {
+            "delete": "Delete"
+        },
+        "continue_shopping": "Continue shopping",
+        "out_of_stock": "Out of Stock",
+        "order_items": "Order Items",
+        "delivery_fee": "Delivery Fee",
+        "free": "Free"
+    },
+    "checkout": {
+        "title": "Checkout",
+        "confirm_delete": "Are you sure you want to remove this item?",
+        "success": "Checkout successful"
+    },
+    "common": {
+        "error": {
+            "loading_data": "Error loading data",
+            "not_found": "Not found"
+        }
+    }
+}

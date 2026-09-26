@@ -1,0 +1,86 @@
+{
+    "queue": {
+        "title": {
+            "queue_management": "Quản lý hàng đợi",
+            "queue_detail": "Chi tiết hàng đợi phòng",
+            "queue_list": "Danh sách hàng đợi",
+            "queue_actions": "Thao tác trạng thái",
+            "summary": "Tổng quan trạng thái",
+            "now_serving": "Đang khám",
+            "up_next": "Số chờ kế tiếp"
+        },
+        "text": {
+            "reception_room": "Phòng Lễ Tân",
+            "rooms_found": "Số phòng hiển thị",
+            "page": "Trang",
+            "priority": "Ưu tiên",
+            "view_medical_history_hint": "Truy cập lịch sử khám bệnh, kết quả xét nghiệm và đơn thuốc cũ",
+            "assign_medical_history_hint": "Chọn hồ sơ bệnh án chờ xử lý trước khi mở chi tiết"
+        },
+        "button": {
+            "call": "Gọi số",
+            "start": "Bắt đầu khám",
+            "uncall": "Hủy gọi",
+            "await_results": "Chờ kết quả",
+            "view_medical_history_detail": "Xem chi tiết hồ sơ bệnh án",
+            "assign_medical_history": "Gán hồ sơ bệnh án",
+            "online_queue": "Hàng đợi online",
+            "offline_queue": "Hàng đợi offline"
+        },
+        "dialog": {
+            "assign_medical_history_title": "Gán hồ sơ bệnh án",
+            "change_status_title": "Thay đổi trạng thái hàng đợi",
+            "change_status_description": "Bạn có chắc chắn muốn thay đổi trạng thái hàng đợi này không?",
+            "call_title": "Gọi số khám",
+            "call_description": "Bạn có chắc chắn muốn gọi số khám này không?",
+            "uncall_title": "Hủy gọi số",
+            "uncall_description": "Bạn có chắc chắn muốn đưa số khám này về trạng thái chờ không?",
+            "start_title": "Bắt đầu khám",
+            "start_description": "Bạn có chắc chắn muốn bắt đầu khám cho số này không?",
+            "await_results_title": "Chuyển sang chờ kết quả",
+            "await_results_description": "Bạn có chắc chắn muốn chuyển số này sang trạng thái chờ kết quả không?",
+            "complete_title": "Hoàn tất lượt khám",
+            "complete_description": "Bạn có chắc chắn muốn đánh dấu số này là hoàn tất không?",
+            "cancel_title": "Hủy lượt khám",
+            "cancel_description": "Bạn có chắc chắn muốn hủy số khám này không?"
+        },
+        "placeholder": {
+            "search_room_code": "Tìm theo mã phòng",
+            "room_specialty_pending": "Chưa gán chuyên khoa",
+            "no_visible_queue": "Không có số hiển thị",
+            "no_room_result": "Không tìm thấy phòng",
+            "queue_room_not_found": "Không tìm thấy dữ liệu hàng đợi của phòng",
+            "no_queue_in_room": "Phòng hiện chưa có số hiển thị",
+            "patient_name_pending": "Chưa có hồ sơ bệnh nhân",
+            "doctor_pending": "Chưa phân công bác sĩ",
+            "medical_history_pending": "Chưa có hồ sơ bệnh án",
+            "purpose_pending": "Chưa có lý do khám",
+            "height_weight_pending": "Chưa có chiều cao/cân nặng",
+            "demographic_pending": "Chưa có tuổi và giới tính"
+        },
+        "error": {
+            "invalid_medical_history": "Lựa chọn hồ sơ bệnh án không hợp lệ"
+        },
+        "field": {
+            "queue_status": "Trạng thái hàng đợi",
+            "medical_history_selection": "Hồ sơ bệnh án",
+            "number_of_calls": "Số lần gọi",
+            "doctor": {
+                "name": "Bác sĩ"
+            },
+            "appointment_snapshot": {
+                "purpose": "Lý do khám"
+            },
+            "specialty_snapshot": {
+                "name": "Chuyên khoa"
+            },
+            "medical_history_snapshot": {
+                "medical_history_number": "Mã hồ sơ bệnh án",
+                "patient": {
+                    "height_weight": "Chiều cao / Cân nặng",
+                    "demographic": "Ngày sinh / Giới tính"
+                }
+            }
+        }
+    }
+}

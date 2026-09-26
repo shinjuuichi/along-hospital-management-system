@@ -1,0 +1,19 @@
+{
+    "staff_group": {
+        "title": {
+            "staff_group_management": "Quản lý nhóm nhân viên",
+            "create_form": "Tạo nhóm nhân viên",
+            "update_form": "Cập nhật nhóm nhân viên",
+            "delete_title": "Xóa nhóm nhân viên",
+            "delete_description": "Bạn có chắc muốn xóa nhóm nhân viên ({name}) không?"
+        },
+        "field": {
+            "name": "Tên",
+            "staffs": "Nhân viên",
+            "number_of_members": "Số lượng thành viên",
+            "members": "Thành viên",
+            "staff_group_members": "Thành viên nhóm",
+            "creation_date": "Ngày tạo"
+        }
+    }
+}

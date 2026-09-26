@@ -1,0 +1,14 @@
+{
+    "about_us": {
+        "information": {
+            "name": "Along Hospital",
+            "address": "123 Health Street, Ho Chi Minh City",
+            "phone": "+84 123 456 789"
+        },
+        "field": {
+            "name": "Name",
+            "address": "Address",
+            "phone": "Phone Number"
+        }
+    }
+}

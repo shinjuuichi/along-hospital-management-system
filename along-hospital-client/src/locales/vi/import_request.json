@@ -1,0 +1,51 @@
+{
+	"import_request": {
+		"title": {
+			"main": "Quản lý yêu cầu nhập kho"
+		},
+		"button": {
+			"create": "Tạo yêu cầu nhập",
+			"approve": "Duyệt",
+			"reject": "Từ chối",
+			"cancel": "Hủy yêu cầu",
+			"create_import": "Tạo phiếu nhập",
+			"view": "Xem chi tiết"
+		},
+		"table": {
+			"id": "ID",
+			"request_date": "Ngày yêu cầu",
+			"status": "Trạng thái",
+			"approved_by": "Người duyệt",
+			"items_count": "Số mặt hàng",
+			"actions": "Thao tác"
+		},
+		"field": {
+			"details": "Chi tiết thuốc",
+			"sku_code": "Thuốc (SKU)",
+			"medicine_name": "Tên thuốc",
+			"request_quantity": "Số lượng",
+			"status": "Trạng thái"
+		},
+		"dialog": {
+			"create_title": "Tạo yêu cầu nhập kho",
+			"update_title": "Cập nhật yêu cầu nhập kho",
+			"view_title": "Chi tiết yêu cầu nhập kho",
+			"reject_title": "Từ chối yêu cầu nhập kho",
+			"reject_description": "Bạn có chắc chắn muốn từ chối yêu cầu nhập kho này?",
+			"approve_confirm_description": "Bạn có chắc chắn muốn duyệt yêu cầu nhập kho #{id}?"
+		},
+		"status": {
+			"pending": "Chờ duyệt",
+			"approved": "Đã duyệt",
+			"rejected": "Từ chối",
+			"cancelled": "Đã hủy",
+			"created": "Đã nhập kho"
+		},
+		"message": {
+			"approve_success": "Duyệt yêu cầu nhập kho thành công",
+			"reject_success": "Từ chối yêu cầu nhập kho thành công",
+			"create_success": "Tạo yêu cầu nhập kho thành công",
+			"update_success": "Cập nhật yêu cầu nhập kho thành công"
+		}
+	}
+}

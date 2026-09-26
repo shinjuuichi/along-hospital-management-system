@@ -1,0 +1,52 @@
+{
+    "feedback": {
+        "title": {
+            "page": "Đánh giá thuốc",
+            "feedback_management": "Quản lý đánh giá",
+            "feedback_detail": "Chi tiết đánh giá",
+            "medicine_info": "Thông tin thuốc",
+            "patient_info": "Thông tin bệnh nhân",
+            "feedback_responds": "Phản hồi",
+            "edit_respond": "Chỉnh sửa phản hồi"
+        },
+        "button": {
+            "submit_review": "Gửi đánh giá",
+            "reply": "Phản hồi",
+            "send_reply": "Gửi"
+        },
+        "text": {
+            "total_reviews": "{{count}} đánh giá",
+            "empty": "Chưa có đánh giá nào",
+            "hidden_feedback": "Bình luận này đã bị ẩn do nội dung không phù hợp hoặc vi phạm quy tắc cộng đồng.",
+            "no_feedback": "Chưa có đánh giá nào.",
+            "no_responds": "Chưa có phản hồi."
+        },
+        "filter": {
+            "all": "Tất cả",
+            "star": "{{count}}"
+        },
+        "field": {
+            "id": "Mã",
+            "rating": "Đánh giá",
+            "content": "Nội dung",
+            "medicine_name": "Tên thuốc",
+            "medicine_brand": "Thương hiệu",
+            "reply_status": "Trạng thái phản hồi",
+            "respond_content": "Nội dung phản hồi"
+        },
+        "placeholder": {
+            "content": "Viết nhận xét của bạn tại đây"
+        },
+        "dialog": {
+            "report_title": "Báo cáo đánh giá",
+            "report_reason": "Lý do"
+        },
+        "rating_label": {
+            "1": "Rất tệ",
+            "2": "Tệ",
+            "3": "Bình thường",
+            "4": "Hài lòng",
+            "5": "Tuyệt vời"
+        }
+    }
+}

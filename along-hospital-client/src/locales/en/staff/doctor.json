@@ -1,0 +1,36 @@
+{
+    "doctor": {
+        "title": {
+            "team": "Our Medical Team"
+        },
+        "text": {
+            "description": "Meet our experienced doctors and healthcare professionals",
+            "queue_description": "Along Hospital brings together experienced doctors across multiple specialties who support patients from consultation and diagnosis to personalized treatment planning. Each profile gives a quick view of specialty, qualifications, and essential details so visitors can choose the right doctor with confidence."
+        },
+        "field": {
+            "id": "ID",
+            "name": "Name",
+            "specialty": "Specialty",
+            "qualification": "Qualification",
+            "image": "Doctor Image"
+        },
+        "badge": {
+            "queue_style": "Medical Team at Along Hospital"
+        },
+        "stats": {
+            "total": "Doctors",
+            "active": "Active",
+            "specialties": "Specialties"
+        },
+        "ticket": {
+            "ticket_label": "DOCTOR TICKET",
+            "view_doctor": "Doctor profile view",
+            "quick_info": "Quick info",
+            "footer_label": "Receiving specialty",
+            "pending_update": "Pending update"
+        },
+        "placeholder": {
+            "no_doctors": "No doctors found"
+        }
+    }
+}

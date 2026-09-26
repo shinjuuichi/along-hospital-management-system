@@ -1,0 +1,31 @@
+{
+    "bed_category": {
+        "field": {
+            "id": "ID",
+            "code": "Code",
+            "name": "Bed Category Name",
+            "description": "Description",
+            "actions": "Actions"
+        },
+        "title": {
+            "management": "Bed Category Management"
+        },
+        "button": {
+            "update": "Update Category",
+            "delete": "Delete Category"
+        },
+        "dialog": {
+            "create_title": "Create Bed Category",
+            "update_title": "Update Bed Category",
+            "delete_title": "Delete Bed Category",
+            "delete_description": "Are you sure you want to delete category '{name}'?",
+            "delete_many_title": "Delete Categories",
+            "delete_many_description": "Are you sure you want to delete {number} selected categories?"
+        },
+        "placeholder": {
+            "no_data": "No data available...",
+            "search": "Search category...",
+            "total": "Total"
+        }
+    }
+}

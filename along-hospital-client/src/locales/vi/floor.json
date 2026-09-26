@@ -1,0 +1,20 @@
+{
+	"floor": {
+		"field": {
+			"floor_number": "Tầng",
+			"building": "Tòa nhà",
+			"building_name": "Tên tòa nhà"
+		},
+		"dialog": {
+			"create_title": "Tạo tầng",
+			"update_title": "Cập nhật tầng",
+			"confirm_delete_title": "Xác nhận xóa",
+			"confirm_delete_description": "Xóa tầng {floorNumber}?",
+			"confirm_delete_selected_title": "Xác nhận xóa đã chọn",
+			"confirm_delete_selected_description": "Xóa {count} tầng đã chọn?"
+		},
+		"title": {
+			"management": "Quản lý tầng"
+		}
+	}
+}

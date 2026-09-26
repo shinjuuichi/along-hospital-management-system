@@ -1,0 +1,14 @@
+{
+    "about_us": {
+        "information": {
+            "name": "Bệnh viện Along",
+            "address": "123 Đường Sức Khỏe, Thành phố Hồ Chí Minh",
+            "phone": "+84 123 456 789"
+        },
+        "field": {
+            "name": "Tên",
+            "address": "Địa chỉ",
+            "phone": "Số điện thoại"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "global_tax_config": {
+        "title": {
+            "page": "Cấu hình thuế chung",
+            "list": "Danh sách cấu hình thuế chung",
+            "detail": "Chi tiết cấu hình thuế chung",
+            "delete": "Xóa cấu hình thuế chung",
+            "delete_confirm": "Bạn có chắc chắn muốn xóa cấu hình thuế chung này",
+            "create": "Tạo cấu hình thuế chung",
+            "update": "Cập nhật cấu hình thuế chung",
+            "global_tax_config_management": "Quản lý cấu hình thuế chung"
+        },
+        "description": {
+            "page_intro": "Quản lý tất cả cấu hình thuế chung trong hệ thống."
+        },
+        "placeholder": {
+            "no_result_title": "Không tìm thấy cấu hình thuế chung",
+            "no_result_subtitle": "Thử điều chỉnh bộ lọc hoặc tìm kiếm với từ khóa khác.",
+            "search_global_tax_config": "Tìm theo cấu hình thuế chung ..."
+        },
+        "field": {
+            "id": "ID",
+            "personal_deduction_amount": "Giảm trừ bản thân",
+            "dependent_deduction_amount": "Giảm trừ người phụ thuộc",
+            "reference_base_salary": "Mức lương cơ sở",
+            "social_insurance_rate": "Tỷ lệ BHXH",
+            "health_insurance_rate": "Tỷ lệ BHYT",
+            "unemployment_insurance_rate": "Tỷ lệ BHTN"
+        }
+    }
+}

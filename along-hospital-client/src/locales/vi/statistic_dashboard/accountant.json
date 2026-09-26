@@ -1,0 +1,48 @@
+{
+	"statistic_dashboard_accountant": {
+		"title": {
+			"page": "Bảng Điều Khiển Kế Toán",
+			"filters": "Bộ Lọc Thời Gian",
+			"current_range": "Khoảng thời gian hiện tại"
+		},
+		"field": {
+			"preset": "Khoảng thời gian",
+			"date_range": "Khoảng ngày",
+			"from_date": "Từ ngày",
+			"to_date": "Đến ngày"
+		},
+		"preset": {
+			"this_month": "Tháng này",
+			"this_year": "Năm nay",
+			"custom": "Tùy chỉnh"
+		},
+		"tab": {
+			"overview": "Tổng quan",
+			"invoices": "Hóa đơn",
+			"refunds": "Hoàn tiền"
+		},
+		"widget": {
+			"total_invoices": "Tổng hóa đơn",
+			"pending_invoices": "Hóa đơn chờ xử lý",
+			"completed_invoices": "Hóa đơn hoàn tất",
+			"net_collected_amount": "Số tiền thu thuần",
+			"refund_amount": "Số tiền hoàn",
+			"pending_refunds": "Hoàn tiền chờ xử lý",
+			"invoice_status": "Trạng thái hóa đơn",
+			"collections_over_time": "Thu tiền theo thời gian",
+			"refunds_over_time": "Hoàn tiền theo thời gian",
+			"gross_invoice_amount": "Tổng giá trị hóa đơn",
+			"invoices_over_time": "Hóa đơn theo thời gian",
+			"approved_refunds": "Hoàn tiền đã duyệt",
+			"cancelled_refunds": "Hoàn tiền đã hủy",
+			"collected_amount": "Số tiền đã thu",
+			"refund_status": "Trạng thái hoàn tiền"
+		},
+		"text": {
+			"description": "Theo dõi dòng hóa đơn, thu tiền và xu hướng hoàn tiền trên bảng điều khiển tài chính."
+		},
+		"button": {
+			"export": "Xuất Excel"
+		}
+	}
+}

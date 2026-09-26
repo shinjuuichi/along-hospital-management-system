@@ -1,0 +1,60 @@
+{
+    "profile": {
+        "title": {
+            "personal_information": "Thông tin cá nhân",
+            "professional_information": "Thông tin chuyên môn",
+            "health_information": "Thông tin sức khỏe",
+            "change_password": "Đổi mật khẩu",
+            "update_profile": "Cập nhật hồ sơ",
+            "password_tips": "Yêu cầu mật khẩu"
+        },
+        "text": {
+            "change_password_description": "Nhập mật khẩu hiện tại và chọn mật khẩu mới",
+            "change_password_success": "Đổi mật khẩu thành công",
+            "password_tip_length": "Ít nhất 8 ký tự",
+            "password_tip_uppercase": "Chứa chữ hoa và chữ thường",
+            "password_tip_number": "Chứa ít nhất một chữ số",
+            "password_tip_special": "Chứa ít nhất một ký tự đặc biệt (@$!%*?&)"
+        },
+        "placeholder": {
+            "no_phone": "Chưa có số điện thoại",
+            "no_email": "Chưa có email",
+            "no_gender": "Chưa có giới tính",
+            "no_date_of_birth": "Chưa có ngày sinh",
+            "no_address": "Chưa có địa chỉ",
+            "no_height": "Chưa có chiều cao",
+            "no_weight": "Chưa có cân nặng",
+            "no_allergies": "Chưa có dữ liệu dị ứng",
+            "name": "Nhập họ và tên của bạn",
+            "address": "Nhập địa chỉ của bạn"
+        },
+        "field": {
+            "current_password": "Mật khẩu hiện tại",
+            "new_password": "Mật khẩu mới",
+            "confirm_password": "Xác nhận mật khẩu",
+            "name": "Họ và tên",
+            "full_name": "Họ và tên đầy đủ",
+            "email": "Email",
+            "phone": "Số điện thoại",
+            "address": "Địa chỉ",
+            "city": "Thành phố",
+            "country": "Quốc gia",
+            "date_of_birth": "Ngày sinh",
+            "gender": "Giới tính",
+            "medical_number": "Mã số y tế",
+            "height": "Chiều cao",
+            "weight": "Cân nặng",
+            "height_weight": "Chiều cao/Cân nặng",
+            "blood_type": "Nhóm máu",
+            "allergy": {
+                "allergies": "Dị ứng",
+                "name": "Tên",
+                "severity": "Mức độ",
+                "reaction": "Phản ứng"
+            },
+            "hire_date": "Ngày tuyển dụng",
+            "qualification": "Trình độ",
+            "specialty": "Chuyên khoa"
+        }
+    }
+}

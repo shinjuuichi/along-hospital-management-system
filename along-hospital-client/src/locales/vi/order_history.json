@@ -1,0 +1,45 @@
+{
+    "order": {
+        "title": {
+            "page": "Lịch sử đơn hàng",
+            "subtitle": "Quản lý và theo dõi các đơn hàng của bạn"
+        },
+        "history": {
+            "empty": "Không có đơn hàng nào",
+            "empty_desc": "Bạn chưa có đơn hàng nào. Hãy bắt đầu mua sắm ngay!",
+            "order_id": "Đơn hàng",
+            "transaction_id": "Mã giao dịch",
+            "order_date": "Ngày đặt hàng",
+            "delivery_date": "Ngày giao hàng",
+            "voucher_code": "Mã voucher",
+            "total_products": "Số lượng sản phẩm",
+            "product_unit": "sản phẩm",
+            "origin_price": "Giá gốc",
+            "discount": "Giảm giá",
+            "total": "Tổng tiền",
+            "detail_button": "Chi tiết",
+            "no_delivery_date": "Chưa có ngày giao",
+            "quantity": "Số lượng",
+            "paid_date": "Ngày thanh toán",
+            "pickup_at_store": "Nhận tại cửa hàng",
+            "delivery": "Giao hàng",
+            "cancellation_reason": "Lý do hủy"
+        },
+        "button": {
+            "repay": "Thanh toán lại"
+        },
+        "repay_dialog": {
+            "title": "Chọn phương thức thanh toán",
+            "payment_type": "Phương thức"
+        },
+        "cancel_dialog": {
+            "title": "Hủy đơn hàng?",
+            "description": "Bạn có chắc chắn muốn hủy đơn hàng này không?"
+        },
+        "field": {
+            "status": "Trạng thái",
+            "order_date": "Ngày đặt hàng",
+            "delivery_date": "Ngày giao hàng"
+        }
+    }
+}

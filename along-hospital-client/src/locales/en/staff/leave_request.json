@@ -1,0 +1,75 @@
+{
+    "leave_request": {
+        "title": {
+            "leave_request_management": "Leave Request Management",
+            "leave_request": "Leave Request",
+            "history": "History",
+            "overtime_request": "Overtime Request",
+            "create_leave_request": "Create Leave Request",
+            "create_overtime_request": "Create Overtime Request",
+            "pending_requests": "Pending Requests"
+        },
+        "field": {
+            "leave_type": "Leave Type",
+            "leave_unit": "Leave Unit",
+            "ot_type": "OT Type",
+            "date_range": "Date Range",
+            "from_date": "From Date",
+            "to_date": "To Date",
+            "from": "From",
+            "to": "To",
+            "leave_dates": "Leave Dates",
+            "date": "Date",
+            "shift": "Shift",
+            "from_time": "From Time",
+            "to_time": "To Time",
+            "start_date": "Start Date",
+            "start_time": "Start Time",
+            "end_date": "End Date",
+            "end_time": "End Time",
+            "reason": "Reason",
+            "status": "Status",
+            "decider": "Decider",
+            "decided_at": "Decided At",
+            "staff_name": "Staff Name",
+            "staff_email": "Staff Email",
+            "created_by": "Created By (ID)",
+            "decided_by": "Decided By (ID)",
+            "actions": "Actions"
+        },
+        "button": {
+            "new_request": "+ New Request",
+            "create_request": "Create Request",
+            "cancel_request": "Cancel Request",
+            "approve": "Approve",
+            "reject": "Reject"
+        },
+        "text": {
+            "filters": "Filters",
+            "important_information": "Important Information",
+            "load_history_failed": "Unable to load leave request history."
+        },
+        "placeholder": {
+            "search": "Search by name, email, approver, reason..."
+        },
+        "confirm": {
+            "cancel_leave_title": "Cancel leave request?",
+            "cancel_leave_description": "Are you sure you want to cancel leave request #{id}?",
+            "cancel_overtime_title": "Cancel overtime request?",
+            "cancel_overtime_description": "Are you sure you want to cancel overtime request #{id}?",
+            "approve_leave_title": "Approve leave request?",
+            "approve_leave_description": "Approve leave request #{id}?",
+            "reject_leave_title": "Reject leave request?",
+            "reject_leave_description": "Reject leave request #{id}?",
+            "approve_overtime_title": "Approve overtime request?",
+            "approve_overtime_description": "Approve overtime request #{id}?",
+            "reject_overtime_title": "Reject overtime request?",
+            "reject_overtime_description": "Reject overtime request #{id}?"
+        },
+        "error": {
+            "from_date_before_to_date": "From date must be earlier than To date",
+            "start_time_before_end_time": "Start time must be earlier than End time",
+            "cannot_review_own_request": "You cannot approve or reject your own request."
+        }
+    }
+}

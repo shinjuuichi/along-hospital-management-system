@@ -1,0 +1,53 @@
+{
+    "queue": {
+        "guest": {
+            "title": {
+                "badge": "CHÀO MỪNG QUÝ KHÁCH",
+                "main": "Dành cho bệnh nhân mới hoặc chưa có phiếu khám",
+                "waiting": "Vui lòng chờ trước khi lấy số mới",
+                "queue_created": "Đã tạo số thứ tự",
+                "settings": "Cài đặt xếp hàng",
+                "scan_instruction": "Vui lòng quét mã QR trên phiếu\nđể xếp hàng tự động",
+                "now_serving": "Đang phục vụ",
+                "up_next": "Tiếp theo",
+                "ticket_number": "Số thứ tự",
+                "patient_name": "Tên bệnh nhân"
+            },
+            "text": {
+                "description": "Vui lòng nhấn nút bên dưới để nhận số thứ tự và làm thủ tục tại quầy tiếp đón.",
+                "prepare_identity_card": "CHUẨN BỊ CCCD",
+                "prepare_health_insurance": "THẺ BHYT (NẾU CÓ)",
+                "waiting_description": "Để tránh spam, bạn chỉ có thể lấy số tiếp theo sau một khoảng thời gian nhất định.",
+                "waiting_countdown": "Thời gian còn lại: {time}",
+                "queue_created_success": "Số thứ tự của bạn đã được tạo thành công.",
+                "scan_hint": "Đặt mã QR cách camera khoảng 10-15cm để nhận diện ổn định.",
+                "scanner_error": "Không thể truy cập camera. Vui lòng kiểm tra quyền truy cập và thiết bị camera.",
+                "current_room_code": "Phòng đã chọn: {roomCode}",
+                "last_scanned_code": "Mã đã quét gần nhất: {code}",
+                "live": "Trực tiếp",
+                "priority_badge": "ƯU TIÊN {value}"
+            },
+            "button": {
+                "take_new_number": "BẤM ĐỂ LẤY SỐ MỚI",
+                "new_registration": "(ĐĂNG KÝ MỚI)",
+                "apply_room": "Áp dụng phòng",
+                "select_qr_image": "Chọn ảnh QR"
+            },
+            "placeholder": {
+                "room_code": "MÃ PHÒNG",
+                "room_specialty_name": "Chuyên khoa",
+                "doctor_name": "Bác sĩ",
+                "patient_name_pending": "CHƯA CÓ HỒ SƠ",
+                "no_queue_in_progress": "Hiện chưa có số nào đang được gọi vào khám.",
+                "no_queue_available": "Phòng hiện chưa có dữ liệu hàng đợi."
+            },
+            "field": {
+                "select_room": "Chọn phòng"
+            },
+            "error": {
+                "invalid_qr_format": "QR không đúng định dạng",
+                "image_scan_not_supported": "Trình duyệt không hỗ trợ quét QR từ ảnh."
+            }
+        }
+    }
+}

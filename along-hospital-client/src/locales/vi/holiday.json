@@ -1,0 +1,41 @@
+{
+  "holiday": {
+    "title": {
+      "holiday_management": "Quản lý ngày nghỉ lễ"
+    },
+    "field": {
+      "id": "ID",
+      "name": "Tên ngày nghỉ",
+      "day": "Ngày",
+      "month": "Tháng",
+      "year": "Năm",
+      "actions": "Hành động",
+      "date_range": "Khoảng ngày",
+      "from_date": "Từ ngày",
+      "to_date": "Đến ngày",
+      "preview": "Xem trước",
+      "days": "ngày",
+      "no_name": "(Không có tên)",
+      "holiday_type": "Loại ngày nghỉ",
+      "date_type": "Loại ngày"
+    },
+    "option": {
+      "annual": "Hàng năm",
+      "specific": "Ngày cụ thể",
+      "specific_day": "Ngày cụ thể",
+      "date_range": "Khoảng ngày"
+    },
+    "dialog": {
+      "create_title": "Thêm ngày nghỉ",
+      "create_range_title": "Thêm nhiều ngày nghỉ",
+      "update_title": "Cập nhật ngày nghỉ",
+      "confirm_delete_title": "Xóa ngày nghỉ?",
+      "confirm_delete_description": "Bạn có chắc chắn muốn xóa \"{{name}}\" không?"
+    },
+    "error": {
+      "from_after_to": "Ngày bắt đầu phải trước hoặc bằng ngày kết thúc",
+      "exceeds_max_days": "Khoảng cách ngày không được vượt quá 366 ngày"
+    }
+  }
+}
+

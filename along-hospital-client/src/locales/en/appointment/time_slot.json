@@ -1,0 +1,17 @@
+{
+    "time_slot": {
+        "title": {
+            "time_slot_management": "Time Slot Management",
+            "create_form": "Create Time Slot",
+            "update_form": "Update Time Slot"
+        },
+        "field": {
+            "time": "Time",
+            "capacity_per_doctor": "Capacity Per Doctor"
+        },
+        "dialog": {
+            "delete_title": "Delete Time Slot",
+            "delete_description": "Are you sure you want to delete the time slot at {time}?"
+        }
+    }
+}

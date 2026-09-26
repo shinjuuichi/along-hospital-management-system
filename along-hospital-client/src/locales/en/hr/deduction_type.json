@@ -1,0 +1,33 @@
+{
+    "deduction_type": {
+        "title": {
+            "page": "Deduction Types",
+            "list": "Deduction Types List",
+            "detail": "Deduction Type Detail",
+            "delete": "Delete Deduction Type",
+            "delete_confirm": "Are you sure you want to delete",
+            "create": "Create Deduction Type",
+            "update": "Update Deduction Type",
+            "deduction_type_management": "Deduction Type Management"
+        },
+        "description": {
+            "page_intro": "Manage all deduction types available in the system."
+        },
+        "placeholder": {
+            "no_result_title": "No deduction types found",
+            "no_result_subtitle": "Try adjusting the filters or searching with another keyword.",
+            "search_deduction_type": "Search by deduction type name ..."
+        },
+        "field": {
+            "id": "ID",
+            "name": "Name",
+            "price": "Price",
+            "description": "Description",
+            "deduction_quantity_source": "Quantity Source",
+            "insurance_subject": "Insurance Subject",
+            "is_taxable": "Taxable",
+            "is_system_generated": "System Generated",
+            "is_percentage": "Percentage"
+        }
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "invoice": {
+        "title": {
+            "create_invoice": "Create Invoice",
+            "invoice_management": "Invoice Management",
+            "invoice_print": "Invoice",
+            "refund_print": "Refund Receipt"
+        },
+        "button": {
+            "payment": "Pay Now",
+            "print_invoice": "Print Invoice",
+            "print_refund": "Print Refund",
+            "complete": "Complete",
+            "approve_refund": "Approve Refund"
+        },
+        "field": {
+            "invoice_number": "Invoice Number",
+            "refund_number": "Refund Number",
+            "charge_id": "Charge ID",
+            "invoice_status": "Invoice Status",
+            "creation_date": "Creation Date",
+            "payment_date": "Payment Date",
+            "tax_percent": "Tax ({percent}%)",
+            "total_amount": "Total Amount",
+            "total_invoice_amount": "Total Invoice Amount",
+            "total_refund_amount": "Total Refund Amount",
+            "total_service": "Total Service",
+            "payment_date_from": "Payment Date From",
+            "payment_date_to": "Payment Date To",
+            "charge": {
+                "quantity": "Quantity",
+                "unit_price": "Unit Price",
+                "total_amount": "Total Amount",
+                "charge_type": "Charge Type",
+                "medical_service": "Medical Service",
+                "snapshot": {
+                    "name": "Medical Service Name",
+                    "description": "Medical Service Description"
+                },
+                "refund": {
+                    "reason": "Refund Reason",
+                    "status": "Refund Status",
+                    "approved_by": "Approved By",
+                    "approval_date": "Approval Date"
+                }
+            }
+        },
+        "dialog": {
+            "cancel_invoice_title": "Cancel Invoice",
+            "cancel_invoice_description": "Are you sure you want to cancel this invoice? This action cannot be undone.",
+            "complete_invoice_title": "Complete Invoice",
+            "complete_invoice_description": "Are you sure you want to complete this invoice? This action will mark the invoice as completed and no further edits can be made.",
+            "approve_refund_title": "Approve Refund",
+            "approve_refund_description": "Are you sure you want to approve the refund for this charge? This action will approve the refund and cannot be undone."
+        }
+    }
+}

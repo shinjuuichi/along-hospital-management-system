@@ -1,0 +1,27 @@
+{
+    "payment": {
+        "cancel": {
+            "title": "Payment canceled",
+            "subtitle": "Thank you for your interest in Along Hospital services.",
+            "help": "If you need assistance, please contact our customer care."
+        },
+        "success": {
+            "title": "Payment successful",
+            "subtitle": "Thank you for using Along Hospital services.",
+            "wish": "Wishing you a healthy day!"
+        }
+    },
+    "sepay": {
+        "payment_title": "SePay Payment",
+        "qr_code": "Scan QR Code",
+        "scan_instruction": "Scan the QR code with your banking app or e-wallet to pay",
+        "no_payment_url": "No payment URL available",
+        "order_summary": "Order Summary",
+        "total": "Total",
+        "back": "Back",
+        "view_order_history": "When payment is successful, you can go to order history page to view your orders",
+        "here": "here",
+        "no_image": "No image",
+        "unknown": "Unknown"
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "feedback": {
+        "title": {
+            "page": "Medicine reviews",
+            "feedback_management": "Feedback Management",
+            "feedback_detail": "Feedback Detail",
+            "medicine_info": "Medicine Information",
+            "patient_info": "Patient Information",
+            "feedback_responds": "Feedback Responses",
+            "edit_respond": "Edit Response"
+        },
+        "button": {
+            "submit_review": "Submit a review",
+            "reply": "Reply",
+            "send_reply": "Send"
+        },
+        "text": {
+            "total_reviews": "{{count}} reviews",
+            "empty": "No reviews yet",
+            "hidden_feedback": "This review has been hidden due to inappropriate content or violation of community guidelines.",
+            "no_feedback": "No feedback available.",
+            "no_responds": "No responses yet."
+        },
+        "filter": {
+            "all": "All",
+            "star": "{{count}}"
+        },
+        "field": {
+            "id": "ID",
+            "rating": "Rating",
+            "content": "Content",
+            "medicine_name": "Medicine Name",
+            "medicine_brand": "Brand",
+            "reply_status": "Reply Status",
+            "respond_content": "Response Content"
+        },
+        "placeholder": {
+            "content": "Write your review here"
+        },
+        "dialog": {
+            "report_title": "Report feedback",
+            "report_reason": "Reason"
+        },
+        "rating_label": {
+            "1": "Very bad",
+            "2": "Bad",
+            "3": "Okay",
+            "4": "Good",
+            "5": "Excellent"
+        }
+    }
+}

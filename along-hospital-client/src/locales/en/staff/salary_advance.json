@@ -1,0 +1,37 @@
+{
+    "salary_advance": {
+        "title": {
+            "salary_advance": "Salary Advance",
+            "salary_advance_management": "Salary Advance Management",
+            "create_request": "Create Salary Advance Request",
+            "edit_request": "Update Salary Advance Request"
+        },
+        "field": {
+            "id": "ID",
+            "created_by": "Created By (ID)",
+            "amount": "Advance Amount",
+            "reason": "Reason",
+            "status": "Status",
+            "creation_date": "Creation Date",
+            "payroll_id": "Linked Payroll ID",
+            "actions": "Actions"
+        },
+        "button": {
+            "create_request": "Create Request",
+            "update_request": "Update Request",
+            "cancel_request": "Cancel Request",
+            "approve": "Approve",
+            "reject": "Reject",
+            "approve_selected": "Approve Selected",
+            "reject_selected": "Reject Selected"
+        },
+        "confirm": {
+            "cancel_title": "Cancel salary advance request?",
+            "cancel_description": "Are you sure you want to cancel this salary advance request?",
+            "approve_title": "Approve salary advance request?",
+            "approve_description": "Are you sure you want to approve this salary advance request?",
+            "reject_title": "Reject salary advance request?",
+            "reject_description": "Are you sure you want to reject this salary advance request?"
+        }
+    }
+}

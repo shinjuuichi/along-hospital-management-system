@@ -1,0 +1,48 @@
+{
+	"statistic_dashboard_accountant": {
+		"title": {
+			"page": "Accountant Dashboard",
+			"filters": "Date Filters",
+			"current_range": "Current range"
+		},
+		"field": {
+			"preset": "Range preset",
+			"date_range": "Date range",
+			"from_date": "From date",
+			"to_date": "To date"
+		},
+		"preset": {
+			"this_month": "This month",
+			"this_year": "This year",
+			"custom": "Custom"
+		},
+		"tab": {
+			"overview": "Overview",
+			"invoices": "Invoices",
+			"refunds": "Refunds"
+		},
+		"widget": {
+			"total_invoices": "Total Invoices",
+			"pending_invoices": "Pending Invoices",
+			"completed_invoices": "Completed Invoices",
+			"net_collected_amount": "Net Collected Amount",
+			"refund_amount": "Refund Amount",
+			"pending_refunds": "Pending Refunds",
+			"invoice_status": "Invoice Status",
+			"collections_over_time": "Collections Over Time",
+			"refunds_over_time": "Refunds Over Time",
+			"gross_invoice_amount": "Gross Invoice Amount",
+			"invoices_over_time": "Invoices Over Time",
+			"approved_refunds": "Approved Refunds",
+			"cancelled_refunds": "Cancelled Refunds",
+			"collected_amount": "Collected Amount",
+			"refund_status": "Refund Status"
+		},
+		"text": {
+			"description": "Monitor invoice flow, collections, and refund trends from a finance-focused dashboard."
+		},
+		"button": {
+			"export": "Export Excel"
+		}
+	}
+}

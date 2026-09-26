@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="x-apple-disable-message-reformatting" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="supported-color-schemes" content="light dark" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Appointment Reminder</title>
+		<style>
+			/* Reset cơ bản cho email */
+			body,
+			table,
+			td,
+			a {
+				font-family: Arial, Helvetica, sans-serif;
+				-webkit-text-size-adjust: 100%;
+				-ms-text-size-adjust: 100%;
+			}
+			table,
+			td {
+				border-collapse: collapse !important;
+			}
+			img {
+				border: 0;
+				outline: none;
+				text-decoration: none;
+				-ms-interpolation-mode: bicubic;
+			}
+			body {
+				margin: 0 !important;
+				padding: 0 !important;
+				width: 100% !important;
+				background: linear-gradient(135deg, #f9fbfd 0%, #f3fffd 100%);
+			}
+			/* Container */
+			.wrapper {
+				width: 100%;
+				background: linear-gradient(135deg, #f9fbfd 0%, #f3fffd 100%);
+				padding: 24px 0;
+			}
+			.container {
+				width: 100%;
+				max-width: 600px;
+				margin: 0 auto;
+				background: #ffffff;
+				border-radius: 12px;
+				overflow: hidden;
+				box-shadow: 0 4px 12px rgba(30, 136, 229, 0.08);
+				border: 1px solid #e2e8f0;
+			}
+			/* Header */
+			.header {
+				padding: 24px;
+				background: linear-gradient(135deg, #1e88e5 0%, #00bfa6 100%);
+				color: #ffffff;
+			}
+			.brand {
+				font-size: 18px;
+				font-weight: 700;
+				letter-spacing: 0.5px;
+			}
+			.subtle {
+				opacity: 0.95;
+				font-size: 13px;
+			}
+			/* Body */
+			.content {
+				padding: 28px 24px;
+				color: #0f172a;
+			}
+			h1 {
+				margin: 0 0 16px;
+				font-size: 22px;
+				line-height: 1.3;
+				color: #0f172a;
+				font-weight: 600;
+			}
+			p {
+				margin: 0 0 14px;
+				font-size: 15px;
+				line-height: 1.6;
+				color: #475569;
+			}
+			.card {
+				background: linear-gradient(135deg, #e6f2fd 0%, #e6faf8 100%);
+				border-radius: 10px;
+				padding: 18px;
+				border: 1px solid #b3daff;
+				margin: 18px 0;
+			}
+			.row {
+				margin: 0 0 8px;
+				font-size: 14px;
+			}
+			.label {
+				color: #64748b;
+			}
+			.value {
+				color: #0f172a;
+				font-weight: 600;
+			}
+			/* CTA */
+			.cta {
+				text-align: center;
+				padding: 20px 0 8px;
+			}
+			.btn {
+				display: inline-block;
+				padding: 14px 28px;
+				border-radius: 8px;
+				background: linear-gradient(135deg, #1e88e5 0%, #00bfa6 100%);
+				color: #ffffff !important;
+				text-decoration: none;
+				font-weight: 700;
+				font-size: 14px;
+				box-shadow: 0 4px 12px rgba(30, 136, 229, 0.25);
+				transition: all 0.3s ease;
+			}
+			.btn:hover {
+				box-shadow: 0 6px 16px rgba(30, 136, 229, 0.35);
+				transform: translateY(-1px);
+			}
+			.link {
+				color: #1e88e5;
+				text-decoration: underline;
+			}
+			/* Divider */
+			.divider {
+				height: 1px;
+				background: #e2e8f0;
+				margin: 24px 0;
+			}
+			/* Footer */
+			.footer {
+				padding: 20px 24px 24px;
+				font-size: 13px;
+				color: #64748b;
+				background-color: #f7fafc;
+				border-top: 1px solid #e2e8f0;
+			}
+			/* Dark mode (nhiều client hiện đại hỗ trợ) */
+			@media (prefers-color-scheme: dark) {
+				body,
+				.wrapper {
+					background: #0f172a !important;
+				}
+				.container {
+					background: #1e293b !important;
+					border-color: #334155 !important;
+				}
+				.header {
+					background: linear-gradient(135deg, #1565c0 0%, #007c73 100%) !important;
+				}
+				.content {
+					color: #e2e8f0 !important;
+				}
+				h1 {
+					color: #f8fafc !important;
+				}
+				p,
+				.label {
+					color: #cbd5e1 !important;
+				}
+				.card {
+					background: #334155 !important;
+					border-color: #475569 !important;
+				}
+				.value {
+					color: #f1f5f9 !important;
+				}
+				.divider {
+					background: #334155 !important;
+				}
+				.footer {
+					color: #94a3b8 !important;
+					background-color: #1e293b !important;
+					border-color: #334155 !important;
+				}
+				.btn {
+					background: linear-gradient(135deg, #42a5f5 0%, #4fd1c5 100%) !important;
+				}
+				.link {
+					color: #90caf9 !important;
+				}
+			}
+			/* Mobile */
+			@media only screen and (max-width: 600px) {
+				.content {
+					padding: 24px 20px;
+				}
+				.header {
+					padding: 20px;
+				}
+				.footer {
+					padding: 18px 20px 24px;
+				}
+				.btn {
+					padding: 12px 24px;
+					font-size: 13px;
+				}
+			}
+			/* Mobile + Dark mode */
+			@media only screen and (max-width: 600px) and (prefers-color-scheme: dark) {
+				body,
+				.wrapper {
+					background: #0f172a !important;
+				}
+				.container {
+					background: #1e293b !important;
+					border-color: #334155 !important;
+				}
+				.content {
+					background-color: #1e293b !important;
+				}
+				.footer {
+					background-color: #1e293b !important;
+					border-color: #334155 !important;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<center class="wrapper">
+			<table role="presentation" class="container" cellpadding="0" cellspacing="0" width="100%">
+				<!-- Header -->
+				<tr>
+					<td class="header">
+						<div class="brand">Along Hospital</div>
+						<div class="subtle">Appointment Reminder · #{{Id}}</div>
+					</td>
+				</tr>
+
+				<!-- Body -->
+				<tr>
+					<td class="content">
+						<!-- Vietnamese Version -->
+						<h1>Nhắc lịch hẹn của bạn</h1>
+						<p>Chào {{PatientName}},</p>
+						<p>Đây là lời nhắc cho lịch hẹn sắp tới của bạn tại Along Hospital.</p>
+
+						<div class="card">
+							<div class="row">
+								<span class="label">Thời gian:&nbsp;</span>
+								<span class="value"
+									>{{Time}} · {{Date}} <span class="label">({{TimeZoneId}})</span></span
+								>
+							</div>
+							<div class="row">
+								<span class="label">Chuyên khoa:&nbsp;</span
+								><span class="value">{{SpecialtyName}}</span>
+							</div>
+							<div class="row">
+								<span class="label">Mã lịch hẹn:&nbsp;</span><span class="value">#{{Id}}</span>
+							</div>
+						</div>
+
+						<div class="cta">
+							<a class="btn" href="{{LinkToAppointmentUrl}}" target="_blank" rel="noopener"
+								>XEM LỊCH HẸN</a
+							>
+						</div>
+
+						<p style="font-size: 14px">
+							Nếu bạn cần thay đổi kế hoạch, hãy mở trang lịch hẹn để xác nhận, đổi lịch hoặc huỷ
+							(nếu khả dụng).
+						</p>
+						<p style="font-size: 13px; color: #64748b; margin-top: 12px">
+							Nếu nút không hiển thị, mở đường dẫn:
+							<a class="link" href="{{LinkToAppointmentUrl}}" target="_blank" rel="noopener"
+								>{{LinkToAppointmentUrl}}</a
+							>
+						</p>
+
+						<div class="divider"></div>
+
+						<!-- English Version -->
+						<h1 style="font-size: 20px; margin-top: 0">Your appointment reminder</h1>
+						<p>Hi {{PatientName}},</p>
+						<p>This is a reminder for your upcoming visit at Along Hospital.</p>
+
+						<div class="card" style="margin-top: 16px">
+							<div class="row">
+								<span class="label">When:&nbsp;</span>
+								<span class="value"
+									>{{Time}} · {{Date}} <span class="label">({{TimeZoneId}})</span></span
+								>
+							</div>
+							<div class="row">
+								<span class="label">Specialty:&nbsp;</span
+								><span class="value">{{SpecialtyName}}</span>
+							</div>
+							<div class="row">
+								<span class="label">Appointment ID:&nbsp;</span><span class="value">#{{Id}}</span>
+							</div>
+						</div>
+
+						<div class="cta">
+							<a class="btn" href="{{LinkToAppointmentUrl}}" target="_blank" rel="noopener"
+								>VIEW APPOINTMENT</a
+							>
+						</div>
+
+						<p style="font-size: 14px">
+							If you need to change your plans, please visit the appointment page to confirm,
+							reschedule, or cancel (if available).
+						</p>
+						<p style="font-size: 13px; color: #64748b; margin-top: 12px">
+							If the button doesn't work, please open this link:
+							<a class="link" href="{{LinkToAppointmentUrl}}" target="_blank" rel="noopener"
+								>{{LinkToAppointmentUrl}}</a
+							>
+						</p>
+					</td>
+				</tr>
+			</table>
+		</center>
+	</body>
+</html>

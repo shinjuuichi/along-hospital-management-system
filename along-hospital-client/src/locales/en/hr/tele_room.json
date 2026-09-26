@@ -1,0 +1,28 @@
+{
+    "tele_room": {
+        "title": {
+            "page": "Tele Room",
+            "list": "Tele Room List",
+            "detail": "Tele Room Detail",
+            "delete": "Delete Tele Room",
+            "delete_confirm": "Are you sure you want to delete this tele room",
+            "create": "Create Tele Room",
+            "update": "Update Tele Room",
+            "tele_room_management": "Tele Room Management"
+        },
+        "description": {
+            "page_intro": "Manage all tele rooms in the system."
+        },
+        "placeholder": {
+            "no_result_title": "No tele rooms found",
+            "no_result_subtitle": "Try adjusting the filters or searching with another keyword.",
+            "search_tele_room": "Search by tele room name ..."
+        },
+        "field": {
+            "id": "ID",
+            "room_code": "Room Code",
+            "room_display_name": "Display Name",
+            "specialty_id": "Specialty"
+        }
+    }
+}

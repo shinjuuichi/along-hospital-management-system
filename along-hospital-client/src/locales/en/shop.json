@@ -1,0 +1,47 @@
+{
+    "shop": {
+        "title": "Shop",
+        "text": {
+            "no_products": "No products found",
+            "no_skus_available": "No variants available",
+            "select_full_variant_to_view_price": "Select a full variant to view price",
+            "out_of_stock": "Out of Stock"
+        },
+        "field": {
+            "search": "Search",
+            "category": "Category",
+            "unit": "Unit",
+            "price": "Price",
+            "quantity": "Quantity",
+            "brand": "Brand"
+        },
+        "button": {
+            "filter": "Filter",
+            "reset": "Reset",
+            "add_to_cart": "Add",
+            "adding_to_cart": "Adding...",
+            "select_variant": "Select Variant",
+            "option_values": "Option Values"
+        },
+        "placeholder": {
+            "search": "Search products..."
+        },
+        "tooltip": {
+            "quantity_decrease": "Decrease quantity",
+            "quantity_increase": "Increase quantity"
+        }
+    },
+    "medicine": {
+        "field": {
+            "brand": "Brand",
+            "unit": "Unit",
+            "price": "Price",
+            "quantity": "Quantity",
+            "final_price": "Final Price"
+        },
+        "filter": {
+            "category": "Category",
+            "unit": "Unit"
+        }
+    }
+}

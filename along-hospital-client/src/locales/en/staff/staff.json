@@ -1,0 +1,44 @@
+{
+    "staff": {
+        "title": {
+            "staff_management": "Staff Management",
+            "delete": "Delete Staff",
+            "delete_confirm": "Are you sure you want to delete"
+        },
+        "placeholder": {
+            "search_staff": "Search staff name...",
+            "search_phone": "Search phone...",
+            "search_email": "Search email..."
+        },
+        "field": {
+            "id": "ID",
+            "name": "Name",
+            "specialty": "Specialty",
+            "phone": "Phone",
+            "qualification": "Qualification",
+            "gender": "Gender",
+            "date_of_birth": "Date of Birth",
+            "image": "Image",
+            "email": "Email",
+            "role": "Role",
+            "address": "Address",
+            "status": "Status",
+            "bank_code": "Bank Code",
+            "account_number": "Account Number",
+            "dependent_quantity": "Dependent Quantity"
+        },
+        "button": {
+            "activate_selected": "Activate Selected",
+            "on_leave_selected": "Set On Leave Selected",
+            "terminate_selected": "Terminate Selected"
+        },
+        "confirm": {
+            "activate_selected_title": "Activate selected staff?",
+            "activate_selected_description": "Are you sure you want to activate {number} selected staff members?",
+            "on_leave_selected_title": "Set selected staff on leave?",
+            "on_leave_selected_description": "Are you sure you want to set {number} selected staff members on leave?",
+            "terminate_selected_title": "Terminate selected staff?",
+            "terminate_selected_description": "Are you sure you want to terminate {number} selected staff members?"
+        }
+    }
+}

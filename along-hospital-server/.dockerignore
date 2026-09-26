@@ -1,0 +1,63 @@
+**/.classpath
+**/.dockerignore
+**/.env
+**/.git
+**/.gitignore
+**/.project
+**/.settings
+**/.toolstarget
+**/.vs
+**/.vscode
+**/*.*proj.user
+**/*.dbmdl
+**/*.jfm
+**/azds.yaml
+**/bin
+**/charts
+**/docker-compose*
+**/Dockerfile*
+**/node_modules
+**/npm-debug.log
+**/obj
+**/secrets.dev.yaml
+**/values.dev.yaml
+LICENSE
+README.md
+!**/.gitignore
+!.git/HEAD
+!.git/config
+!.git/packed-refs
+!.git/refs/heads/**
+
+# Python specific
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/.Python
+**/pip-log.txt
+**/pip-delete-this-directory.txt
+**/.pytest_cache
+**/.coverage
+**/.hypothesis
+**/.mypy_cache
+**/.dmypy.json
+**/.pytype
+**/.ipynb_checkpoints
+
+# Virtual environments
+**/.venv
+**/venv
+**/ENV
+**/env
+**/.virtualenv
+**/.requirements.hash
+
+# ML artifacts (large model files - exclude if not needed in container)
+# Uncomment if models are trained outside container
+# **/model_artifacts/*.joblib
+# **/datasets/raw/*.csv
+
+# IDE specific
+**/*.pyproj
+**/*.pyproj.user

@@ -1,0 +1,32 @@
+{
+    "payroll_policy": {
+        "title": {
+            "page": "Payroll Policies",
+            "list": "Payroll Policies List",
+            "detail": "Payroll Policy Detail",
+            "delete": "Delete Payroll Policy",
+            "delete_confirm": "Are you sure you want to delete this payroll policy",
+            "create": "Create Payroll Policy",
+            "update": "Update Payroll Policy",
+            "payroll_policy_management": "Payroll Policy Management"
+        },
+        "description": {
+            "page_intro": "Manage all payroll policies available in the system."
+        },
+        "placeholder": {
+            "no_result_title": "No payroll policies found",
+            "no_result_subtitle": "Try adjusting the filters or searching with another keyword.",
+            "search_payroll_policy": "Search by payroll policy name ..."
+        },
+        "field": {
+            "id": "ID",
+            "name": "Policy Name",
+            "start_date": "Start Date",
+            "end_date": "End Date",
+            "payroll_policy_status": "Status",
+            "staff_id": "Staff",
+            "allowance_type_id": "Allowance Type",
+            "deduction_type_id": "Deduction Type"
+        }
+    }
+}

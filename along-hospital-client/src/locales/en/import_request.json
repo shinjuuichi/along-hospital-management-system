@@ -1,0 +1,51 @@
+{
+	"import_request": {
+		"title": {
+			"main": "Import Request Management"
+		},
+		"button": {
+			"create": "Create Import Request",
+			"approve": "Approve",
+			"reject": "Reject",
+			"cancel": "Cancel Request",
+			"create_import": "Create Import",
+			"view": "View Details"
+		},
+		"table": {
+			"id": "ID",
+			"request_date": "Request Date",
+			"status": "Status",
+			"approved_by": "Approved By",
+			"items_count": "Items",
+			"actions": "Actions"
+		},
+		"field": {
+			"details": "Medicine Details",
+			"sku_code": "Medicine (SKU)",
+			"medicine_name": "Medicine Name",
+			"request_quantity": "Quantity",
+			"status": "Status"
+		},
+		"dialog": {
+			"create_title": "Create Import Request",
+			"update_title": "Update Import Request",
+			"view_title": "Import Request Details",
+			"reject_title": "Reject Import Request",
+			"reject_description": "Are you sure you want to reject this import request?",
+			"approve_confirm_description": "Are you sure you want to approve import request #{id}?"
+		},
+		"status": {
+			"pending": "Pending",
+			"approved": "Approved",
+			"rejected": "Rejected",
+			"cancelled": "Cancelled",
+			"created": "Import Created"
+		},
+		"message": {
+			"approve_success": "Import request approved successfully",
+			"reject_success": "Import request rejected successfully",
+			"create_success": "Import request created successfully",
+			"update_success": "Import request updated successfully"
+		}
+	}
+}

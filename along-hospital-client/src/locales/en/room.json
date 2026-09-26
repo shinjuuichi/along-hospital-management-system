@@ -1,0 +1,53 @@
+{
+    "room": {
+        "title": {
+            "management": "Room Management",
+            "filters": "Filters",
+            "detail": "Room Detail",
+            "beds_list": "Beds List"
+        },
+        "placeholder": {
+            "search": "Search room code..."
+        },
+        "field": {
+            "status": "Status",
+            "floor": "Floor",
+            "category": "Category",
+            "room_code": "Room Code",
+            "building": "Building",
+            "room_category": "Room Category",
+            "specialty": "Specialty",
+            "bed_count": "Bed Count"
+        },
+        "dialog": {
+            "create_title": "Create Room",
+            "update_title": "Update Room",
+            "confirm_delete_title": "Confirm Delete",
+            "confirm_delete_description": "Are you sure you want to delete room {code}?",
+            "confirm_delete_selected_title": "Confirm Delete Selected",
+            "confirm_delete_selected_description": "Are you sure you want to delete {count} selected rooms?"
+        }
+    },
+    "room_category": {
+        "title": {
+            "management": "Room Category Management",
+            "filters": "Filters"
+        },
+        "placeholder": {
+            "search_name": "Search category name..."
+        },
+        "field": {
+            "name": "Category Name",
+            "description": "Description",
+            "roles": "Roles"
+        },
+        "dialog": {
+            "create_title": "Create Room Category",
+            "update_title": "Update Room Category",
+            "confirm_delete_title": "Confirm Delete",
+            "confirm_delete_description": "Are you sure you want to delete category {name}?",
+            "confirm_delete_selected_title": "Confirm Delete Selected",
+            "confirm_delete_selected_description": "Are you sure you want to delete {count} selected categories?"
+        }
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "invoice": {
+        "title": {
+            "create_invoice": "Tạo hóa đơn",
+            "invoice_management": "Quản lý hóa đơn",
+            "invoice_print": "Hóa đơn",
+            "refund_print": "Phiếu hoàn tiền"
+        },
+        "button": {
+            "payment": "Thanh toán",
+            "print_invoice": "In hóa đơn",
+            "print_refund": "In hoàn tiền",
+            "complete": "Hoàn thành",
+            "approve_refund": "Duyệt hoàn tiền"
+        },
+        "field": {
+            "invoice_number": "Số hóa đơn",
+            "refund_number": "Mã hoàn tiền",
+            "charge_id": "Mã khoản phí",
+            "invoice_status": "Trạng thái hóa đơn",
+            "creation_date": "Ngày tạo",
+            "payment_date": "Ngày thanh toán",
+            "tax_percent": "Thuế ({percent}%)",
+            "total_amount": "Tổng số tiền",
+            "total_invoice_amount": "Tổng tiền dịch vụ",
+            "total_refund_amount": "Tổng tiền hoàn",
+            "total_service": "Tổng dịch vụ",
+            "payment_date_from": "Ngày thanh toán từ",
+            "payment_date_to": "Ngày thanh toán đến",
+            "charge": {
+                "quantity": "Số lượng",
+                "unit_price": "Đơn giá",
+                "total_amount": "Tổng số tiền",
+                "charge_type": "Loại khoản phí",
+                "medical_service": "Dịch vụ y tế",
+                "snapshot": {
+                    "name": "Tên dịch vụ y tế",
+                    "description": "Mô tả dịch vụ y tế"
+                },
+                "refund": {
+                    "reason": "Lý do hoàn tiền",
+                    "status": "Trạng thái hoàn tiền",
+                    "approved_by": "Người duyệt hoàn tiền",
+                    "approval_date": "Ngày duyệt hoàn tiền"
+                }
+            }
+        },
+        "dialog": {
+            "cancel_invoice_title": "Hủy hóa đơn",
+            "cancel_invoice_description": "Bạn có chắc chắn muốn hủy hóa đơn này không? Hành động này không thể hoàn tác.",
+            "complete_invoice_title": "Hoàn thành hóa đơn",
+            "complete_invoice_description": "Bạn có chắc chắn muốn hoàn thành hóa đơn này không? Hành động này sẽ đánh dấu hóa đơn là đã hoàn thành và không thể chỉnh sửa thêm.",
+            "approve_refund_title": "Duyệt hoàn tiền",
+            "approve_refund_description": "Bạn có chắc chắn muốn duyệt hoàn tiền cho khoản phí này không? Hành động này sẽ duyệt hoàn tiền và không thể hoàn tác."
+        }
+    }
+}

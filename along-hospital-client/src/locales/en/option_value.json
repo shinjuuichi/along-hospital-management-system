@@ -1,0 +1,29 @@
+{
+    "option_value": {
+        "title": {
+            "management": "Option Value Management"
+        },
+        "filter": {
+            "title": "Filters",
+            "searchPlaceholder": "Search option values",
+            "option": "Option"
+        },
+        "field": {
+            "name": "Value name",
+            "unit_multiplier": "Unit multiplier",
+            "option": "Option",
+            "active": "Is Active"
+        },
+        "text": {
+            "active": "Active",
+            "inactive": "Inactive"
+        },
+        "actions": "Actions",
+        "dialog": {
+            "create_title": "Create option value",
+            "update_title": "Update option value",
+            "confirm_delete_title": "Delete option value",
+            "confirm_delete_description": "Are you sure you want to delete option value \"{{name}}\"?"
+        }
+    }
+}

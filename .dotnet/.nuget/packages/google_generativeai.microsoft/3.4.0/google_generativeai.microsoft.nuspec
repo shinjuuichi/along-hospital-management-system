@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Google_GenerativeAI.Microsoft</id>
+    <version>3.4.0</version>
+    <title>Microsoft.Extensions.AI Integration with Google_GenerativeAI SDK for .NET Applications</title>
+    <authors>Gunpal Jain</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>favicon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://github.com/gunpal5/Google_GenerativeAI</projectUrl>
+    <description>This library provides Microsoft.Extensions.AI integration with Google_GenerativeAI SDK for .NET applications.</description>
+    <tags>GenerativeAI,Google,Gemini,Tools,SDK,GoogleGemini.Net,Google,Gemini,Gemini.Net</tags>
+    <repository type="git" url="https://github.com/gunpal5/Google_GenerativeAI" branch="refs/heads/main" commit="4b41c9beadcd227acb844b7255bb6fb7db4f3b14" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.2">
+        <dependency id="Google_GenerativeAI" version="3.4.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.AI.Abstractions" version="9.10.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net8.0">
+        <dependency id="Google_GenerativeAI" version="3.4.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.AI.Abstractions" version="9.10.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net9.0">
+        <dependency id="Google_GenerativeAI" version="3.4.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.AI.Abstractions" version="9.10.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Google_GenerativeAI" version="3.4.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.AI.Abstractions" version="9.10.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

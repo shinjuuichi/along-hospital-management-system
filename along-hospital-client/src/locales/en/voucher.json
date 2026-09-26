@@ -1,0 +1,99 @@
+{
+    "voucher": {
+        "title": {
+            "page": "Vouchers",
+            "list": "Available Vouchers",
+            "detail": "Voucher Details",
+            "delete": "Delete Voucher",
+            "delete_confirm": "Are you sure you want to delete",
+            "create": "Create Voucher",
+            "update": "Update Voucher",
+            "voucher_management": "Voucher Management",
+            "filters": "Filters",
+            "collectible_vouchers": "Voucher Store",
+            "my_vouchers": "My Vouchers"
+        },
+        "section": {
+            "basic_info": "Basic Information",
+            "discount_info": "Discount Information",
+            "usage_info": "Usage Information",
+            "applicable_medicines": "Applicable Medicines"
+        },
+        "description": {
+            "page_intro": "Manage all vouchers in the hospital system.",
+            "list": "Browse and manage available vouchers.",
+            "collectible_subtitle": "Collect discount vouchers for medicine purchases",
+            "my_vouchers_subtitle": "Manage and use collected vouchers",
+            "no_vouchers_title": "You don't have any vouchers yet",
+            "no_vouchers_subtitle": "Discover and collect promotional vouchers today",
+            "no_collectible_title": "No matching vouchers found",
+            "no_collectible_subtitle": "Try adjusting filters or clearing search criteria"
+        },
+        "button": {
+            "view_detail": "View detail",
+            "collect": "Collect",
+            "use_now": "Use Now",
+            "used": "Used",
+            "expired": "Expired",
+            "copy_code": "Copy code",
+            "explore_vouchers": "Explore vouchers",
+            "clear_filters": "Clear filters"
+        },
+        "placeholder": {
+            "no_description": "No description available.",
+            "no_result_title": "No vouchers found",
+            "no_result_subtitle": "Try adjusting the filters or searching with another keyword.",
+            "search_voucher": "Search voucher name...",
+            "select_status": "Select status",
+            "select_type": "Select type",
+            "select_discount_type": "Select discount type"
+        },
+        "field": {
+            "id": "ID",
+            "name": "Voucher Name",
+            "description": "Description",
+            "discount_value": "Discount Value",
+            "discount_value_percentage": "Discount Value (%)",
+            "discount_value_fixed_amount": "Discount Value ($)",
+            "min_purchase_amount": "Min Purchase Amount ($)",
+            "max_discount": "Max Discount ($)",
+            "quantity": "Quantity",
+            "expire_date": "Expire Date",
+            "voucher_status": "Status",
+            "voucher_type": "Type",
+            "discount_type": "Discount Type",
+            "image": "Image",
+            "medicines": "Medicines",
+            "medicine": "Medicine",
+            "applicable_medicines": "Applicable Medicines",
+            "code": "Code",
+            "medicine_id": "ID",
+            "medicine_name": "Medicine Name",
+            "medicine_brand": "Brand",
+            "medicine_price": "Price",
+            "medicine_category": "Category"
+        },
+        "status": {
+            "Active": "Active",
+            "Expired": "Expired"
+        },
+        "type": {
+            "Patient": "Patient Voucher",
+            "Medicine": "Medicine Discount"
+        },
+        "discount_type": {
+            "Percentage": "Percentage",
+            "FixedAmount": "Fixed Amount"
+        },
+        "label": {
+            "expire_date": "Expires",
+            "remaining_quantity": "Remaining {quantity}",
+            "min_purchase": "Minimum {amount}",
+            "max_discount": "Max discount {amount}"
+        },
+        "error": {
+            "duplicate_applicable_medicines": "Applicable medicines cannot contain duplicates",
+            "medicine_fixed_amount_not_supported": "Medicine discounts no longer support fixed amount. Please switch this voucher to percentage."
+        }
+    }
+}

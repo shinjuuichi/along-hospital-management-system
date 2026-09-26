@@ -1,0 +1,36 @@
+{
+    "doctor": {
+        "title": {
+            "team": "Đội Ngũ Y Bác Sĩ"
+        },
+        "text": {
+            "description": "Gặp gỡ các bác sĩ và chuyên gia y tế giàu kinh nghiệm của chúng tôi",
+            "queue_description": "Đội ngũ bác sĩ của Along Hospital quy tụ nhiều chuyên gia giàu kinh nghiệm, luôn đồng hành cùng người bệnh từ tư vấn, chẩn đoán đến xây dựng phác đồ điều trị phù hợp. Mỗi hồ sơ giúp bạn xem nhanh chuyên khoa, trình độ chuyên môn và những thông tin cần thiết để lựa chọn bác sĩ phù hợp."
+        },
+        "field": {
+            "id": "ID",
+            "name": "Tên",
+            "specialty": "Chuyên khoa",
+            "qualification": "Bằng cấp",
+            "image": "Hình ảnh bác sĩ"
+        },
+        "badge": {
+            "queue_style": "Đội ngũ bác sĩ tại Along Hospital"
+        },
+        "stats": {
+            "total": "Tổng bác sĩ",
+            "active": "Đang hoạt động",
+            "specialties": "Chuyên khoa"
+        },
+        "ticket": {
+            "ticket_label": "DOCTOR TICKET",
+            "view_doctor": "Trang thông tin bác sĩ",
+            "quick_info": "Thông tin nhanh",
+            "footer_label": "Chuyên khoa tiếp nhận",
+            "pending_update": "Đang cập nhật"
+        },
+        "placeholder": {
+            "no_doctors": "Không tìm thấy bác sĩ"
+        }
+    }
+}

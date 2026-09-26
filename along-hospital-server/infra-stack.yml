@@ -1,0 +1,161 @@
+x-manager-deploy: &manager-deploy
+  mode: replicated
+  replicas: 1
+  placement:
+    constraints:
+      - node.role == manager
+  restart_policy:
+    condition: on-failure
+    delay: 5s
+    max_attempts: 10
+    window: 120s
+  update_config:
+    parallelism: 1
+    order: stop-first
+    failure_action: rollback
+  rollback_config:
+    parallelism: 1
+    order: stop-first
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: ${SQL_SA_PASSWORD}
+      ACCEPT_EULA: 'Y'
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    healthcheck:
+      test: ['CMD-SHELL', "bash -c '</dev/tcp/127.0.0.1/1433'"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    ports:
+      - target: 1433
+        published: 1433
+        protocol: tcp
+        mode: ingress
+    networks:
+      - hospital-network
+    deploy: *manager-deploy
+
+  mongodb:
+    image: mongo:7.0
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: ['CMD', 'mongosh', '--eval', "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    ports:
+      - target: 27017
+        published: 27017
+        protocol: tcp
+        mode: ingress
+    networks:
+      - hospital-network
+    deploy: *manager-deploy
+
+  redis:
+    image: redis:7-alpine
+    command: ['redis-server', '--requirepass', '${REDIS_PASSWORD}']
+    volumes:
+      - redis_data:/data
+    ports:
+      - target: 6379
+        published: 6379
+        protocol: tcp
+        mode: ingress
+    networks:
+      - hospital-network
+    deploy: *manager-deploy
+
+  rabbitmq:
+    image: rabbitmq:4.2.2-management
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USERNAME}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+      RABBITMQ_PLUGINS: rabbitmq_management rabbitmq_prometheus
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    healthcheck:
+      test: ['CMD', 'rabbitmq-diagnostics', 'check_port_connectivity']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    ports:
+      - target: 5672
+        published: 5672
+        protocol: tcp
+        mode: ingress
+      - target: 15672
+        published: 15672
+        protocol: tcp
+        mode: ingress
+      - target: 15692
+        published: 15692
+        protocol: tcp
+        mode: ingress
+    networks:
+      - hospital-network
+    deploy: *manager-deploy
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    volumes:
+      - qdrant_data:/qdrant/storage
+    healthcheck:
+      test: ['CMD-SHELL', "bash -c ':> /dev/tcp/127.0.0.1/6333' || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    ports:
+      - target: 6333
+        published: 6333
+        protocol: tcp
+        mode: ingress
+      - target: 6334
+        published: 6334
+        protocol: tcp
+        mode: ingress
+    networks:
+      - hospital-network
+    deploy: *manager-deploy
+
+  machine-learning-svc:
+    image: ${DOCKER_REGISTRY:-docker.io}/${NAMESPACE_LC:-ok}/machine-learning-svc:${VERSION:-latest}
+    ports:
+      - target: 4996
+        published: 7996
+        protocol: tcp
+        mode: ingress
+    environment:
+      FLASK_ENV: production
+      FLASK_RUN_HOST: 0.0.0.0
+      FLASK_RUN_PORT: '4996'
+      DB_HOST: ${DB_HOST:-infra_sqlserver}
+      DB_PORT: ${DB_PORT:-1433}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME_MEDICAL_HISTORY: ${DB_NAME_MEDICAL_HISTORY}
+      DB_NAME_FEEDBACK: ${DB_NAME_FEEDBACK}
+      OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT:-http://observability_otel-collector:4317}
+      OTEL_EXPORTER_OTLP_PROTOCOL: ${OTEL_EXPORTER_OTLP_PROTOCOL:-grpc}
+    networks:
+      - hospital-network
+    deploy: *manager-deploy
+
+volumes:
+  sqlserver_data:
+  mongodb_data:
+  redis_data:
+  rabbitmq_data:
+  qdrant_data:
+
+networks:
+  hospital-network:
+    external: true

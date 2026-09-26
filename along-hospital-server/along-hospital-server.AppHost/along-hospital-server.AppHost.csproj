@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Sdk Name="Aspire.AppHost.Sdk" Version="9.3.1" />
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<UserSecretsId>a3d6580b-3694-415e-91fe-268a3bde8955</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Aspire.Hosting.AppHost" Version="9.3.1" />
+		<PackageReference Include="Aspire.Hosting.Python" Version="9.5.2" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\AttendanceService\AttendanceSvc.WebAPI\AttendanceSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\BillingService\BillingSvc.WebAPI\BillingSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\BlogService\BlogSvc.WebAPI\BlogSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\AppointmentService\AppointmentSvc.WebAPI\AppointmentSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\CartService\CartSvc.WebAPI\CartSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\ChatboxService\ChatboxSvc.WebAPI\ChatboxSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\CommonServices\SmsSvc\SmsSvc.csproj" />
+		<ProjectReference Include="..\InpatientResourceService\InpatientResourceSvc.WebAPI\InpatientResourceSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\InventoryService\InventorySvc.WebAPI\InventorySvc.WebAPI.csproj" />
+		<ProjectReference Include="..\MedicalHistoryService\MedicalHistorySvc.WebAPI\MedicalHistorySvc.WebAPI.csproj" />
+		<ProjectReference Include="..\MedicalOrderService\MedicalOrderSvc.WebAPI\MedicalOrderSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\MedicalServiceService\MedicalServiceSvc.WebAPI\MedicalServiceSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\MedicineService\MedicineSvc.WebAPI\MedicineSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\OrderService\OrderSvc.WebAPI\OrderSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\PatientService\PatientSvc.WebAPI\PatientSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\ApiGateway\ApiGateway.csproj" />
+		<ProjectReference Include="..\AuthService\AuthSvc.WebAPI\AuthSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\CommonServices\EmailSvc\EmailSvc.csproj" />
+		<ProjectReference Include="..\CommonServices\UploadSvc\UploadSvc.csproj" />
+		<ProjectReference Include="..\PaymentService\PaymentSvc.WebAPI\PaymentSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\PayrollService\PayrollSvc.WebAPI\PayrollSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\ProductService\ProductSvc.WebAPI\ProductSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\QueueService\QueueSvc.WebAPI\QueueSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\RecruitmentService\RecruitmentSvc.WebAPI\RecruitmentSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\ReportService\ReportSvc.WebAPI\ReportSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\StaffRequestService\StaffRequestSvc.WebAPI\StaffRequestSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\SupplierService\SupplierSvc.WebAPI\SupplierSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\TeleHealthService\TeleHealthSvc.WebAPI\TeleHealthSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\UserService\UserSvc.WebAPI\UserSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\StaffService\StaffSvc.WebAPI\StaffSvc.WebAPI.csproj" />
+		<ProjectReference Include="..\FeedbackService\FeedbackSvc.WebAPI\FeedbackSvc.WebAPI.csproj" />
+	  <ProjectReference Include="..\MedicineService\MedicineSvc.WebAPI\MedicineSvc.WebAPI.csproj" />
+	  <ProjectReference Include="..\VoucherService\VoucherSvc.WebAPI\VoucherSvc.WebAPI.csproj" />
+	  <ProjectReference Include="..\WorkScheduleService\WorkScheduleSvc.WebAPI\WorkScheduleSvc.WebAPI.csproj" />
+	</ItemGroup>
+</Project>

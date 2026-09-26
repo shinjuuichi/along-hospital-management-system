@@ -1,0 +1,34 @@
+{
+    "medicine_unit": {
+        "title": {
+            "management": "Quản lý đơn vị thuốc"
+        },
+        "filter": {
+            "title": "Bộ lọc",
+            "searchPlaceholder": "Tìm kiếm đơn vị thuốc"
+        },
+        "field": {
+            "name": "Tên đơn vị",
+            "description": "Mô tả",
+            "options": "Thuộc tính"
+        },
+        "text": {
+            "active": "Hoạt động",
+            "inactive": "Ngừng hoạt động"
+        },
+        "button": {
+            "activate": "Kích hoạt",
+            "inactivate": "Ngừng kích hoạt"
+        },
+        "status": "Trạng thái",
+        "information": "Thông tin",
+        "detail": "Chi tiết",
+        "actions": "Hành động",
+        "dialog": {
+            "create_title": "Thêm đơn vị thuốc",
+            "update_title": "Cập nhật đơn vị thuốc",
+            "confirm_delete_title": "Xóa đơn vị thuốc",
+            "confirm_delete_description": "Bạn có chắc muốn xóa đơn vị \"{{name}}\"?"
+        }
+    }
+}

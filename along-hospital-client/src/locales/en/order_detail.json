@@ -1,0 +1,31 @@
+{
+    "order_detail": {
+        "common": {
+            "loading": "Loading...",
+            "back": "Back",
+            "back_to_history": "Back to Order History"
+        },
+        "detail": {
+            "title": "Order Details ",
+            "transaction_id": "Transaction ID",
+            "not_found": "Order not found",
+            "info_title": "Order Information",
+            "order_date": "Order Date",
+            "paid_date": "Paid Date",
+            "delivery_date": "Delivery Date",
+            "voucher_code": "Voucher Code",
+            "total_quantity": "Total Quantity",
+            "unit_product": "products",
+            "products": "Products",
+            "quantity": "Quantity",
+            "unit_price": "Unit Price",
+            "discount": "Discount",
+            "medicine_discount": "Medicine Discount",
+            "voucher_discount": "Voucher Discount",
+            "total": "Total",
+            "origin_price": "Original Price",
+            "total_discount": "Total Discount",
+            "final_price": "Final Price"
+        }
+    }
+}

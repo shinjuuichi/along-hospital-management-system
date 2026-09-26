@@ -1,0 +1,53 @@
+{
+    "appointment": {
+        "title": {
+            "patient_info": "Patient Info",
+            "appointment_info": "Appointment Info",
+            "doctor_info": "Doctor Info",
+            "create_appointment": "Create Appointment",
+            "create_appointment_note": "Note: Appointments can only be booked 1 time a day.",
+            "appointment_history": "Appointment History",
+            "appointment_management": "Appointment Management",
+            "appointment_detail": "Appointment Detail",
+            "tele_session_info": "Tele Session Info",
+            "timelines": "Timelines",
+            "upcoming": "Upcoming",
+            "completed": "Completed",
+            "available_time_slots": "Available Time Slots"
+        },
+        "button": {
+            "cancel_appointment": "Cancel Appointment",
+            "choose_time_slot": "Choose Date & Time Slot",
+            "pay": "Pay"
+        },
+        "field": {
+            "date": "Date",
+            "purpose": "Purpose",
+            "status": "Status",
+            "meeting_type": "Meeting Type",
+            "payment_status": "Payment Status",
+            "specialty": "Specialty",
+            "time_slot": "Time Slot",
+            "patient": "Patient",
+            "join_url": "Join URL"
+        },
+        "text": {
+            "time_slot_booked": "Booked {booked}/{max}",
+            "no_date_selected": "No date selected",
+            "no_time_slot_available": "No time slot available",
+            "link": "Link"
+        },
+        "dialog": {
+            "confirm_create_title": "Create appointment?",
+            "confirm_create_description": "Are you sure to create this appointment?",
+            "confirm_cancel_title": "Cancel appointment?",
+            "confirm_cancel_description": "Are you sure to cancel this appointment?",
+            "select_time_slot_title": "Select Date and Time Slot",
+            "create_success_title": "Appointment created successfully",
+            "create_success_payment_instruction": "Please click HERE to pay the general consultation fee:",
+            "create_success_payment_link_label": "HERE",
+            "create_success_skip_payment_instruction": "You can skip this step and return to Appointment History, open the appointment detail drawer, and pay again within 3 days from creation time to avoid automatic cancellation.",
+            "create_success_telehealth_join_instruction": "For telehealth appointments, go to Appointment History, select this appointment to open the detail drawer, then click the join meeting link."
+        }
+    }
+}

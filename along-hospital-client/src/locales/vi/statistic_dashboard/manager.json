@@ -1,0 +1,77 @@
+{
+	"statistic_dashboard_manager": {
+		"title": {
+			"page": "Bảng Điều Khiển Quản Lý",
+			"filters": "Bộ Lọc Thời Gian",
+			"current_range": "Khoảng thời gian hiện tại"
+		},
+		"field": {
+			"preset": "Khoảng thời gian",
+			"date_range": "Khoảng ngày",
+			"from_date": "Từ ngày",
+			"to_date": "Đến ngày"
+		},
+		"preset": {
+			"this_month": "Tháng này",
+			"this_year": "Năm nay",
+			"custom": "Tùy chỉnh"
+		},
+		"tab": {
+			"overview": "Tổng quan",
+			"commercial": "Thương mại",
+			"clinical": "Lâm sàng"
+		},
+		"widget": {
+			"order_revenue": "Doanh thu đơn hàng",
+			"new_patients": "Bệnh nhân mới",
+			"new_staff": "Nhân sự mới",
+			"revenue_over_time": "Doanh thu đơn hàng theo thời gian",
+			"collections_over_time": "Thu tiền theo thời gian",
+			"new_users_over_time": "Người dùng mới theo thời gian",
+			"new_staff_role_distribution": "Phân bố vai trò nhân sự mới",
+			"order_status": "Trạng thái đơn hàng",
+			"orders": "Đơn hàng",
+			"revenue": "Doanh thu",
+			"net_collected_amount": "Số tiền thu thuần",
+			"total_medicines": "Tổng thuốc",
+			"public_medicines": "Thuốc đang công khai",
+			"orders_over_time": "Đơn hàng theo thời gian",
+			"invoice_status": "Trạng thái hóa đơn",
+			"refund_status": "Trạng thái hoàn tiền",
+			"refunds_over_time": "Hoàn tiền theo thời gian",
+			"medicines_created_over_time": "Thuốc được tạo theo thời gian",
+			"medicine_status": "Trạng thái thuốc",
+			"total_medical_histories": "Tổng hồ sơ bệnh án",
+			"appointments": "Lịch hẹn",
+			"active_occupancies": "Ca lưu trú đang hoạt động",
+			"occupancy_rate": "Tỷ lệ lấp đầy",
+			"admissions_over_time": "Nhập viện theo thời gian",
+			"medical_history_status": "Trạng thái bệnh án",
+			"medical_history_type": "Loại bệnh án",
+			"appointments_over_time": "Lịch hẹn theo thời gian",
+			"appointment_status": "Trạng thái lịch hẹn",
+			"room_status": "Trạng thái phòng",
+			"bed_status": "Trạng thái giường",
+			"check_ins": "Lượt chấm công vào",
+			"unique_staff_with_attendance": "Nhân sự có chấm công",
+			"published_schedules": "Lịch làm việc đã phát hành",
+			"worked_minutes": "Số phút làm việc",
+			"pending_leave_requests": "Đơn nghỉ phép chờ xử lý",
+			"pending_salary_advances": "Tạm ứng lương chờ xử lý",
+			"applications_received": "Hồ sơ ứng tuyển nhận được",
+			"attendance_logs_over_time": "Bản ghi chấm công theo thời gian",
+			"work_status": "Trạng thái làm việc",
+			"leave_request_status": "Trạng thái đơn nghỉ phép",
+			"salary_advance_status": "Trạng thái tạm ứng lương",
+			"job_posting_status": "Trạng thái tin tuyển dụng",
+			"job_application_status": "Trạng thái hồ sơ ứng tuyển",
+			"applications_over_time": "Hồ sơ ứng tuyển theo thời gian"
+		},
+		"text": {
+			"description": "Theo dõi hiệu quả thương mại, lâm sàng và vận hành trên một bảng điều khiển duy nhất."
+		},
+		"button": {
+			"export": "Xuất Excel"
+		}
+	}
+}

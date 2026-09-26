@@ -1,0 +1,81 @@
+{
+    "order_management": {
+        "title": {
+            "order_management": "Quản lý đơn hàng",
+            "filters": "Bộ lọc",
+            "detail": "Chi tiết đơn hàng",
+            "order_info": "Thông tin đơn hàng",
+            "price_summary": "Tóm tắt giá",
+            "patient_info": "Thông tin bệnh nhân"
+        },
+        "field": {
+            "id": "Mã đơn",
+            "order_date": "Ngày đặt hàng",
+            "delivery_date": "Ngày giao hàng",
+            "status": "Trạng thái",
+            "voucher": "Mã giảm giá",
+            "origin_price": "Giá gốc",
+            "total_discount": "Tổng giảm giá",
+            "final_price": "Giá cuối",
+            "transaction_id": "Mã giao dịch",
+            "medicine_name": "Tên thuốc",
+            "medicine_brand": "Thương hiệu",
+            "medicine_unit": "Đơn vị",
+            "quantity": "Số lượng",
+            "unit_price": "Giá/đơn vị",
+            "discount_amount": "Số tiền giảm",
+            "is_payment_cash": "Tiền mặt",
+            "is_pickup_at_store": "Nhận hàng tại cửa hàng",
+            "paid_date": "Ngày thanh toán",
+            "cancellation_reason": "Lý do hủy",
+            "patient_name": "Tên bệnh nhân",
+            "patient_phone": "Số điện thoại",
+            "patient_email": "Email",
+            "patient_address": "Địa chỉ"
+        },
+        "text": {
+            "unknown": "Không xác định",
+            "order_details": "Chi tiết đơn hàng",
+            "yes": "Phải",
+            "no": "Không",
+            "pickup_at_store": "Nhận tại cửa hàng",
+            "delivery": "Giao hàng"
+        },
+        "button": {
+            "shipping": "Đang giao",
+            "delivered": "Đã giao",
+            "completed": "Hoàn thành",
+            "paid": "Thanh toán",
+            "create_order": "Tạo đơn hàng"
+        },
+        "confirm": {
+            "paid_title": "Xác nhận thanh toán",
+            "paid_description": "Bạn có chắc chắn muốn xác nhận đơn hàng này đã được thanh toán?",
+            "shipping_title": "Xác nhận giao hàng",
+            "shipping_description": "Bạn có chắc chắn muốn cập nhật trạng thái đơn hàng sang Đang giao?",
+            "completed_title": "Xác nhận hoàn thành",
+            "completed_description": "Bạn có chắc chắn muốn xác nhận đơn hàng đã hoàn thành?"
+        },
+        "public": "Công khai",
+        "private": "Riêng tư",
+        "create": {
+            "title": "Tạo đơn hàng",
+            "field": {
+                "patient_id": "Bệnh nhân",
+                "voucher_code": "Mã giảm giá",
+                "payment_type": "Phương thức thanh toán",
+                "description": "Mô tả",
+                "order_details": "Chi tiết đơn hàng",
+                "details": "Chi tiết đơn hàng",
+                "medicine": "Thuốc",
+                "sku": "SKU",
+                "sku_code": "Mã SKU",
+                "quantity": "Số lượng",
+                "add_detail": "Thêm sản phẩm",
+                "remove_detail": "Xóa",
+                "select_medicine": "Chọn thuốc",
+                "select_sku": "Chọn SKU"
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+﻿{
+	"work_schedule_template": {
+		"title": {
+			"template_management": "Mẫu lịch làm việc",
+			"template_detail": "Chi tiết mẫu lịch làm việc",
+			"weekly_shift_rule": "Quy tắc ca theo tuần",
+			"assign_staff_to_inpatient_room": "Phân công nhân viên vào phòng nội trú",
+			"assign_doctor_to_tele_room": "Phân công bác sĩ vào phòng khám từ xa"
+		},
+		"field": {
+			"name": "Tên",
+			"description": "Mô tả",
+			"active": "Kích hoạt",
+			"shift": "Ca",
+			"time": "Thời gian"
+		},
+		"tab": {
+			"room_assignments": "Phân công phòng",
+			"tele_room_assignments": "Phân công phòng khám từ xa"
+		},
+		"status": {
+			"yes": "Có",
+			"no": "Không"
+		},
+		"table": {
+			"id": "ID",
+			"active": "Kích hoạt",
+			"actions": "Thao tác"
+		},
+		"button": {
+			"new_template": "Mẫu mới",
+			"open": "Mở",
+			"duplicate": "Nhân bản",
+			"save_weekly_rules": "Lưu quy tắc tuần",
+			"select_all": "Chọn tất cả",
+			"clear_all": "Xóa tất cả",
+			"assign_staff": "Phân công nhân viên",
+			"assign_doctor": "Phân công bác sĩ"
+		},
+		"dialog": {
+			"create_template": "Tạo mẫu lịch làm việc",
+			"edit_template": "Chỉnh sửa mẫu lịch làm việc",
+			"delete_template_title": "Xóa mẫu lịch làm việc",
+			"delete_template_description": "Bạn có chắc chắn muốn xóa mẫu '{name}' không?"
+		},
+		"text": {
+			"copy_monday_to": "Sao chép Thứ hai sang",
+			"allowed_roles_for_room": "Vai trò được phép cho phòng này",
+			"no_assignments_yet": "Chưa có phân công."
+		}
+	}
+}

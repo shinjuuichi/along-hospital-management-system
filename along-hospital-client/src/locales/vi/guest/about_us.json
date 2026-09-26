@@ -1,0 +1,124 @@
+{
+    "about_us": {
+        "hero": {
+            "eyebrow": "Về Along Hospital",
+            "title": "Cam kết chăm sóc sức khỏe chất lượng và hành trình bệnh nhân liền mạch",
+            "subtitle": "Chúng tôi kết nối chăm sóc y tế tận tâm, đặt lịch khám và mua thuốc trực tuyến trong một trải nghiệm y tế số đáng tin cậy.",
+            "primary_action": "Đặt lịch khám",
+            "secondary_action": "Mua thuốc ngay",
+            "badges": {
+                "care": "Lấy bệnh nhân làm trung tâm",
+                "booking": "Quy trình đặt lịch số hóa",
+                "pharmacy": "Tiếp cận thuốc đáng tin cậy"
+            }
+        },
+        "story": {
+            "eyebrow": "Câu chuyện của chúng tôi",
+            "title": "Được xây dựng để kết nối chăm sóc bệnh viện với sự thuận tiện hiện đại",
+            "subtitle": "Along Hospital bắt đầu từ một mục tiêu đơn giản: giúp việc tiếp cận, hiểu và hoàn tất hành trình chăm sóc sức khỏe trở nên dễ dàng hơn ngay từ lần tìm kiếm đầu tiên đến lần theo dõi tiếp theo.",
+            "paragraph_1": "Từ một trải nghiệm dịch vụ tập trung vào bệnh viện, hệ thống đã phát triển thành một nền tảng rộng hơn giúp người bệnh tìm dịch vụ, đặt lịch tự tin hơn và tiếp tục điều trị với ít rào cản hơn.",
+            "paragraph_2": "Bằng cách kết nối dịch vụ y tế, lịch hẹn trực tuyến và thương mại thuốc trong cùng một hệ thống, chúng tôi hỗ trợ hành trình nhẹ nhàng hơn cho bệnh nhân và quy trình vận hành rõ ràng hơn cho đội ngũ y tế.",
+            "image_alt": "Minh họa sự phát triển của Along Hospital thành hệ sinh thái y tế số kết nối",
+            "highlights": {
+                "foundation": {
+                    "value": "2018",
+                    "label": "khởi đầu cho hành trình chăm sóc kết nối"
+                },
+                "booking": {
+                    "value": "24/7",
+                    "label": "khả dụng cho tìm kiếm và đặt lịch khám"
+                },
+                "commerce": {
+                    "value": "1 nền tảng",
+                    "label": "cho chăm sóc, lịch hẹn và đơn thuốc"
+                }
+            }
+        },
+        "principles": {
+            "eyebrow": "Sứ mệnh, Tầm nhìn & Giá trị",
+            "title": "Những nguyên tắc dẫn dắt mọi tương tác với bệnh nhân",
+            "subtitle": "Chúng tôi thiết kế hệ thống dựa trên niềm tin, sự rõ ràng trong vận hành và khả năng tiếp cận dịch vụ y tế.",
+            "items": {
+                "mission": {
+                    "title": "Sứ mệnh",
+                    "text": "Mang đến hành trình chăm sóc đáng tin cậy, kết nối điều trị trực tiếp, đặt lịch trực tuyến và tiếp cận thuốc trong một trải nghiệm liền mạch."
+                },
+                "vision": {
+                    "title": "Tầm nhìn",
+                    "text": "Trở thành nền tảng y tế được bệnh nhân tin cậy khi cần ra quyết định rõ ràng hơn, tiếp cận nhanh hơn và gắn kết hơn với bệnh viện."
+                },
+                "values": {
+                    "title": "Giá trị",
+                    "text": "Sự tận tâm, minh bạch, phối hợp và cải tiến liên tục định hình cách chúng tôi xây dựng từng điểm chạm công khai."
+                }
+            }
+        },
+        "goals": {
+            "eyebrow": "Mục tiêu hệ thống",
+            "title": "Nền tảng này được thiết kế để giải quyết điều gì",
+            "subtitle": "Trải nghiệm công khai vừa củng cố uy tín bệnh viện vừa giúp hoàn tất dịch vụ và thương mại y tế dễ dàng hơn trên môi trường số.",
+            "items": {
+                "appointment": {
+                    "title": "Đặt lịch khám",
+                    "text": "Giúp bệnh nhân tìm dịch vụ, chọn bác sĩ phù hợp và lên lịch thăm khám với ít thời gian chờ hơn cùng các bước tiếp theo rõ ràng hơn."
+                },
+                "commerce": {
+                    "title": "Thương mại thuốc",
+                    "text": "Mở rộng chăm sóc sau thăm khám thông qua trải nghiệm tìm kiếm và đặt mua thuốc đáng tin cậy, hỗ trợ điều trị liên tục."
+                },
+                "care": {
+                    "title": "Trải nghiệm chăm sóc phối hợp",
+                    "text": "Giữ thông tin bệnh viện, khả năng tiếp cận tư vấn và các điểm chạm dịch vụ số đồng bộ quanh một hành trình bệnh nhân."
+                }
+            }
+        },
+        "team": {
+            "eyebrow": "Đội ngũ phát triển",
+            "title": "Gặp gỡ đội ngũ xây dựng Along Hospital",
+            "subtitle": "Phần này giới thiệu các thành viên cốt lõi phụ trách định hướng sản phẩm, phân tích nghiệp vụ, kỹ thuật và hạ tầng hệ thống.",
+            "member_badge": "Thành viên cốt lõi",
+            "previous": "Thành viên trước",
+            "next": "Thành viên tiếp theo",
+            "go_to_member": "Đi tới thành viên",
+            "experience_label": "Kinh nghiệm",
+            "members": {
+                "member_01": {
+                    "name": "Lê Phước Duy",
+                    "role": "Team Leader",
+                    "experience": "1 năm dẫn dắt đội ngũ sản phẩm số",
+                    "bio": "Phụ trách định hướng sản phẩm, kế hoạch triển khai và phối hợp toàn bộ tiến độ của nền tảng Along Hospital."
+                },
+                "member_02": {
+                    "name": "Quách Phúc Khang",
+                    "role": "Business Analyst",
+                    "experience": "1 năm phân tích quy trình nghiệp vụ",
+                    "bio": "Chuyển các nghiệp vụ bệnh viện thành yêu cầu rõ ràng để luồng đặt lịch, thương mại và dịch vụ luôn đồng bộ."
+                },
+                "member_03": {
+                    "name": "Nguyễn Bửu Khánh",
+                    "role": "Developer",
+                    "experience": "1 năm phát triển ứng dụng web",
+                    "bio": "Xây dựng các tính năng cốt lõi và đảm bảo nền tảng hoạt động ổn định cho cả người dùng công khai lẫn nội bộ."
+                },
+                "member_04": {
+                    "name": "Trần Minh Quân",
+                    "role": "Developer",
+                    "experience": "1 năm phát triển frontend và hệ thống",
+                    "bio": "Tập trung chuyển các yêu cầu y tế phức tạp thành giao diện dễ dùng và logic ứng dụng dễ bảo trì."
+                },
+                "member_05": {
+                    "name": "Thái Ba Sinl",
+                    "role": "Devops Engineer",
+                    "experience": "1 năm về hạ tầng và tự động hóa",
+                    "bio": "Phụ trách triển khai, độ ổn định môi trường và pipeline giao hàng để hệ thống luôn an toàn và sẵn sàng."
+                }
+            }
+        },
+        "cta": {
+            "title": "Sẵn sàng kết nối với Along Hospital?",
+            "subtitle": "Đặt lịch khám hoặc khám phá trải nghiệm mua thuốc trên cùng một nền tảng đáng tin cậy.",
+            "primary_action": "Đặt lịch khám",
+            "secondary_action": "Mua thuốc ngay"
+        }
+    }
+}

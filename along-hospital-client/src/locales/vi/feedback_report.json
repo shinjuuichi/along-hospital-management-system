@@ -1,0 +1,27 @@
+{
+    "feedback_report": {
+        "title": {
+            "management": "Quản lý báo cáo đánh giá"
+        },
+        "field": {
+            "id": "Mã",
+            "feedback": "Đánh giá",
+            "status": "Trạng thái",
+            "reason": "Lý do",
+            "actions": "Hành động"
+        },
+        "button": {
+            "resolve": "Xử lý",
+            "reject": "Từ chối",
+            "view_reason": "Xem lý do"
+        },
+        "status": {
+            "pending": "Chờ xử lý",
+            "resolved": "Đã xử lý",
+            "rejected": "Đã từ chối"
+        },
+        "dialog": {
+            "reason_title": "Lý do báo cáo"
+        }
+    }
+}

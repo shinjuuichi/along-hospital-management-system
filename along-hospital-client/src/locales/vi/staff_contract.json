@@ -1,0 +1,49 @@
+{
+  "staff_contract": {
+    "title": {
+      "staff_contract_management": "Quản lý hợp đồng nhân viên",
+      "hr_contract_management": "Quản lý hợp đồng HR",
+      "create_form": "Tạo hợp đồng nhân viên",
+      "update_form": "Cập nhật hợp đồng nhân viên",
+      "renew_form": "Gia hạn hợp đồng nhân viên",
+      "delete_title": "Xóa hợp đồng nhân viên?",
+      "delete_description": "Bạn có chắc chắn muốn xóa hợp đồng \"{code}\"?",
+      "terminate_title": "Chấm dứt hợp đồng?",
+      "terminate_description": "Bạn có chắc chắn muốn chấm dứt hợp đồng \"{code}\"?",
+      "renew_title": "Gia hạn hợp đồng?",
+      "renew_description": "Bạn có chắc chắn muốn gia hạn hợp đồng \"{code}\"?",
+      "sign_form": "Ký hợp đồng",
+      "sign_title": "Ký hợp đồng?",
+      "sign_description": "Bạn có chắc chắn muốn ký hợp đồng \"{code}\"?"
+    },
+    "field": {
+      "id": "ID",
+      "contract_code": "Mã hợp đồng",
+      "contract_type": "Loại hợp đồng",
+      "start_date": "Ngày bắt đầu",
+      "end_date": "Ngày kết thúc",
+      "hourly_rate": "Lương theo giờ",
+      "working_hours_per_week": "Giờ làm việc/tuần",
+      "status": "Trạng thái",
+      "signed_date": "Ngày ký",
+      "signing_status": "Tình trạng ký",
+      "signature_image": "Chữ ký",
+      "insurance_salary_rate": "Tỷ lệ lương đóng BH",
+      "staff": "Nhân viên",
+      "staff_name": "Tên nhân viên",
+      "staff_image": "Ảnh nhân viên",
+      "regional_wage": "Lương vùng",
+      "creation_date": "Ngày tạo",
+      "last_modified_date": "Ngày sửa cuối",
+      "actions": "Thao tác"
+    },
+    "button": {
+      "terminate": "Chấm dứt",
+      "renew": "Gia hạn",
+      "sign": "Ký",
+      "signed": "Đã ký",
+      "detail": "Chi tiết",
+      "unsigned": "Chưa ký"
+    }
+  }
+}

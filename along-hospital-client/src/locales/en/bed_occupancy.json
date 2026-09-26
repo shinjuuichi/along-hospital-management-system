@@ -1,0 +1,94 @@
+{
+	"bed_occupancy": {
+		"title": {
+			"management": "Bed Occupancy Management",
+			"filters": "Board Filters",
+			"room_list": "Rooms",
+			"bed_assignment": "Bed Assignment",
+			"bed_info": "Bed Information",
+			"room_info": "Room Information",
+			"billing_summary": "Estimated Bed Charge",
+			"history": "Bed History",
+			"occupancy_history": "Occupancy History",
+			"occupancy_timeline": "Occupancy Timeline"
+		},
+		"summary": {
+			"rooms": "Rooms",
+			"beds": "Beds",
+			"occupied": "Occupied",
+			"available": "Available",
+			"maintenance": "Maintenance"
+		},
+		"filter": {
+			"search": "Search board",
+			"building": "Building",
+			"floor": "Floor",
+			"specialty": "Specialty",
+			"bed_state": "Bed State"
+		},
+		"field": {
+			"bed": "Bed",
+			"room": "Room",
+			"bed_info": "Bed Information",
+			"room_info": "Room Information",
+			"occupancy_status": "Occupancy Status",
+			"transfer_note": "Transfer Note",
+			"latest_transfer_note": "Latest Transfer Note",
+			"from_date": "From Date",
+			"to_date": "To Date",
+			"duration_days": "Duration",
+			"daily_rate": "Daily Rate",
+			"total_amount": "Total Amount",
+			"total_bed_charge": "Estimated Bed Charge"
+		},
+		"placeholder": {
+			"no_bed_assigned": "No bed has been assigned to this patient",
+			"no_rooms_available": "No rooms available for this specialty",
+			"no_beds_available": "No beds available in this room",
+			"enter_transfer_note": "Enter the reason or note for this transfer",
+			"select_room": "-- Select a room --",
+			"search_board": "Search by room code, bed code, patient name, or medical history number",
+			"no_matching_rooms": "No rooms match the current filters.",
+			"no_room_selected": "Select a room to view its beds.",
+			"no_matching_beds": "No beds match the current filters in this room.",
+			"no_history": "No occupancy history is available for this bed."
+		},
+		"button": {
+			"assign_bed": "Assign Bed",
+			"compact_view": "Compact View",
+			"detailed_view": "Detailed View",
+			"discharge_bed": "Discharge from Bed",
+			"transfer_bed": "Transfer Bed",
+			"view_inpatient": "View Inpatient",
+			"view_history": "View History",
+			"refresh": "Refresh Board"
+		},
+		"dialog": {
+			"assign_bed_title": "Assign Bed to Patient",
+			"transfer_bed_title": "Transfer Patient to Another Bed",
+			"confirm": {
+				"discharge_title": "Confirm Discharge",
+				"discharge_description": "Are you sure you want to discharge this patient from the bed? This action will mark the bed as available."
+			}
+		},
+		"text": {
+			"selected_bed": "Selected Bed",
+			"current_bed": "Current Bed",
+			"now": "Now",
+			"day_unit": "day(s)",
+			"timeline_click_hint": "Hover to highlight the timeline segment. Click a node to view Bed Information.",
+			"compact_view_hint": "Compact view groups consecutive transfers in the same room.",
+			"detailed_view_hint": "Detailed view shows every transfer event in order.",
+			"transfer_events": "transfer(s)",
+			"transferred": "Transferred",
+			"assigned": "Assigned",
+			"duration_label": "Duration",
+			"latest_bed": "Latest Bed",
+			"click_to_focus_detail": "Click to view Bed Information.",
+			"available": "This bed is currently available.",
+			"no_current_inpatient": "No active inpatient is assigned to this bed right now.",
+			"in_progress": "In Progress",
+			"estimated_billing_hint": "This is a running estimate. The final billed bed charge invoice is created when the patient is discharged from the bed."
+		}
+	}
+}

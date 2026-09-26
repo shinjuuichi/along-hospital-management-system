@@ -1,0 +1,47 @@
+{
+    "blog": {
+        "title": {
+            "list": "Tin tức & Blog",
+            "detail": "Blog",
+            "management": "Quản lý blog",
+            "header_subtitle": "Tin tức bệnh viện & bài viết chăm sóc sức khỏe",
+            "untitled": "Không có tiêu đề"
+        },
+        "field": {
+            "title": "Tiêu đề",
+            "type": "Loại bài viết",
+            "category": "Danh mục",
+            "content": "Nội dung",
+            "cover_image": "Ảnh bìa",
+            "preview": "Xem trước",
+            "image": "Hình ảnh",
+            "publication_date": "Ngày đăng",
+            "creation_date": "Ngày tạo",
+            "page_info": "Trang {current} / {total}"
+        },
+        "placeholder": {
+            "select_type": "-- Chọn loại --",
+            "select_category": "-- Chọn danh mục --"
+        },
+        "button": {
+            "choose_image": "Chọn ảnh",
+            "remove_image": "Xóa ảnh"
+        },
+        "text": {
+            "read_more": "Đọc thêm",
+            "no_posts": "Không có bài viết nào",
+            "no_posts_subtitle": "Thử điều chỉnh bộ lọc của bạn hoặc quay lại sau để xem nội dung mới.",
+            "image_alt": "Hình bài viết",
+            "recent_posts": "Bài viết mới",
+            "no_recent": "Chưa có bài viết mới.",
+            "published_on": "Đăng ngày {date}",
+            "no_category": "Chưa phân loại"
+        },
+        "dialog": {
+            "delete_title": "Xóa blog",
+            "delete_description": "Bạn có chắc chắn muốn xóa blog '{title}' không?",
+            "delete_many_title": "Xóa nhiều blog",
+            "delete_many_description": "Bạn có chắc chắn muốn xóa {number} blog đã chọn không?"
+        }
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "medicine_sku": {
+        "title": {
+            "management": "Medicine SKU Management"
+        },
+        "field": {
+            "sku_code": "SKU Code",
+            "price": "Price",
+            "inventory": "Inventory",
+            "medicine": "Medicine",
+            "option_values": "Option Values",
+            "active": "Status",
+            "name": "SKU Name",
+            "option": "Option",
+            "option_value": "Option Value",
+            "actions": "Actions"
+        },
+        "filter": {
+            "title": "Filter",
+            "searchPlaceholder": "Search SKU code or medicine"
+        },
+        "dialog": {
+            "create_title": "Create SKU",
+            "update_title": "Update SKU",
+            "confirm_delete_title": "Delete SKU",
+            "confirm_delete_description": "Are you sure you want to delete SKU {{sku}}?"
+        },
+        "helper": {
+            "option_unique": "Each option can only appear once per SKU"
+        },
+        "validation": {
+            "medicine_required": "Please select medicine",
+            "option_required": "Please select option values",
+            "price_positive": "Price must be greater than 0",
+            "option_unique": "Each option can only appear once",
+            "option_unit_mismatch": "Option values do not match medicine unit",
+            "quantity_non_negative": "Quantity must be >= 0",
+            "min_quantity_non_negative": "Min quantity must be >= 0",
+            "max_quantity_gte_min": "Max quantity must >= min quantity"
+        },
+        "text": {
+            "error": "Error",
+            "active": "Active",
+            "inactive": "Inactive"
+        }
+    }
+}

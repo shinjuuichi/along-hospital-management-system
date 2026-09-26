@@ -1,0 +1,60 @@
+{
+    "profile": {
+        "title": {
+            "personal_information": "Personal Information",
+            "professional_information": "Professional Information",
+            "health_information": "Health Information",
+            "change_password": "Change Password",
+            "update_profile": "Update Profile",
+            "password_tips": "Password Requirements"
+        },
+        "text": {
+            "change_password_description": "Enter your current password and choose a new password",
+            "change_password_success": "Password changed successfully",
+            "password_tip_length": "At least 8 characters long",
+            "password_tip_uppercase": "Contains uppercase and lowercase letters",
+            "password_tip_number": "Contains at least one number",
+            "password_tip_special": "Contains at least one special character (@$!%*?&)"
+        },
+        "placeholder": {
+            "no_phone": "No phone number provided",
+            "no_email": "No email provided",
+            "no_gender": "No gender provided",
+            "no_date_of_birth": "No date of birth provided",
+            "no_address": "No address provided",
+            "no_height": "No height provided",
+            "no_weight": "No weight provided",
+            "no_allergies": "No allergies recorded",
+            "name": "Enter your full name",
+            "address": "Enter your address"
+        },
+        "field": {
+            "current_password": "Current Password",
+            "new_password": "New Password",
+            "confirm_password": "Confirm Password",
+            "name": "Name",
+            "full_name": "Full Name",
+            "email": "Email",
+            "phone": "Phone",
+            "address": "Address",
+            "city": "City",
+            "country": "Country",
+            "date_of_birth": "Date of Birth",
+            "gender": "Gender",
+            "medical_number": "Medical Number",
+            "height": "Height",
+            "weight": "Weight",
+            "height_weight": "Height/Weight",
+            "blood_type": "Blood Type",
+            "allergy": {
+                "allergies": "Allergies",
+                "name": "Name",
+                "severity": "Severity",
+                "reaction": "Reaction"
+            },
+            "hire_date": "Hire Date",
+            "qualification": "Qualification",
+            "specialty": "Specialty"
+        }
+    }
+}

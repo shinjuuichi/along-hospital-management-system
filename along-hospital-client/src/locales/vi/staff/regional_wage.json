@@ -1,0 +1,19 @@
+{
+    "regional_wage": {
+        "title": {
+            "menu": "Lương vùng",
+            "management": "Quản lý lương vùng",
+            "create": "Tạo lương vùng",
+            "update": "Cập nhật lương vùng",
+            "delete": "Xóa lương vùng",
+            "delete_confirm": "Bạn có chắc muốn xóa lương vùng mã"
+        },
+        "field": {
+            "id": "Mã",
+            "code": "Mã vùng",
+            "monthly_wage": "Lương tháng",
+            "from_date": "Từ ngày",
+            "to_date": "Đến ngày"
+        }
+    }
+}

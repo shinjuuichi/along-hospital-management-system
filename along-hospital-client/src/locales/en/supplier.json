@@ -1,0 +1,28 @@
+{
+    "supplier": {
+        "title": {
+            "supplier_management": "Supplier Management"
+        },
+        "field": {
+            "id": "ID",
+            "name": "Supplier Name",
+            "phone": "Phone",
+            "email": "Email",
+            "address": "Address",
+            "note": "Note",
+            "actions": "Actions"
+        },
+        "text": {
+            "total_suppliers": "Total suppliers"
+        },
+        "filter": {
+            "search_placeholder": "Search by supplier name..."
+        },
+        "dialog": {
+            "create_title": "Create Supplier",
+            "update_title": "Update Supplier",
+            "confirm_delete_title": "Delete Supplier?",
+            "confirm_delete_description": "Are you sure you want to delete \"{{name}}\"?"
+        }
+    }
+}

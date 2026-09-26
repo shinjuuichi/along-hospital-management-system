@@ -1,0 +1,46 @@
+{
+	"statistic_dashboard_inventory_clerk": {
+		"title": {
+			"page": "Inventory Clerk Dashboard",
+			"filters": "Date Filters",
+			"current_range": "Current range"
+		},
+		"field": {
+			"preset": "Range preset",
+			"date_range": "Date range",
+			"from_date": "From date",
+			"to_date": "To date"
+		},
+		"preset": {
+			"this_month": "This month",
+			"this_year": "This year",
+			"custom": "Custom"
+		},
+		"tab": {
+			"overview": "Overview",
+			"inventory": "Inventory",
+			"supplier": "Supplier",
+			"import": "Import"
+		},
+		"widget": {
+			"total_inventory_items": "Total Medicine Types",
+			"low_stock_items": "Low Stock Items",
+			"out_of_stock_items": "Out of Stock Items",
+			"total_suppliers": "Total Suppliers",
+			"total_imports": "Total Imports",
+			"total_import_value": "Total Import Value",
+			"total_quantity": "Total Quantity",
+			"stock_status": "Stock Status",
+			"inventory_over_time": "Inventory Over Time",
+			"suppliers_over_time": "Suppliers Over Time",
+			"imports_over_time": "Imports Over Time",
+			"import_by_supplier": "Import by Supplier"
+		},
+		"text": {
+			"description": "Track inventory levels, supplier performance, and import activity from one dashboard."
+		},
+		"button": {
+			"export": "Export Excel"
+		}
+	}
+}

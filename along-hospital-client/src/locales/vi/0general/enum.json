@@ -1,0 +1,383 @@
+{
+    "enum": {
+        "gender": {
+            "male": "Nam",
+            "female": "Nữ",
+            "other": "Khác"
+        },
+        "role": {
+            "manager": "Quản lý",
+            "patient": "Bệnh nhân",
+            "doctor": "Bác sĩ",
+            "nurse": "Điều dưỡng",
+            "hr": "Nhân sự",
+            "pharmacist": "Dược sĩ",
+            "accountant": "Kế toán",
+            "marketer": "Marketing",
+            "receptionist": "Lễ tân",
+            "hotline_agent": "Nhân viên hotline",
+            "inventory_clerk": "Nhân viên kho"
+        },
+        "blood_type": {
+            "unknown": "Không xác định",
+            "o": "O",
+            "a": "A",
+            "b": "B",
+            "ab": "AB",
+            "rare": "Hiếm"
+        },
+        "qualification": {
+            "bachelor": "Cử nhân",
+            "master": "Thạc sĩ",
+            "phd": "Tiến sĩ",
+            "specialist": "Chuyên khoa"
+        },
+        "blog_type": {
+            "health": "Sức khỏe",
+            "news": "Tin tức",
+            "promotion": "Khuyến mãi",
+            "guide": "Hướng dẫn",
+            "other": "Khác"
+        },
+        "appointment_status": {
+            "scheduled": "Đã lên lịch",
+            "completed": "Đã hoàn thành",
+            "cancelled": "Đã hủy"
+        },
+        "appointment_payment_status": {
+            "pending": "Đang chờ",
+            "completed": "Đã hoàn thành",
+            "failed": "Thất bại"
+        },
+        "appointment_meeting_type": {
+            "in_person": "Trực tiếp",
+            "telehealth": "Y tế từ xa"
+        },
+        "attendance_log_type": {
+            "check_in": "Điểm danh vào",
+            "check_out": "Điểm danh ra"
+        },
+        "severity_level": {
+            "mild": "Nhẹ",
+            "moderate": "Trung bình",
+            "severe": "Nghiêm trọng"
+        },
+        "medical_history_status": {
+            "pending_payment": "Chờ thanh toán",
+            "draft": "Bản nháp",
+            "completed": "Đã hoàn thành",
+            "cancelled": "Đã hủy"
+        },
+        "medical_history_type": {
+            "outpatient": "Ngoại trú",
+            "inpatient": "Nội trú"
+        },
+        "medical_order_type": {
+            "clinical": "Lâm sàng",
+            "infusion": "Truyền dịch",
+            "instruction": "Chỉ định"
+        },
+        "clinical_medical_order_status": {
+            "pending": "Chờ xử lý",
+            "paid": "Đã thanh toán",
+            "cancelled": "Đã hủy"
+        },
+        "clinical_medical_order_detail_status": {
+            "pending": "Chờ xử lý",
+            "completed": "Đã hoàn thành",
+            "failed": "Thất bại"
+        },
+        "infusion_medical_order_detail_execution_status": {
+            "pending": "Chờ xử lý",
+            "completed": "Đã hoàn thành",
+            "failed": "Thất bại"
+        },
+        "instruction_medical_order_status": {
+            "draft": "Bản nháp",
+            "issued": "Đã ban hành",
+            "cancelled": "Đã hủy"
+        },
+        "nursing_care_order_level": {
+            "level_1": "Mức 1",
+            "level_2": "Mức 2",
+            "level_3": "Mức 3"
+        },
+        "nutrition_order_type": {
+            "breast_milk": "Sữa mẹ",
+            "formula_milk": "Sữa công thức",
+            "porridge": "Cháo",
+            "soft_rice": "Cơm mềm",
+            "regular_diet": "Chế độ ăn thường",
+            "npo": "Nhịn ăn (NPO)",
+            "other": "Khác"
+        },
+        "position_order_type": {
+            "supine": "Nằm ngửa",
+            "trendelenburg": "Trendelenburg",
+            "head_elevated_30": "Nâng đầu 30 độ",
+            "head_elevated_45": "Nâng đầu 45 độ",
+            "other": "Khác"
+        },
+        "respiratory_support_order_type": {
+            "room_air": "Khí phòng",
+            "oxygen_nasal_cannula": "Oxy gọng mũi",
+            "oxygen_mask": "Mặt nạ oxy",
+            "endotracheal_intubation": "Đặt nội khí quản",
+            "tracheostomy": "Mở khí quản",
+            "other": "Khác"
+        },
+        "invoice_status": {
+            "pending": "Đang chờ",
+            "completed": "Đã hoàn thành",
+            "cancelled": "Đã hủy"
+        },
+        "charge_type": {
+            "invoice": "Hóa đơn",
+            "refund": "Hoàn tiền"
+        },
+        "refund_status": {
+            "pending": "Đang chờ",
+            "approved": "Đã duyệt",
+            "cancelled": "Đã hủy"
+        },
+        "queue_status": {
+            "waiting": "Đang chờ",
+            "called": "Đã gọi",
+            "in_progress": "Đang tiến hành",
+            "awaiting_results": "Đang chờ kết quả",
+            "completed": "Đã hoàn thành",
+            "cancelled": "Đã hủy"
+        },
+        "complaint_topic": {
+            "service": "Dịch vụ",
+            "billing": "Thanh toán",
+            "doctor": "Bác sĩ",
+            "medicine": "Thuốc",
+            "others": "Khác"
+        },
+        "complaint_type": {
+            "neutral": "Trung lập",
+            "positive": "Tích cực",
+            "negative": "Tiêu cực"
+        },
+        "complaint_resolve_status": {
+            "pending": "Đang chờ xử lý",
+            "draft": "Đã soạn thảo",
+            "resolved": "Đã giải quyết",
+            "closed": "Đã đóng"
+        },
+        "medicine_status": {
+            "draft": "Nháp",
+            "active": "Hoạt động",
+            "inactive": "Ngừng hoạt động"
+        },
+        "voucher_status": {
+            "active": "Đang hoạt động",
+            "expired": "Hết hạn"
+        },
+        "voucher_type": {
+            "patient": "Bệnh nhân",
+            "medicine": "Thuốc"
+        },
+        "order_status": {
+            "unpaid": "Chưa thanh toán",
+            "paid": "Đã thanh toán",
+            "shipping": "Đang vận chuyển",
+            "completed": "Hoàn thành",
+            "cancelled": "Đã hủy"
+        },
+        "feedback_report_status": {
+            "pending": "Chờ xử lý",
+            "resolved": "Đã xử lý",
+            "rejected": "Đã từ chối"
+        },
+        "feedback_reply_status": {
+            "waiting_staff": "Chờ nhân viên",
+            "replied": "Đã phản hồi"
+        },
+        "payment_type": {
+            "pay_os": "PayOS",
+            "se_pay": "SePay",
+            "cash": "Tiền mặt"
+        },
+        "voucher_discount_type": {
+            "percentage": "Phần trăm",
+            "fixed_amount": "Số tiền cố định"
+        },
+        "staff_status": {
+            "active": "Đang làm việc",
+            "on_leave": "Nghỉ phép",
+            "terminated": "Đã nghỉ việc",
+            "suspended": "Tạm đình chỉ"
+        },
+        "bank_code": {
+            "mb_bank": "MBBank",
+            "vietcombank": "Vietcombank",
+            "techcombank": "Techcombank",
+            "bidv": "BIDV",
+            "vietin_bank": "VietinBank",
+            "acb": "ACB",
+            "tp_bank": "TPBank",
+            "vp_bank": "VPBank",
+            "agribank": "Agribank",
+            "msb": "MSB",
+            "ocb": "OCB",
+            "kienlong_bank": "KienlongBank",
+            "eximbank": "Eximbank",
+            "hd_bank": "HDBank",
+            "sacombank": "Sacombank",
+            "vib": "VIB",
+            "ab_bank": "ABBank",
+            "lp_bank": "LPBank",
+            "bac_a_bank": "BacABank",
+            "sea_bank": "SeABank",
+            "shb": "SHB",
+            "ncb": "NCB",
+            "woori_bank": "WooriBank",
+            "viet_a_bank": "VietABank",
+            "viet_bank": "VietBank",
+            "nam_a_bank": "NamABank",
+            "pg_bank": "PGBank",
+            "public_bank": "PublicBank"
+        },
+        "bed_status": {
+            "active": "Đang hoạt động",
+            "maintenance": "Bảo trì",
+            "occupied": "Đang sử dụng"
+        },
+        "room_status": {
+            "active": "Đang hoạt động",
+            "maintenance": "Đang bảo trì",
+            "closed": "Đóng cửa"
+        },
+        "active_status": {
+            "active": "Hoạt động",
+            "inactive": "Không hoạt động"
+        },
+        "insurance_subject": {
+            "none": "Không",
+            "full": "Đầy đủ",
+            "social_and_health": "BHXH & BHYT"
+        },
+        "allowance_quantity_source": {
+            "none": "Không",
+            "overtime_minutes": "Phút tăng ca"
+        },
+        "deduction_quantity_source": {
+            "none": "Không",
+            "late_minutes": "Phút đi muộn",
+            "early_leave_minutes": "Phút về sớm"
+        },
+        "payroll_policy_status": {
+            "active": "Hoạt động",
+            "inactive": "Không hoạt động"
+        },
+        "payroll_status": {
+            "draft": "Nháp",
+            "pending": "Chờ duyệt",
+            "approved": "Đã duyệt",
+            "paid": "Đã thanh toán",
+            "terminated": "Đã chấm dứt"
+        },
+        "occupancy_status": {
+            "active": "Đang điều trị",
+            "discharged": "Đã xuất viện",
+            "transferred": "Đã chuyển giường"
+        },
+        "import_request_status": {
+            "pending": "Chờ duyệt",
+            "approved": "Đã duyệt",
+            "rejected": "Từ chối",
+            "cancelled": "Đã hủy",
+            "created": "Mới tạo"
+        },
+        "leave_request_type": {
+            "leave": "Yêu cầu nghỉ phép",
+            "overtime": "Yêu cầu tăng ca"
+        },
+        "leave_type": {
+            "annual": "Nghỉ phép năm",
+            "sick": "Nghỉ ốm",
+            "maternity": "Nghỉ thai sản",
+            "personal": "Nghỉ việc riêng",
+            "other": "Khác"
+        },
+        "leave_unit": {
+            "day": "Ngày",
+            "shift": "Ca"
+        },
+        "overtime_type": {
+            "after_shift": "Sau ca",
+            "holiday": "Ngày lễ"
+        },
+        "leave_request_status": {
+            "pending": "Chờ duyệt",
+            "approved": "Đã duyệt",
+            "rejected": "Từ chối",
+            "canceled": "Đã hủy"
+        },
+        "salary_advance_status": {
+            "pending": "Chờ duyệt",
+            "approved": "Đã duyệt",
+            "rejected": "Từ chối",
+            "cancelled": "Đã hủy",
+            "disbursed": "Đã chi ứng"
+        },
+        "staff_certificate_status": {
+            "valid": "Còn hiệu lực",
+            "expired": "Hết hạn",
+            "suspended": "Tạm đình chỉ"
+        },
+        "day_of_week": {
+            "sunday": "Chủ nhật",
+            "monday": "Thứ hai",
+            "tuesday": "Thứ ba",
+            "wednesday": "Thứ tư",
+            "thursday": "Thứ năm",
+            "friday": "Thứ sáu",
+            "saturday": "Thứ bảy"
+        },
+        "work_schedule_status": {
+            "draft": "Nháp",
+            "published": "Đã phát hành",
+            "locked": "Đã khóa",
+            "finalized": "Đã chốt"
+        },
+        "work_status": {
+            "worked": "Đã làm việc",
+            "absent": "Vắng mặt",
+            "overtime": "Tăng ca"
+        },
+        "work_status_reason": {
+            "worked_from_attendance": "Làm việc theo chấm công",
+            "approved_day_leave": "Nghỉ theo ngày đã duyệt",
+            "approved_shift_leave": "Nghỉ theo ca đã duyệt",
+            "no_attendance_log": "Không có log chấm công",
+            "missing_check_in": "Thiếu check-in",
+            "missing_check_out": "Thiếu check-out",
+            "invalid_attendance_range": "Khoảng chấm công không hợp lệ",
+            "late_arrival": "Đến muộn",
+            "early_leave": "Về sớm"
+        },
+        "location_type": {
+            "room": "Phòng",
+            "tele_room": "Phòng khám từ xa"
+        },
+        "employment_type": {
+            "full_time": "Toàn thời gian",
+            "part_time": "Bán thời gian",
+            "internship": "Thực tập"
+        },
+        "contract_type": {
+            "probation": "Thử việc",
+            "fixed_term": "Có thời hạn",
+            "indefinite": "Không thời hạn",
+            "internship": "Thực tập"
+        },
+        "staff_contract_status": {
+            "active": "Hoạt động",
+            "expired": "Hết hạn",
+            "terminated": "Đã chấm dứt"
+        }
+    }
+}

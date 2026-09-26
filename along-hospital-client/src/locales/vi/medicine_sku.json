@@ -1,0 +1,47 @@
+{
+    "medicine_sku": {
+        "title": {
+            "management": "Quản lý SKU thuốc"
+        },
+        "field": {
+            "sku_code": "Mã SKU",
+            "price": "Giá",
+            "inventory": "Tồn kho",
+            "medicine": "Thuốc",
+            "option_values": "Giá trị tuỳ chọn",
+            "active": "Trạng thái",
+            "name": "Tên SKU",
+            "option": "Tuỳ chọn",
+            "option_value": "Giá trị tuỳ chọn",
+            "actions": "Thao tác"
+        },
+        "filter": {
+            "title": "Bộ lọc",
+            "searchPlaceholder": "Tìm mã SKU hoặc thuốc"
+        },
+        "dialog": {
+            "create_title": "Tạo SKU",
+            "update_title": "Cập nhật SKU",
+            "confirm_delete_title": "Xoá SKU",
+            "confirm_delete_description": "Bạn có chắc muốn xoá SKU {{sku}}?"
+        },
+        "helper": {
+            "option_unique": "Mỗi tuỳ chọn chỉ chọn 1 giá trị"
+        },
+        "validation": {
+            "medicine_required": "Vui lòng chọn thuốc",
+            "option_required": "Vui lòng chọn giá trị tuỳ chọn",
+            "price_positive": "Giá phải lớn hơn 0",
+            "option_unique": "Mỗi tuỳ chọn chỉ dùng 1 giá trị",
+            "option_unit_mismatch": "Option không hợp với đơn vị thuốc",
+            "quantity_non_negative": "Số lượng phải >= 0",
+            "min_quantity_non_negative": "Số lượng tối thiểu phải >= 0",
+            "max_quantity_gte_min": "Số lượng tối đa phải >= số lượng tối thiểu"
+        },
+        "text": {
+            "error": "Lỗi",
+            "active": "Hoạt động",
+            "inactive": "Ngừng hoạt động"
+        }
+    }
+}

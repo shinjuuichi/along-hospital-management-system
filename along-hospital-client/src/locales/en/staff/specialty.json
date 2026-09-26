@@ -1,0 +1,35 @@
+{
+    "specialty": {
+        "title": {
+            "page": "Specialties",
+            "list": "Specialties A–Z",
+            "detail": "Specialty detail",
+            "delete": "Delete Specialty",
+            "delete_confirm": "Are you sure you want to delete",
+            "create": "Create Specialty",
+            "update": "Update Specialty",
+            "specialty_management": "Specialty Management"
+        },
+        "description": {
+            "page_intro": "Browse the full list of specialties available across our hospital system.",
+            "list": "Use the search or alphabet filter to find the specialty you need."
+        },
+        "button": {
+            "view_detail": "View detail",
+            "book_appointment": "Book appointment"
+        },
+        "placeholder": {
+            "no_description": "Information is being updated.",
+            "no_featured": "Featured specialties will be updated soon.",
+            "no_result_title": "No specialties found",
+            "no_result_subtitle": "Try adjusting the filters or searching with another keyword.",
+            "search_specialty": "Search by specialty name ..."
+        },
+        "field": {
+            "id": "ID",
+            "name": "Specialty Name",
+            "description": "Description",
+            "is_medical": "Is Medical"
+        }
+    }
+}

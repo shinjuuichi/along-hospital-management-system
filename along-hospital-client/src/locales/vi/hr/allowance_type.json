@@ -1,0 +1,33 @@
+{
+    "allowance_type": {
+        "title": {
+            "page": "Loại phụ cấp",
+            "list": "Danh sách loại phụ cấp",
+            "detail": "Chi tiết loại phụ cấp",
+            "delete": "Xóa loại phụ cấp",
+            "delete_confirm": "Bạn có chắc chắn muốn xóa",
+            "create": "Tạo loại phụ cấp",
+            "update": "Cập nhật loại phụ cấp",
+            "allowance_type_management": "Quản lý loại phụ cấp"
+        },
+        "description": {
+            "page_intro": "Quản lý tất cả loại phụ cấp trong hệ thống."
+        },
+        "placeholder": {
+            "no_result_title": "Không tìm thấy loại phụ cấp",
+            "no_result_subtitle": "Thử điều chỉnh bộ lọc hoặc tìm kiếm với từ khóa khác.",
+            "search_allowance_type": "Tìm theo tên loại phụ cấp ..."
+        },
+        "field": {
+            "id": "ID",
+            "name": "Tên",
+            "price": "Giá tiền",
+            "description": "Mô tả",
+            "allowance_quantity_source": "Nguồn số lượng",
+            "insurance_subject": "Đối tượng bảo hiểm",
+            "is_taxable": "Chịu thuế",
+            "is_system_generated": "Hệ thống tạo",
+            "is_percentage": "Theo phần trăm"
+        }
+    }
+}

@@ -1,0 +1,124 @@
+{
+    "about_us": {
+        "hero": {
+            "eyebrow": "About Along Hospital",
+            "title": "Committed to quality healthcare and connected patient journeys",
+            "subtitle": "We bring compassionate care, appointment booking, and medicine ordering into one trusted digital healthcare experience.",
+            "primary_action": "Book an Appointment",
+            "secondary_action": "Order Medicine Now",
+            "badges": {
+                "care": "Patient-first care",
+                "booking": "Digital appointment flow",
+                "pharmacy": "Trusted medicine access"
+            }
+        },
+        "story": {
+            "eyebrow": "Our Story",
+            "title": "Built to connect hospital care with modern convenience",
+            "subtitle": "Along Hospital started with a simple ambition: make healthcare easier to access, understand, and complete from the first search to the next follow-up.",
+            "paragraph_1": "What began as a hospital-first service experience has grown into a broader platform that helps patients discover care, book appointments with confidence, and continue treatment with less friction.",
+            "paragraph_2": "By connecting medical services, online scheduling, and medicine commerce in one system, we support a calmer journey for patients and a clearer operating flow for healthcare teams.",
+            "image_alt": "Illustration representing Along Hospital growth into connected digital healthcare",
+            "highlights": {
+                "foundation": {
+                    "value": "2018",
+                    "label": "foundation of our connected-care journey"
+                },
+                "booking": {
+                    "value": "24/7",
+                    "label": "availability for appointment discovery and booking"
+                },
+                "commerce": {
+                    "value": "1 platform",
+                    "label": "for care access, bookings, and medicine orders"
+                }
+            }
+        },
+        "principles": {
+            "eyebrow": "Mission, Vision & Values",
+            "title": "The principles guiding every patient interaction",
+            "subtitle": "We design the system around trust, operational clarity, and accessible healthcare experiences.",
+            "items": {
+                "mission": {
+                    "title": "Mission",
+                    "text": "Deliver dependable healthcare journeys that connect in-person treatment, online appointments, and medicine access in one seamless experience."
+                },
+                "vision": {
+                    "title": "Vision",
+                    "text": "Become the healthcare platform patients rely on for clear decisions, faster access, and a more connected relationship with their hospital."
+                },
+                "values": {
+                    "title": "Values",
+                    "text": "Compassion, transparency, coordination, and continuous improvement shape how we design every public-facing touchpoint."
+                }
+            }
+        },
+        "goals": {
+            "eyebrow": "System Goals",
+            "title": "What this platform is designed to solve",
+            "subtitle": "The public experience supports hospital credibility while making care and commerce easier to complete online.",
+            "items": {
+                "appointment": {
+                    "title": "Appointment booking",
+                    "text": "Help patients find medical services, choose the right doctor, and schedule visits with less waiting and clearer next steps."
+                },
+                "commerce": {
+                    "title": "Medicine ecommerce",
+                    "text": "Extend care beyond the visit through trusted medicine discovery, ordering, and a smoother path to ongoing treatment support."
+                },
+                "care": {
+                    "title": "Coordinated care experience",
+                    "text": "Keep hospital information, consultation access, and digital service touchpoints aligned around one patient journey."
+                }
+            }
+        },
+        "team": {
+            "eyebrow": "Developer Team",
+            "title": "Meet the team building Along Hospital",
+            "subtitle": "This section introduces the core members responsible for product direction, analysis, engineering, and infrastructure.",
+            "member_badge": "Core team member",
+            "previous": "Previous member",
+            "next": "Next member",
+            "go_to_member": "Go to member",
+            "experience_label": "Experience",
+            "members": {
+                "member_01": {
+                    "name": "Le Phuoc Duy",
+                    "role": "Team Leader",
+                    "experience": "1 year leading digital product teams",
+                    "bio": "Leads product direction, delivery planning, and coordination across the Along Hospital platform."
+                },
+                "member_02": {
+                    "name": "Quach Phuc Khang",
+                    "role": "Business Analyst",
+                    "experience": "1 year analyzing business workflows",
+                    "bio": "Translates hospital operations into clear requirements so booking, ecommerce, and service flows stay aligned."
+                },
+                "member_03": {
+                    "name": "Nguyen Buu Khanh",
+                    "role": "Developer",
+                    "experience": "1 year building web applications",
+                    "bio": "Implements core product features and keeps the platform reliable across public and internal user journeys."
+                },
+                "member_04": {
+                    "name": "Tran Minh Quan",
+                    "role": "Developer",
+                    "experience": "1 year in frontend and system development",
+                    "bio": "Focuses on turning complex healthcare requirements into usable interfaces and maintainable application logic."
+                },
+                "member_05": {
+                    "name": "Thai Ba Sinl",
+                    "role": "Devops Engineer",
+                    "experience": "1 year in infrastructure and automation",
+                    "bio": "Owns deployment, environment stability, and delivery pipelines so the platform stays secure and available."
+                }
+            }
+        },
+        "cta": {
+            "title": "Ready to connect with Along Hospital?",
+            "subtitle": "Schedule a visit or explore medicine ordering with the same trusted platform experience.",
+            "primary_action": "Book an Appointment",
+            "secondary_action": "Order Medicine Now"
+        }
+    }
+}

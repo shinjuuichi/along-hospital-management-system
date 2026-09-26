@@ -1,0 +1,37 @@
+{
+    "salary_advance": {
+        "title": {
+            "salary_advance": "Ứng lương",
+            "salary_advance_management": "Quản lý ứng lương",
+            "create_request": "Tạo yêu cầu ứng lương",
+            "edit_request": "Cập nhật yêu cầu ứng lương"
+        },
+        "field": {
+            "id": "ID",
+            "created_by": "Người tạo (ID)",
+            "amount": "Số tiền ứng",
+            "reason": "Lý do",
+            "status": "Trạng thái",
+            "creation_date": "Ngày tạo",
+            "payroll_id": "Mã bảng lương liên kết",
+            "actions": "Thao tác"
+        },
+        "button": {
+            "create_request": "Tạo yêu cầu",
+            "update_request": "Cập nhật yêu cầu",
+            "cancel_request": "Hủy yêu cầu",
+            "approve": "Duyệt",
+            "reject": "Từ chối",
+            "approve_selected": "Duyệt đã chọn",
+            "reject_selected": "Từ chối đã chọn"
+        },
+        "confirm": {
+            "cancel_title": "Hủy yêu cầu ứng lương?",
+            "cancel_description": "Bạn có chắc muốn hủy yêu cầu ứng lương?",
+            "approve_title": "Duyệt yêu cầu ứng lương?",
+            "approve_description": "Bạn có chắc muốn duyệt yêu cầu ứng lương?",
+            "reject_title": "Từ chối yêu cầu ứng lương?",
+            "reject_description": "Bạn có chắc muốn từ chối yêu cầu ứng lương?"
+        }
+    }
+}

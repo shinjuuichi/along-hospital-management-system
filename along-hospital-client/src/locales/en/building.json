@@ -1,0 +1,19 @@
+{
+	"building": {
+		"field": {
+			"name": "Name",
+			"location": "Location"
+		},
+		"dialog": {
+			"create_title": "Create building",
+			"update_title": "Update building",
+			"confirm_delete_title": "Confirm delete",
+			"confirm_delete_description": "Delete building {name}?",
+			"confirm_delete_selected_title": "Confirm delete selected",
+			"confirm_delete_selected_description": "Delete {count} selected building(s)?"
+		},
+		"title": {
+			"management": "Building Management"
+		}
+	}
+}

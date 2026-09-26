@@ -1,0 +1,34 @@
+{
+    "qualification": {
+        "title": {
+            "page": "Qualifications",
+            "list": "Qualifications A–Z",
+            "detail": "Qualification detail",
+            "delete": "Delete Qualification",
+            "delete_confirm": "Are you sure you want to delete",
+            "create": "Create Qualification",
+            "update": "Update Qualification",
+            "qualification_management": "Qualification Management"
+        },
+        "description": {
+            "page_intro": "Browse the full list of qualifications available across our hospital system.",
+            "list": "Use the search or alphabet filter to find the qualification you need."
+        },
+        "button": {
+            "view_detail": "View detail",
+            "book_appointment": "Book appointment"
+        },
+        "placeholder": {
+            "no_description": "Information is being updated.",
+            "no_featured": "Featured qualifications will be updated soon.",
+            "no_result_title": "No qualifications found",
+            "no_result_subtitle": "Try adjusting the filters or searching with another keyword.",
+            "search_qualification": "Search by qualification name ..."
+        },
+        "field": {
+            "id": "ID",
+            "name": "Qualification Name",
+            "description": "Description"
+        }
+    }
+}

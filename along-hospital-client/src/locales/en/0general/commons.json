@@ -1,0 +1,151 @@
+{
+    "button": {
+        "close": "Close",
+        "submit": "Submit",
+        "submitting": "Submitting",
+        "cancel": "Cancel",
+        "back": "Back",
+        "add": "Add",
+        "add_file": "Add file",
+        "create": "Create",
+        "create_range": "Create Range",
+        "edit": "Edit",
+        "update": "Update",
+        "report": "Report",
+        "complete": "Complete",
+        "confirm": "Confirm",
+        "delete": "Delete",
+        "save": "Save",
+        "add_row": "Add Row",
+        "clear": "Clear",
+        "login": "Login",
+        "filter": "Filter",
+        "reset_filter": "Reset Filter",
+        "creating": "Creating...",
+        "next": "Next",
+        "resend_in": "Resend in",
+        "toggle_language": "Toggle language",
+        "toggle_theme": "Toggle theme",
+        "delete_selected": "Delete selected",
+        "view_detail": "View Detail",
+        "book_appointment": "Book Now",
+        "view_services": "View Services",
+        "view_all": "View All",
+        "select_all": "Select All",
+        "deselect_all": "Deselect All",
+        "detail": "Detail",
+        "assign": "Assign",
+        "actions": "Actions"
+    },
+    "text": {
+        "all": "All",
+        "yes": "Yes",
+        "no": "No",
+        "search": "Search...",
+        "loading": "Loading...",
+        "filter": "Filter",
+        "filters": "Filters",
+        "no_image": "No image",
+        "user": "User",
+        "confirm_delete": "Are you sure you want to delete this item?",
+        "image_preview": "Image Preview",
+        "select_options": "Select options",
+        "day": "Day",
+        "month": "Month",
+        "year": "Year",
+        "date": "Date",
+        "start_date": "Start Date",
+        "end_date": "End Date",
+        "time": "Time",
+        "start_time": "Start Time",
+        "end_time": "End Time",
+        "step": "Step",
+        "more": "More",
+        "result": "Result",
+        "none": "None",
+        "no_": "No.",
+        "total": "Total",
+        "sign_here": "Sign, full name",
+        "rows_per_page": "Rows per page",
+        "still_have_questions": "Still have questions?",
+        "contact_support": "Feel free to contact our support team for assistance",
+        "placeholder": {
+            "no_data": "No data available...",
+            "no_data_subtitle": "There is nothing to display here"
+        }
+    },
+    "tooltip": {
+        "menu": "Menu",
+        "edit": "Edit",
+        "delete": "Delete",
+        "cart": "Cart",
+        "create_appointment": "Create Appointment",
+        "switch_dark": "Switch to dark mode",
+        "switch_light": "Switch to light mode",
+        "collapse": "Collapse",
+        "expand": "Expand",
+        "view_detail_medical_history": "View Medical History Details",
+        "remove": "Remove"
+    },
+    "dialog": {
+        "doctor_picker": {
+            "title": "Select Doctor",
+            "confirm_button": "Select"
+        },
+        "patient_info": {
+            "basic_info": "Basic Info",
+            "health_info": "Health Info",
+            "allergies": "Allergies",
+            "allergy_table": {
+                "name": "Name",
+                "severity": "Severity Level",
+                "reaction": "Reaction",
+                "add_allergy": "Add Allergy"
+            }
+        },
+        "doctor_info": {
+            "basic_info": "Basic Info",
+            "professional_info": "Professional Info"
+        }
+    },
+    "not_found": {
+        "title": "Page Not Found",
+        "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+        "button": {
+            "back_home": "Back to Home"
+        }
+    },
+    "error": {
+        "required": "This field is required",
+        "invalid_email": "Please enter a valid email",
+        "invalid_phone": "Please enter a valid phone number",
+        "invalid_phone_or_email": "Please enter a valid phone number or email",
+        "invalid_number": "Please enter a valid number",
+        "invalid_date": "Please enter a valid date",
+        "invalid_time": "Please enter a valid time",
+        "weak_password": "Password must contain at least 8 characters, including uppercase, lowercase, number, and special character",
+        "min_length": "Must be at least {min} characters, currently {current}",
+        "max_length": "Can't exceed {max} characters, currently {current}/{max}",
+        "min_number": "Minimum number is {min}",
+        "max_number": "Maximum number is {max}",
+        "number_higher_than": "Number must be higher than {min}",
+        "number_higher_than_or_equal": "Number must be higher than or equal to {min}",
+        "number_less_than": "Number must be less than {max}",
+        "number_less_than_or_equal": "Number must be less than or equal to {max}",
+        "csv": {
+            "empty": "CSV file is empty",
+            "invalid_format": "File must be in CSV format",
+            "read_error": "Unable to read file",
+            "parse_error": "Failed to parse CSV file"
+        },
+        "not_match": "Values do not match",
+        "must_be_different": "Values must be different",
+        "duplicate_values_not_allowed": "Duplicate values are not allowed",
+        "password_not_match": "Passwords do not match with the new password",
+        "password_must_be_different": "New password must be different from current password",
+        "fill_all_required": "Please fill all required fields",
+        "invalid_percentage": "Percentage must be between 0 and 100",
+        "past_date": "Date cannot be in the past",
+        "past_time": "Time cannot be in the past"
+    }
+}

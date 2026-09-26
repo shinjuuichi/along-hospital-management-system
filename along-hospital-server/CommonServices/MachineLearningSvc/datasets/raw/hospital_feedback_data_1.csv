@@ -1,0 +1,201 @@
+rating_score,wait_time_rating,staff_courtesy_rating,facility_cleanliness_rating,communication_rating,recommend_facility,comments
+4.7,4.2,4.8,4.6,4.9,TRUE,Very professional staff and clean facility. Highly recommended.
+3.9,3,4.1,4,3.8,TRUE,"Good care, but wait time could be improved."
+4.2,3.8,4.4,4.5,4.2,TRUE,Friendly staff and clean environment. My child was comfortable.
+2.9,2,3.1,3,2.9,FALSE,Long wait time and not enough communication.
+4.5,4,4.7,4.6,4.6,TRUE,Excellent care and support during my stay.
+3.2,2.9,3.5,3.6,3.2,FALSE,"Average experience, could be friendlier."
+4,3.2,4.3,4.2,4,TRUE,Quick response and courteous staff.
+3.5,2.8,3.9,3.7,3.6,FALSE,"Fair service, but had to wait longer than expected."
+2.5,1.8,2.7,2.9,2.5,FALSE,"Staff seemed overwhelmed, and facility was crowded."
+4.8,4.6,4.9,4.8,4.7,TRUE,Exceptional care and knowledgeable staff.
+3.8,3.1,4,4.1,3.9,TRUE,Helpful staff and clean waiting area.
+4.3,3.7,4.5,4.4,4.2,TRUE,Efficient staff and good communication.
+3.4,2.7,3.3,3.2,3.1,FALSE,"Average experience, nothing outstanding."
+4.1,3.9,4.2,4.3,4.1,TRUE,Therapists were supportive and knowledgeable.
+4.6,4.1,4.8,4.7,4.5,TRUE,"Wonderful experience during delivery, caring staff."
+2.7,2,2.8,3.1,2.9,FALSE,"Not very satisfied, long wait and unclear instructions."
+3.6,3.2,3.8,3.9,3.7,TRUE,Staff were attentive; facility was clean.
+4,3.6,4.1,4.2,4,TRUE,"No issues, good experience overall."
+3,2.5,3.2,3.5,3.1,FALSE,"Acceptable service, but room was noisy."
+4.4,4,4.6,4.5,4.3,TRUE,Efficient and supportive rheumatology team.
+2.3,1.9,2.5,2.7,2.1,FALSE,"Staff seemed rushed, not much attention given."
+3.9,3.3,4,4.1,3.8,TRUE,"Good explanations provided, pleasant staff."
+4.9,4.7,4.9,5,4.8,TRUE,"Outstanding care and facilities, truly supportive."
+3.7,3,4.1,3.9,3.6,TRUE,"Nice pediatric unit for children, friendly nurses."
+4.2,3.8,4.3,4,4.1,TRUE,Efficient checkup and polite staff.
+3.3,2.4,3.1,3.2,3,FALSE,"Room was small, but care was adequate."
+4.5,4.3,4.6,4.7,4.4,TRUE,Very attentive and professional care.
+2.8,2.1,3,2.9,2.6,FALSE,"Chaotic ER, staff seemed overwhelmed."
+4.6,4.2,4.9,4.8,4.7,TRUE,"Excellent family medicine team, very kind."
+3.9,3.6,4,4.1,3.8,TRUE,"Neurology team was helpful, good experience."
+2.1,1.5,2.3,2.9,2.1,FALSE,"Very long wait, staff seemed tired."
+4.2,4,4.3,4.6,4.2,TRUE,"Very supportive oncology team, good facilities."
+3.5,3,3.8,3.9,3.7,TRUE,"Routine visit, no major concerns."
+4,4,4.1,4.2,4,TRUE,"Good care for elderly patients, attentive staff."
+2.5,2,2.9,2.8,2.7,FALSE,"ENT unit was busy, not much attention."
+4.4,4.2,4.7,4.5,4.6,TRUE,Pulmonology team provided excellent care.
+3.1,2.9,3.2,3.3,3.1,FALSE,"Routine diabetes check, nothing special."
+4.8,4.5,4.9,5,4.8,TRUE,Best hospital experience I've ever had.
+2.6,2.3,2.9,3,2.8,FALSE,Not enough information provided during visit.
+4.9,4.8,5,4.9,4.8,TRUE,Amazing maternity care and support.
+3.7,3.4,3.8,3.9,3.6,TRUE,"Good care, but appointment started late."
+3.2,2.8,3.5,3.6,3.4,FALSE,"Average neurology unit, could improve communication."
+4.3,4,4.5,4.4,4.2,TRUE,"Great family medicine team, prompt service."
+2.9,2.2,3,2.8,2.6,FALSE,"Too crowded, felt rushed through appointment."
+4.1,3.9,4.2,4.3,4,TRUE,Timely care in a stressful situation.
+4.8,4.7,5,4.9,4.8,TRUE,"Top notch dermatology team, highly recommend."
+3.4,2.9,3.2,3.5,3.3,FALSE,"Average stay, staff could be more attentive."
+4.5,4,4.6,4.2,4.4,TRUE,Therapy team was very encouraging.
+2,1.5,2.4,2.6,2.2,FALSE,"Poor attention to elderly patients, disappointing."
+4.3,4.1,4.4,4.5,4.2,TRUE,Very satisfied with the family medicine team.
+4.2,2.8,4.7,4.4,4.5,TRUE,Dr. Greer explained everything clearly and the staff was very kind.
+3.6,3.1,4,3.5,3.7,FALSE,Nurses were attentive but there were communication delays.
+4.8,4.5,5,5,4.9,TRUE,Exceptional care and spotless facilities. Highly recommend.
+3.2,2.3,3.5,3.1,3,FALSE,Long wait times and basic amenities. Care was adequate.
+4.5,3.8,4.7,4.6,4.4,TRUE,Dr. Hall was friendly and made the experience pleasant.
+2.9,2,2.7,3.2,2.8,FALSE,Staff seemed rushed and room was not very clean.
+5,4.9,5,5,5,TRUE,Best pediatric care. Very caring and professional staff.
+3.8,3.2,4.2,4,3.7,TRUE,Nice facility and prompt service. Doctor was knowledgeable.
+2.5,1.8,2.9,3,2.1,FALSE,"Emergency room was crowded, staff tried their best."
+4.7,4,4.6,4.7,4.8,TRUE,Superb doctor and very clean facilities.
+3.3,2.7,3.9,3.4,3.2,FALSE,"Facilities were okay, but staff was friendly."
+2,1.5,2.3,2.6,2,FALSE,Long waits and staff seemed overwhelmed.
+4.4,3.9,4.5,4.2,4.3,TRUE,Physical therapist was very encouraging.
+2.2,2.2,2.4,2.8,2.1,FALSE,Would not recommend due to poor communication.
+3.7,3.5,4.1,4,3.8,TRUE,"Ear, nose, and throat team was helpful."
+4.1,3.4,4.2,4.5,4,TRUE,"Good experience overall, staff was respectful."
+3.9,3.6,4.3,3.9,4,TRUE,Helpful psychiatric team and supportive environment.
+2.7,2.4,2.5,3.1,2.8,FALSE,"Waited a long time, staff seemed tired."
+4,3.7,4.5,4.2,4.1,TRUE,Endocrinology care was thorough and compassionate.
+4.9,4.8,5,5,4.9,TRUE,"Excellent service, very clean and efficient."
+3.4,3,3.8,3.7,3.3,FALSE,"Average experience, nothing special."
+3,2.7,3.2,3.5,3.1,FALSE,Staff was okay but overall not very welcoming.
+4.2,3.9,4.6,4.3,4.5,TRUE,Surgical team was very professional.
+4.3,3.8,4.9,4.7,4.2,TRUE,Gynecology team was attentive and supportive.
+2.8,2.5,3,2.9,2.6,FALSE,Imaging center was crowded and slow.
+4.6,4.3,5,4.8,4.7,TRUE,"Great care for my child, very clean and friendly."
+2.6,2,2.7,3,2.3,FALSE,Oncology unit was understaffed and communication was poor.
+3.5,3.2,3.7,3.9,3.6,TRUE,"Cardiology staff was helpful, wait time average."
+4.7,4.2,4.9,4.6,5,TRUE,"Excellent geriatric care, communication was great."
+3.1,2.6,3.4,3,3.2,FALSE,Emergency staff was polite but facilities need improvement.
+4.4,3.6,4.7,4.2,4.6,TRUE,Obstetrics team was wonderful during delivery.
+2.4,2.5,2.9,2.8,2.6,FALSE,"Would not return, communication was lacking."
+3.5,3.1,4,3.8,3.9,TRUE,Oncology team was attentive and caring.
+4,3.5,4.4,4,4.1,TRUE,Physical therapy helped my recovery greatly.
+2.1,1.9,2.1,2.5,2,FALSE,Orthopedics unit was not very responsive.
+4.2,3.7,4.6,4.4,4.2,TRUE,Endocrinology care was excellent.
+3.6,3.5,4.1,3.7,3.8,TRUE,Pulmonology staff was thorough and caring.
+3.8,3.3,4.2,3.8,3.7,TRUE,Urology team was professional and prompt.
+2.3,2.1,2.7,2.9,2.2,FALSE,Neurology unit could improve communication.
+4,3.6,4.5,4.3,4.2,TRUE,Gynecology staff was very supportive.
+3.7,3.2,4.1,3.9,4,TRUE,Surgery team was skilled and responsive.
+2.9,2.3,3,2.7,2.8,FALSE,Immunology staff was courteous but wait was long.
+4.1,3.6,4.5,4.3,4.2,TRUE,Radiology staff was efficient and friendly.
+4.3,4,4.7,4.6,4.4,TRUE,ENT team provided excellent care.
+3.1,2.7,3.4,3.6,3,FALSE,Nephrology department was okay but not exceptional.
+4.7,4.4,4.8,4.6,4.7,TRUE,Staff were prompt and attentive. The provider explained everything thoroughly.
+3.6,2.9,4,3.5,3.7,FALSE,Waited longer than expected for my scheduled appointment.
+4.2,4.1,4.3,4.4,4.2,TRUE,Efficient service and friendly staff. Recommend for orthopedic care.
+3.1,2.2,3,3.8,2.9,FALSE,Provider was knowledgeable but communication could be improved.
+4.9,4.7,5,4.9,4.8,TRUE,Exceptional care and clear communication. Highly recommend.
+4.5,4.1,4.6,4.5,4.3,TRUE,Very good experience for my child’s care. Staff were friendly.
+3.4,2.6,3.7,3.2,3.5,FALSE,Staff were polite but there was a long wait.
+3.9,3.4,4,3.8,3.7,TRUE,Provider was attentive and answered all my questions.
+2.7,2,2.8,2.9,2.5,FALSE,Wait time was excessive and staff seemed rushed.
+4.4,4,4.5,4.2,4.3,TRUE,Very supportive and professional staff. Facility was clean.
+2.9,2.5,3.2,3,2.8,FALSE,Provider was knowledgeable but the wait time was long.
+4.1,3.7,4.2,4,4.1,TRUE,Helpful staff and easy check-in process.
+3.2,2.6,3.4,3,3.1,FALSE,Service was average. Clinic could be cleaner.
+2.5,1.9,2.7,2.5,2.3,FALSE,Not satisfied with the service. Area for improvement.
+4.3,3.9,4.5,4.1,4,TRUE,Very friendly provider and great facility.
+4,3.6,4.2,4,3.8,TRUE,Staff were knowledgeable and clinic was clean.
+4.6,4,4.7,4.6,4.5,TRUE,Excellent experience for my child’s surgery.
+3.7,3.1,3.8,3.6,3.5,FALSE,Wait time was okay but room felt crowded.
+4.5,4.3,4.6,4.4,4.2,TRUE,Kind staff and quick service. Highly satisfied.
+3.3,3,3.5,3.3,3.1,FALSE,Staff were courteous but rooms need refurbishment.
+2.8,2.2,2.9,2.7,2.6,FALSE,Long wait and unfriendly staff. Not recommended.
+3.7,3,3.8,3.9,3.7,TRUE,Good experience overall. Staff handled emergency calmly.
+4.8,4.6,4.9,4.8,4.7,TRUE,Very impressed with the level of care and expertise.
+4.4,4.2,4.5,4.4,4.3,TRUE,Staff were very caring and supportive throughout the stay.
+4,3.6,4.1,4.2,3.9,TRUE,Quick appointment and friendly provider.
+3.6,3.2,3.9,3.5,3.6,FALSE,Provider was helpful but clinic was busy.
+3,2.4,3.2,3.1,2.9,FALSE,Service was okay but more communication needed.
+4.2,4,4.3,4.1,4,TRUE,Great experience and knowledgeable staff.
+4.6,4.5,4.8,4.7,4.6,TRUE,Wonderful staff and very clean facility.
+3.5,3.3,3.8,3.4,3.7,FALSE,Service was adequate. Could improve wait times.
+3.1,2.7,3.5,3.2,3.3,FALSE,Average service. Clinic was busy.
+2.6,2.1,2.8,2.7,2.4,FALSE,Not satisfied with the emergency response.
+4.9,4.7,5,4.9,4.8,TRUE,Excellent care and staff. Highly recommend.
+4.3,4,4.4,4.2,4,TRUE,Staff made my child feel comfortable.
+3.8,3.4,3.9,3.7,3.8,TRUE,Quick and efficient appointment.
+4.1,3.8,4,4.2,4.1,TRUE,Staff were friendly and knowledgeable.
+3.2,2.8,3.5,3.3,3,FALSE,Average experience. Provider was attentive.
+3.9,3.5,3.8,3.7,3.6,FALSE,Provider was nice but clinic was busy.
+4.7,4.4,4.8,4.5,4.6,TRUE,Very satisfied with the care received.
+2.7,2.4,2.9,2.7,2.6,FALSE,Long wait and poor communication.
+3,2.3,3.1,3,2.8,FALSE,Clinic was crowded and wait was long.
+3.6,3.3,3.7,3.6,3.5,TRUE,Staff were responsive and helpful.
+4.8,4.5,4.9,4.8,4.7,TRUE,Highly recommend Dr. Mehra and the staff.
+4.2,4,4.3,4.2,4.1,TRUE,Good experience overall for my child.
+3.7,3.3,3.8,3.7,3.6,FALSE,Provider was helpful but wait was long.
+4.7,4.2,4.9,5,4.8,TRUE,Very satisfied with the dermatologist and clean facility.
+3.2,2.9,3.7,4,2.5,FALSE,Staff were helpful but information was lacking.
+4.1,3.5,4.3,4.7,4.2,TRUE,"Good experience overall, doctor was attentive."
+2.7,2.4,3.2,3.8,2.9,FALSE,"Waited longer than expected, communication could improve."
+4.8,4.9,4.6,4.8,4.7,TRUE,Efficient surgery and very friendly staff.
+3.5,2.8,3.9,4.1,3.6,FALSE,Doctor was helpful but the wait was long.
+4.3,4.1,4.4,4.5,4.2,TRUE,Attentive care and clear communication throughout stay.
+4.9,4.7,5,5,4.8,TRUE,"Superb care for children, staff were wonderful."
+2.9,2.5,3.1,3.7,2.8,FALSE,Surgery went fine but staff seemed busy.
+3.8,4,4.2,4.3,3.9,TRUE,Very clean and supportive staff.
+2.2,1.5,2.7,3,2.1,FALSE,"Experience could be better, ICU access limited."
+4.2,4.5,4.4,4.2,4.5,TRUE,Doctor was very understanding and supportive.
+5,4.9,5,5,5,TRUE,"Exceptional care during delivery, highly recommend."
+3,2.7,3.6,3.8,3.1,FALSE,"Average experience, nothing special."
+4.5,4.2,4.6,4.4,4.3,TRUE,Pulmonology staff were very caring.
+4,3.7,4.5,4.1,4.2,TRUE,"Ear, nose, and throat clinic was very efficient."
+2.6,2.2,2.8,3.5,2.4,FALSE,Some issues with scheduling and wait times.
+3.6,3.1,3.8,4,3.5,TRUE,Helpful staff in rheumatology department.
+2.4,2.1,2.5,3.1,2.8,FALSE,"ICU experience was stressful, staff seemed overworked."
+4.6,4.3,4.4,4.7,4.9,TRUE,Radiology staff were very professional.
+3.3,3,3.2,3.7,3.1,FALSE,Cardiology unit could be improved.
+4.4,4,4.2,4.3,4,TRUE,Excellent care and informative doctor.
+4.1,3.8,4,4.4,3.9,TRUE,Neurology staff explained everything clearly.
+3.7,3.4,4.1,3.9,3.8,TRUE,Clinic is clean and staff are friendly.
+2.7,2.4,2.9,3.5,2.8,FALSE,Emergency wait was longer than expected.
+4.2,4.1,4.3,4.3,4.2,TRUE,Allergy clinic was quick and efficient.
+3.5,2.9,3.7,3.9,3.3,FALSE,"Senior care was decent, but staff seemed rushed."
+4.8,4.7,4.9,5,4.9,TRUE,Dermatology team was excellent.
+3.1,2.6,3.5,3.7,3,FALSE,Oncology team was knowledgeable but wait was long.
+4,3.4,4.2,4.6,4.1,TRUE,Family medicine department provided great care.
+2.8,2.5,3.2,3.8,2.9,FALSE,Orthopedics care was average.
+4.6,4.3,4.7,4.8,4.6,TRUE,Cardiology team was very attentive.
+3.6,2.9,3.9,4,3.7,FALSE,Emergency department was busy but effective.
+4.5,4.2,4.6,4.5,4.4,TRUE,Gastroenterology unit is highly recommended.
+2.9,2.5,3.1,3.6,2.8,FALSE,Endocrinology staff could improve communication.
+4.2,4,4.4,4.6,4.1,TRUE,Family medicine team was very supportive.
+2.1,1.4,2.6,2.9,2,FALSE,"ICU was crowded and noisy, staff helpful."
+4.8,4.5,5,5,4.9,TRUE,"Pediatrics team was excellent, highly recommend."
+3,2.7,3.3,3.7,3,FALSE,"General surgery team was okay, room for improvement."
+3.9,3.6,4.1,4.2,4,TRUE,Gastroenterology department was clean and efficient.
+3.4,2.8,3.9,3.8,3.4,FALSE,Orthopedics team was helpful but the wait was long.
+4.1,3.8,4.3,4.6,4.2,TRUE,Ophthalmology staff were very friendly.
+4.2,3.9,4.1,4.5,4.3,TRUE,Neurology unit is highly recommended.
+4.5,4.2,4.7,4.8,4.6,TRUE,Dermatology team was excellent and prompt.
+4.5,3.9,4.6,4.2,4.3,TRUE,"Quick and professional service, staff were attentive and informative."
+3.2,2.8,3.5,3.2,2.9,FALSE,"Lengthy wait time, but staff tried their best. Facilities were average."
+4.8,4.6,4.9,4.7,4.8,TRUE,Wonderful care for my child. Staff were reassuring and facility was spotless.
+2.7,2.2,2.9,3,2.1,FALSE,"Not very satisfied, communication was lacking and wait was long."
+3.7,3.1,4,3.8,3.9,TRUE,"Good care, but some delays during admission. Staff were friendly."
+1.9,1.7,2.1,2.5,1.8,FALSE,Unfriendly staff and poor communication. Would not recommend.
+4.1,3.8,4.3,4.4,4,TRUE,Staff were compassionate and responsive. Clean facilities.
+3.4,3.2,3.7,3.5,3.6,FALSE,"Average experience, room for improvement in wait times."
+4.7,4.8,4.9,4.7,4.9,TRUE,Exceptional service and communication. Highly recommended.
+2.3,2.6,2.5,2.1,2.2,FALSE,Facilities need improvement. Communication was unclear.
+3.8,3.5,4,3.9,3.7,TRUE,"Surgery was successful, staff were supportive and kind."
+1.6,1.9,2.3,2,1.7,FALSE,"Disorganized visit, staff seemed rushed, not a good experience."
+4,3.6,4.2,4.1,4,TRUE,"Warm and caring staff, made my stay comfortable."
+2,1.6,2,2.3,2.1,FALSE,Long wait and staff seemed overwhelmed. Needs improvement.
+3,2.7,3.2,3.3,3.5,FALSE,"Rehab was adequate, some staff were helpful, but not all."
+4.6,4.2,4.7,4.6,4.5,TRUE,Excellent staff and clean facility. Highly efficient.

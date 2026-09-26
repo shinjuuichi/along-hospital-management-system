@@ -1,0 +1,41 @@
+{
+    "bed": {
+        "title": {
+            "management": "Quản lý Giường bệnh",
+            "list": "Danh sách Giường",
+            "detail": "Chi tiết Giường"
+        },
+        "field": {
+            "id": "ID",
+            "code": "Mã giường",
+            "status": "Trạng thái",
+            "room": "Phòng",
+            "room_id": "Phòng",
+            "bed_category": "Loại giường",
+            "bed_category_id": "Loại giường"
+        },
+        "filter": {
+            "title": "Lọc giường",
+            "status": "Trạng thái",
+            "room_id": "Mã phòng",
+            "bed_category": "Loại giường"
+        },
+        "placeholder": {
+            "select_status": "-- Chọn trạng thái --",
+            "select_room": "-- Chọn phòng --",
+            "select_bed_category": "-- Chọn loại giường --"
+        },
+        "dialog": {
+            "create_title": "Tạo giường mới",
+            "update_title": "Cập nhật giường",
+            "delete_title": "Xóa giường",
+            "delete_description": "Bạn có chắc chắn muốn xóa giường '{code}'?",
+            "delete_many_title": "Xóa nhiều giường",
+            "delete_many_description": "Bạn có chắc chắn muốn xóa {number} giường đã chọn?"
+        },
+        "text": {
+            "no_beds": "Không tìm thấy giường nào.",
+            "no_beds_subtitle": "Thử điều chỉnh bộ lọc hoặc thêm giường mới."
+        }
+    }
+}

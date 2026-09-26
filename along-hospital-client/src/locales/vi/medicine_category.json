@@ -1,0 +1,32 @@
+{
+  "medicine_category": {
+    "field": {
+      "id": "ID",
+      "name": "Tên danh mục",
+      "description": "Mô tả",
+      "actions": "Hành động"
+    },
+    "title": {
+      "medicine_category_management": "Quản lý danh mục thuốc",
+      "management": "Quản lý danh mục",
+      "filter": "Lọc danh mục"
+    },
+    "button": {
+      "update": "Cập nhật danh mục",
+      "delete": "Xóa danh mục",
+      "search": "Tìm kiếm",
+      "reset": "Đặt lại"
+    },
+    "dialog": {
+      "create_title": "Tạo danh mục thuốc",
+      "update_title": "Cập nhật danh mục thuốc",
+      "confirm_delete_title": "Xác nhận xóa danh mục",
+      "confirm_delete_description": "Bạn có chắc muốn xóa danh mục này không?"
+    },
+    "placeholder": {
+      "no_data": "Không có dữ liệu...",
+      "search": "Tìm kiếm danh mục...",
+      "total": "Tổng"
+    }
+  }
+}

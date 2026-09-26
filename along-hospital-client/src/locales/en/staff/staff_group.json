@@ -1,0 +1,19 @@
+{
+    "staff_group": {
+        "title": {
+            "staff_group_management": "Staff Group Management",
+            "create_form": "Create Staff Group",
+            "update_form": "Update Staff Group",
+            "delete_title": "Delete Staff Group",
+            "delete_description": "Are you sure you want to delete staff group ({name})?"
+        },
+        "field": {
+            "name": "Name",
+            "staffs": "Staffs",
+            "number_of_members": "Number of Members",
+            "members": "Members",
+            "staff_group_members": "Staff Group Members",
+            "creation_date": "Creation Date"
+        }
+    }
+}

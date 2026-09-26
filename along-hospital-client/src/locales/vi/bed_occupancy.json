@@ -1,0 +1,94 @@
+{
+	"bed_occupancy": {
+		"title": {
+			"management": "Quản lý sử dụng giường bệnh",
+			"filters": "Bộ lọc bảng giường",
+			"room_list": "Danh sách phòng",
+			"bed_assignment": "Phân bổ giường bệnh",
+			"bed_info": "Thông tin giường",
+			"room_info": "Thông tin phòng",
+			"billing_summary": "Ước tính tiền giường",
+			"history": "Lịch sử giường bệnh",
+			"occupancy_history": "Lịch sử sử dụng giường",
+			"occupancy_timeline": "Dòng thời gian sử dụng giường"
+		},
+		"summary": {
+			"rooms": "Phòng",
+			"beds": "Giường",
+			"occupied": "Đang sử dụng",
+			"available": "Còn trống",
+			"maintenance": "Bảo trì"
+		},
+		"filter": {
+			"search": "Tìm kiếm bảng giường",
+			"building": "Tòa nhà",
+			"floor": "Tầng",
+			"specialty": "Chuyên khoa",
+			"bed_state": "Trạng thái giường"
+		},
+		"field": {
+			"bed": "Giường",
+			"room": "Phòng",
+			"bed_info": "Thông tin giường",
+			"room_info": "Thông tin phòng",
+			"occupancy_status": "Trạng thái sử dụng",
+			"transfer_note": "Ghi chú chuyển giường",
+			"latest_transfer_note": "Ghi chú chuyển giường gần nhất",
+			"from_date": "Từ ngày",
+			"to_date": "Đến ngày",
+			"duration_days": "Thời gian nằm",
+			"daily_rate": "Đơn giá theo ngày",
+			"total_amount": "Thành tiền",
+			"total_bed_charge": "Ước tính tiền giường"
+		},
+		"placeholder": {
+			"no_bed_assigned": "Chưa có giường nào được phân bổ cho bệnh nhân này",
+			"no_rooms_available": "Không có phòng nào khả dụng cho chuyên khoa này",
+			"no_beds_available": "Không có giường nào khả dụng trong phòng này",
+			"enter_transfer_note": "Nhập lý do hoặc ghi chú cho lần chuyển giường này",
+			"select_room": "-- Chọn phòng --",
+			"search_board": "Tìm theo mã phòng, mã giường, tên bệnh nhân hoặc mã hồ sơ bệnh án",
+			"no_matching_rooms": "Không có phòng nào phù hợp với bộ lọc hiện tại.",
+			"no_room_selected": "Hãy chọn một phòng để xem danh sách giường.",
+			"no_matching_beds": "Không có giường nào trong phòng này phù hợp với bộ lọc hiện tại.",
+			"no_history": "Chưa có lịch sử sử dụng cho giường này."
+		},
+		"button": {
+			"assign_bed": "Phân bổ giường",
+			"compact_view": "Chế độ gọn",
+			"detailed_view": "Chế độ chi tiết",
+			"discharge_bed": "Xuất giường",
+			"transfer_bed": "Chuyển giường",
+			"view_inpatient": "Xem nội trú",
+			"view_history": "Xem lịch sử",
+			"refresh": "Làm mới bảng"
+		},
+		"dialog": {
+			"assign_bed_title": "Phân bổ giường cho bệnh nhân",
+			"transfer_bed_title": "Chuyển bệnh nhân sang giường khác",
+			"confirm": {
+				"discharge_title": "Xác nhận xuất giường",
+				"discharge_description": "Bạn có chắc chắn muốn xuất bệnh nhân này khỏi giường? Hành động này sẽ đánh dấu giường là khả dụng."
+			}
+		},
+		"text": {
+			"selected_bed": "Giường đã chọn",
+			"current_bed": "Giường hiện tại",
+			"now": "Hiện tại",
+			"day_unit": "ngày",
+			"timeline_click_hint": "Di chuột để làm nổi bật đoạn timeline. Nhấn vào node để xem Bed Information.",
+			"compact_view_hint": "Chế độ gọn sẽ nhóm các lần chuyển giường liên tiếp trong cùng phòng.",
+			"detailed_view_hint": "Chế độ chi tiết hiển thị từng sự kiện chuyển giường theo thứ tự.",
+			"transfer_events": "lần chuyển",
+			"transferred": "Chuyển từ",
+			"assigned": "Phân vào",
+			"duration_label": "Thời lượng",
+			"latest_bed": "Giường gần nhất",
+			"click_to_focus_detail": "Nhấn để xem Bed Information.",
+			"available": "Giường này hiện đang còn trống.",
+			"no_current_inpatient": "Hiện chưa có bệnh nhân nội trú nào đang sử dụng giường này.",
+			"in_progress": "Đang sử dụng",
+			"estimated_billing_hint": "Đây là khoản ước tính đang chạy. Hóa đơn tiền giường cuối cùng sẽ được tạo khi bệnh nhân được xuất giường."
+		}
+	}
+}

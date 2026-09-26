@@ -1,0 +1,21 @@
+{
+    "option": {
+        "title": {
+            "management": "Option Management"
+        },
+        "filter": {
+            "title": "Filters",
+            "searchPlaceholder": "Search options"
+        },
+        "field": {
+            "name": "Option name"
+        },
+        "actions": "Actions",
+        "dialog": {
+            "create_title": "Create option",
+            "update_title": "Update option",
+            "confirm_delete_title": "Delete option",
+            "confirm_delete_description": "Are you sure you want to delete option \"{{name}}\"?"
+        }
+    }
+}

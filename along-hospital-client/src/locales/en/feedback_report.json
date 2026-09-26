@@ -1,0 +1,27 @@
+{
+    "feedback_report": {
+        "title": {
+            "management": "Feedback Report Management"
+        },
+        "field": {
+            "id": "ID",
+            "feedback": "Feedback",
+            "status": "Status",
+            "reason": "Reason",
+            "actions": "Actions"
+        },
+        "button": {
+            "resolve": "Resolve",
+            "reject": "Reject",
+            "view_reason": "View reason"
+        },
+        "status": {
+            "pending": "Pending",
+            "resolved": "Resolved",
+            "rejected": "Rejected"
+        },
+        "dialog": {
+            "reason_title": "Report reason"
+        }
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "attendance": {
+        "title": {
+            "manage_attendance": "Manage Attendance Logs",
+            "face_enrollment": "Face Enrollment",
+            "face_enrollment_subtitle": "Allow the system to recognize you at check-in and check-out using your face."
+        },
+        "field": {
+            "id": "ID",
+            "log_type": "Log Type",
+            "log_time": "Log Time"
+        },
+        "button": {
+            "check_in": "Check In",
+            "check_out": "Check Out",
+            "reset_identification": "Reset Identification",
+            "enroll_face": "Enroll Face",
+            "start_enrollment": "Start Enrollment",
+            "retake": "Retake",
+            "capturing": "Capturing...",
+            "capture": "Capture"
+        },
+        "dialog": {
+            "reset_identification_title": "Confirm reset identification",
+            "reset_identification_description": "Are you sure you want to remove your current face identification data?"
+        },
+        "face_enrollment": {
+            "status": {
+                "current_status": "Your current status",
+                "not_enrolled": "Not enrolled",
+                "enrolled": "Enrolled"
+            },
+            "title": {
+                "face_capture": "Face Capture"
+            },
+            "description": {
+                "general_info": "Face enrollment helps the system verify that it is really you when you perform actions such as attendance check-in and check-out. Your face images are used only for recognition purposes inside the system.",
+                "processing_images": "Processing captured images...",
+                "re_enroll": "You can re-enroll your face at any time if you feel that the system does not recognize you accurately.",
+                "step": {
+                    "how_it_works": "How it works",
+                    "1": {
+                        "title": "1. Face capture",
+                        "description": "When you start, the camera will capture your face for a short period of time to create a richer dataset."
+                    },
+                    "2": {
+                        "title": "2. Image processing",
+                        "description": "The system converts your face images into numerical representations and stores them securely on the server."
+                    },
+                    "3": {
+                        "title": "3. Recognition",
+                        "description": "When you check in or out, the system compares your live face data with the stored data to verify your identity."
+                    }
+                },
+                "illustration_note": "This area can be replaced later with an illustration or short animation that explains face enrollment.",
+                "prompt": {
+                    "opening_camera": "Opening camera...",
+                    "start_burst_mode": "Click \"Ready\" to automatically capture for {durationSeconds} seconds.",
+                    "start_single_mode": "Click \"Capture\" to take a single face image.",
+                    "preview": "This is the last captured image. Do you want to keep it?"
+                }
+            },
+            "error": {
+                "no_camera_access": "Unable to access the camera. Please ensure that your device has a camera and that you have granted permission to use it.",
+                "enable_camera_first": "Please enable the camera first.",
+                "no_captured_images": "No captured images to process.",
+                "enrollment_failed": "Face enrollment failed. Please try again."
+            }
+        }
+    }
+}

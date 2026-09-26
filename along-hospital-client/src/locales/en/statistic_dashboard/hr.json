@@ -1,0 +1,42 @@
+{
+	"statistic_dashboard_hr": {
+		"title": {
+			"page": "HR Dashboard",
+			"filters": "Date Filters",
+			"current_range": "Current range"
+		},
+		"field": {
+			"preset": "Range preset",
+			"date_range": "Date range",
+			"from_date": "From date",
+			"to_date": "To date"
+		},
+		"preset": {
+			"this_month": "This month",
+			"this_year": "This year",
+			"custom": "Custom"
+		},
+		"tab": {
+			"overview": "Overview",
+			"recruitment": "Recruitment",
+			"leave": "Leave"
+		},
+		"widget": {
+			"open_job_postings": "Open Job Postings",
+			"applications_received": "Applications Received",
+			"pending_leave_requests": "Pending Leave Requests",
+			"approved_leave_requests": "Approved Leave Requests",
+			"finalized_schedules": "Finalized Schedules",
+			"passed_applications": "Passed Applications",
+			"failed_applications": "Failed Applications",
+			"interview_pass_rate": "Interview Pass Rate",
+			"rejected_leave_requests": "Rejected Leave Requests"
+		},
+		"text": {
+			"description": "Track recruitment, leave management, and HR workforce performance from one dashboard."
+		},
+		"button": {
+			"export": "Export Excel"
+		}
+	}
+}

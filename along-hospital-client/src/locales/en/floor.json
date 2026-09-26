@@ -1,0 +1,20 @@
+{
+	"floor": {
+		"field": {
+			"floor_number": "Floor",
+			"building": "Building",
+			"building_name": "Building name"
+		},
+		"dialog": {
+			"create_title": "Create floor",
+			"update_title": "Update floor",
+			"confirm_delete_title": "Confirm delete",
+			"confirm_delete_description": "Delete floor {floorNumber}?",
+			"confirm_delete_selected_title": "Confirm delete selected",
+			"confirm_delete_selected_description": "Delete {count} selected floor(s)?"
+		},
+		"title": {
+			"management": "Floor Management"
+		}
+	}
+}

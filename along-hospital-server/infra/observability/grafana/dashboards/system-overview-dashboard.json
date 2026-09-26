@@ -1,0 +1,261 @@
+{
+	"annotations": {
+		"list": []
+	},
+	"editable": true,
+	"fiscalYearStartMonth": 0,
+	"graphTooltip": 1,
+	"links": [],
+	"panels": [
+		{
+			"collapsed": false,
+			"gridPos": { "h": 1, "w": 24, "x": 0, "y": 0 },
+			"id": 100,
+			"panels": [],
+			"title": "Service Health Overview",
+			"type": "row"
+		},
+		{
+			"datasource": { "type": "prometheus", "uid": "prometheus" },
+			"fieldConfig": {
+				"defaults": {
+					"color": { "mode": "thresholds" },
+					"mappings": [
+						{
+							"options": {
+								"0": { "color": "red", "index": 1, "text": "DOWN" },
+								"1": { "color": "green", "index": 0, "text": "UP" }
+							},
+							"type": "value"
+						}
+					],
+					"thresholds": {
+						"mode": "absolute",
+						"steps": [
+							{ "color": "red", "value": null },
+							{ "color": "green", "value": 1 }
+						]
+					},
+					"unit": "none"
+				},
+				"overrides": []
+			},
+			"gridPos": { "h": 4, "w": 24, "x": 0, "y": 1 },
+			"id": 1,
+			"options": {
+				"colorMode": "background",
+				"graphMode": "none",
+				"justifyMode": "center",
+				"orientation": "horizontal",
+				"reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+				"showPercentChange": false,
+				"textMode": "auto",
+				"wideLayout": true
+			},
+			"pluginVersion": "11.6.0",
+			"targets": [
+				{
+					"datasource": { "type": "prometheus", "uid": "prometheus" },
+					"editorMode": "code",
+					"expr": "clamp_max(count(http_server_request_duration_seconds_count{service_name=~\".*\"} offset 1m) by (service_name), 1) or clamp_max(count(process_cpu_time_seconds_total{service_name=~\".*\"} offset 1m) by (service_name), 1)",
+					"legendFormat": "{{service_name}}",
+					"range": true,
+					"refId": "A"
+				}
+			],
+			"title": "Service Health Status",
+			"type": "stat"
+		},
+		{
+			"collapsed": false,
+			"gridPos": { "h": 1, "w": 24, "x": 0, "y": 5 },
+			"id": 101,
+			"panels": [],
+			"title": "Request Overview",
+			"type": "row"
+		},
+		{
+			"datasource": { "type": "prometheus", "uid": "prometheus" },
+			"fieldConfig": {
+				"defaults": {
+					"color": { "mode": "thresholds" },
+					"mappings": [],
+					"thresholds": {
+						"mode": "absolute",
+						"steps": [
+							{ "color": "green", "value": null },
+							{ "color": "yellow", "value": 100 },
+							{ "color": "red", "value": 1000 }
+						]
+					},
+					"unit": "reqps"
+				},
+				"overrides": []
+			},
+			"gridPos": { "h": 4, "w": 6, "x": 0, "y": 6 },
+			"id": 2,
+			"options": {
+				"colorMode": "value",
+				"graphMode": "area",
+				"justifyMode": "auto",
+				"orientation": "auto",
+				"reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+				"showPercentChange": false,
+				"textMode": "auto",
+				"wideLayout": true
+			},
+			"pluginVersion": "11.6.0",
+			"targets": [
+				{
+					"datasource": { "type": "prometheus", "uid": "prometheus" },
+					"editorMode": "code",
+					"expr": "sum(rate(http_server_request_duration_seconds_count{http_route=~\"api/.*\", http_route!~\".*(health|healthz|metrics).*\"}[1m])) or vector(0)",
+					"legendFormat": "Total RPS",
+					"range": true,
+					"refId": "A"
+				}
+			],
+			"title": "Total Request Rate",
+			"type": "stat"
+		},
+		{
+			"datasource": { "type": "prometheus", "uid": "prometheus" },
+			"fieldConfig": {
+				"defaults": {
+					"color": { "mode": "thresholds" },
+					"mappings": [],
+					"thresholds": {
+						"mode": "absolute",
+						"steps": [{ "color": "green", "value": null }]
+					},
+					"unit": "short"
+				},
+				"overrides": []
+			},
+			"gridPos": { "h": 4, "w": 6, "x": 6, "y": 6 },
+			"id": 3,
+			"options": {
+				"colorMode": "value",
+				"graphMode": "area",
+				"justifyMode": "auto",
+				"orientation": "auto",
+				"reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+				"showPercentChange": false,
+				"textMode": "auto",
+				"wideLayout": true
+			},
+			"pluginVersion": "11.6.0",
+			"targets": [
+				{
+					"datasource": { "type": "prometheus", "uid": "prometheus" },
+					"editorMode": "code",
+					"expr": "count(count by (service_name) (http_server_request_duration_seconds_count{service_name=~\".*\"})) or vector(0)",
+					"legendFormat": "Active Services",
+					"range": true,
+					"refId": "A"
+				}
+			],
+			"title": "Active Services",
+			"type": "stat"
+		},
+		{
+			"datasource": { "type": "prometheus", "uid": "prometheus" },
+			"fieldConfig": {
+				"defaults": {
+					"color": { "mode": "thresholds" },
+					"mappings": [],
+					"thresholds": {
+						"mode": "absolute",
+						"steps": [
+							{ "color": "green", "value": null },
+							{ "color": "yellow", "value": 0.01 },
+							{ "color": "red", "value": 0.05 }
+						]
+					},
+					"unit": "percentunit"
+				},
+				"overrides": []
+			},
+			"gridPos": { "h": 4, "w": 6, "x": 12, "y": 6 },
+			"id": 4,
+			"options": {
+				"colorMode": "value",
+				"graphMode": "area",
+				"justifyMode": "auto",
+				"orientation": "auto",
+				"reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+				"showPercentChange": false,
+				"textMode": "auto",
+				"wideLayout": true
+			},
+			"pluginVersion": "11.6.0",
+			"targets": [
+				{
+					"datasource": { "type": "prometheus", "uid": "prometheus" },
+					"editorMode": "code",
+					"expr": "sum(rate(http_server_request_duration_seconds_count{http_route=~\"api/.*\", http_response_status_code=~\"5..\"}[5m])) / sum(rate(http_server_request_duration_seconds_count{http_route=~\"api/.*\"}[5m])) or vector(0)",
+					"legendFormat": "Error Rate",
+					"range": true,
+					"refId": "A"
+				}
+			],
+			"title": "Error Rate (5xx)",
+			"type": "stat"
+		},
+		{
+			"datasource": { "type": "prometheus", "uid": "prometheus" },
+			"fieldConfig": {
+				"defaults": {
+					"color": { "mode": "thresholds" },
+					"mappings": [],
+					"thresholds": {
+						"mode": "absolute",
+						"steps": [
+							{ "color": "green", "value": null },
+							{ "color": "yellow", "value": 500 },
+							{ "color": "red", "value": 1000 }
+						]
+					},
+					"unit": "ms"
+				},
+				"overrides": []
+			},
+			"gridPos": { "h": 4, "w": 6, "x": 18, "y": 6 },
+			"id": 5,
+			"options": {
+				"colorMode": "value",
+				"graphMode": "area",
+				"justifyMode": "auto",
+				"orientation": "auto",
+				"reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+				"showPercentChange": false,
+				"textMode": "auto",
+				"wideLayout": true
+			},
+			"pluginVersion": "11.6.0",
+			"targets": [
+				{
+					"datasource": { "type": "prometheus", "uid": "prometheus" },
+					"editorMode": "code",
+					"expr": "histogram_quantile(0.95, sum(rate(http_server_request_duration_seconds_bucket{http_route=~\"api/.*\", http_route!~\".*(health|healthz|metrics).*\"}[5m])) by (le)) * 1000 or vector(0)",
+					"legendFormat": "P95 Latency",
+					"range": true,
+					"refId": "A"
+				}
+			],
+			"title": "P95 Latency (ms)",
+			"type": "stat"
+		}
+	],
+	"refresh": "10s",
+	"schemaVersion": 39,
+	"tags": ["overview", "system", "health"],
+	"templating": { "list": [] },
+	"time": { "from": "now-1h", "to": "now" },
+	"timepicker": {},
+	"timezone": "browser",
+	"title": "System Overview Dashboard",
+	"uid": "system-overview-dashboard",
+	"version": 1,
+	"weekStart": ""
+}

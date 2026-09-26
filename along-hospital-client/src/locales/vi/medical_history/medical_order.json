@@ -1,0 +1,115 @@
+{
+    "medical_order": {
+        "title": {
+            "medical_orders": "Y lệnh",
+            "medical_order_subtitle": "Xem và quản lý các chỉ định lâm sàng theo từng bệnh nhân",
+            "detail": "Chi tiết y lệnh",
+            "general_information": "Thông tin chung",
+            "clinical_medical_order_information": "Thông tin y lệnh lâm sàng",
+            "instruction_medical_order_information": "Thông tin y lệnh chỉ định"
+        },
+        "button": {
+            "issue": "Ban hành",
+            "complete": "Hoàn thành",
+            "fail": "Thất bại",
+            "save_as_draft": "Lưu nháp",
+            "print_refund": "In hoàn tiền"
+        },
+        "field": {
+            "instruction": "Chỉ định",
+            "medical_order_type": "Loại y lệnh",
+            "creation_date": "Ngày tạo",
+            "clinical_medical_order": {
+                "status": "Trạng thái",
+                "details": {
+                    "details": "Chi tiết y lệnh lâm sàng",
+                    "detail": "Chi tiết y lệnh lâm sàng",
+                    "medical_service": "Dịch vụ y tế",
+                    "quantity": "Số lượng",
+                    "status": "Trạng thái",
+                    "fail_reason": "Lý do thất bại"
+                }
+            },
+            "infusion_medical_order": {
+                "details": {
+                    "details": "Chi tiết y lệnh truyền dịch",
+                    "detail": "Chi tiết y lệnh truyền dịch",
+                    "medicine": "Thuốc",
+                    "rate": "Tốc độ truyền",
+                    "frequency": "Tần suất",
+                    "duration": "Thời lượng",
+                    "execution_status": "Trạng thái thực hiện",
+                    "note": "Ghi chú"
+                }
+            },
+            "instruction_medical_order": {
+                "status": "Trạng thái",
+                "position_order": {
+                    "position_order": "Y lệnh tư thế",
+                    "position_order_type": "Loại",
+                    "type": "Loại",
+                    "instruction": "Chỉ định"
+                },
+                "respiratory_support_order": {
+                    "respiratory_support_order": "Y lệnh hỗ trợ hô hấp",
+                    "respiratory_support_order_type": "Loại",
+                    "type": "Loại",
+                    "oxygen_flow": "Lưu lượng oxy",
+                    "fio2": "FiO2",
+                    "instruction": "Chỉ định"
+                },
+                "nutrition_order": {
+                    "nutrition_order": "Y lệnh dinh dưỡng",
+                    "nutrition_order_type": "Loại",
+                    "type": "Loại",
+                    "instruction": "Chỉ định"
+                },
+                "nursing_care_order": {
+                    "nursing_care_order": "Y lệnh chăm sóc",
+                    "nursing_care_order_level": "Mức độ",
+                    "level": "Mức độ",
+                    "monitor_interval_hour": "Khoảng theo dõi (giờ)"
+                }
+            }
+        },
+        "placeholder": {
+            "no_medical_orders": "Không có y lệnh nào",
+            "no_clinical_order_details": "Không có chi tiết y lệnh lâm sàng",
+            "no_infusion_order_details": "Không có chi tiết y lệnh truyền dịch",
+            "no_instruction_sub_order_data": "Không có dữ liệu y lệnh con"
+        },
+        "text": {
+            "processed_details": "Chi tiết đã xử lý"
+        },
+        "dialog": {
+            "title": {
+                "create_medical_order": "Tạo y lệnh",
+                "update_medical_order": "Cập nhật y lệnh"
+            },
+            "clinical": {
+                "cancel_title": "Hủy y lệnh lâm sàng",
+                "cancel_description": "Bạn có chắc chắn muốn hủy y lệnh lâm sàng này không? Hành động này không thể hoàn tác.",
+                "detail": {
+                    "complete_title": "Hoàn thành chi tiết y lệnh lâm sàng",
+                    "complete_description": "Bạn có chắc chắn muốn đánh dấu chi tiết y lệnh lâm sàng này là đã hoàn thành không?",
+                    "fail_title": "Đánh dấu thất bại chi tiết y lệnh lâm sàng",
+                    "fail_description": "Bạn có chắc chắn muốn đánh dấu chi tiết y lệnh lâm sàng này là thất bại không?"
+                }
+            },
+            "infusion": {
+                "detail": {
+                    "complete_title": "Hoàn thành chi tiết y lệnh truyền dịch",
+                    "complete_description": "Bạn có chắc chắn muốn đánh dấu chi tiết y lệnh truyền dịch này là đã hoàn thành không?",
+                    "fail_title": "Đánh dấu thất bại chi tiết y lệnh truyền dịch",
+                    "fail_description": "Bạn có chắc chắn muốn đánh dấu chi tiết y lệnh truyền dịch này là thất bại không?"
+                }
+            },
+            "instruction": {
+                "issue_title": "Ban hành y lệnh chỉ định",
+                "issue_description": "Bạn có chắc chắn muốn ban hành y lệnh chỉ định này không? Hành động này không thể hoàn tác.",
+                "cancel_title": "Hủy y lệnh chỉ định",
+                "cancel_description": "Bạn có chắc chắn muốn hủy y lệnh chỉ định này không? Hành động này không thể hoàn tác."
+            }
+        }
+    }
+}

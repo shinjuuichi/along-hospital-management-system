@@ -1,0 +1,33 @@
+{
+    "complaint": {
+        "placeholder": {
+            "search_content": "Search by complaint content..."
+        },
+        "title": {
+            "complaint_management": "Complaint Management",
+            "complaint_summary": "Complaint Summary"
+        },
+        "field": {
+            "topic": "Complaint Topic",
+            "content": "Content",
+            "response": "Response",
+            "type": "Complaint Type",
+            "resolve_status": "Complaint Resolve Status"
+        },
+        "button": {
+            "tooltip_classify": "Classify Complaint",
+            "classify_neutral": "Classify as Neutral",
+            "classify_positive": "Classify as Positive",
+            "classify_negative": "Classify as Negative",
+            "view_summary": "View Summary"
+        },
+        "dialog": {
+            "confirm": {
+                "close_complaint_title": "Close complaint?",
+                "close_complaint_description": "Are you sure you want to close this complaint? This action cannot be undone",
+                "classify_complaint_title": "Confirm classification",
+                "classify_complaint_description": "Are you sure you want to classify this complaint as {type}?"
+            }
+        }
+    }
+}

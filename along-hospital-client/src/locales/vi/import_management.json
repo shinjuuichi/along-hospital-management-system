@@ -1,0 +1,57 @@
+{
+	"import_management": {
+		"title": {
+			"main": "Quản lý nhập hàng"
+		},
+		"button": {
+			"import_csv": "Nhập CSV",
+			"delete_selected": "Xóa {count} phiếu nhập đã chọn"
+		},
+		"text": {
+			"supplier_number": "Nhà cung cấp #{id}",
+			"medicine_number": "Thuốc #{id}",
+			"import_success": "Nhập dữ liệu thành công.",
+			"supplier_id_prefix": "NCC #"
+		},
+		"table": {
+			"id": "ID",
+			"date": "Ngày",
+			"supplier": "Nhà cung cấp",
+			"note": "Ghi chú",
+			"items": "Số mặt hàng"
+		},
+		"field": {
+			"import_date": "Ngày nhập",
+			"supplier": "Nhà cung cấp",
+			"note": "Ghi chú",
+			"import_details": "Chi tiết nhập",
+			"medicine": "Thuốc",
+			"quantity": "Số lượng",
+			"unit_price": "Đơn giá"
+		},
+		"dialog": {
+			"create": {
+				"title": "Tạo phiếu nhập"
+			},
+			"view": {
+				"title": "Chi tiết phiếu nhập"
+			},
+			"update": {
+				"title": "Cập nhật phiếu nhập"
+			}
+		},
+		"confirm": {
+			"delete_many": {
+				"title": "Xóa các phiếu nhập đã chọn?",
+				"description": "Bạn có chắc chắn muốn xóa {count} phiếu nhập đã chọn?"
+			},
+			"delete_one": {
+				"title": "Xóa phiếu nhập?",
+				"description": "Bạn có chắc chắn muốn xóa phiếu nhập #{id}?"
+			}
+		},
+		"placeholder": {
+			"import_detail_line": "{index}. {name} | SL: {quantity} | Đơn giá: {unitPrice}"
+		}
+	}
+}

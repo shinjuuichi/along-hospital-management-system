@@ -1,0 +1,48 @@
+{
+  "medical_service": {
+    "title": {
+      "management": "Quản lý Dịch vụ Y tế",
+      "filter": "Bộ lọc dịch vụ",
+      "list": "Danh sách dịch vụ khám chữa bệnh"
+    },
+    "description": {
+      "list": "Tìm kiếm và xem chi tiết các dịch vụ khám chữa bệnh của chúng tôi"
+    },
+    "field": {
+      "id": "Mã số",
+      "name": "Tên dịch vụ",
+      "description": "Mô tả",
+      "price": "Giá",
+      "specialty": "Chuyên khoa",
+      "code": "Mã code",
+      "active": "Kích hoạt",
+      "table_status": "Trạng thái",
+      "roles": "Vai trò",
+      "actions": "Hành động"
+    },
+    "label": {
+      "price": "Giá dịch vụ",
+      "description": "Mô tả",
+      "active": "Hoạt động",
+      "inactive": "Tạm ngưng"
+    },
+    "button": {
+      "view_detail": "Xem chi tiết",
+      "book_appointment": "Đăng ký hẹn"
+    },
+    "placeholder": {
+      "no_result_title": "Không tìm thấy dịch vụ",
+      "no_result_subtitle": "Vui lòng thử lại với từ khóa khác",
+      "no_description": "Không có mô tả"
+    },
+    "note": {
+      "price_note": "Lưu ý: Giá trên có thể thay đổi tùy theo tình trạng bệnh nhân. Vui lòng liên hệ với bác sĩ để được tư vấn chi tiết."
+    },
+    "dialog": {
+      "create_title": "Tạo mới Dịch vụ Y tế",
+      "update_title": "Cập nhật Dịch vụ Y tế",
+      "confirm_delete_title": "Xác nhận xóa",
+      "confirm_delete_description": "Bạn có chắc muốn xóa dịch vụ y tế: {name} không?"
+    }
+  }
+}

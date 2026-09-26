@@ -1,0 +1,324 @@
+groups:
+  # ========================================
+  # System-Wide Alerts
+  # ========================================
+  - name: system_alerts
+    interval: 30s
+    rules:
+      # High error rate across entire system
+      - alert: HighSystemErrorRate
+        expr: |
+          sum(rate(http_server_request_duration_seconds_count{http_response_status_code=~"[45].."}[5m])) 
+          / 
+          sum(rate(http_server_request_duration_seconds_count[5m])) * 100 > 5
+        for: 5m
+        labels:
+          severity: critical
+          category: system
+        annotations:
+          summary: 'High error rate detected across system'
+          description: 'System-wide error rate is {{ $value | humanize }}% (threshold: 5%)'
+
+      # High P95 latency across system
+      - alert: HighSystemLatency
+        expr: |
+          histogram_quantile(0.95, 
+            sum(rate(http_server_request_duration_seconds_bucket[5m])) by (le)
+          ) * 1000 > 3000
+        for: 5m
+        labels:
+          severity: warning
+          category: system
+        annotations:
+          summary: 'High P95 latency detected across system'
+          description: 'System P95 latency is {{ $value | humanize }}ms (threshold: 3000ms)'
+
+  # ========================================
+  # Ocelot API Gateway Alerts
+  # ========================================
+  - name: ocelot_gateway_alerts
+    interval: 30s
+    rules:
+      # High error rate at gateway
+      - alert: OcelotHighErrorRate
+        expr: |
+          sum(rate(http_server_request_duration_seconds_count{service="api-gateway", http_response_status_code=~"[45].."}[5m])) 
+          / 
+          sum(rate(http_server_request_duration_seconds_count{service="api-gateway"}[5m])) * 100 > 3
+        for: 5m
+        labels:
+          severity: critical
+          category: gateway
+          service: api-gateway
+        annotations:
+          summary: 'High error rate at Ocelot API Gateway'
+          description: 'Gateway error rate is {{ $value | humanize }}% (threshold: 3%)'
+
+      # High P95 latency after gateway
+      - alert: OcelotHighLatency
+        expr: |
+          histogram_quantile(0.95, 
+            sum(rate(http_server_request_duration_seconds_bucket{service="api-gateway"}[5m])) by (le)
+          ) * 1000 > 3000
+        for: 5m
+        labels:
+          severity: warning
+          category: gateway
+          service: api-gateway
+        annotations:
+          summary: 'High P95 latency at API Gateway'
+          description: 'Gateway P95 latency is {{ $value | humanize }}ms (threshold: 3000ms)'
+
+      # Gateway service down
+      - alert: OcelotGatewayDown
+        expr: up{job="api-gateway"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          category: gateway
+          service: api-gateway
+        annotations:
+          summary: 'Ocelot API Gateway is down'
+          description: 'API Gateway service is not responding'
+
+  # ========================================
+  # Per-Service Alerts
+  # ========================================
+  - name: microservice_alerts
+    interval: 30s
+    rules:
+      # Service down
+      - alert: MicroserviceDown
+        expr: up{job=~".*-service"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          category: microservice
+        annotations:
+          summary: 'Microservice {{ $labels.job }} is down'
+          description: 'Service {{ $labels.job }} is not responding for 2 minutes'
+
+      # High error rate per service
+      - alert: MicroserviceHighErrorRate
+        expr: |
+          sum(rate(http_server_request_duration_seconds_count{http_response_status_code=~"5..",job=~".*-service"}[5m])) by (service) 
+          / 
+          sum(rate(http_server_request_duration_seconds_count{job=~".*-service"}[5m])) by (service) * 100 > 5
+        for: 5m
+        labels:
+          severity: warning
+          category: microservice
+        annotations:
+          summary: 'High 5xx error rate in {{ $labels.service }}'
+          description: 'Service {{ $labels.service }} has {{ $value | humanize }}% error rate (threshold: 5%)'
+
+      # High exception rate
+      - alert: MicroserviceHighExceptionRate
+        expr: rate(process_runtime_dotnet_exceptions_count[5m]) > 10
+        for: 5m
+        labels:
+          severity: warning
+          category: microservice
+        annotations:
+          summary: 'High exception rate in {{ $labels.service }}'
+          description: 'Service {{ $labels.service }} has {{ $value | humanize }} exceptions/sec'
+
+  # ========================================
+  # Infrastructure Alerts
+  # ========================================
+  - name: infrastructure_alerts
+    interval: 30s
+    rules:
+      # Host CPU high
+      - alert: HostCPUHigh
+        expr: (1 - avg(rate(node_cpu_seconds_total{mode="idle"}[5m]))) * 100 > 80
+        for: 5m
+        labels:
+          severity: warning
+          category: infrastructure
+        annotations:
+          summary: 'Host CPU usage is high'
+          description: 'Host CPU usage is {{ $value | humanize }}% (threshold: 80%)'
+
+      # Host memory high
+      - alert: HostMemoryHigh
+        expr: |
+          (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+          category: infrastructure
+        annotations:
+          summary: 'Host memory usage is high'
+          description: 'Host memory usage is {{ $value | humanize }}% (threshold: 85%)'
+
+      # Host disk space low
+      - alert: HostDiskSpaceLow
+        expr: |
+          (1 - (node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"})) * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+          category: infrastructure
+        annotations:
+          summary: 'Host disk space is low'
+          description: 'Host disk usage is {{ $value | humanize }}% (threshold: 85%)'
+
+  # ========================================
+  # Container Alerts
+  # ========================================
+  - name: container_alerts
+    interval: 30s
+    rules:
+      # Container CPU high
+      - alert: ContainerCPUHigh
+        expr: rate(container_cpu_usage_seconds_total{name=~".+"}[5m]) * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+          category: container
+        annotations:
+          summary: 'Container {{ $labels.name }} CPU is high'
+          description: 'Container {{ $labels.name }} CPU usage is {{ $value | humanize }}% (threshold: 85%)'
+
+      # Container memory high
+      - alert: ContainerMemoryHigh
+        expr: |
+          (container_memory_working_set_bytes{name=~".+"} / container_spec_memory_limit_bytes{name=~".+"}) * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+          category: container
+        annotations:
+          summary: 'Container {{ $labels.name }} memory is high'
+          description: 'Container {{ $labels.name }} memory usage is {{ $value | humanize }}% (threshold: 85%)'
+
+      # Container restart count high
+      - alert: ContainerRestartCountHigh
+        expr: changes(container_last_seen{name=~".+"}[10m]) > 3
+        for: 1m
+        labels:
+          severity: critical
+          category: container
+        annotations:
+          summary: 'Container {{ $labels.name }} restarting frequently'
+          description: 'Container {{ $labels.name }} has restarted {{ $value }} times in last 10 minutes (threshold: 3)'
+
+  # ========================================
+  # Database Alerts (SQL Server)
+  # ========================================
+  - name: database_alerts
+    interval: 30s
+    rules:
+      # SQL Server deadlock detected
+      - alert: SQLServerDeadlock
+        expr: increase(sqlserver_deadlock_total[5m]) > 0
+        for: 1m
+        labels:
+          severity: critical
+          category: database
+        annotations:
+          summary: 'SQL Server deadlock detected'
+          description: '{{ $value }} deadlock(s) detected in last 5 minutes'
+
+      # High database connection pool usage
+      - alert: HighDatabaseConnectionPoolUsage
+        expr: |
+          (db_connection_pool_active_connections / 
+          (db_connection_pool_active_connections + db_connection_pool_idle_connections)) * 100 > 80
+        for: 5m
+        labels:
+          severity: warning
+          category: database
+        annotations:
+          summary: 'High database connection pool usage'
+          description: 'Connection pool usage is {{ $value | humanize }}% (threshold: 80%)'
+
+      # Slow query detected
+      - alert: SlowQueryDetected
+        expr: |
+          histogram_quantile(0.95, 
+            sum(rate(db_command_duration_seconds_bucket[5m])) by (le, command_name)
+          ) * 1000 > 5000
+        for: 5m
+        labels:
+          severity: warning
+          category: database
+        annotations:
+          summary: 'Slow database query detected'
+          description: 'Query {{ $labels.command_name }} P95 latency is {{ $value | humanize }}ms (threshold: 5000ms)'
+
+  # ========================================
+  # Business Metrics Alerts
+  # ========================================
+  - name: business_alerts
+    interval: 60s
+    rules:
+      # Payment failure rate high
+      - alert: HighPaymentFailureRate
+        expr: |
+          sum(rate(business_payment_failed_total[5m])) 
+          / 
+          (sum(rate(business_payment_success_total[5m])) + sum(rate(business_payment_failed_total[5m]))) * 100 > 10
+        for: 5m
+        labels:
+          severity: critical
+          category: business
+        annotations:
+          summary: 'High payment failure rate'
+          description: 'Payment failure rate is {{ $value | humanize }}% (threshold: 10%)'
+
+      # Order cancellation rate high
+      - alert: HighOrderCancellationRate
+        expr: |
+          sum(rate(business_order_canceled_total[10m])) 
+          / 
+          sum(rate(business_order_created_total[10m])) * 100 > 20
+        for: 10m
+        labels:
+          severity: warning
+          category: business
+        annotations:
+          summary: 'High order cancellation rate'
+          description: 'Order cancellation rate is {{ $value | humanize }}% (threshold: 20%)'
+
+      # Appointment cancellation spike
+      - alert: AppointmentCancellationSpike
+        expr: |
+          rate(business_appointment_canceled_total[5m]) > 
+          rate(business_appointment_canceled_total[5m] offset 1h) * 3
+        for: 5m
+        labels:
+          severity: warning
+          category: business
+        annotations:
+          summary: 'Appointment cancellation spike detected'
+          description: 'Appointment cancellations increased 3x compared to 1 hour ago'
+
+  # ========================================
+  # Observability Stack Alerts
+  # ========================================
+  - name: observability_alerts
+    interval: 60s
+    rules:
+      # Prometheus scrape failure
+      - alert: PrometheusScrapeFailing
+        expr: up == 0
+        for: 5m
+        labels:
+          severity: warning
+          category: observability
+        annotations:
+          summary: 'Prometheus scrape failing for {{ $labels.job }}'
+          description: 'Target {{ $labels.instance }} of job {{ $labels.job }} is down'
+
+      # OTEL Collector down
+      - alert: OtelCollectorDown
+        expr: up{job="otel-collector"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          category: observability
+        annotations:
+          summary: 'OpenTelemetry Collector is down'
+          description: 'OTEL Collector service is not responding'

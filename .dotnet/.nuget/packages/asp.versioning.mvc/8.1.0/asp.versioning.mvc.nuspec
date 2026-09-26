@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Asp.Versioning.Mvc</id>
+    <version>8.1.0</version>
+    <authors>.NET Foundation and Contributors</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://github.com/dotnet/aspnet-api-versioning/wiki</projectUrl>
+    <description>A service API versioning library for Microsoft ASP.NET Core MVC.</description>
+    <releaseNotes>https://github.com/dotnet/aspnet-api-versioning/releases/tag/v8.1.0</releaseNotes>
+    <copyright>© .NET Foundation. All rights reserved.</copyright>
+    <tags>Asp AspNet AspNetCore MVC Versioning</tags>
+    <repository type="git" url="https://github.com/dotnet/aspnet-api-versioning" commit="22a775b8eae36147587faaa062d7555260c94736" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="Asp.Versioning.Http" version="8.1.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

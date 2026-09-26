@@ -1,0 +1,774 @@
+name: Docker CI/CD
+
+on:
+  pull_request:
+    branches: ["main"]
+  push:
+    branches: ["main"]
+
+jobs:
+  # Discover all buildable services and detect changes
+  detect-changes:
+    runs-on: self-hosted
+    outputs:
+      services: ${{ steps.filter.outputs.services }}
+      any_changed: ${{ steps.filter.outputs.any_changed }}
+      stack_changed: ${{ steps.filter.outputs.stack_changed }}
+      infra_stack_changed: ${{ steps.filter.outputs.infra_stack_changed }}
+      app_stack_changed: ${{ steps.filter.outputs.app_stack_changed }}
+      observability_stack_changed: ${{ steps.filter.outputs.observability_stack_changed }}
+      all_services: ${{ steps.discover.outputs.all_services }}
+      service_map: ${{ steps.discover.outputs.service_map }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Discover all buildable services
+        id: discover
+        shell: bash
+        run: |
+          # Convert PascalCase folder name to kebab-case service name
+          # Examples:
+          #   AuthSvc.WebAPI -> auth-svc
+          #   MedicalServiceSvc.WebAPI -> medical-service-svc
+          #   TeleHealthSvc.WebAPI -> tele-health-svc
+          #   CommonServices/EmailSvc -> email-svc
+          #   ApiGateway -> api-gateway
+          to_kebab() {
+            local name="$1"
+            local result
+            result=$(echo "$name" \
+              | sed 's/Svc\.WebAPI$//g' \
+              | sed 's/Svc$//g' \
+              | sed 's/\([a-z0-9]\)\([A-Z]\)/\1-\2/g' \
+              | tr '[:upper:]' '[:lower:]' \
+              | sed 's/^-//;s/-$//' \
+              | sed 's/--/-/g')
+
+            echo "$result"
+          }
+
+          echo "Discovering all Dockerfiles..."
+
+          # Arrays to store discovered services
+          declare -A SERVICE_MAP  # service-name -> dockerfile-path
+          declare -A DIR_MAP      # service-name -> watch-directory
+          all_services=()
+
+          # Pattern 1: Standard microservices - *Service/*Svc.WebAPI/Dockerfile
+          while IFS= read -r dockerfile; do
+            [ -z "$dockerfile" ] && continue
+            # Extract:
+            #   AuthService/AuthSvc.WebAPI/Dockerfile -> AuthSvc.WebAPI
+            #   MedicalServiceService/MedicalServiceSvc.WebAPI/Dockerfile -> MedicalServiceSvc.WebAPI
+            webapi_dir=$(dirname "$dockerfile")
+            service_dir=$(dirname "$webapi_dir")
+            folder_name=$(basename "$webapi_dir")
+            svc_name="$(to_kebab "$folder_name")-svc"
+            
+            SERVICE_MAP["$svc_name"]="$dockerfile"
+            DIR_MAP["$svc_name"]="$service_dir"
+            all_services+=("$svc_name")
+            echo "Found: $svc_name -> $dockerfile (watch: $service_dir)"
+          done < <(find . -path './*Service/*Svc.WebAPI/Dockerfile' -type f 2>/dev/null | sed 's|^\./||')
+
+          # Pattern 2: CommonServices - CommonServices/*/Dockerfile
+          while IFS= read -r dockerfile; do
+            [ -z "$dockerfile" ] && continue
+            # Extract: CommonServices/EmailSvc/Dockerfile -> EmailSvc
+            svc_folder=$(dirname "$dockerfile")
+            folder_name=$(basename "$svc_folder")
+            svc_name="$(to_kebab "$folder_name")-svc"
+            
+            SERVICE_MAP["$svc_name"]="$dockerfile"
+            DIR_MAP["$svc_name"]="$svc_folder"
+            all_services+=("$svc_name")
+            echo "Found: $svc_name -> $dockerfile (watch: $svc_folder)"
+          done < <(find ./CommonServices -maxdepth 2 -name 'Dockerfile' -type f 2>/dev/null | sed 's|^\./||')
+
+          # Pattern 3: ApiGateway - ApiGateway/Dockerfile
+          if [ -f "ApiGateway/Dockerfile" ]; then
+            SERVICE_MAP["api-gateway"]="ApiGateway/Dockerfile"
+            DIR_MAP["api-gateway"]="ApiGateway"
+            all_services+=("api-gateway")
+            echo "Found: api-gateway -> ApiGateway/Dockerfile (watch: ApiGateway)"
+          fi
+
+          # Remove duplicates and sort
+          mapfile -t unique_services < <(printf '%s\n' "${all_services[@]}" | sort -u)
+
+          echo "---"
+          echo "Total services discovered: ${#unique_services[@]}"
+
+          # Output all services as JSON array
+          all_services_json=$(printf '%s\n' "${unique_services[@]}" | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          echo "all_services=$all_services_json" >> "$GITHUB_OUTPUT"
+
+          # Output service map as JSON object (service-name -> dockerfile)
+          service_map_json="{"
+          first=true
+          for svc in "${unique_services[@]}"; do
+            if [ "$first" = true ]; then
+              first=false
+            else
+              service_map_json+=","
+            fi
+            service_map_json+="\"$svc\":{\"dockerfile\":\"${SERVICE_MAP[$svc]}\",\"dir\":\"${DIR_MAP[$svc]}\"}"
+          done
+          service_map_json+="}"
+          echo "service_map=$service_map_json" >> "$GITHUB_OUTPUT"
+
+          # Export for next step
+          for svc in "${unique_services[@]}"; do
+            echo "SVC_${svc//-/_}_DOCKERFILE=${SERVICE_MAP[$svc]}" >> "$GITHUB_ENV"
+            echo "SVC_${svc//-/_}_DIR=${DIR_MAP[$svc]}" >> "$GITHUB_ENV"
+          done
+
+      - name: Detect changed services
+        id: filter
+        shell: bash
+        run: |
+          # Parse discovered services
+          all_services_json='${{ steps.discover.outputs.all_services }}'
+          service_map_json='${{ steps.discover.outputs.service_map }}'
+
+          mapfile -t all_services < <(echo "$all_services_json" | jq -r '.[]')
+
+          # Helper function to output all services
+          output_all_services() {
+            echo "$all_services_json"
+          }
+
+          # If this is the first push or we can't get the base, build all
+          if [ "${{ github.event_name }}" == "push" ] && [ -z "${{ github.event.before }}" ]; then
+            echo "First push - building all services"
+            echo "services=$(output_all_services)" >> "$GITHUB_OUTPUT"
+            echo "any_changed=true" >> "$GITHUB_OUTPUT"
+            echo "stack_changed=true" >> "$GITHUB_OUTPUT"
+            echo "infra_stack_changed=true" >> "$GITHUB_OUTPUT"
+            echo "app_stack_changed=true" >> "$GITHUB_OUTPUT"
+            echo "observability_stack_changed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Get the base commit
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            base_ref="${{ github.event.pull_request.base.sha }}"
+          else
+            base_ref="${{ github.event.before }}"
+          fi
+
+          # Get changed files
+          changed_files=$(git diff --name-only "$base_ref" HEAD)
+          echo "Changed files:"
+          echo "$changed_files"
+          echo "---"
+
+          infra_stack_changed=false
+          app_stack_changed=false
+          observability_stack_changed=false
+
+          if echo "$changed_files" | grep -qE "^infra-stack\.yml$"; then
+            infra_stack_changed=true
+            echo "infra-stack.yml changed"
+          fi
+
+          if echo "$changed_files" | grep -qE "^app-stack\.yml$"; then
+            app_stack_changed=true
+            echo "app-stack.yml changed"
+          fi
+
+          if echo "$changed_files" | grep -qE "^(observability-stack\.yml|infra/observability/)"; then
+            observability_stack_changed=true
+            echo "observability stack sources changed"
+          fi
+
+          stack_changed=false
+          if [ "$infra_stack_changed" = "true" ] || [ "$app_stack_changed" = "true" ] || [ "$observability_stack_changed" = "true" ]; then
+            stack_changed=true
+          fi
+
+          # Track services that need to be built
+          declare -A services_to_build
+
+          # Rule 1: If SharedLibrary changes, build ALL services
+          if echo "$changed_files" | grep -qE "^SharedLibrary/"; then
+            echo "SharedLibrary changed - building ALL services"
+            echo "services=$(output_all_services)" >> "$GITHUB_OUTPUT"
+            echo "any_changed=true" >> "$GITHUB_OUTPUT"
+            echo "stack_changed=$stack_changed" >> "$GITHUB_OUTPUT"
+            echo "infra_stack_changed=$infra_stack_changed" >> "$GITHUB_OUTPUT"
+            echo "app_stack_changed=$app_stack_changed" >> "$GITHUB_OUTPUT"
+            echo "observability_stack_changed=$observability_stack_changed" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Rule 2: If along-hospital-server.ServiceDefaults changes, build all
+          if echo "$changed_files" | grep -qE "^along-hospital-server\.ServiceDefaults/"; then
+            echo "ServiceDefaults changed - building ALL services"
+            echo "services=$(output_all_services)" >> "$GITHUB_OUTPUT"
+            echo "any_changed=true" >> "$GITHUB_OUTPUT"
+            echo "stack_changed=$stack_changed" >> "$GITHUB_OUTPUT"
+            echo "infra_stack_changed=$infra_stack_changed" >> "$GITHUB_OUTPUT"
+            echo "app_stack_changed=$app_stack_changed" >> "$GITHUB_OUTPUT"
+            echo "observability_stack_changed=$observability_stack_changed" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Rule 3: Check for service-specific directory changes (auto-detected)
+          for svc in "${all_services[@]}"; do
+            # Get the watch directory from the service map
+            watch_dir=$(echo "$service_map_json" | jq -r ".[\"$svc\"].dir // empty")
+            if [ -n "$watch_dir" ] && echo "$changed_files" | grep -qE "^${watch_dir}/"; then
+              services_to_build[$svc]=1
+              echo "Service directory changed: ${watch_dir} -> ${svc}"
+            fi
+          done
+
+          # Output the results
+          if [ ${#services_to_build[@]} -eq 0 ]; then
+            echo "No services need rebuilding"
+            echo "services=[]" >> "$GITHUB_OUTPUT"
+            echo "any_changed=false" >> "$GITHUB_OUTPUT"
+          else
+            changed_services=("${!services_to_build[@]}")
+            echo "Services to build: ${changed_services[*]}"
+            services_json=$(printf '%s\n' "${changed_services[@]}" | jq -R -s -c 'split("\n") | map(select(length > 0))')
+            echo "services=$services_json" >> "$GITHUB_OUTPUT"
+            echo "any_changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+          echo "stack_changed=$stack_changed" >> "$GITHUB_OUTPUT"
+          echo "infra_stack_changed=$infra_stack_changed" >> "$GITHUB_OUTPUT"
+          echo "app_stack_changed=$app_stack_changed" >> "$GITHUB_OUTPUT"
+          echo "observability_stack_changed=$observability_stack_changed" >> "$GITHUB_OUTPUT"
+
+  # Build and Push job for Main branch using docker build
+  build-and-push:
+    name: Build & Push ${{ matrix.service }}
+    runs-on: self-hosted
+    needs: detect-changes
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.detect-changes.outputs.any_changed == 'true'
+
+    outputs:
+      version: ${{ steps.setver.outputs.version }}
+    strategy:
+      max-parallel: 4
+      fail-fast: false
+      matrix:
+        service: ${{ fromJson(needs.detect-changes.outputs.services) }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Version
+        id: setver
+        shell: bash
+        run: |
+          run_num=${{ github.run_number }}
+          major=$((run_num / 10000 + 1))
+          minor=$(((run_num % 10000) / 100))
+          patch=$((run_num % 100))
+          short_sha=$(echo "${{ github.sha }}" | cut -c1-7)
+          version="${major}.${minor}.${patch}-${short_sha}"
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+
+      - name: Compute lowercase namespace
+        id: ns
+        shell: bash
+        run: |
+          lc="$(echo '${{ secrets.DOCKER_USERNAME }}' | tr '[:upper:]' '[:lower:]' | tr -d '\n')"
+          echo "namespace_lc=${lc}" >> "$GITHUB_OUTPUT"
+
+      - name: Get Dockerfile path from service map
+        id: dockerfile
+        shell: bash
+        env:
+          SERVICE_MAP: ${{ needs.detect-changes.outputs.service_map }}
+        run: |
+          SERVICE_NAME="${{ matrix.service }}"
+
+          # Get dockerfile path from the auto-discovered service map
+          dockerfile=$(echo "$SERVICE_MAP" | jq -r ".[\"$SERVICE_NAME\"].dockerfile // empty")
+
+          if [ -z "$dockerfile" ]; then
+            echo "Error: Unknown service ${SERVICE_NAME} - not found in service map"
+            echo "Available services:"
+            echo "$SERVICE_MAP" | jq -r 'keys[]'
+            exit 1
+          fi
+
+          echo "dockerfile=${dockerfile}" >> "$GITHUB_OUTPUT"
+          echo "Dockerfile for ${SERVICE_NAME}: ${dockerfile}"
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          docker system prune -af
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and Push ${{ matrix.service }}
+        shell: bash
+        env:
+          DOCKER_REGISTRY: docker.io
+          VERSION: ${{ steps.setver.outputs.version }}
+          NAMESPACE_LC: ${{ steps.ns.outputs.namespace_lc }}
+          DOCKERFILE: ${{ steps.dockerfile.outputs.dockerfile }}
+        run: |
+          SERVICE_NAME="$(echo '${{ matrix.service }}' | tr -d '\n\r\t ')"
+          echo "Building and pushing ${SERVICE_NAME}..."
+          echo "Using Dockerfile: ${DOCKERFILE}"
+
+          # Image names
+          versioned_image="${NAMESPACE_LC}/${SERVICE_NAME}:${VERSION}"
+          latest_image="${NAMESPACE_LC}/${SERVICE_NAME}:latest"
+
+          # Build using docker build (context is project root)
+          echo "Building image: ${versioned_image}"
+          docker build \
+            --file "${DOCKERFILE}" \
+            --tag "${versioned_image}" \
+            --tag "${latest_image}" \
+            --build-arg BUILD_CONFIGURATION=Release \
+            .
+
+          # Verify image was built
+          if ! docker images --format "{{.Repository}}:{{.Tag}}" | grep -q "^${versioned_image}$"; then
+            echo "Error: Image not built for ${SERVICE_NAME}"
+            docker images | grep "${SERVICE_NAME}" || true
+            exit 1
+          fi
+
+          # Push both tags
+          echo "Pushing version tag: ${versioned_image}"
+          docker push "${versioned_image}"
+
+          echo "Pushing latest tag: ${latest_image}"
+          docker push "${latest_image}"
+
+          echo "Successfully pushed ${SERVICE_NAME}"
+          echo "  - ${versioned_image}"
+          echo "  - ${latest_image}"
+
+  # Deploy to production via Portainer API
+  deploy:
+    runs-on: self-hosted
+    needs: [detect-changes, build-and-push]
+    if: |
+      always() &&
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/main' &&
+      (needs.detect-changes.outputs.any_changed == 'true' || needs.detect-changes.outputs.stack_changed == 'true') &&
+      (needs.build-and-push.result == 'success' || needs.build-and-push.result == 'skipped')
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Decide deployment targets
+        id: plan
+        shell: bash
+        env:
+          CHANGED_SERVICES: ${{ needs.detect-changes.outputs.services }}
+          INFRA_STACK_CHANGED: ${{ needs.detect-changes.outputs.infra_stack_changed }}
+          APP_STACK_CHANGED: ${{ needs.detect-changes.outputs.app_stack_changed }}
+          OBSERVABILITY_STACK_CHANGED: ${{ needs.detect-changes.outputs.observability_stack_changed }}
+        run: |
+          set -euo pipefail
+
+          redeploy_infra="${INFRA_STACK_CHANGED:-false}"
+          redeploy_app="${APP_STACK_CHANGED:-false}"
+          redeploy_observability="${OBSERVABILITY_STACK_CHANGED:-false}"
+          service_updates="[]"
+
+          if [ -n "${CHANGED_SERVICES:-}" ] && [ "${CHANGED_SERVICES}" != "[]" ]; then
+            service_updates="$(echo "${CHANGED_SERVICES}" | jq -c '.')"
+          fi
+
+          has_service_updates=false
+          if [ "${service_updates}" != "[]" ]; then
+            has_service_updates=true
+          fi
+
+          echo "redeploy_infra=${redeploy_infra}" >> "$GITHUB_OUTPUT"
+          echo "redeploy_app=${redeploy_app}" >> "$GITHUB_OUTPUT"
+          echo "redeploy_observability=${redeploy_observability}" >> "$GITHUB_OUTPUT"
+          echo "service_updates=${service_updates}" >> "$GITHUB_OUTPUT"
+          echo "has_service_updates=${has_service_updates}" >> "$GITHUB_OUTPUT"
+          echo "redeploy_infra=${redeploy_infra}"
+          echo "redeploy_app=${redeploy_app}"
+          echo "redeploy_observability=${redeploy_observability}"
+          echo "service_updates=${service_updates}"
+          echo "has_service_updates=${has_service_updates}"
+
+      - name: Upsert selected stacks via Portainer API
+        if: steps.plan.outputs.redeploy_infra == 'true' || steps.plan.outputs.redeploy_app == 'true' || steps.plan.outputs.redeploy_observability == 'true'
+        shell: bash
+        env:
+          PORTAINER_URL: ${{ secrets.PORTAINER_URL }}
+          PORTAINER_API_KEY: ${{ secrets.PORTAINER_API_KEY }}
+          PORTAINER_ENDPOINT_ID: ${{ secrets.PORTAINER_ENDPOINT_ID }}
+          REDEPLOY_INFRA: ${{ steps.plan.outputs.redeploy_infra }}
+          REDEPLOY_APP: ${{ steps.plan.outputs.redeploy_app }}
+          REDEPLOY_OBSERVABILITY: ${{ steps.plan.outputs.redeploy_observability }}
+        run: |
+          set -euo pipefail
+
+          for required_var in PORTAINER_URL PORTAINER_API_KEY PORTAINER_ENDPOINT_ID; do
+            if [ -z "${!required_var:-}" ]; then
+              echo "Missing required secret: ${required_var}"
+              exit 1
+            fi
+          done
+
+          base_url="${PORTAINER_URL%/}"
+          auth_header="X-API-Key: ${PORTAINER_API_KEY}"
+
+          default_env_json="[]"
+
+          extract_stack_env_json() {
+            local stack_file="$1"
+            local stack_refs
+
+            if [ ! -f "$stack_file" ]; then
+              echo "[]"
+              return
+            fi
+
+            stack_refs="$(grep -oE '\$\{[A-Za-z_][A-Za-z0-9_]*(:-[^}]*)?\}' "$stack_file" || true)"
+
+            if [ -z "$stack_refs" ]; then
+              echo "[]"
+              return
+            fi
+
+            printf '%s\n' "$stack_refs" \
+              | sed -E 's/^\$\{([A-Za-z_][A-Za-z0-9_]*)(:-[^}]*)?\}$/\1/' \
+              | sort -u \
+              | jq -R -s -c 'split("\n") | map(select(length > 0)) | map({name: ., value: ""})'
+          }
+
+          normalize_stack_env_json() {
+            local env_json="${1:-[]}"
+
+            echo "${env_json:-[]}" | jq -c '
+              def normalize_entry:
+                if type == "object" then
+                  if has("name") then {name: .name, value: (.value // "")}
+                  elif has("Name") then {name: .Name, value: (.Value // "")}
+                  else empty
+                  end
+                elif type == "string" then
+                  capture("^(?<name>[^=]+)=(?<value>.*)$")?
+                else
+                  empty
+                end;
+
+              if type == "array" then
+                map(normalize_entry)
+                | map(select(.name != null and .name != ""))
+              else
+                []
+              end
+            '
+          }
+
+          merge_stack_env_json() {
+            local existing_env_json="${1:-[]}"
+            local stack_file="$2"
+            local normalized_existing_env_json
+            local stack_env_json
+
+            normalized_existing_env_json="$(normalize_stack_env_json "${existing_env_json}")"
+            stack_env_json="$(extract_stack_env_json "$stack_file")"
+
+            jq -cn \
+              --argjson existing "${normalized_existing_env_json}" \
+              --argjson required "${stack_env_json}" '
+                ($existing + $required)
+                | reduce .[] as $item ({}; .[$item.name] = ($item.value // ""))
+                | to_entries
+                | sort_by(.key)
+                | map({name: .key, value: .value})
+              '
+          }
+
+          swarm_id=""
+          get_swarm_id() {
+            if [ -n "$swarm_id" ]; then
+              echo "$swarm_id"
+              return
+            fi
+
+            local body
+            body="$(mktemp)"
+            local status
+            status=$(curl --silent --show-error --output "$body" --write-out "%{http_code}" \
+              -H "$auth_header" \
+              "${base_url}/api/endpoints/${PORTAINER_ENDPOINT_ID}/docker/swarm")
+
+            if [ "$status" != "200" ]; then
+              echo "Failed to query swarm ID (HTTP ${status})"
+              cat "$body"
+              rm -f "$body"
+              exit 1
+            fi
+
+            swarm_id="$(jq -r '.ID // empty' "$body")"
+            rm -f "$body"
+
+            if [ -z "$swarm_id" ]; then
+              echo "Unable to parse swarm ID from Portainer response"
+              exit 1
+            fi
+
+            echo "$swarm_id"
+          }
+
+          # Stacks are created and updated as file-content (non-Git) stacks
+          # via the Portainer "swarm string" API. Do NOT use git-based endpoints
+          # (/git, /git/redeploy) - they only work for Git-managed stacks.
+          upsert_stack() {
+            local stack_name="$1"
+            local stack_file="$2"
+
+            if [ ! -f "$stack_file" ]; then
+              echo "Stack file not found: ${stack_file}"
+              exit 1
+            fi
+
+            echo "Deploying stack '${stack_name}' from '${stack_file}'"
+
+            local stack_content
+            stack_content="$(cat "$stack_file")"
+
+            # List all stacks and find by name (compatible with all Portainer versions)
+            local list_body
+            list_body="$(mktemp)"
+            local list_status
+            list_status=$(curl --silent --show-error --output "$list_body" --write-out "%{http_code}" \
+              -H "$auth_header" \
+              "${base_url}/api/stacks")
+
+            if ! [[ "$list_status" =~ ^2 ]]; then
+              echo "Failed to list stacks (HTTP ${list_status})"
+              cat "$list_body"
+              rm -f "$list_body"
+              exit 1
+            fi
+
+            local stack_id
+            stack_id="$(jq -r --arg name "$stack_name" '.[] | select(.Name == $name) | .Id // empty' "$list_body")"
+
+            if [ -n "$stack_id" ]; then
+              local stack_env_json
+              stack_env_json="$(jq -c --arg name "$stack_name" '.[] | select(.Name == $name) | (.Env // [])' "$list_body" | head -n 1)"
+              rm -f "$list_body"
+
+              local merged_env_json
+              merged_env_json="$(merge_stack_env_json "${stack_env_json:-[]}" "$stack_file")"
+
+              local update_payload
+
+              update_payload="$(jq -n \
+                 --arg stackFileContent "$stack_content" \
+                 --argjson env "${merged_env_json}" \
+                 '{stackFileContent:$stackFileContent,env:$env,prune:true,pullImage:true}')"
+
+              local update_body
+              update_body="$(mktemp)"
+              local update_status
+              update_status=$(curl --silent --show-error --output "$update_body" --write-out "%{http_code}" \
+                -X PUT "${base_url}/api/stacks/${stack_id}?endpointId=${PORTAINER_ENDPOINT_ID}" \
+                -H "$auth_header" \
+                -H "Content-Type: application/json" \
+                --data "$update_payload")
+
+              if [[ "$update_status" =~ ^2 ]]; then
+                echo "Updated stack '${stack_name}' (id=${stack_id}) with $(echo "${merged_env_json}" | jq 'length') preserved env vars"
+                rm -f "$update_body"
+                return
+              fi
+
+              echo "Failed to update stack '${stack_name}' (HTTP ${update_status})"
+              cat "$update_body"
+              rm -f "$update_body"
+              exit 1
+            else
+              rm -f "$list_body"
+              # Stack not found - create it
+              local create_payload
+              create_payload="$(jq -n \
+                --arg name "$stack_name" \
+                --arg swarmID "$(get_swarm_id)" \
+                --arg stackFileContent "$stack_content" \
+                --argjson env "$default_env_json" \
+                '{name:$name,swarmID:$swarmID,stackFileContent:$stackFileContent,env:$env}')"
+
+              local create_body
+              create_body="$(mktemp)"
+              local create_status
+              create_status=$(curl --silent --show-error --output "$create_body" --write-out "%{http_code}" \
+                -X POST "${base_url}/api/stacks/create/swarm/string?endpointId=${PORTAINER_ENDPOINT_ID}" \
+                -H "$auth_header" \
+                -H "Content-Type: application/json" \
+                --data "$create_payload")
+
+              if [[ "$create_status" =~ ^2 ]]; then
+                echo "Created stack '${stack_name}'"
+                rm -f "$create_body"
+                return
+              fi
+
+              echo "Failed to create stack '${stack_name}' (HTTP ${create_status})"
+              cat "$create_body"
+              rm -f "$create_body"
+              exit 1
+            fi
+          }
+
+          if [ "${REDEPLOY_INFRA}" = "true" ]; then
+            upsert_stack "infra" "infra-stack.yml"
+          fi
+
+          if [ "${REDEPLOY_APP}" = "true" ]; then
+            upsert_stack "app" "app-stack.yml"
+          fi
+
+          if [ "${REDEPLOY_OBSERVABILITY}" = "true" ]; then
+            upsert_stack "observability" "observability-stack.yml"
+          fi
+
+          echo "Portainer stack deployment completed"
+
+      - name: Redeploy changed services via Portainer Docker API
+        if: steps.plan.outputs.has_service_updates == 'true'
+        shell: bash
+        env:
+          PORTAINER_URL: ${{ secrets.PORTAINER_URL }}
+          PORTAINER_API_KEY: ${{ secrets.PORTAINER_API_KEY }}
+          PORTAINER_ENDPOINT_ID: ${{ secrets.PORTAINER_ENDPOINT_ID }}
+          SERVICE_UPDATES: ${{ steps.plan.outputs.service_updates }}
+          BUILD_VERSION: ${{ needs.build-and-push.outputs.version }}
+        run: |
+          set -euo pipefail
+
+          for required_var in PORTAINER_URL PORTAINER_API_KEY PORTAINER_ENDPOINT_ID; do
+            if [ -z "${!required_var:-}" ]; then
+              echo "Missing required secret: ${required_var}"
+              exit 1
+            fi
+          done
+
+          base_url="${PORTAINER_URL%/}"
+          auth_header="X-API-Key: ${PORTAINER_API_KEY}"
+
+          services_body="$(mktemp)"
+          services_status=$(curl --silent --show-error --output "$services_body" --write-out "%{http_code}" \
+            -H "$auth_header" \
+            "${base_url}/api/endpoints/${PORTAINER_ENDPOINT_ID}/docker/services")
+
+          if ! [[ "$services_status" =~ ^2 ]]; then
+            echo "Failed to list swarm services (HTTP ${services_status})"
+            cat "$services_body"
+            rm -f "$services_body"
+            exit 1
+          fi
+
+          swarm_services_json="$(cat "$services_body")"
+          rm -f "$services_body"
+
+          force_update_service() {
+            local service_name="$1"
+            local stack_prefix="app"
+            if [ "$service_name" = "machine-learning-svc" ]; then
+              stack_prefix="infra"
+            fi
+
+            local swarm_service_name="${stack_prefix}_${service_name}"
+            local service_json
+            service_json="$(echo "$swarm_services_json" | jq -c --arg name "$swarm_service_name" '.[] | select(.Spec.Name == $name)' | head -n 1)"
+
+            if [ -z "$service_json" ]; then
+              echo "Skip '${service_name}': service '${swarm_service_name}' not found in swarm"
+              return 0
+            fi
+
+            local service_id
+            service_id="$(echo "$service_json" | jq -r '.ID')"
+            local service_version
+            service_version="$(echo "$service_json" | jq -r '.Version.Index')"
+            local current_image
+            current_image="$(echo "$service_json" | jq -r '.Spec.TaskTemplate.ContainerSpec.Image // empty')"
+
+            if [ -z "$current_image" ]; then
+              echo "Failed '${service_name}': missing current image in service spec"
+              return 1
+            fi
+
+            local target_image="$current_image"
+            if [ -n "${BUILD_VERSION:-}" ]; then
+              local image_without_digest="${current_image%@*}"
+              local image_repo="$image_without_digest"
+              local image_tail="${image_without_digest##*/}"
+              if [[ "$image_tail" == *:* ]]; then
+                image_repo="${image_without_digest%:*}"
+              fi
+              target_image="${image_repo}:${BUILD_VERSION}"
+            else
+              echo "BUILD_VERSION is empty; keeping current image for '${swarm_service_name}' and forcing rollout"
+            fi
+
+            local update_spec
+            update_spec="$(echo "$service_json" | jq -c --arg image "$target_image" '
+              .Spec
+              | .TaskTemplate.ForceUpdate = ((.TaskTemplate.ForceUpdate // 0) + 1)
+              | .TaskTemplate.ContainerSpec.Image = $image
+            ')"
+
+            local update_body
+            update_body="$(mktemp)"
+            local update_status
+            update_status=$(curl --silent --show-error --output "$update_body" --write-out "%{http_code}" \
+              -X POST "${base_url}/api/endpoints/${PORTAINER_ENDPOINT_ID}/docker/services/${service_id}/update?version=${service_version}&registryAuthFrom=spec" \
+              -H "$auth_header" \
+              -H "Content-Type: application/json" \
+              --data "$update_spec")
+
+            if [[ "$update_status" =~ ^2 ]]; then
+              echo "Updated '${swarm_service_name}' with image '${target_image}'"
+              rm -f "$update_body"
+              return 0
+            fi
+
+            echo "Failed to update '${swarm_service_name}' (HTTP ${update_status})"
+            cat "$update_body"
+            rm -f "$update_body"
+            return 1
+          }
+
+          failed=0
+          while IFS= read -r svc; do
+            [ -z "$svc" ] && continue
+            if ! force_update_service "$svc"; then
+              failed=1
+            fi
+          done < <(echo "${SERVICE_UPDATES}" | jq -r '.[]')
+
+          if [ "$failed" -ne 0 ]; then
+            echo "One or more service updates failed"
+            exit 1
+          fi
+
+          echo "Targeted service deployment completed"

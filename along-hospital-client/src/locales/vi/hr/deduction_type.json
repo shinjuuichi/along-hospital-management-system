@@ -1,0 +1,33 @@
+{
+    "deduction_type": {
+        "title": {
+            "page": "Loại khấu trừ",
+            "list": "Danh sách loại khấu trừ",
+            "detail": "Chi tiết loại khấu trừ",
+            "delete": "Xóa loại khấu trừ",
+            "delete_confirm": "Bạn có chắc chắn muốn xóa",
+            "create": "Tạo loại khấu trừ",
+            "update": "Cập nhật loại khấu trừ",
+            "deduction_type_management": "Quản lý loại khấu trừ"
+        },
+        "description": {
+            "page_intro": "Quản lý tất cả loại khấu trừ trong hệ thống."
+        },
+        "placeholder": {
+            "no_result_title": "Không tìm thấy loại khấu trừ",
+            "no_result_subtitle": "Thử điều chỉnh bộ lọc hoặc tìm kiếm với từ khóa khác.",
+            "search_deduction_type": "Tìm theo tên loại khấu trừ ..."
+        },
+        "field": {
+            "id": "ID",
+            "name": "Tên",
+            "price": "Giá tiền",
+            "description": "Mô tả",
+            "deduction_quantity_source": "Nguồn số lượng",
+            "insurance_subject": "Đối tượng bảo hiểm",
+            "is_taxable": "Chịu thuế",
+            "is_system_generated": "Hệ thống tạo",
+            "is_percentage": "Theo phần trăm"
+        }
+    }
+}

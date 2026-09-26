@@ -1,0 +1,57 @@
+{
+	"import_management": {
+		"title": {
+			"main": "Import Management"
+		},
+		"button": {
+			"import_csv": "Import CSV",
+			"delete_selected": "Delete Selected ({count})"
+		},
+		"text": {
+			"supplier_number": "Supplier #{id}",
+			"medicine_number": "Medicine #{id}",
+			"import_success": "Import successfully completed.",
+			"supplier_id_prefix": "Supplier #"
+		},
+		"table": {
+			"id": "ID",
+			"date": "Date",
+			"supplier": "Supplier",
+			"note": "Note",
+			"items": "Items"
+		},
+		"field": {
+			"import_date": "Import Date",
+			"supplier": "Supplier",
+			"note": "Note",
+			"import_details": "Import Details",
+			"medicine": "Medicine",
+			"quantity": "Quantity",
+			"unit_price": "Unit Price"
+		},
+		"dialog": {
+			"create": {
+				"title": "Create Import"
+			},
+			"view": {
+				"title": "Import Details"
+			},
+			"update": {
+				"title": "Update Import"
+			}
+		},
+		"confirm": {
+			"delete_many": {
+				"title": "Delete selected imports?",
+				"description": "Are you sure you want to delete {count} selected import(s)?"
+			},
+			"delete_one": {
+				"title": "Delete import?",
+				"description": "Are you sure you want to delete import #{id}?"
+			}
+		},
+		"placeholder": {
+			"import_detail_line": "{index}. {name} | Qty: {quantity} | Unit Price: {unitPrice}"
+		}
+	}
+}

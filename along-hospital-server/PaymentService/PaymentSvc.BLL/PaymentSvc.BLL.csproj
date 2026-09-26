@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Remove="C:\Users\phuck\.nuget\packages\vnpay.net\8.5.0\contentFiles\any\net8.0\Icon.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\PaymentSvc.DAL\PaymentSvc.DAL.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="payOS" Version="1.0.9" />
+		<PackageReference Include="VNPAY.NET" Version="8.5.0" />
+	</ItemGroup>
+
+</Project>

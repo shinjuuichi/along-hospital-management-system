@@ -1,0 +1,139 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  DOCKER_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/along-hospital-client
+  NODE_VERSION: '22'
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: self-hosted
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Build application
+        run: npm run build
+        
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 1
+
+  docker-build-push:
+    name: Build and Push Docker Image
+    needs: build-and-test
+    runs-on: self-hosted
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main')
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          
+      - name: Extract metadata
+        id: meta
+        run: |
+          # Auto-increment version based on run number
+          VERSION="1.0.${{ github.run_number }}"
+          
+          # Get short commit SHA
+          SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)
+          
+          # Combined version tag: version-hash
+          VERSION_TAG="${VERSION}-${SHORT_SHA}"
+          echo "VERSION_TAG=${VERSION_TAG}" >> $GITHUB_OUTPUT
+          
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          platforms: linux/amd64
+          tags: |
+            ${{ env.DOCKER_IMAGE }}:latest
+            ${{ env.DOCKER_IMAGE }}:${{ steps.meta.outputs.VERSION_TAG }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy:
+    name: Deploy to Server
+    needs: docker-build-push
+    runs-on: self-hosted
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Extract version
+        id: version
+        run: |
+          # Auto-increment version based on run number
+          VERSION="1.0.${{ github.run_number }}"
+          SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)
+          VERSION_TAG="${VERSION}-${SHORT_SHA}"
+          echo "VERSION_TAG=${VERSION_TAG}" >> $GITHUB_OUTPUT
+          
+      - name: Deploy to Ubuntu Server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: ${{ secrets.SERVER_PORT || 22 }}
+          script: |
+            # Pull latest image
+            docker pull ${{ env.DOCKER_IMAGE }}:${{ steps.version.outputs.VERSION_TAG }}
+            
+            # Stop and remove old container
+            docker stop along-hospital-client || true
+            docker rm along-hospital-client || true
+            
+            # Run new container with environment variables
+            docker run -d \
+              --name along-hospital-client \
+              --restart unless-stopped \
+              -e VITE_BASE_API_URL=${{ secrets.VITE_BASE_API_URL }} \
+              -e VITE_IMAGE_CLOUD_URL=${{ secrets.VITE_IMAGE_CLOUD_URL }} \
+              -e VITE_GOOGLE_CLIENT_ID=${{ secrets.VITE_GOOGLE_CLIENT_ID }} \
+              -p 9999:80 \
+              ${{ env.DOCKER_IMAGE }}:${{ steps.version.outputs.VERSION_TAG }}
+            
+            # Clean up old images
+            docker image prune -f
+            
+            echo "Deployment completed successfully!"
+            
+      - name: Verify deployment
+        run: |
+          echo "Application deployed with version: ${{ steps.version.outputs.VERSION_TAG }}"
+          echo "Image: ${{ env.DOCKER_IMAGE }}:${{ steps.version.outputs.VERSION_TAG }}"

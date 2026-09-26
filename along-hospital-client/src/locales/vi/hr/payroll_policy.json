@@ -1,0 +1,32 @@
+{
+    "payroll_policy": {
+        "title": {
+            "page": "Chính sách lương",
+            "list": "Danh sách chính sách lương",
+            "detail": "Chi tiết chính sách lương",
+            "delete": "Xóa chính sách lương",
+            "delete_confirm": "Bạn có chắc chắn muốn xóa chính sách lương này",
+            "create": "Tạo chính sách lương",
+            "update": "Cập nhật chính sách lương",
+            "payroll_policy_management": "Quản lý chính sách lương"
+        },
+        "description": {
+            "page_intro": "Quản lý tất cả chính sách lương trong hệ thống."
+        },
+        "placeholder": {
+            "no_result_title": "Không tìm thấy chính sách lương",
+            "no_result_subtitle": "Thử điều chỉnh bộ lọc hoặc tìm kiếm với từ khóa khác.",
+            "search_payroll_policy": "Tìm theo tên chính sách lương ..."
+        },
+        "field": {
+            "id": "ID",
+            "name": "Tên chính sách",
+            "start_date": "Ngày bắt đầu",
+            "end_date": "Ngày kết thúc",
+            "payroll_policy_status": "Trạng thái",
+            "staff_id": "Nhân viên",
+            "allowance_type_id": "Loại phụ cấp",
+            "deduction_type_id": "Loại khấu trừ"
+        }
+    }
+}

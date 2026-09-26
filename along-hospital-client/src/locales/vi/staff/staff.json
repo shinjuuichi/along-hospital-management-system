@@ -1,0 +1,44 @@
+{
+    "staff": {
+        "title": {
+            "staff_management": "Quản lý nhân viên",
+            "delete": "Xóa nhân viên",
+            "delete_confirm": "Bạn có chắc chắn muốn xóa"
+        },
+        "placeholder": {
+            "search_staff": "Tìm kiếm tên nhân viên...",
+            "search_phone": "Tìm số điện thoại...",
+            "search_email": "Tìm email..."
+        },
+        "field": {
+            "id": "Mã",
+            "name": "Tên",
+            "specialty": "Chuyên khoa",
+            "phone": "Số điện thoại",
+            "qualification": "Trình độ",
+            "gender": "Giới tính",
+            "date_of_birth": "Ngày sinh",
+            "image": "Hình ảnh",
+            "email": "Email",
+            "role": "Vai trò",
+            "address": "Địa chỉ",
+            "status": "Trạng thái",
+            "bank_code": "Mã ngân hàng",
+            "account_number": "Số tài khoản",
+            "dependent_quantity": "Số người phụ thuộc"
+        },
+        "button": {
+            "activate_selected": "Kích hoạt đã chọn",
+            "on_leave_selected": "Cho nghỉ đã chọn",
+            "terminate_selected": "Chấm dứt đã chọn"
+        },
+        "confirm": {
+            "activate_selected_title": "Kích hoạt nhân viên đã chọn?",
+            "activate_selected_description": "Bạn có chắc muốn kích hoạt {number} nhân viên đã chọn?",
+            "on_leave_selected_title": "Cho nghỉ nhân viên đã chọn?",
+            "on_leave_selected_description": "Bạn có chắc muốn chuyển {number} nhân viên đã chọn sang trạng thái nghỉ?",
+            "terminate_selected_title": "Chấm dứt nhân viên đã chọn?",
+            "terminate_selected_description": "Bạn có chắc muốn chấm dứt {number} nhân viên đã chọn?"
+        }
+    }
+}

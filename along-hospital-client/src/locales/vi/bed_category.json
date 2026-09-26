@@ -1,0 +1,31 @@
+{
+    "bed_category": {
+        "field": {
+            "id": "ID",
+            "code": "Mã dịch vụ y tế",
+            "name": "Tên loại giường",
+            "description": "Mô tả",
+            "actions": "Hành động"
+        },
+        "title": {
+            "management": "Quản lý loại giường"
+        },
+        "button": {
+            "update": "Cập nhật loại giường",
+            "delete": "Xóa loại giường"
+        },
+        "dialog": {
+            "create_title": "Tạo loại giường",
+            "update_title": "Cập nhật loại giường",
+            "delete_title": "Xóa loại giường",
+            "delete_description": "Bạn có chắc chắn muốn xóa loại giường '{name}' không?",
+            "delete_many_title": "Xóa nhiều loại giường",
+            "delete_many_description": "Bạn có chắc chắn muốn xóa {number} loại giường đã chọn không?"
+        },
+        "placeholder": {
+            "no_data": "Không có dữ liệu...",
+            "search": "Tìm kiếm loại giường...",
+            "total": "Tổng"
+        }
+    }
+}

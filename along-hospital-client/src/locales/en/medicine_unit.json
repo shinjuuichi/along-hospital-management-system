@@ -1,0 +1,34 @@
+{
+    "medicine_unit": {
+        "title": {
+            "management": "Medicine Unit Management"
+        },
+        "filter": {
+            "title": "Filter",
+            "searchPlaceholder": "Search medicine units"
+        },
+        "field": {
+            "name": "Unit name",
+            "description": "Description",
+            "options": "Options"
+        },
+        "text": {
+            "active": "Active",
+            "inactive": "Inactive"
+        },
+        "button": {
+            "activate": "Activate",
+            "inactivate": "Inactivate"
+        },
+        "status": "Status",
+        "information": "Information",
+        "detail": "Detail",
+        "actions": "Actions",
+        "dialog": {
+            "create_title": "Create medicine unit",
+            "update_title": "Update medicine unit",
+            "confirm_delete_title": "Delete medicine unit",
+            "confirm_delete_description": "Are you sure you want to delete unit \"{{name}}\"?"
+        }
+    }
+}

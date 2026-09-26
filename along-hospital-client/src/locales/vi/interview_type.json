@@ -1,0 +1,19 @@
+{
+  "interview_type": {
+    "title": {
+      "interview_type_management": "Quản lý loại phỏng vấn"
+    },
+    "field": {
+      "id": "ID",
+      "name": "Tên",
+      "description": "Mô tả",
+      "actions": "Hành động"
+    },
+    "dialog": {
+      "create_title": "Thêm loại phỏng vấn",
+      "update_title": "Cập nhật loại phỏng vấn",
+      "confirm_delete_title": "Xóa loại phỏng vấn?",
+      "confirm_delete_description": "Bạn có chắc chắn muốn xóa \"{name}\" không?"
+    }
+  }
+}

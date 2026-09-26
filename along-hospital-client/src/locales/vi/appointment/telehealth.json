@@ -1,0 +1,90 @@
+{
+    "meeting_room": {
+        "title": {
+            "join_meeting": "Tham gia cuộc gọi",
+            "appointment_time": "Thời gian hẹn",
+            "duration": "Thời lượng",
+            "duration_left": "còn lại",
+            "note": "Vui lòng giữ trang này mở. Bác sĩ sẽ tham gia trong giây lát.",
+            "placeholder_meeting_id": "Nhập mã hoặc ID cuộc gọi...",
+            "room_name": "Tên Phòng"
+        },
+        "subtitle": {
+            "enter_meeting": "Nhập ID hoặc mã để tham gia cuộc gọi",
+            "session_ready": "Kiểm tra kết nối, âm thanh và video trước khi bắt đầu buổi tư vấn."
+        },
+        "consultation_complete_title": "Buổi tư vấn đã hoàn tất",
+        "consultation_complete_subtitle": "Cuộc hẹn từ xa của bạn đã kết thúc thành công",
+        "chief_complaint": "Triệu chứng chính",
+        "diagnosis": "Chẩn đoán",
+        "recommendations": "Khuyến nghị",
+        "sample_chief_complaint": "Đau đầu và sốt nhẹ trong hai ngày.",
+        "sample_diagnosis": "Nghi nhiễm siêu vi đường hô hấp trên.",
+        "sample_rec_1": "Uống nhiều nước.",
+        "sample_rec_2": "Nghỉ ngơi đầy đủ.",
+        "sample_rec_3": "Dùng thuốc theo chỉ định.",
+        "sample_rec_4": "Tái khám nếu triệu chứng nặng hơn.",
+        "schedule_follow_up": "Đặt lịch tái khám",
+        "back_to_home": "Về trang chủ",
+        "summary_notice": "Tóm tắt buổi tư vấn đã được lưu. Bạn có thể xem lại trong Lịch sử y tế.",
+        "thank_you_title": "Cảm ơn bạn đã sử dụng dịch vụ Telehealth",
+        "thank_you_message": "Buổi tư vấn của bạn đã kết thúc thành công. Chúng tôi hy vọng dịch vụ telehealth của chúng tôi hữu ích và tiện lợi cho bạn.",
+        "thank_you_note": "Tóm tắt buổi tư vấn đã được lưu trữ và có sẵn trong Lịch sử y tế của bạn để tham khảo sau này.",
+        "mic": "Micro",
+        "camera": "Camera",
+        "chat": "Trò chuyện",
+        "end_call": "Kết thúc",
+        "chat_title": "Trò chuyện",
+        "no_messages": "Chưa có tin nhắn.",
+        "chat_input_placeholder": "Nhập tin nhắn và nhấn Enter",
+        "create_medical_history": "Tạo hồ sơ khám",
+        "remote_placeholder": "Video từ đầu bên kia sẽ hiển thị tại đây",
+        "doctor_avatar_url": "",
+        "message": {
+            "waiting_for_doctor": "Đang chờ bác sĩ tham gia…"
+        },
+        "time": {
+            "ended": "Đã kết thúc"
+        }
+    },
+    "telehealth": {
+        "error": {
+            "session_not_ready": "Phiên chưa sẵn sàng",
+            "connection_failed": "Không thể thiết lập kết nối tới phòng tư vấn. Vui lòng thử lại.",
+            "record_permission_denied": "Bạn đã từ chối quyền ghi. Vui lòng cấp quyền màn hình và âm thanh.",
+            "record_unsupported": "Trình duyệt hiện tại không hỗ trợ tính năng ghi này.",
+            "record_empty_file": "Không tạo được file ghi hình. Vui lòng thử lại.",
+            "record_failed": "Không thể ghi lại buổi tư vấn. Vui lòng thử lại."
+        },
+        "notice": {
+            "expiring_soon": "Buổi tư vấn sẽ tự kết thúc trong khoảng 5 phút nữa.",
+            "record_downloaded": "Đã tải xuống file ghi hình thành công."
+        },
+        "status": {
+            "loading": "Đang tải thông tin buổi tư vấn...",
+            "unavailable_title": "Không thể vào phòng tư vấn",
+            "not_started_title": "Buổi tư vấn chưa bắt đầu",
+            "not_started_description": "Bạn chưa thể vào phòng họp lúc này. Vui lòng quay lại đúng giờ hẹn.",
+            "expired_title": "Buổi tư vấn đã hết hạn",
+            "expired_description": "Khung giờ của buổi tư vấn này đã kết thúc.",
+            "forbidden_title": "Bạn không có quyền truy cập",
+            "forbidden_description": "Tài khoản hiện tại không được phép tham gia buổi tư vấn này.",
+            "payment_pending_title": "Cuộc hẹn chưa đủ điều kiện tham gia",
+            "payment_pending_description": "Bạn cần hoàn tất thanh toán trước khi vào buổi tư vấn.",
+            "recording": "Đang ghi buổi tư vấn",
+            "record_acquiring": "Đang chuẩn bị ghi..."
+        },
+        "button": {
+            "start_call": "Bắt đầu gọi",
+            "hang_up": "Kết thúc",
+            "mute_unmute": "Bật/Tắt mic",
+            "toggle_video": "Bật/Tắt video",
+            "start_recording": "Bắt đầu ghi",
+            "stop_recording": "Dừng ghi"
+        },
+        "participants": {
+            "title": "Người tham gia",
+            "empty": "Chưa có người tham gia"
+        }
+    }
+}

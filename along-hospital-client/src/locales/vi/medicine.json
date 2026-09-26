@@ -1,0 +1,67 @@
+{
+    "medicine": {
+        "text": {
+            "true": "Đúng",
+            "false": "Sai"
+        },
+        "field": {
+            "name": "Tên thuốc",
+            "brand": "Thương hiệu",
+            "unit": "Đơn vị",
+            "status": "Trạng thái",
+            "images": "Hình ảnh",
+            "options": "Tuỳ chọn",
+            "medicine_category": {
+                "name": "Danh mục thuốc",
+                "description": "Mô tả"
+            },
+            "price": "Giá",
+            "action": "Hành động",
+            "quantity": "Số lượng",
+            "min_quantity": "Số lượng tối thiểu",
+            "max_quantity": "Số lượng tối đa"
+        },
+        "title": {
+            "medicine_management": "Quản Lí Thuốc",
+            "medicine_information": "Thông tin thuốc"
+        },
+        "label": {
+            "total_skus": "Tổng số SKU",
+            "active_skus": "SKU đang hoạt động"
+        },
+        "filter": {
+            "title": "Bộ lọc thuốc",
+            "category": "Loại thuốc",
+            "unit": "Đơn vị",
+            "search_place_holder": "Tìm theo tên thuốc...",
+            "is_public": "Công khai"
+        },
+        "button": {
+            "add": "Thêm thuốc",
+            "update": "Cập nhật thuốc",
+            "delete": "Xóa thuốc",
+            "reset": "Reset"
+        },
+        "table": {
+            "name": "Tên thuốc",
+            "brand": "Thương hiệu",
+            "unit": "Đơn vị",
+            "category": "Danh mục",
+            "images": "Hình ảnh",
+            "actions": "Hành động"
+        },
+        "placeholder": {
+            "no_data": "Không có dữ liệu...",
+            "total": "Tổng"
+        },
+        "dialog": {
+            "create_title": "Thêm thuốc mới",
+            "update_title": "Cập nhật thuốc",
+            "confirm_delete_title": "Xóa thuốc?",
+            "confirm_delete_description": "Bạn có chắc chắn muốn xóa \"{{name}}\" không?"
+        },
+        "action": {
+            "medicine_sku": "Quản lý SKU"
+        }
+    }
+}

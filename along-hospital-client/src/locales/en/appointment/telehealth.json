@@ -1,0 +1,90 @@
+{
+    "meeting_room": {
+        "title": {
+            "join_meeting": "Join a meeting",
+            "appointment_time": "Appointment time",
+            "duration": "Duration",
+            "duration_left": "left",
+            "note": "Please keep this page open. Your doctor will join shortly.",
+            "placeholder_meeting_id": "Enter meeting ID or code...",
+            "room_name": "Room Name"
+        },
+        "subtitle": {
+            "enter_meeting": "Enter the meeting ID or code to join",
+            "session_ready": "Check your connection, microphone, and camera before the consultation starts."
+        },
+        "consultation_complete_title": "Consultation completed",
+        "consultation_complete_subtitle": "Your telehealth visit has ended successfully",
+        "chief_complaint": "Chief complaint",
+        "diagnosis": "Diagnosis",
+        "recommendations": "Recommendations",
+        "sample_chief_complaint": "Headache and mild fever for two days.",
+        "sample_diagnosis": "Viral upper respiratory infection (suspected).",
+        "sample_rec_1": "Drink plenty of fluids.",
+        "sample_rec_2": "Get adequate rest.",
+        "sample_rec_3": "Take prescribed medication as directed.",
+        "sample_rec_4": "Seek follow-up if symptoms worsen.",
+        "schedule_follow_up": "Schedule a follow-up",
+        "back_to_home": "Back to home",
+        "summary_notice": "A summary of your consultation has been recorded. You can review it in your Medical History.",
+        "thank_you_title": "Thank You for Using Our Telehealth Service",
+        "thank_you_message": "Your consultation session has ended successfully. We hope you found our telehealth service helpful and convenient.",
+        "thank_you_note": "A summary of your consultation has been recorded and is available in your Medical History for future reference.",
+        "mic": "Microphone",
+        "camera": "Camera",
+        "chat": "Chat",
+        "end_call": "End call",
+        "chat_title": "Chat",
+        "no_messages": "No messages yet.",
+        "chat_input_placeholder": "Type a message and press Enter",
+        "create_medical_history": "Create medical history",
+        "remote_placeholder": "Remote video will appear here",
+        "doctor_avatar_url": "",
+        "message": {
+            "waiting_for_doctor": "Waiting for your doctor to join…"
+        },
+        "time": {
+            "ended": "Ended"
+        }
+    },
+    "telehealth": {
+        "error": {
+            "session_not_ready": "Session is not ready yet",
+            "connection_failed": "Unable to establish the consultation connection. Please try again.",
+            "record_permission_denied": "Recording permission was denied. Please allow screen and audio access.",
+            "record_unsupported": "Your browser does not support this recording feature.",
+            "record_empty_file": "No recording file was generated. Please try again.",
+            "record_failed": "Unable to record this consultation. Please try again."
+        },
+        "notice": {
+            "expiring_soon": "This consultation will end automatically in about 5 minutes.",
+            "record_downloaded": "Recording downloaded successfully."
+        },
+        "status": {
+            "loading": "Loading consultation details...",
+            "unavailable_title": "Unable to join this consultation",
+            "not_started_title": "Consultation has not started yet",
+            "not_started_description": "You cannot enter this room yet. Please come back at the scheduled time.",
+            "expired_title": "Consultation has expired",
+            "expired_description": "The scheduled time window for this consultation has ended.",
+            "forbidden_title": "You do not have access",
+            "forbidden_description": "Your current account is not allowed to join this consultation.",
+            "payment_pending_title": "Consultation is not ready yet",
+            "payment_pending_description": "You need to complete payment before joining this consultation.",
+            "recording": "Recording in progress",
+            "record_acquiring": "Preparing recorder..."
+        },
+        "button": {
+            "start_call": "Start Call",
+            "hang_up": "Hang Up",
+            "mute_unmute": "Mute/Unmute",
+            "toggle_video": "Toggle Video",
+            "start_recording": "Start recording",
+            "stop_recording": "Stop recording"
+        },
+        "participants": {
+            "title": "Participants",
+            "empty": "No participants"
+        }
+    }
+}

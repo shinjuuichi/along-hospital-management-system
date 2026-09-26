@@ -1,0 +1,35 @@
+{
+    "specialty": {
+        "title": {
+            "page": "Chuyên Khoa",
+            "list": "Danh sách Chuyên Khoa",
+            "detail": "Chi tiết Chuyên Khoa",
+            "delete": "Xóa chuyên khoa",
+            "delete_confirm": "Bạn có chắc muốn xóa",
+            "create": "Tạo chuyên khoa",
+            "update": "Cập nhật chuyên khoa",
+            "specialty_management": "Quản lý chuyên khoa"
+        },
+        "description": {
+            "page_intro": "Duyệt qua danh sách đầy đủ các chuyên khoa có sẵn trong hệ thống bệnh viện của chúng tôi.",
+            "list": "Tìm và chọn chuyên khoa phù hợp với bạn"
+        },
+        "button": {
+            "view_detail": "Xem chi tiết",
+            "book_appointment": "Đặt lịch khám"
+        },
+        "field": {
+            "id": "Mã",
+            "name": "Tên chuyên khoa",
+            "description": "Mô tả",
+            "is_medical": "Là chuyên khoa y tế"
+        },
+        "placeholder": {
+            "no_description": "Chưa có mô tả",
+            "no_featured": "Chuyên khoa nổi bật sẽ được cập nhật sớm.",
+            "no_result_title": "Không tìm thấy chuyên khoa",
+            "no_result_subtitle": "Hãy thử đổi từ khóa hoặc ký tự lọc.",
+            "search_specialty": "Tìm kiếm tên chuyên khoa..."
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "tax_bracket": {
+        "title": {
+            "page": "Bậc thuế",
+            "list": "Danh sách bậc thuế",
+            "detail": "Chi tiết bậc thuế",
+            "delete": "Xóa bậc thuế",
+            "delete_confirm": "Bạn có chắc chắn muốn xóa bậc thuế này",
+            "create": "Tạo bậc thuế",
+            "update": "Cập nhật bậc thuế",
+            "tax_bracket_management": "Quản lý bậc thuế"
+        },
+        "description": {
+            "page_intro": "Quản lý tất cả bậc thuế trong hệ thống."
+        },
+        "placeholder": {
+            "no_result_title": "Không tìm thấy bậc thuế",
+            "no_result_subtitle": "Thử điều chỉnh bộ lọc hoặc tìm kiếm với từ khóa khác.",
+            "search_tax_bracket": "Tìm theo bậc thuế ..."
+        },
+        "field": {
+            "id": "ID",
+            "from_amount": "Từ số tiền",
+            "tax_rate": "Thuế suất"
+        }
+    }
+}

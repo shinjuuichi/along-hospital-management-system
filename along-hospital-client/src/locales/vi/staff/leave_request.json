@@ -1,0 +1,75 @@
+{
+    "leave_request": {
+        "title": {
+            "leave_request_management": "Quản lý yêu cầu nghỉ phép",
+            "leave_request": "Yêu cầu nghỉ phép",
+            "history": "Lịch sử",
+            "overtime_request": "Yêu cầu tăng ca",
+            "create_leave_request": "Tạo yêu cầu nghỉ phép",
+            "create_overtime_request": "Tạo yêu cầu tăng ca",
+            "pending_requests": "Yêu cầu chờ duyệt"
+        },
+        "field": {
+            "leave_type": "Loại nghỉ phép",
+            "leave_unit": "Đơn vị nghỉ",
+            "ot_type": "Loại tăng ca",
+            "date_range": "Khoảng ngày",
+            "from_date": "Từ ngày",
+            "to_date": "Đến ngày",
+            "from": "Từ",
+            "to": "Đến",
+            "leave_dates": "Ngày nghỉ phép",
+            "date": "Ngày",
+            "shift": "Ca",
+            "from_time": "Từ giờ",
+            "to_time": "Đến giờ",
+            "start_date": "Ngày bắt đầu",
+            "start_time": "Giờ bắt đầu",
+            "end_date": "Ngày kết thúc",
+            "end_time": "Giờ kết thúc",
+            "reason": "Lý do",
+            "status": "Trạng thái",
+            "approver": "Người duyệt",
+            "approved_at": "Duyệt lúc",
+            "staff_name": "Tên nhân viên",
+            "staff_email": "Email nhân viên",
+            "created_by": "Người tạo (ID)",
+            "approved_by": "Người duyệt (ID)",
+            "actions": "Thao tác"
+        },
+        "button": {
+            "new_request": "+ Yêu cầu mới",
+            "create_request": "Tạo yêu cầu",
+            "cancel_request": "Hủy yêu cầu",
+            "approve": "Duyệt",
+            "reject": "Từ chối"
+        },
+        "text": {
+            "filters": "Bộ lọc",
+            "important_information": "Thông tin quan trọng",
+            "load_history_failed": "Không thể tải lịch sử yêu cầu nghỉ phép."
+        },
+        "placeholder": {
+            "search": "Tìm theo tên, email, người duyệt, lý do..."
+        },
+        "confirm": {
+            "cancel_leave_title": "Hủy yêu cầu nghỉ phép?",
+            "cancel_leave_description": "Bạn có chắc muốn hủy yêu cầu nghỉ phép #{id}?",
+            "cancel_overtime_title": "Hủy yêu cầu tăng ca?",
+            "cancel_overtime_description": "Bạn có chắc muốn hủy yêu cầu tăng ca #{id}?",
+            "approve_leave_title": "Duyệt yêu cầu nghỉ phép?",
+            "approve_leave_description": "Duyệt yêu cầu nghỉ phép #{id}?",
+            "reject_leave_title": "Từ chối yêu cầu nghỉ phép?",
+            "reject_leave_description": "Từ chối yêu cầu nghỉ phép #{id}?",
+            "approve_overtime_title": "Duyệt yêu cầu tăng ca?",
+            "approve_overtime_description": "Duyệt yêu cầu tăng ca #{id}?",
+            "reject_overtime_title": "Từ chối yêu cầu tăng ca?",
+            "reject_overtime_description": "Từ chối yêu cầu tăng ca #{id}?"
+        },
+        "error": {
+            "from_date_before_to_date": "Ngày bắt đầu phải trước ngày kết thúc",
+            "start_time_before_end_time": "Giờ bắt đầu phải trước giờ kết thúc",
+            "cannot_review_own_request": "Bạn không thể duyệt hoặc từ chối yêu cầu của chính mình."
+        }
+    }
+}

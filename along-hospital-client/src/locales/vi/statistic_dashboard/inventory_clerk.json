@@ -1,0 +1,46 @@
+{
+	"statistic_dashboard_inventory_clerk": {
+		"title": {
+			"page": "Bảng Điều Khiển Thủ Kho",
+			"filters": "Bộ Lọc Thời Gian",
+			"current_range": "Khoảng thời gian hiện tại"
+		},
+		"field": {
+			"preset": "Khoảng thời gian",
+			"date_range": "Khoảng ngày",
+			"from_date": "Từ ngày",
+			"to_date": "Đến ngày"
+		},
+		"preset": {
+			"this_month": "Tháng này",
+			"this_year": "Năm nay",
+			"custom": "Tùy chỉnh"
+		},
+		"tab": {
+			"overview": "Tổng quan",
+			"inventory": "Kho hàng",
+			"supplier": "Nhà cung cấp",
+			"import": "Nhập kho"
+		},
+		"widget": {
+			"total_inventory_items": "Tổng loại thuốc",
+			"low_stock_items": "Loại thuốc sắp hết",
+			"out_of_stock_items": "Loại thuốc hết hàng",
+			"total_suppliers": "Tổng nhà cung cấp",
+			"total_imports": "Tổng lần nhập kho",
+			"total_import_value": "Tổng giá trị nhập kho",
+			"total_quantity": "Tổng số lượng",
+			"stock_status": "Tình trạng kho",
+			"inventory_over_time": "Kho hàng theo thời gian",
+			"suppliers_over_time": "Nhà cung cấp theo thời gian",
+			"imports_over_time": "Nhập kho theo thời gian",
+			"import_by_supplier": "Nhập kho theo nhà cung cấp"
+		},
+		"text": {
+			"description": "Theo dõi mức tồn kho, hiệu suất nhà cung cấp và hoạt động nhập kho trên một bảng điều khiển duy nhất."
+		},
+		"button": {
+			"export": "Xuất Excel"
+		}
+	}
+}
